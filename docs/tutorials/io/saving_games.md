@@ -21,7 +21,7 @@ If you're looking to save user configuration, you can use the
 :::info
 
 You can see how saving and loading works in action using the
-[Saving and Loading (Serialization) demo project ](https://github.com/godotengine/godot-demo-projects/blob/master/loading/serialization)_.
+[Saving and Loading (Serialization) demo project ](https://github.com/redot-engine/redot-demo-projects/blob/master/loading/serialization)_.
 
 :::
 

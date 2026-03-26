@@ -13,7 +13,7 @@ by [Microsoft](https://microsoft.com) (not to be confused with [doc_configuring_
   Alternatively, [clangd](https://open-vsx.org/extension/llvm-vs-code-extensions/vscode-clangd)
   can be used instead.
 - When using the clangd extension, run ``scons compiledb=yes``.
-- From the Visual Studio Code's main screen open the Godot root folder with
+- From the Visual Studio Code's main screen open the Redot root folder with
   **File &gt; Open Folder...**.
 - Press `Ctrl + Shift + P` to open the command prompt window and enter *Configure Task*.
 
@@ -86,11 +86,11 @@ To run and debug the project you need to create a new configuration in the ``lau
   "name": "Launch Project",
   "type": "lldb",
   "request": "launch",
-  // Change to godot.linuxbsd.editor.dev.x86_64.llvm for llvm-based builds.
-  "program": "${workspaceFolder}/bin/godot.linuxbsd.editor.dev.x86_64",
+  // Change to Redot.linuxbsd.editor.dev.x86_64.llvm for llvm-based builds.
+  "program": "${workspaceFolder}/bin/Redot.linuxbsd.editor.dev.x86_64",
   // Change the arguments below for the project you want to test with.
   // To run the project instead of editing it, remove the "--editor" argument.
-  "args": [ "--editor", "--path", "path-to-your-godot-project-folder" ],
+  "args": [ "--editor", "--path", "path-to-your-Redot-project-folder" ],
   "stopAtEntry": false,
   "cwd": "${workspaceFolder}",
   "environment": [],
@@ -108,11 +108,11 @@ To run and debug the project you need to create a new configuration in the ``lau
   "name": "Launch Project",
   "type": "cppdbg",
   "request": "launch",
-  // Change to godot.linuxbsd.editor.dev.x86_64.llvm for llvm-based builds.
-  "program": "${workspaceFolder}/bin/godot.linuxbsd.editor.dev.x86_64",
+  // Change to Redot.linuxbsd.editor.dev.x86_64.llvm for llvm-based builds.
+  "program": "${workspaceFolder}/bin/Redot.linuxbsd.editor.dev.x86_64",
   // Change the arguments below for the project you want to test with.
   // To run the project instead of editing it, remove the "--editor" argument.
-  "args": [ "--editor", "--path", "path-to-your-godot-project-folder" ],
+  "args": [ "--editor", "--path", "path-to-your-Redot-project-folder" ],
   "stopAtEntry": false,
   "cwd": "${workspaceFolder}",
   "environment": [],
@@ -125,8 +125,8 @@ To run and debug the project you need to create a new configuration in the ``lau
       "ignoreFailures": true
     },
     {
-        "description": "Load custom pretty-printers for Godot types.",
-        "text": "source ${workspaceRoot}/misc/utility/godot_gdb_pretty_print.py"
+        "description": "Load custom pretty-printers for Redot types.",
+        "text": "source ${workspaceRoot}/misc/utility/Redot_gdb_pretty_print.py"
     }
   ],
   "preLaunchTask": "build"
@@ -143,15 +143,15 @@ To run and debug the project you need to create a new configuration in the ``lau
   "name": "Launch Project",
   "type": "cppvsdbg",
   "request": "launch",
-  "program": "${workspaceFolder}/bin/godot.windows.editor.dev.x86_64.exe",
+  "program": "${workspaceFolder}/bin/Redot.windows.editor.dev.x86_64.exe",
   // Change the arguments below for the project you want to test with.
   // To run the project instead of editing it, remove the "--editor" argument.
-  "args": [ "--editor", "--path", "path-to-your-godot-project-folder" ],
+  "args": [ "--editor", "--path", "path-to-your-Redot-project-folder" ],
   "stopAtEntry": false,
   "cwd": "${workspaceFolder}",
   "environment": [],
   "console": "internalConsole",
-  "visualizerFile": "${workspaceFolder}/platform/windows/godot.natvis",
+  "visualizerFile": "${workspaceFolder}/platform/windows/Redot.natvis",
   "preLaunchTask": "build"
 }
 
@@ -167,12 +167,12 @@ To run and debug the project you need to create a new configuration in the ``lau
   "type": "lldb",
   "request": "custom",
   "targetCreateCommands": [
-    "target create ${workspaceFolder}/bin/godot.macos.editor.dev.x86_64"
+    "target create ${workspaceFolder}/bin/Redot.macos.editor.dev.x86_64"
   ],
   // Change the arguments below for the project you want to test with.
   // To run the project instead of editing it, remove the "--editor" argument.
   "processCreateCommands": [
-    "process launch -- --editor --path path-to-your-godot-project-folder"
+    "process launch -- --editor --path path-to-your-Redot-project-folder"
   ]
 }
 ```
@@ -201,7 +201,7 @@ Do note that lldb may work better with LLVM-based builds. See [doc_compiling_for
 :::
 
 The name under ``program`` depends on your build configuration,
-e.g. ``godot.linuxbsd.editor.dev.x86_64`` for 64-bit LinuxBSD platform with
+e.g. ``Redot.linuxbsd.editor.dev.x86_64`` for 64-bit LinuxBSD platform with
 ``target=editor`` and ``dev_build=yes``.
 
 ## Configuring Intellisense
@@ -260,7 +260,7 @@ To fix include errors you may be having, you need to configure some settings in 
   - This argument can be added to your build task in ``tasks.json`` since it will need to be run whenever files are added or moved.
 
 If you run into any issues, ask for help in one of
-[Godot's community channels](https://godotengine.org/community).
+[Redot's community channels](https://redotengine.org/community).
 
 :::tip
 

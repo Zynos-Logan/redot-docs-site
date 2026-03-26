@@ -5,12 +5,12 @@ import TabItem from "@theme/TabItem";
 
 # Recording with microphone
 
-Godot supports in-game audio recording for Windows, macOS, Linux, Android and
+Redot supports in-game audio recording for Windows, macOS, Linux, Android and
 iOS.
 
 A simple demo is included in the official demo projects and will be used as
 support for this tutorial:
-[&lt;https://github.com/godotengine/godot-demo-projects/tree/master/audio/mic_record&gt;](&lt;https://github.com/godotengine/godot-demo-projects/tree/master/audio/mic_record&gt;).
+[&lt;https://github.com/redot-engine/redot-demo-projects/tree/master/audio/mic_record&gt;](&lt;https://github.com/redot-engine/redot-demo-projects/tree/master/audio/mic_record&gt;).
 
 You will need to enable audio input in the [Audio &gt; Driver &gt; Enable Input](class_ProjectSettings_property_audio/driver/enable_input) project setting, or you'll just get empty audio files.
 

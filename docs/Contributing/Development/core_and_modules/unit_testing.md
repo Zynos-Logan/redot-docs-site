@@ -1,10 +1,10 @@
 
 # Unit testing
 
-Godot Engine allows to write unit tests directly in C++. The engine integrates
+Redot Engine allows to write unit tests directly in C++. The engine integrates
 the [doctest](https://github.com/onqtam/doctest) unit testing framework which
 gives ability to write test suites and test cases next to production code, but
-since the tests in Godot go through a different ``main`` entry point, the tests
+since the tests in Redot go through a different ``main`` entry point, the tests
 reside in a dedicated ``tests/`` directory instead, which is located at the root
 of the engine source code.
 
@@ -29,7 +29,7 @@ scons tests=yes
 Once the build is done, run the tests with a ``--test`` command-line option:
 
 ```shell
-./bin/<godot_binary> --test
+./bin/<Redot_binary> --test
 
 ```
 
@@ -38,7 +38,7 @@ options. To retrieve the full list of supported options, run the ``--test``
 command with the ``--help`` option:
 
 ```shell
-./bin/<godot_binary> --test --help
+./bin/<Redot_binary> --test --help
 
 ```
 
@@ -76,7 +76,7 @@ test suites, test cases, and source file names:
 For instance, to run only the ``String`` unit tests, run:
 
 ```shell
-./bin/<godot_binary> --test --test-case="*[String]*"
+./bin/<Redot_binary> --test --test-case="*[String]*"
 
 ```
 
@@ -85,7 +85,7 @@ option, and can be combined with any combination of filtering options above,
 for instance:
 
 ```shell
-./bin/<godot_binary> --test --source-file="*test_color*" --success
+./bin/<Redot_binary> --test --source-file="*test_color*" --success
 
 ```
 
@@ -94,7 +94,7 @@ now, some tests include random stress tests which take a while to execute. In
 order to skip those kind of tests, run the following command:
 
 ```shell
-./bin/<godot_binary> --test --test-case-exclude="*[Stress]*"
+./bin/<Redot_binary> --test --test-case-exclude="*[Stress]*"
 
 ```
 
@@ -105,7 +105,7 @@ main test entry point in ``tests/test_main.cpp``. Most test suites are located
 directly under ``tests/`` directory.
 
 All header files are prefixed with ``test_``, and this is a naming convention
-which the Godot build system relies on to detect tests throughout the engine.
+which the Redot build system relies on to detect tests throughout the engine.
 
 Here's a minimal working test suite with a single test case written:
 
@@ -138,13 +138,13 @@ To view usage instructions, run the script with the ``-h`` flag.
 :::
 
 The ``tests/test_macros.h`` header encapsulates everything which is needed for
-writing C++ unit tests in Godot. It includes doctest assertion and logging
+writing C++ unit tests in Redot. It includes doctest assertion and logging
 macros such as ``CHECK`` as seen above, and of course the definitions for
 writing test cases themselves.
 
 :::info
 
-[tests/test_macros.h](https://github.com/godotengine/godot/blob/master/tests/test_macros.h)
+[tests/test_macros.h](https://github.com/redot-engine/redot-engine/blob/master/tests/test_macros.h)
 source code for currently implemented macros and aliases for them.
 
 :::
@@ -159,7 +159,7 @@ allows to prevent naming collisions for when other static helper functions are
 written to accommodate the repeating testing procedures such as populating
 common test data for each test, or writing parameterized tests.
 
-Godot supports writing tests per C++ module. For instructions on how to write
+Redot supports writing tests per C++ module. For instructions on how to write
 module tests, refer to [doc_custom_module_unit_tests](doc_custom_module_unit_tests).
 
 ### Subcases
@@ -184,7 +184,7 @@ Subcases can be nested to an arbitrary depth, but it is advised to limit nesting
 
 ### Assertions
 
-A list of all commonly used assertions used throughout the Godot tests, sorted
+A list of all commonly used assertions used throughout the Redot tests, sorted
 by severity.
 
 | **Assertion** | **Description** |
@@ -210,7 +210,7 @@ for more complex ones if you think that it deserves a better explanation.
 
 ### Logging
 
-The test output is handled by doctest itself, and does not rely on Godot
+The test output is handled by doctest itself, and does not rely on Redot
 printing or logging functionality at all, so it's recommended to use dedicated
 macros which allow to log test output in a format written by doctest.
 
@@ -224,7 +224,7 @@ Different reporters can be chosen at runtime. For instance, here's how the
 output can be redirected to an XML file:
 
 ```shell
-./bin/<godot_binary> --test --source-file="*test_validate*" --success --reporters=xml --out=doctest.txt
+./bin/<Redot_binary> --test --source-file="*test_validate*" --success --reporters=xml --out=doctest.txt
 
 ```
 
@@ -237,7 +237,7 @@ output can be redirected to an XML file:
 ### Testing failure paths
 
 Sometimes, it's not always feasible to test for an *expected* result. With the
-Godot development philosophy of that the engine should not crash and should
+Redot development philosophy of that the engine should not crash and should
 gracefully recover whenever a non-fatal error occurs, it's important to check
 that those failure paths are indeed safe to execute without crashing the engine.
 
@@ -327,9 +327,9 @@ command-line option. For instance, the GDScript module implements and registers
 several tools to help the debugging of the tokenizer, parser, and compiler:
 
 ```shell
-./bin/<godot_binary> --test gdscript-tokenizer test.gd
-./bin/<godot_binary> --test gdscript-parser test.gd
-./bin/<godot_binary> --test gdscript-compiler test.gd
+./bin/<Redot_binary> --test gdscript-tokenizer test.gd
+./bin/<Redot_binary> --test gdscript-parser test.gd
+./bin/<Redot_binary> --test gdscript-compiler test.gd
 
 ```
 
@@ -369,7 +369,7 @@ help of OS [get_cmdline_args](class_OS_method_get_cmdline_args) method.
 
 ## Integration tests for GDScript
 
-Godot uses doctest to prevent regressions in GDScript during development. There
+Redot uses doctest to prevent regressions in GDScript during development. There
 are several types of test scripts which can be written:
 
 - tests for expected errors;
@@ -397,17 +397,17 @@ func test():
 
 ```
 
-3. Change directory to the Godot source repository root.
+3. Change directory to the Redot source repository root.
 
 ```shell
-cd godot
+cd Redot
 
 ```
 
 4. Generate ``*.out`` files to update the expected results from the output:
 
 ```shell
-bin/<godot_binary> --gdscript-generate-tests modules/gdscript/tests/scripts
+bin/<Redot_binary> --gdscript-generate-tests modules/gdscript/tests/scripts
 
 ```
 
@@ -419,7 +419,7 @@ the crash and debug from there.
 5. Run GDScript tests with:
 
 ```shell
-./bin/<godot_binary> --test --test-suite="*GDScript*"
+./bin/<Redot_binary> --test --test-suite="*GDScript*"
 
 ```
 
@@ -441,7 +441,7 @@ only commit ``*.out`` files for new tests.
 The GDScript test runner is meant for testing the GDScript implementation,
 not for testing user scripts nor testing the engine using scripts. We
 recommend writing new tests for already resolved
-[issues related to GDScript at GitHub](https://github.com/godotengine/godot/issues?q=is%3Aissue+label%3Atopic%3Agdscript+is%3Aclosed),
+[issues related to GDScript at GitHub](https://github.com/redot-engine/redot-engine/issues?q=is%3Aissue+label%3Atopic%3Agdscript+is%3Aclosed),
 or writing tests for currently working features.
 
 :::

@@ -3,7 +3,7 @@ import TabItem from "@theme/TabItem";
 
 # The Profiler
 
-You run your game from Godot and play around. It's fun, it's becoming feature
+You run your game from Redot and play around. It's fun, it's becoming feature
 complete, and you feel it's getting close to release.
 
 But then, you open the skill tree, and it grinds to a halt as something snags in
@@ -12,7 +12,7 @@ unacceptable. What went wrong? Is it positioning the skill tree elements, the
 UI, or rendering?
 
 You could try to optimize everything and run the game repeatedly, but you can be
-smarter about this and narrow down the possibilities. Enter Godot's profiler.
+smarter about this and narrow down the possibilities. Enter Redot's profiler.
 
 ## An overview of the profiler
 
@@ -21,7 +21,7 @@ You can open the profiler by opening the **Debugger** panel and clicking on the
 
 ![Image](img/profiler.png)
 
-Godot's profiler does not automatically run because profiling is
+Redot's profiler does not automatically run because profiling is
 performance-intensive. It has to continually measure everything happening in the
 game and report back to the debugger, so it's off by default.
 
@@ -34,7 +34,7 @@ preserved across editor sessions.
 :::note
 
 The profiler does not currently support C# scripts. C# scripts can be profiled
-using JetBrains Rider and JetBrains dotTrace with the Godot support plugin.
+using JetBrains Rider and JetBrains dotTrace with the Redot support plugin.
 
 :::
 
@@ -49,16 +49,16 @@ left and the performance graph on the right.
 
 The main measurements are frame time, physics frame, idle time, and physics time.
 
-- The **frame time** is the time it takes Godot to execute all the logic for an
+- The **frame time** is the time it takes Redot to execute all the logic for an
   entire image, from physics to rendering.
-- **Physics frame** is the time Godot has allocated between physics updates. In
+- **Physics frame** is the time Redot has allocated between physics updates. In
   an ideal scenario, the frame time is whatever you chose: 16.66 milliseconds by
   default, which corresponds to 60FPS. It's a frame of reference you can use for
   everything else around it.
-- **Idle time** is the time Godot took to update logic other than physics, such
+- **Idle time** is the time Redot took to update logic other than physics, such
   as code that lives in `_process` or timers and cameras set to update on
   **Idle**.
-- **Physics time** is the time Godot took to update physics tasks, like
+- **Physics time** is the time Redot took to update physics tasks, like
   `_physics_process` and built-in nodes set to **Physics** update.
 
 :::note
@@ -69,7 +69,7 @@ particles or visual effects!
 
 :::
 
-By default, Godot ticks on Frame Time and Physics Time. This gives you an
+By default, Redot ticks on Frame Time and Physics Time. This gives you an
 overview of how long each frame takes relative to the allocated desired physics
 FPS. You can toggle functions on and off by clicking the checkboxes on the left.
 Other facilities make appearances as you go down the list, like Physics 2D,
@@ -101,7 +101,7 @@ function took **with** any nested function calls. For example:
 time. You could be fooled into thinking that this is because all three of them
 are slow.
 
-But when changed to **Self**, Godot measures the time spent in the function body
+But when changed to **Self**, Redot measures the time spent in the function body
 without considering function calls it made itself.
 
 ![Image](img/self_curve.png)

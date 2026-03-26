@@ -1,8 +1,8 @@
 :::note
 
-The asset library is maintained upstream by Godot.
+The asset library is maintained upstream by Redot.
 While it is possible to use this library from within Redot, please note that you are
-limited to assets that are compatible with Godot 4.5.x.
+limited to assets that are compatible with Redot 4.5.x.
 
 :::
 # Using the Asset Library
@@ -12,7 +12,7 @@ limited to assets that are compatible with Godot 4.5.x.
 ### Overview
 
 As mentioned before, you can access the web frontend of the Asset Library on
-[Godot's official website](https://godotengine.org/asset-library/asset).
+[Redot's official website](https://godotengine.org/asset-library/asset).
 This is what it looks like when you first visit it:
 
 ![image](img/assetlib_website.png)
@@ -32,12 +32,12 @@ While most other filter settings should be fairly self-explanatory, it's worth
 going over what "support level" means in the Asset Library.
 Currently there are three support levels, and each asset can belong to only one.
 
-**Official** assets are created and maintained by the official Godot Engine
+**Official** assets are created and maintained by the official Redot Engine
 developers. Currently, these include the official engine demos, which showcase
 how various areas of the engine work.
 
 **Community** assets are submitted and maintained by the members of the
-Godot community.
+Redot community.
 
 **Testing** assets are works-in-progress, and may contain bugs and usability
 issues. They are not recommended for use in serious projects, but you are
@@ -60,7 +60,7 @@ Now let's take a look at what an asset's page looks like and what it contains.
 1. Asset's thumbnail/icon.
 2. Asset's name.
 3. Current version number of the asset.
-4. Asset's category, Godot version, and support status.
+4. Asset's category, Redot version, and support status.
 5. Asset's original author/submitter.
 6. The license the asset is distributed under.
 7. The date of the asset's latest edit/update.
@@ -118,13 +118,13 @@ categories except *Templates*, *Demos* and *Projects*.
 
 :::
 
-You can also access the AssetLib directly from Godot:
+You can also access the AssetLib directly from Redot:
 
 ![image](img/assetlib_editor_workspace.png)
 
 ![image](img/assetlib_editor_projects.webp)
 
-Click on it, and Godot will fetch info about the assets from the AssetLib. Once
+Click on it, and Redot will fetch info about the assets from the AssetLib. Once
 it's finished, you will see a window similar to what the AssetLib website looks
 like, with some differences:
 
@@ -133,7 +133,7 @@ like, with some differences:
 Similarly to the web version of the AssetLib, here you can search
 for assets by category, name, and sort them by factors such as name or edit date.
 
-Notably, you can only fetch assets for the current version of Godot you are running.
+Notably, you can only fetch assets for the current version of Redot you are running.
 Projects, Demos and Templates can be downloaded from the Project Manager
 view of the AssetLib. Addons (tools, scripts, materials etc.) can be downloaded from
 the in-project AssetLib and added to the current project.
@@ -143,7 +143,7 @@ query for the changes to take place).
 
 In the future, you will be able to choose a different AssetLib provider to fetch
 assets from (using the Site dropdown menu), however currently only the official
-[Godot website](https://godotengine.org) version of the AssetLib is supported,
+[Redot website](https://redotengine.org) version of the AssetLib is supported,
 as well as the version that may be running on your local machine's web server
 (the localhost option).
 
@@ -151,7 +151,7 @@ When you click on an asset, you will see more information about it.
 
 ![image](img/assetlib_editor_asset.png)
 
-If you click on the Install button, Godot will fetch an archive of the asset,
+If you click on the Install button, Redot will fetch an archive of the asset,
 and will track download progress of it at the bottom of the editor window. If
 the download fails, you can retry it using the Retry button.
 
@@ -163,7 +163,7 @@ This will bring up the Package Installer window.
 ![image](img/assetlib_editor_installer.png)
 
 Here you can see a list of all the files that will be installed. You can tick off
-any of the files that you do not wish to install, and Godot will also inform you
+any of the files that you do not wish to install, and Redot will also inform you
 about any problems with files that it cannot install. These files will be shown
 in red, and hovering over them will show you a message stating why it cannot be
 installed.
@@ -180,4 +180,4 @@ installation is complete.
 You may also use the Import button to import asset archives obtained
 elsewhere (such as downloading them directly from the AssetLib web frontend),
 which will take you through the same package installation procedure as with the
-assets downloaded directly via Godot that we just covered.
+assets downloaded directly via Redot that we just covered.

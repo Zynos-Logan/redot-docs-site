@@ -10,7 +10,7 @@ To code C# in an external editor, see
 
 :::
 
-Godot can be used with an external text editor, such as Sublime Text or Visual
+Redot can be used with an external text editor, such as Sublime Text or Visual
 Studio Code. Browse to the relevant editor settings:
 **Editor &gt; Editor Settings &gt; Text Editor &gt; External**
 
@@ -19,8 +19,8 @@ Studio Code. Browse to the relevant editor settings:
    **Text Editor &gt; External** section of the Editor Settings
 
 There are two text fields: the executable path and command-line flags. The flags
-allow you to integrate the editor with Godot, passing it the file path to open
-and other relevant arguments. Godot will replace the following placeholders in
+allow you to integrate the editor with Redot, passing it the file path to open
+and other relevant arguments. Redot will replace the following placeholders in
 the flags string:
 
 | Field in Exec Flags | Is replaced with |
@@ -53,7 +53,7 @@ you use the server mode.
 :::
 
 ## Automatically reloading your changes
-To have the Godot Editor automatically reload any script that has been changed by an external text editor,
+To have the Redot Editor automatically reload any script that has been changed by an external text editor,
 enable **Editor &gt; Editor Settings &gt; Text Editor &gt; Behavior &gt; Auto Reload Scripts on External Change**.
 
 ## Using External Editor in Debugger
@@ -65,22 +65,22 @@ For details, see [Script editor debug tools and options ](doc_debugger_tools_and
 
 We have official plugins for the following code editors:
 
-- [Visual Studio Code ](https://github.com/godotengine/godot-vscode-plugin)
-- [Emacs ](https://github.com/godotengine/emacs-gdscript-mode)
+- [Visual Studio Code ](https://github.com/redot-engine/redot-vscode-plugin)
+- [Emacs ](https://github.com/redot-engine/emacs-gdscript-mode)
 
 ## LSP/DAP support
 
-Godot supports the [Language Server Protocol ](https://microsoft.github.io/language-server-protocol/) (**LSP**) for code completion and the [Debug Adapter Protocol ](https://microsoft.github.io/debug-adapter-protocol/) (**DAP**) for debugging. You can check the [LSP client list ](https://microsoft.github.io/language-server-protocol/implementors/tools/) and [DAP client list ](https://microsoft.github.io/debug-adapter-protocol/implementors/tools/) to find if your editor supports them. If this is the case, you should be able to take advantage of these features without the need of a custom plugin.
+Redot supports the [Language Server Protocol ](https://microsoft.github.io/language-server-protocol/) (**LSP**) for code completion and the [Debug Adapter Protocol ](https://microsoft.github.io/debug-adapter-protocol/) (**DAP**) for debugging. You can check the [LSP client list ](https://microsoft.github.io/language-server-protocol/implementors/tools/) and [DAP client list ](https://microsoft.github.io/debug-adapter-protocol/implementors/tools/) to find if your editor supports them. If this is the case, you should be able to take advantage of these features without the need of a custom plugin.
 
-To use these protocols, a Godot instance must be running on your current project. You should then configure your editor to communicate to the running adapter ports in Godot, which by default are ``6005`` for **LSP**, and ``6006`` for **DAP**. You can change these ports and other settings in the **Editor Settings**, under the **Network &gt; Language Server** and **Network &gt; Debug Adapter** sections respectively.
+To use these protocols, a Redot instance must be running on your current project. You should then configure your editor to communicate to the running adapter ports in Redot, which by default are ``6005`` for **LSP**, and ``6006`` for **DAP**. You can change these ports and other settings in the **Editor Settings**, under the **Network &gt; Language Server** and **Network &gt; Debug Adapter** sections respectively.
 
 Below are some configuration steps for specific editors:
 
 ### Visual Studio Code
 
-You need to install the official [Visual Studio Code plugin ](https://github.com/godotengine/godot-vscode-plugin).
+You need to install the official [Visual Studio Code plugin ](https://github.com/redot-engine/redot-vscode-plugin).
 
-For **LSP**, follow [these instructions ](https://github.com/godotengine/godot-vscode-plugin#gdscript_lsp_server_port) to change the default LSP port. The connection status can be checked on the status bar:
+For **LSP**, follow [these instructions ](https://github.com/redot-engine/redot-vscode-plugin#gdscript_lsp_server_port) to change the default LSP port. The connection status can be checked on the status bar:
 
 ![Image](img/lsp_vscode_status.png)
 
@@ -91,8 +91,8 @@ For **DAP**, specify the ``debugServer`` property in your ``launch.json`` file:
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "GDScript Godot",
-            "type": "godot",
+            "name": "GDScript Redot",
+            "type": "Redot",
             "request": "launch",
             "project": "${workspaceFolder}",
             "port": 6007,
@@ -105,4 +105,4 @@ For **DAP**, specify the ``debugServer`` property in your ``launch.json`` file:
 
 ### Emacs
 
-Check the official instructions to configure [LSP ](https://github.com/godotengine/emacs-gdscript-mode#auto-completion-with-the-language-server-protocol-lsp), and [DAP ](https://github.com/godotengine/emacs-gdscript-mode#using-the-debugger).
+Check the official instructions to configure [LSP ](https://github.com/redot-engine/emacs-gdscript-mode#auto-completion-with-the-language-server-protocol-lsp), and [DAP ](https://github.com/redot-engine/emacs-gdscript-mode#using-the-debugger).

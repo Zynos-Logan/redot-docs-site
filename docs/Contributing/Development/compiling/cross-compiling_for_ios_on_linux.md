@@ -5,7 +5,7 @@
 
 The procedure for this is somewhat complex and requires a lot of steps,
 but once you have the environment properly configured you can
-compile Godot for iOS anytime you want.
+compile Redot for iOS anytime you want.
 
 ## Disclaimer
 
@@ -102,7 +102,7 @@ cp -r target/bin "$HOME/iostoolchain/usr/"
 Now you should have the iOS toolchain binaries in
 ``$HOME/iostoolchain/usr/bin``.
 
-## Compiling Godot for iPhone
+## Compiling Redot for iPhone
 
 Once you've done the above steps, you should keep two things in your
 environment: the built toolchain and the iPhoneOS SDK directory. Those
@@ -117,7 +117,7 @@ export OSXCROSS_IOS="anything"
 
 ```
 
-Now you can compile for iPhone using SCons like the standard Godot
+Now you can compile for iPhone using SCons like the standard Redot
 way, with some additional arguments to provide the correct paths:
 
 ```

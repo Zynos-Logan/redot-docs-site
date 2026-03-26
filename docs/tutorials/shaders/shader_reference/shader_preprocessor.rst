@@ -14,7 +14,7 @@ starting with a hash symbol (``#``). It is not a *keyword* of the shader
 language (such as ``if`` or ``for``), but a special kind of token within the
 language.
 
-From Godot 4.0 onwards, you can use a shader preprocessor within text-based
+From Redot 4.0 onwards, you can use a shader preprocessor within text-based
 shaders. The syntax is similar to what most GLSL shader compilers support
 (which in turn is similar to the C/C++ preprocessor).
 
@@ -465,7 +465,7 @@ Built-in defines
 Current renderer
 ~~~~~~~~~~~~~~~~
 
-Since Godot 4.4, you can check which renderer is currently used with the built-in
+Since Redot 4.4, you can check which renderer is currently used with the built-in
 defines ``CURRENT_RENDERER``, ``RENDERER_COMPATIBILITY``, ``RENDERER_MOBILE``,
 and ``RENDERER_FORWARD_PLUS``:
 

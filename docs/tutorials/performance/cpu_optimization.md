@@ -19,7 +19,7 @@ For the CPU, the easiest way to identify bottlenecks is to use a profiler.
 Profilers run alongside your program and take timing measurements to work out
 what proportion of time is spent in each function.
 
-The Godot IDE conveniently has a built-in profiler. It does not run every time
+The Redot IDE conveniently has a built-in profiler. It does not run every time
 you start your project: it must be manually started and stopped. This is
 because, like most profilers, recording these timing measurements can
 slow down your project significantly.
@@ -44,13 +44,13 @@ When a project is running slowly, you will often see an obvious function or
 process taking a lot more time than others. This is your primary bottleneck, and
 you can usually increase speed by optimizing this area.
 
-For more info about using Godot's built-in profiler, see
+For more info about using Redot's built-in profiler, see
 [doc_debugger_panel](doc_debugger_panel).
 
 ## External profilers
 
-Although the Godot IDE profiler is very convenient and useful, sometimes you
-need more power, and the ability to profile the Godot engine source code itself.
+Although the Redot IDE profiler is very convenient and useful, sometimes you
+need more power, and the ability to profile the Redot engine source code itself.
 
 You can [use a number of third-party C++ profilers ](doc_using_cpp_profilers)
 to do this.
@@ -65,12 +65,12 @@ itself, excluding child functions (Self), the number of times the function is
 called, the function name, and the file or module.
 
 In this example, we can see nearly all time is spent under the
-``Main::iteration()`` function. This is the master function in the Godot source
+``Main::iteration()`` function. This is the master function in the Redot source
 code that is called repeatedly. It causes frames to be drawn, physics ticks to
 be simulated, and nodes and scripts to be updated. A large proportion of the
 time is spent in the functions to render a canvas (66%), because this example
 uses a 2D benchmark. Below this, we see that almost 50% of the time is spent
-outside Godot code in ``libglapi`` and ``i965_dri`` (the graphics driver).
+outside Redot code in ``libglapi`` and ``i965_dri`` (the graphics driver).
 This tells us the a large proportion of CPU time is being spent in the
 graphics driver.
 
@@ -159,14 +159,14 @@ can make your data accesses localised, or even better, access memory in a linear
 fashion (like a continuous list), then the cache will work optimally and the CPU
 will be able to work as fast as possible.
 
-Godot usually takes care of such low-level details for you. For example, the
+Redot usually takes care of such low-level details for you. For example, the
 Server APIs make sure data is optimized for caching already for things like
 rendering and physics. Still, you should be especially aware of caching when
 writing GDExtensions.
 
 ## Languages
 
-Godot supports a number of different languages, and it is worth bearing in mind
+Redot supports a number of different languages, and it is worth bearing in mind
 that there are trade-offs involved. Some languages are designed for ease of use
 at the cost of speed, and others are faster but more difficult to work with.
 
@@ -184,7 +184,7 @@ languages.
 
 ### C#
 
-[C# ](toc-learn-scripting-C#) is popular and has first-class support in Godot. It
+[C# ](toc-learn-scripting-C#) is popular and has first-class support in Redot. It
 offers a good compromise between speed and ease of use. Beware of possible
 garbage collection pauses and leaks that can occur during gameplay, though. A
 common approach to workaround issues with garbage collection is to use *object
@@ -193,11 +193,11 @@ pooling*, which is outside the scope of this guide.
 ### Other languages
 
 Third parties provide support for several other languages, including `Rust
-&lt;https://github.com/godot-rust/gdext&gt;`_.
+&lt;https://github.com/Godot-rust/gdext&gt;`_.
 
 ### C++
 
-Godot is written in C++. Using C++ will usually result in the fastest code.
+Redot is written in C++. Using C++ will usually result in the fastest code.
 However, on a practical level, it is the most difficult to deploy to end users'
 machines on different platforms. Options for using C++ include
 GDExtensions and
@@ -229,7 +229,7 @@ depends on the target platform and can range from thousands to tens of
 thousands so ensure that you profile performance on all target platforms
 during development).
 
-Each node is handled individually in the Godot renderer. Therefore, a smaller
+Each node is handled individually in the Redot renderer. Therefore, a smaller
 number of nodes with more in each can lead to better performance.
 
 One quirk of the [SceneTree ](class_SceneTree) is that you can sometimes

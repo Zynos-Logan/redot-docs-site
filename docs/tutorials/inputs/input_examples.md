@@ -5,7 +5,7 @@ import TabItem from "@theme/TabItem";
 
 ## Introduction
 
-In this tutorial, you'll learn how to use Godot's [InputEvent ](class_InputEvent)
+In this tutorial, you'll learn how to use Redot's [InputEvent ](class_InputEvent)
 system to capture player input. There are many different types of input your
 game may use - keyboard, gamepad, mouse, etc. - and many different ways to
 turn those inputs into actions in your game. This document will show you some
@@ -13,7 +13,7 @@ of the most common scenarios, which you can use as starting points for your
 own projects.
 
 :::note
-For a detailed overview of how Godot's input event system works,
+For a detailed overview of how Redot's input event system works,
 see [doc_inputevent](doc_inputevent).
 
 :::
@@ -24,7 +24,7 @@ Sometimes you want your game to respond to a certain input event - pressing
 the "jump" button, for example. For other situations, you might want something
 to happen as long as a key is pressed, such as movement. In the first case,
 you can use the ``_input()`` function, which will be called whenever an input
-event occurs. In the second case, Godot provides the [Input ](class_Input)
+event occurs. In the second case, Redot provides the [Input ](class_Input)
 singleton, which you can use to query the state of an input.
 
 Examples:
@@ -105,7 +105,7 @@ func _input(event):
 ```csharp
 using Godot;
 
-public partial class Node : Godot.Node
+public partial class Node : Redot.Node
 {
     public override void _Input(InputEvent @event)
     {
@@ -202,7 +202,7 @@ the InputMap tab:
 
 :::tip
 
-A new Godot project includes a number of default actions already defined.
+A new Redot project includes a number of default actions already defined.
 To see them, turn on ``Show Built-in Actions`` in the InputMap dialog.
 
 :::

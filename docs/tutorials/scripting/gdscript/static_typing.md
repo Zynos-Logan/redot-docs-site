@@ -44,7 +44,7 @@ You've probably encountered a lack of autocomplete suggestions after a dot:
 
 ![Image](img/typed_gdscript_code_completion_dynamic.webp)
 
-This is due to dynamic code. Godot cannot know what value type you're passing
+This is due to dynamic code. Redot cannot know what value type you're passing
 to the function. If you write the type explicitly however, you will get all
 methods, properties, constants, etc. from the value:
 
@@ -84,7 +84,7 @@ func sum(a: float = 0.0, b: float = 0.0) -> float:
 
 ```
 
-Godot will try to infer types if you write a colon, but you omit the type
+Redot will try to infer types if you write a colon, but you omit the type
 
 ```
 var damage := 10.5
@@ -97,7 +97,7 @@ func sum(a := 0.0, b := 0.0) -> float:
 :::note
 
 1. There is no difference between ``=`` and ``:=`` for constants.
-2. You don't need to write type hints for constants, as Godot sets it automatically
+2. You don't need to write type hints for constants, as Redot sets it automatically
    from the assigned value. But you can still do so to make the intent of your code clearer.
    Also, this is useful for typed arrays (like ``const A: Array[int] = [1, 2, 3]``),
    since untyped arrays are used by default.
@@ -139,7 +139,7 @@ extends Node2D
 
 ```
 
-If you use ``class_name``, Godot registers the ``Rifle`` type globally in the editor,
+If you use ``class_name``, Redot registers the ``Rifle`` type globally in the editor,
 and you can use it anywhere, without having to preload it into a constant
 
 ```
@@ -240,7 +240,7 @@ scores[0] = "lots"
 
 ```
 
-Since Godot 4.2, you can also specify a type for the loop variable in a ``for`` loop.
+Since Redot 4.2, you can also specify a type for the loop variable in a ``for`` loop.
 For instance, you can write
 
 ```
@@ -327,7 +327,7 @@ player.damage()
 
 :::note
 
-If you try to cast with a built-in type and it fails, Godot will throw an error.
+If you try to cast with a built-in type and it fails, Redot will throw an error.
 
 :::
 
@@ -335,7 +335,7 @@ If you try to cast with a built-in type and it fails, Godot will throw an error.
 
 You can also use casting to ensure safe lines. Safe lines are a tool to tell you
 when ambiguous lines of code are type-safe. As you can mix and match typed
-and dynamic code, at times, Godot doesn't have enough information to know if
+and dynamic code, at times, Redot doesn't have enough information to know if
 an instruction will trigger an error or not at runtime.
 
 This happens when you get a child node. Let's take a timer for example:
@@ -345,9 +345,9 @@ so even if your timer is of type ``Timer``, it is also a ``Node`` and
 an ``Object``, two classes it extends. With dynamic GDScript, you also don't
 care about the node's type as long as it has the methods you need to call.
 
-You can use casting to tell Godot the type you expect when you get a node:
+You can use casting to tell Redot the type you expect when you get a node:
 ``($Timer as Timer)``, ``($Player as CharacterBody2D)``, etc.
-Godot will ensure the type works and if so, the line number will turn
+Redot will ensure the type works and if so, the line number will turn
 green at the left of the script editor.
 
 ![Image](img/typed_gdscript_safe_unsafe_line.webp)
@@ -440,7 +440,7 @@ Detailed documentation about the GDScript warning system has been moved to
 
 :::
 
-Godot gives you warnings about your code as you write it. The engine identifies
+Redot gives you warnings about your code as you write it. The engine identifies
 sections of your code that may lead to issues at runtime, but lets you decide
 whether or not you want to leave the code as it is.
 

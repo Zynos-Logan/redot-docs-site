@@ -1,7 +1,7 @@
 
 # Built-in functions
 
-Godot supports a large number of built-in functions, conforming roughly to the
+Redot supports a large number of built-in functions, conforming roughly to the
 GLSL ES 3.0 specification.
 
 :::note
@@ -58,7 +58,7 @@ originally published by Khronos Group under the
 [Open Publication License ](https://opencontent.org/openpub)_.
 Each function description links to the corresponding official OpenGL
 documentation. Modification history for this page can be found on
-[GitHub ](https://github.com/godotengine/godot-docs/blob/master/tutorials/shaders/shader_reference/shader_functions.rst)_.
+[GitHub ](https://github.com/redot-engine/redot-docs-site/blob/master/tutorials/shaders/shader_reference/shader_functions.rst)_.
 
 .. rst-class:: classref-section-separator
 ## 

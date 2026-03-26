@@ -1,7 +1,7 @@
 
 # Nodes and Scenes
 
-In [doc_key_concepts_overview](doc_key_concepts_overview), we saw that a Godot game is a tree of
+In [doc_key_concepts_overview](doc_key_concepts_overview), we saw that a Redot game is a tree of
 scenes and that each scene is a tree of nodes. In this lesson, we explain a bit
 more about them. You will also create your first scene.
 
@@ -43,10 +43,10 @@ that runs and jumps, a life bar, a chest with which you can interact, and more.
 
 ![Image](img/nodes_and_scenes_3d_scene_example.png)
 
-The Godot editor essentially is a **scene editor**. It has plenty of tools for
-editing 2D and 3D scenes, as well as user interfaces. A Godot project can
+The Redot editor essentially is a **scene editor**. It has plenty of tools for
+editing 2D and 3D scenes, as well as user interfaces. A Redot project can
 contain as many of these scenes as you need. The engine only requires one as
-your application's **main scene**. This is the scene Godot will first load when
+your application's **main scene**. This is the scene Redot will first load when
 you or a player runs the game.
 
 On top of acting like nodes, scenes have the following characteristics:
@@ -145,7 +145,7 @@ The Save Scene As dialog, like other file dialogs in the editor, only
 allows you to save files inside the project. The ``res://`` path at
 the top of the window represents the project's root directory and
 stands for "resource path". For more information about file paths in
-Godot, see [doc_filesystem](doc_filesystem).
+Redot, see [doc_filesystem](doc_filesystem).
 
 :::
 
@@ -172,11 +172,11 @@ Click the Select button, and in the file dialog that appears, double click on
 
 ![Image](img/nodes_and_scenes_14_select_main_scene.webp)
 
-The demo should run again. Moving forward, every time you run the project, Godot
+The demo should run again. Moving forward, every time you run the project, Redot
 will use this scene as a starting point.
 
 :::note
-The editor saves the main scene's path in a project.godot file in your
+The editor saves the main scene's path in a project.Redot file in your
 project's directory. While you can edit this text file directly to
 change project settings, you can also use the "Project -&gt; Project
 Settings" window to do so. For more information, see
@@ -184,5 +184,5 @@ Settings" window to do so. For more information, see
 
 :::
 
-In the next part, we will discuss another key concept in games and in Godot:
+In the next part, we will discuss another key concept in games and in Redot:
 creating instances of a scene.

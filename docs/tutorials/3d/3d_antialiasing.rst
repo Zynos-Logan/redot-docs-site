@@ -9,7 +9,7 @@
 
 .. seealso::
 
-    Godot also supports antialiasing in 2D rendering. This is covered on the
+    Redot also supports antialiasing in 2D rendering. This is covered on the
     :ref:`doc_2d_antialiasing` page.
 
 Introduction
@@ -30,13 +30,13 @@ and thin lines on top of the box have almost disappeared:
 
    Image is scaled by 2× with nearest-neighbor filtering to make aliasing more noticeable.
 
-To combat this, various antialiasing techniques can be used in Godot. These are
+To combat this, various antialiasing techniques can be used in Redot. These are
 detailed below.
 
 .. seealso::
 
     You can compare antialiasing algorithms in action using the
-    `3D Antialiasing demo project <https://github.com/godotengine/godot-demo-projects/tree/master/3d/antialiasing>`__.
+    `3D Antialiasing demo project <https://github.com/redot-engine/redot-demo-projects/tree/master/3d/antialiasing>`__.
 
 Multisample antialiasing (MSAA)
 -------------------------------
@@ -124,7 +124,7 @@ AMD FidelityFX Super Resolution 2.2 (FSR2)
 *This is only available in the Forward+ renderer, not the Mobile or Compatibility
 renderers.*
 
-Since Godot 4.2, there is built-in support for
+Since Redot 4.2, there is built-in support for
 `AMD FidelityFX Super Resolution <https://www.amd.com/en/products/graphics/technologies/fidelityfx/super-resolution.html>`__
 2.2. This is an :ref:`upscaling method <doc_resolution_scaling>`
 compatible with all recent GPUs from any vendor. FSR2 is normally designed to
@@ -201,7 +201,7 @@ advanced project setting above ``1.0`` while ensuring
 :ref:`Rendering > Scaling 3D > Mode<class_ProjectSettings_property_rendering/scaling_3d/mode>`
 is set to ``Bilinear`` (the default).
 Since the scale factor is defined per-axis, a scale factor of ``1.5`` will result
-in 2.25× SSAA while a scale factor of ``2.0`` will result in 4× SSAA. Since Godot
+in 2.25× SSAA while a scale factor of ``2.0`` will result in 4× SSAA. Since Redot
 uses the hardware's own bilinear filtering to perform the downsampling, the result
 will look crisper at integer scale factors (namely, ``2.0``).
 
@@ -282,7 +282,7 @@ When targeting low-end platforms such as mobile or integrated graphics, FXAA is
 usually the only viable option. 2× MSAA may be usable in some circumstances,
 but higher MSAA levels are unlikely to run smoothly on mobile GPUs.
 
-Godot allows using multiple antialiasing techniques at the same time. This is
+Redot allows using multiple antialiasing techniques at the same time. This is
 usually unnecessary, but it can provide better visuals on high-end GPUs or for
 :ref:`non-real-time rendering <doc_creating_movies>`. For example, to make
 moving edges look better when TAA is enabled, you can also enable MSAA at the

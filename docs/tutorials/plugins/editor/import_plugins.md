@@ -5,14 +5,14 @@
 :::note
 This tutorial assumes you already know how to make generic plugins. If
 in doubt, refer to the [doc_making_plugins](doc_making_plugins) page. This also
-assumes you are acquainted with Godot's import system.
+assumes you are acquainted with Redot's import system.
 
 :::
 
 ## Introduction
 
 An import plugin is a special type of editor tool that allows custom resources
-to be imported by Godot and be treated as first-class resources. The editor
+to be imported by Redot and be treated as first-class resources. The editor
 itself comes bundled with a lot of import plugins to handle the common resources
 like PNG images, Collada and glTF models, Ogg Vorbis sounds, and many more.
 
@@ -81,7 +81,7 @@ released automatically by the engine when it goes out of scope.
 
 The main character of the show is the
 [EditorImportPlugin class ](class_EditorImportPlugin). It is responsible for
-implementing the methods that are called by Godot when it needs to know how to deal
+implementing the methods that are called by Redot when it needs to know how to deal
 with files.
 
 Let's begin to code our plugin, one method at time:
@@ -98,7 +98,7 @@ func _get_importer_name():
 
 The first method is the
 [_get_importer_name()](class_EditorImportPlugin_private_method__get_importer_name). This is a
-unique name for your plugin that is used by Godot to know which import was used
+unique name for your plugin that is used by Redot to know which import was used
 in a certain file. When the files needs to be reimported, the editor will know
 which plugin to call.
 
@@ -122,7 +122,7 @@ func _get_recognized_extensions():
 
 ```
 
-Godot's import system detects file types by their extension. In the
+Redot's import system detects file types by their extension. In the
 [_get_recognized_extensions()](class_EditorImportPlugin_private_method__get_recognized_extensions)
 method you return an array of strings to represent each extension that this
 plugin can understand. If an extension is recognized by more than one plugin,
@@ -144,7 +144,7 @@ func _get_save_extension():
 
 The imported files are saved in the ``.import`` folder at the project's root.
 Their extension should match the type of resource you are importing, but since
-Godot can't tell what you'll use (because there might be multiple valid
+Redot can't tell what you'll use (because there might be multiple valid
 extensions for the same resource), you need to declare what will be used in
 the import.
 
@@ -226,7 +226,7 @@ use short and clear names.
 
 We can use the ``match`` statement here to make the code more structured. This
 way it's easy to add new presets in the future. We use the catch all pattern to
-return something too. Although Godot won't ask for presets beyond the preset
+return something too. Although Redot won't ask for presets beyond the preset
 count you defined, it's always better to be on the safe side.
 
 If you have only one preset you could simply return its name directly, but if
@@ -430,5 +430,5 @@ showing the red color instead.
 
 And that's it! Your first import plugin is done! Now get creative and make
 plugins for your own beloved formats. This can be quite useful to write your
-data in a custom format and then use it in Godot as if they were native
+data in a custom format and then use it in Redot as if they were native
 resources. This shows how the import system is powerful and extendable.

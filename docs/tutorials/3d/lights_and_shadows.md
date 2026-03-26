@@ -20,7 +20,7 @@ in the [doc_standard_material_3d](doc_standard_material_3d) tutorial.
 :::info
 
 You can compare various types of lights in action using the
-[3D Lights and Shadows demo project](https://github.com/godotengine/godot-demo-projects/tree/master/3d/lights_and_shadows)_.
+[3D Lights and Shadows demo project](https://github.com/redot-engine/redot-demo-projects/tree/master/3d/lights_and_shadows)_.
 
 :::
 
@@ -55,7 +55,7 @@ units to configure your lights' intensity and color temperature.
 
 ## Light number limits
 
-When using the Forward+ renderer, Godot uses a *clustering* approach for
+When using the Forward+ renderer, Redot uses a *clustering* approach for
 real-time lighting. As many lights as desired can be added (as long as
 performance allows). However, there's still a default limit of 512 *clustered
 elements* that can be present in the current camera view. A clustered element is
@@ -462,7 +462,7 @@ make use of the increased sample count.
 
 ### 16-bits versus 32-bit
 
-By default, Godot uses 16-bit depth textures for shadow map rendering. This is
+By default, Redot uses 16-bit depth textures for shadow map rendering. This is
 recommended in most cases as it performs better without a noticeable difference
 in quality.
 

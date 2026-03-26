@@ -1,13 +1,13 @@
 
 # Learn to code with GDScript
 
-In Godot, you can write code using the GDScript and C# programming languages.
+In Redot, you can write code using the GDScript and C# programming languages.
 
 If you are new to programming, we recommend starting with GDScript because we
 designed it to be simpler than all-purpose languages like C#. It will be both
 faster and easier to learn.
 
-While GDScript is a language specific to Godot, the techniques you will learn
+While GDScript is a language specific to Redot, the techniques you will learn
 with it will apply to other programming languages.
 
 Note that it is completely normal for a programmer to learn and use multiple

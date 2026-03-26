@@ -80,7 +80,7 @@ by N and D. For example:
 
 ![Image](img/tutovec12.png)
 
-For 3D math, Godot provides a [Plane ](class_Plane)
+For 3D math, Redot provides a [Plane ](class_Plane)
 built-in type that handles this.
 
 Basically, N and D can represent any plane in space, be it for 2D or 3D
@@ -192,7 +192,7 @@ D = -D;
 
 </Tabs>
 
-Godot also implements this operator in [Plane ](class_Plane).
+Redot also implements this operator in [Plane ](class_Plane).
 So, using the format below will work as expected:
 
 <Tabs>
@@ -510,7 +510,7 @@ used much nowadays).
 
 This is another bonus bit, a reward for being patient and keeping up
 with this long tutorial. Here is another piece of wisdom. This might
-not be something with a direct use case (Godot already does collision
+not be something with a direct use case (Redot already does collision
 detection pretty well) but it's used by almost all physics engines and collision
 detection libraries :)
 
@@ -734,7 +734,7 @@ if (overlapping)
 
 ### More information
 
-For more information on using vector math in Godot, see the following article:
+For more information on using vector math in Redot, see the following article:
 
 - [doc_matrices_and_transforms](doc_matrices_and_transforms)
 

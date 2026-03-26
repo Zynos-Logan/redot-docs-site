@@ -5,7 +5,7 @@ import TabItem from "@theme/TabItem";
 
 ## Modules
 
-Godot allows extending the engine in a modular way. New modules can be
+Redot allows extending the engine in a modular way. New modules can be
 created and then enabled/disabled. This allows for adding new engine
 functionality at every level without modifying the core, which can be
 split for use and reuse in different modules.
@@ -23,22 +23,22 @@ While it's recommended that most of a game be written in scripting (as
 it is an enormous time saver), it's perfectly possible to use C++
 instead. Adding C++ modules can be useful in the following scenarios:
 
--  Binding an external library to Godot (like PhysX, FMOD, etc).
+-  Binding an external library to Redot (like PhysX, FMOD, etc).
 -  Optimize critical parts of a game.
 -  Adding new functionality to the engine and/or editor.
--  Porting an existing game to Godot.
+-  Porting an existing game to Redot.
 -  Write a whole, new game in C++ because you can't live without C++.
 
 ## Creating a new module
 
-Before creating a module, make sure to :ref:`download the source code of Godot
+Before creating a module, make sure to :ref:`download the source code of Redot
 and compile it &lt;toc-devel-compiling&gt;`.
 
 To create a new module, the first step is creating a directory inside
 ``modules/``. If you want to maintain the module separately, you can checkout
 a different VCS into modules and use it.
 
-The example module will be called "summator" (``godot/modules/summator``).
+The example module will be called "summator" (``Redot/modules/summator``).
 Inside we will create a summator class:
 
 ```cpp
@@ -167,7 +167,7 @@ env.add_source_files(env.modules_sources, src_list)
 ```
 
 This allows for powerful possibilities using Python to construct the file list
-using loops and logic statements. Look at some modules that ship with Godot by
+using loops and logic statements. Look at some modules that ship with Redot by
 default for examples.
 
 To add include directories for the compiler to look at you can append it to the
@@ -180,7 +180,7 @@ env.Append(CPPPATH=["#myotherlib/include"]) # this is an 'absolute' path
 ```
 
 If you want to add custom compiler flags when building your module, you need to clone
-``env`` first, so it won't add those flags to whole Godot build (which can cause errors).
+``env`` first, so it won't add those flags to whole Redot build (which can cause errors).
 Example ``SCsub`` with custom flags:
 
 ```python
@@ -217,12 +217,12 @@ And that's it. Hope it was not too complex! Your module should look like
 this:
 
 ```none
-godot/modules/summator/config.py
-godot/modules/summator/summator.h
-godot/modules/summator/summator.cpp
-godot/modules/summator/register_types.h
-godot/modules/summator/register_types.cpp
-godot/modules/summator/SCsub
+Redot/modules/summator/config.py
+Redot/modules/summator/summator.h
+Redot/modules/summator/summator.cpp
+Redot/modules/summator/register_types.h
+Redot/modules/summator/register_types.cpp
+Redot/modules/summator/SCsub
 
 ```
 
@@ -423,7 +423,7 @@ a GDExtension instead.
 :::
 
 So far, we defined a clean SCsub that allows us to add the sources
-of our new module as part of the Godot binary.
+of our new module as part of the Redot binary.
 
 This static approach is fine when we want to build a release version of our
 game, given we want all the modules in a single binary.
@@ -449,19 +449,19 @@ module_env = env.Clone()
 # Position-independent code is required for a shared library.
 module_env.Append(CCFLAGS=['-fPIC'])
 
-# Don't inject Godot's dependencies into our shared library.
+# Don't inject Redot's dependencies into our shared library.
 module_env['LIBS'] = []
 
 # Define the shared library. By default, it would be built in the module's
 # folder, however it's better to output it into `bin` next to the
-# Godot binary.
+# Redot binary.
 shared_lib = module_env.SharedLibrary(target='#bin/summator', source=sources)
 
 # Finally, notify the main build environment it now has our shared library
 # as a new dependency.
 
 # LIBPATH and LIBS need to be set on the real "env" (not the clone)
-# to link the specified libraries to the Godot executable.
+# to link the specified libraries to the Redot executable.
 
 env.Append(LIBPATH=['#bin'])
 
@@ -473,13 +473,13 @@ env.Append(LIBS=[shared_lib_shim])
 ```
 
 Once compiled, we should end up with a ``bin`` directory containing both the
-``godot*`` binary and our ``libsummator*.so``. However given the .so is not in
+``Redot*`` binary and our ``libsummator*.so``. However given the .so is not in
 a standard directory (like ``/usr/lib``), we have to help our binary find it
 during runtime with the ``LD_LIBRARY_PATH`` environment variable:
 
 ```shell
 export LD_LIBRARY_PATH="$PWD/bin/"
-./bin/godot*
+./bin/Redot*
 
 ```
 
@@ -491,7 +491,7 @@ you won't be able to run your project from the editor.
 :::
 
 On top of that, it would be nice to be able to select whether to compile our
-module as shared library (for development) or as a part of the Godot binary
+module as shared library (for development) or as a part of the Redot binary
 (for release). To do that we can define a custom flag to be passed to SCons
 using the ``ARGUMENT`` command:
 
@@ -520,7 +520,7 @@ else:
 
 ```
 
-Now by default ``scons`` command will build our module as part of Godot's binary
+Now by default ``scons`` command will build our module as part of Redot's binary
 and as a shared library when passing ``summator_shared=yes``.
 
 Finally, you can even speed up the build further by explicitly specifying your
@@ -596,7 +596,7 @@ Untracked files:
 
 3. Now we can generate the documentation:
 
-We can do this via running Godot's doctool i.e. `[godot --doctool](path)`,
+We can do this via running Redot's doctool i.e. `[Redot --doctool](path)`,
 which will dump the engine API reference to the given ``&lt;path&gt;`` in XML format.
 
 In our case we'll point it to the root of the cloned repository. You can point it
@@ -605,11 +605,11 @@ to an another folder, and just copy over the files that you need.
 Run command:
 
 ```
-bin/<godot_binary> --doctool .
+bin/<Redot_binary> --doctool .
 
 ```
 
-Now if you go to the ``godot/modules/summator/doc_classes`` folder, you will see
+Now if you go to the ``Redot/modules/summator/doc_classes`` folder, you will see
 that it contains a ``Summator.xml`` file, or any other classes, that you referenced
 in your ``get_doc_classes`` function.
 
@@ -622,7 +622,7 @@ In order to keep documentation up-to-date, all you'll have to do is simply modif
 one of the XML files and recompile the engine from now on.
 
 If you change your module's API, you can also re-extract the docs, they will contain
-the things that you previously added. Of course if you point it to your godot
+the things that you previously added. Of course if you point it to your Redot
 folder, make sure you don't lose work by extracting older docs from an older engine build
 on top of the newer ones.
 
@@ -638,7 +638,7 @@ ERROR: Can't write doc file: docs/doc/classes/@GDScript.xml
 ## Writing custom unit tests
 
 It's possible to write self-contained unit tests as part of a C++ module. If you
-are not familiar with the unit testing process in Godot yet, please refer to
+are not familiar with the unit testing process in Redot yet, please refer to
 [doc_unit_testing](doc_unit_testing).
 
 The procedure is the following:
@@ -695,7 +695,7 @@ TEST_CASE("[Modules][Summator] Adding numbers") {
    following command:
 
 ```console
-./bin/<godot_binary> --test --source-file="*test_summator*" --success
+./bin/<Redot_binary> --test --source-file="*test_summator*" --success
 
 ```
 
@@ -732,12 +732,12 @@ def get_icons_path():
 
 Remember to:
 
--  Use ``GDCLASS`` macro for inheritance, so Godot can wrap it.
+-  Use ``GDCLASS`` macro for inheritance, so Redot can wrap it.
 -  Use ``_bind_methods`` to bind your functions to scripting, and to
    allow them to work as callbacks for signals.
--  **Avoid multiple inheritance for classes exposed to Godot**, as ``GDCLASS``
+-  **Avoid multiple inheritance for classes exposed to Redot**, as ``GDCLASS``
    doesn't support this. You can still use multiple inheritance in your own
-   classes as long as they're not exposed to Godot's scripting API.
+   classes as long as they're not exposed to Redot's scripting API.
 
 But this is not all, depending what you do, you will be greeted with
 some (hopefully positive) surprises.

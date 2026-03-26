@@ -1,7 +1,7 @@
 
 # Using the theme editor
 
-This article explains how to create and manage UI themes using the Godot
+This article explains how to create and manage UI themes using the Redot
 editor and its theme editor tool. We recommend getting familiar with the
 basics behind GUI skinning/theming by reading [doc_gui_skinning](doc_gui_skinning) before starting.
 
@@ -40,7 +40,7 @@ and icons — they open for editing in the Inspector.
 ![Image](img/theme_editor.webp)
 
 The theme editor has two main parts. The main theme editor, located at the bottom of
-the Godot editor, aims to provide users with tools to quickly create, edit, and delete
+the Redot editor, aims to provide users with tools to quickly create, edit, and delete
 theme items and types. It gives visual tools for picking and changing controls, abstracting
 the underlying theme concepts. The **Manage Theme Items** dialog, on the other hand,
 tries to address the needs of those who want to change themes manually. It's also
@@ -131,7 +131,7 @@ the custom theme items for the selected type. Finally, **Remove All Items** will
 remove everything from the type.
 
 From the **Import Items** tab you can import theme items from other themes. You can
-import items from the default Godot theme, the Godot editor theme, or another custom
+import items from the default Redot theme, the Redot editor theme, or another custom
 theme. You can import individual or multiple items, and you can decide whether to
 copy or omit their data as well. There are several ways you can select and deselect the
 items, including by hand, by hierarchy, by data type, and everything. Opting to

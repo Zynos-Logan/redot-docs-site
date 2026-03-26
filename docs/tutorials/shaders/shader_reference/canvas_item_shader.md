@@ -1,7 +1,7 @@
 
 # CanvasItem shaders
 
-CanvasItem shaders are used to draw all 2D elements in Godot. These include
+CanvasItem shaders are used to draw all 2D elements in Redot. These include
 all nodes that inherit from CanvasItems, and all GUI elements.
 
 CanvasItem shaders contain fewer built-in variables and functionality than 
@@ -139,10 +139,10 @@ void fragment() {
 
 ### NORMAL
 
-Similarly, if a normal map is used in the [CanvasTexture ](class_CanvasTexture), Godot uses
+Similarly, if a normal map is used in the [CanvasTexture ](class_CanvasTexture), Redot uses
 it by default and assigns its value to the built-in ``NORMAL`` variable. If you are using a normal
 map meant for use in 3D, it will appear inverted. In order to use it in your shader, you must assign
-it to the ``NORMAL_MAP`` property. Godot will handle converting it for use in 2D and overwriting ``NORMAL``.
+it to the ``NORMAL_MAP`` property. Redot will handle converting it for use in 2D and overwriting ``NORMAL``.
 
 ```glsl
 NORMAL_MAP = texture(NORMAL_TEXTURE, UV).rgb;
@@ -161,7 +161,7 @@ NORMAL_MAP = texture(NORMAL_TEXTURE, UV).rgb;
 | in vec4 **SPECULAR_SHININESS** | Specular shininess color, as sampled from the texture. |
 | in vec2 **UV** | UV from the ``vertex()`` function. |
 | in vec2 **SCREEN_UV** | Screen UV coordinate for current pixel. |
-| sampler2D **SCREEN_TEXTURE** | Removed in Godot 4. Use a ``sampler2D`` with ``hint_screen_texture`` instead. |
+| sampler2D **SCREEN_TEXTURE** | Removed in Redot 4. Use a ``sampler2D`` with ``hint_screen_texture`` instead. |
 | inout vec3 **NORMAL** | Normal read from ``NORMAL_TEXTURE``. Writable. |
 | sampler2D **NORMAL_TEXTURE** | Default 2D normal texture. |
 | out vec3 **NORMAL_MAP** | Configures normal maps meant for 3D for use in 2D. If used, overrides ``NORMAL``. |
@@ -173,9 +173,9 @@ NORMAL_MAP = texture(NORMAL_TEXTURE, UV).rgb;
 
 ## Light built-ins
 
-Light processor functions work differently in Godot 4.x than they did in Godot
-3.x. In Godot 4.x all lighting is done during the regular draw pass. In other
-words, Godot no longer draws the object again for each light.
+Light processor functions work differently in Redot 4.x than they did in Redot
+3.x. In Redot 4.x all lighting is done during the regular draw pass. In other
+words, Redot no longer draws the object again for each light.
 
 Use the ``unshaded`` render mode if you do not want the ``light()`` function to
 run. Use the ``light_only`` render mode if you only want to see the impact of

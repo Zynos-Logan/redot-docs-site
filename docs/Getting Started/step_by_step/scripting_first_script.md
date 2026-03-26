@@ -3,7 +3,7 @@ import TabItem from "@theme/TabItem";
 
 # Creating your first script
 
-In this lesson, you will code your first script to make the Godot icon turn in
+In this lesson, you will code your first script to make the Redot icon turn in
 circles using GDScript. As we mentioned :ref:`in the introduction
 &lt;toc-learn-introduction&gt;`, we assume you have programming foundations.
 The equivalent C# code has been included in another tab for convenience.
@@ -24,7 +24,7 @@ To learn more about C#, head to the [C# basics](doc_c_sharp) page.
 ## Project setup
 
 Please [create a new project](doc_creating_and_importing_projects) to
-start with a clean slate. Your project should contain one picture: the Godot
+start with a clean slate. Your project should contain one picture: the Redot
 icon, which we often use for prototyping in the community.
 
 We need to create a Sprite2D node to display it in the game. In the Scene dock,
@@ -42,7 +42,7 @@ Your Scene tab should now only have a Sprite2D node.
 ![Image](img/scripting_first_script_scene_tree.webp)
 
 A Sprite2D node needs a texture to display. In the Inspector on the right, you
-can see that the Texture property says "[empty]". To display the Godot icon,
+can see that the Texture property says "[empty]". To display the Redot icon,
 click and drag the file ``icon.svg`` from the FileSystem dock onto the Texture
 slot.
 
@@ -119,7 +119,7 @@ node, including classes it extends, like ``Node2D``, ``CanvasItem``, and
 :::note
 In GDScript, if you omit the line with the ``extends`` keyword, your
 class will implicitly extend [RefCounted](class_RefCounted), which
-Godot uses to manage your application's memory.
+Redot uses to manage your application's memory.
 
 :::
 
@@ -227,7 +227,7 @@ instance with this script attached to it will have its own copy of the ``speed``
 and ``angular_speed`` properties.
 
 :::note
-Angles in Godot work in radians by default,
+Angles in Redot work in radians by default,
 but you have built-in functions and properties available if you prefer
 to calculate angles in degrees instead.
 
@@ -235,7 +235,7 @@ to calculate angles in degrees instead.
 
 To move our icon, we need to update its position and rotation every frame in the
 game loop. We can use the ``_process()`` virtual function of the ``Node`` class.
-If you define it in any class that extends the Node class, like Sprite2D, Godot
+If you define it in any class that extends the Node class, like Sprite2D, Redot
 will call the function every frame and pass it an argument named ``delta``, the
 time elapsed since the last frame.
 
@@ -288,7 +288,7 @@ instructions.
 
 :::note
 Notice how ``_process()``, like ``_init()``, starts with a leading
-underscore. By convention, Godot's virtual functions, that is to say,
+underscore. By convention, Redot's virtual functions, that is to say,
 built-in functions you can override to communicate with the engine,
 start with an underscore.
 
@@ -306,7 +306,7 @@ corresponding documentation in a new tab.
 
 :::
 
-Run the scene to see the Godot icon turn in-place.
+Run the scene to see the Redot icon turn in-place.
 
 ![Image](img/scripting_first_script_godot_turning_in_place.gif)
 
@@ -360,10 +360,10 @@ is a vector pointing forward relative to our icon. Multiplied by our ``speed``
 property, it gives us a velocity we can use to move the node forward.
 
 We add ``velocity * delta`` to the node's ``position`` to move it. The position
-itself is of type [Vector2](class_Vector2), a built-in type in Godot
+itself is of type [Vector2](class_Vector2), a built-in type in Redot
 representing a 2D vector.
 
-Run the scene to see the Godot head run in circles.
+Run the scene to see the Redot head run in circles.
 
 ![Image](img/scripting_first_script_rotating_godot.gif)
 

@@ -163,13 +163,13 @@ using Godot;
 
 public partial class MyInspectorPlugin : EditorInspectorPlugin
 {
-    public override bool _CanHandle(GodotObject @object)
+    public override bool _CanHandle(RedotObject @object)
     {
         // We support all objects in this example.
         return true;
     }
 
-    public override bool _ParseProperty(GodotObject @object, Variant.Type type,
+    public override bool _ParseProperty(RedotObject @object, Variant.Type type,
         string name, PropertyHint hintType, string hintString,
         PropertyUsageFlags usageFlags, bool wide)
     {

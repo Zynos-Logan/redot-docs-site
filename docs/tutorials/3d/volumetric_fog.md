@@ -8,7 +8,7 @@ Compatibility renderers.
 
 :::
 
-As described in [doc_environment_and_post_processing](doc_environment_and_post_processing), Godot supports
+As described in [doc_environment_and_post_processing](doc_environment_and_post_processing), Redot supports
 various visual effects including two types of fog: traditional (non-volumetric)
 fog and volumetric fog. Traditional fog affects the entire scene at once and
 cannot be customized with [doc_fog_shader](doc_fog_shader).
@@ -17,13 +17,13 @@ Volumetric fog can be used at the same time as non-volumetric fog if desired.
 
 On this page, you'll learn:
 
-- How to set up volumetric fog in Godot.
+- How to set up volumetric fog in Redot.
 - What fog volumes are and how they differ from "global" volumetric fog.
 
 :::info
 
 You can see how volumetric fog works in action using the
-[Volumetric Fog demo project](https://github.com/godotengine/godot-demo-projects/tree/master/3d/volumetric_fog)_.
+[Volumetric Fog demo project](https://github.com/redot-engine/redot-demo-projects/tree/master/3d/volumetric_fog)_.
 
 :::
 
@@ -227,7 +227,7 @@ the following properties in FogMaterial:
 
 ### Using 3D noise density textures
 
-Since Godot 4.1, there is a NoiseTexture3D resource that can be used to
+Since Redot 4.1, there is a NoiseTexture3D resource that can be used to
 procedurally generate 3D noise. This is well-suited to FogMaterial density
 textures, which can result in more detailed fog effects:
 

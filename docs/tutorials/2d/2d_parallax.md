@@ -3,14 +3,14 @@
 
 ## Introduction
 
-Parallax is an effect used to simulate depth by having textures move at different speeds relative to the camera. Godot
+Parallax is an effect used to simulate depth by having textures move at different speeds relative to the camera. Redot
 provides the [Parallax2D](class_parallax2d) node to achieve this effect. It can still be easy to get tripped
 up though, so this page provides in-depth descriptions of some properties and how to fix some common mistakes.
 
 :::note
 
 This page only covers how to use [Parallax2D](class_parallax2d). This node is still experimental, so the
-implementation might change in future versions of Godot. However, it is still recommended to use over the
+implementation might change in future versions of Redot. However, it is still recommended to use over the
 [ParallaxLayer](class_parallaxlayer) and [ParallaxBackground](class_parallaxbackground) nodes. 
 
 :::
@@ -182,7 +182,7 @@ normal zoom level and zooming out to half size.
 
 ## Split screen
 
-Most tutorials for making a split screen game in Godot begin by writing a small script to assign
+Most tutorials for making a split screen game in Redot begin by writing a small script to assign
 the [Viewport.world_2d](class_viewport_property_world_2d) of the first SubViewport to the second, so they have a
 shared display. Questions often pop up about how to share a parallax effect between both screens.
 

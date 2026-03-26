@@ -5,7 +5,7 @@ import TabItem from "@theme/TabItem";
 
 ## Introduction
 
-Godot has a special system to tag availability of features.
+Redot has a special system to tag availability of features.
 Each *feature* is represented as a string, which can refer to many of the following:
 
 * Platform name.
@@ -46,7 +46,7 @@ loaded only on a debug editor build for Linux x86_64.
 
 ## Default features
 
-Here is a list of most feature tags in Godot. Keep in mind they are **case-sensitive**:
+Here is a list of most feature tags in Redot. Keep in mind they are **case-sensitive**:
 
 | **Feature tag** | **Description** |
 | --- | --- |

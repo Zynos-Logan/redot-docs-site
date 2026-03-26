@@ -17,5 +17,5 @@ This section contains tutorials and documentation about export in Redot Engine.
 - [Exporting projects](exporting_projects)
 - [Feature tags](feature_tags)
 - [One-click deploy](one-click_deploy)
-- [Running Godot apps on macOS](running_on_macos)
+- [Running Redot apps on macOS](running_on_macos)
 

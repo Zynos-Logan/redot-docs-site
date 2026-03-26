@@ -14,7 +14,7 @@
   </figcaption>
 </figure>
 
-- Navigate to the Godot root folder and select it.
+- Navigate to the Redot root folder and select it.
 - On the next screen, choose **Custom Build System** for the **Project Manager**.
 
 <figure>
@@ -31,7 +31,7 @@
 - Under **Language Support** open the **Includes/Imports** tab and add the following paths:
 
 ```none
-.  // A dot, to indicate the root of the Godot project
+.  // A dot, to indicate the root of the Redot project
 core/
 core/os/
 core/math/
@@ -70,8 +70,8 @@ platform/<your_platform>/  // Replace <your_platform> with a folder
 
 - Click **Add** to create a new launch configuration.
 - Select **Executable** option and specify the path to your executable located in
-  the ``&lt;Godot root directory&gt;/bin`` folder. The name depends on your build configuration,
-  e.g. ``godot.linuxbsd.editor.dev.x86_64`` for 64-bit LinuxBSD platform with
+  the ``&lt;Redot root directory&gt;/bin`` folder. The name depends on your build configuration,
+  e.g. ``Redot.linuxbsd.editor.dev.x86_64`` for 64-bit LinuxBSD platform with
   ``platform=editor`` and ``dev_build=yes``.
 
 <figure>
@@ -79,4 +79,4 @@ platform/<your_platform>/  // Replace <your_platform> with a folder
 </figure>
 
 If you run into any issues, ask for help in one of
-[Godot's community channels](https://godotengine.org/community).
+[Redot's community channels](https://redotengine.org/community).

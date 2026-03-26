@@ -114,7 +114,7 @@ public partial class MyBuildings : Node
 <TabItem value="c__" label="C++">
 
 ```cpp
-using namespace godot;
+using namespace Redot;
 
 class MyBuildings : public Node {
     GDCLASS(MyBuildings, Node)

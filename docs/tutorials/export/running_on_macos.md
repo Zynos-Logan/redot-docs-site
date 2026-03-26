@@ -1,9 +1,9 @@
 
-# Running Godot apps on macOS
+# Running Redot apps on macOS
 
 :::info
 
-This page covers running Godot projects on macOS.
+This page covers running Redot projects on macOS.
 If you haven't exported your project yet, read [doc_exporting_for_macos](doc_exporting_for_macos) first.
 
 :::
@@ -60,7 +60,7 @@ To allow third-party apps, open ``System Preferences``, click ``Security & Priva
 
 :::note
 
-App developer used self-signed certificate or ad-hoc signing (default Godot behavior for exported project).
+App developer used self-signed certificate or ad-hoc signing (default Redot behavior for exported project).
 
 :::
 

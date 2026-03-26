@@ -3,7 +3,7 @@
 
 ## Supported image formats
 
-Godot can import the following image formats:
+Redot can import the following image formats:
 
 - BMP (``.bmp``)
   - No support for 16-bit per pixel images. Only 1-bit, 4-bit, 8-bit, 24-bit, and 32-bit per pixel images are supported.
@@ -38,14 +38,14 @@ Godot can import the following image formats:
 
 :::note
 
-If you've compiled the Godot editor from source with specific modules disabled,
+If you've compiled the Redot editor from source with specific modules disabled,
 some formats may not be available.
 
 :::
 
 ## Importing textures
 
-The default action in Godot is to import images as textures. Textures are stored
+The default action in Redot is to import images as textures. Textures are stored
 in video memory. Their pixel data can't be accessed directly from the CPU
 without converting them back to an [class_Image](class_Image) in a script. This is what
 makes drawing them efficient.
@@ -95,7 +95,7 @@ It is possible to choose other types of imported resources in the Import dock:
   to missing support in built-in 3D shaders.
 
 For **Cubemap**, the expected image order is X+, X-, Y+, Y-, Z+, Z-
-(in Godot's coordinate system, so Y+ is "up" and Z- is "forward").
+(in Redot's coordinate system, so Y+ is "up" and Z- is "forward").
 Here are templates you can use for cubemap images (right-click &gt; **Save Link As…**):
 
 - :download:`2×3 cubemap template (default layout option) &lt;img/cubemap_template_2x3.webp&gt;`
@@ -106,7 +106,7 @@ Here are templates you can use for cubemap images (right-click &gt; **Save Link 
 ### Detect 3D
 
 The default import options (no mipmaps and **Lossless** compression) are suited
-for 2D, but are not ideal for most 3D projects. **Detect 3D** makes Godot aware
+for 2D, but are not ideal for most 3D projects. **Detect 3D** makes Redot aware
 of when a texture is used in a 3D scene (such as a texture in a
 [class_BaseMaterial3D](class_BaseMaterial3D)). If this happens, several import options are
 changed so the texture flags are friendlier to 3D. Mipmaps are enabled and the
@@ -128,7 +128,7 @@ looking grainy at a distance.
 
 :::info
 
-In Godot 4.0, changing the texture filter and repeat mode is no longer done
+In Redot 4.0, changing the texture filter and repeat mode is no longer done
 in the import options.
 
 Instead, texture filter and repeat modes are changed in the CanvasItem
@@ -143,7 +143,7 @@ documentation.
 ### Compress > Mode
 
 Images are one of the largest assets in a game. To handle them efficiently, they
-need to be compressed. Godot offers several compression methods, depending on
+need to be compressed. Redot offers several compression methods, depending on
 the use case.
 
 - **Lossless:** This is the default and most common compression mode for 2D assets.
@@ -253,7 +253,7 @@ not (see **HDR Compression** below).
 
 :::note
 
-This option only has an effect on textures that are imported as HDR formats in Godot
+This option only has an effect on textures that are imported as HDR formats in Redot
 (``.hdr`` and ``.exr`` files).
 
 :::
@@ -276,7 +276,7 @@ When using a texture as normal map, only the red and green channels are
 required. Given regular texture compression algorithms produce artifacts that
 don't look that nice in normal maps, the :abbr:`RGTC (Red-Green Texture Compression)`
 compression format is the best fit for this data. Forcing this option to **Enable**
-will make Godot import the image as :abbr:`RGTC (Red-Green Texture Compression)` compressed.
+will make Redot import the image as :abbr:`RGTC (Red-Green Texture Compression)` compressed.
 By default, it's set to **Detect**. This means that if the texture is ever detected to
 be used as a normal map, it will be changed to **Enable** and reimported automatically.
 
@@ -296,7 +296,7 @@ using the same amount of memory as a standard RGBA VRAM-compressed texture:
 
 :::note
 
-Godot requires the normal map to use the X+, Y+ and Z+ coordinates, which is
+Redot requires the normal map to use the X+, Y+ and Z+ coordinates, which is
 known as an OpenGL-style normal map. If you've imported a material made to be
 used with another engine, it may be DirectX-style. In this case, the normal map
 needs to be converted by enabling the **Normal Map Invert Y** import option.
@@ -391,7 +391,7 @@ displayed correctly:
 
 ### Process > Normal Map Invert Y
 
-Godot requires the normal map to use the X+, Y+ and Z+ coordinates, which is
+Redot requires the normal map to use the X+, Y+ and Z+ coordinates, which is
 known as an OpenGL-style normal map. If you've imported a material made to be
 used with another engine, it may be DirectX-style. In this case, the normal map
 needs to be converted by enabling the **Normal Map Invert Y** import option.
@@ -419,7 +419,7 @@ Some HDR panorama images you can find online may contain extremely bright
 pixels, due to being taken from real life sources without any clipping.
 
 While these HDR panorama images are accurate to real life, this can cause the
-radiance map generated by Godot to contain sparkles when used as a background
+radiance map generated by Redot to contain sparkles when used as a background
 sky. This can be seen in material reflections (even on rough materials in
 extreme cases). Enabling **HDR Clamp Exposure** can resolve this using a smart
 clamping formula that does not introduce *visible* clipping – glow will keep
@@ -470,13 +470,13 @@ should be left disabled otherwise.
 
 If checked, converts the imported image's colors to match the editor's icon and
 font color palette. This assumes the image uses the exact same colors as
-[Godot's own color palette for editor icons ](doc_editor_icons), with the
+[Redot's own color palette for editor icons ](doc_editor_icons), with the
 source file designed for a dark editor theme. This should be enabled for editor
 plugin icons and custom class icons, but should be left disabled otherwise.
 
 ## Importing SVG images with text
 
-As the SVG library used in Godot doesn't support rasterizing text found in SVG
+As the SVG library used in Redot doesn't support rasterizing text found in SVG
 images, text must be converted to a path first. Otherwise, text won't appear in
 the rasterized image.
 

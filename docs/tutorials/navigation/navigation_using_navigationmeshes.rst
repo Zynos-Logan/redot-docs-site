@@ -226,8 +226,8 @@ Baking navigation mesh chunks for large worlds
 .. seealso::
 
     You can see the navigation mesh chunk baking in action in the
-    `Navigation Mesh Chunks 2D <https://github.com/godotengine/godot-demo-projects/tree/master/2d/navigation_mesh_chunks>`__
-    and `Navigation Mesh Chunks 3D <https://github.com/godotengine/godot-demo-projects/tree/master/3d/navigation_mesh_chunks>`__
+    `Navigation Mesh Chunks 2D <https://github.com/redot-engine/redot-demo-projects/tree/master/2d/navigation_mesh_chunks>`__
+    and `Navigation Mesh Chunks 3D <https://github.com/redot-engine/redot-demo-projects/tree/master/3d/navigation_mesh_chunks>`__
     demo projects.
 
 To avoid misaligned edges between different region chunks the navigation meshes have two important properties

@@ -104,7 +104,7 @@ either? Let's see an example:
 
   .. code-tab:: cpp C++
 
-    using namespace godot;
+    using namespace Redot;
 
     class MyBuildings : public Node {
         GDCLASS(MyBuildings, Node)

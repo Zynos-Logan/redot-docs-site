@@ -20,7 +20,7 @@ and avoidance agents can switch between different maps. Switches will become eff
 
 ### Default navigation maps
 
-By default Godot creates a navigation map for each [World2D](class_World2D) and [World3D](class_World3D) of the root viewport.
+By default Redot creates a navigation map for each [World2D](class_World2D) and [World3D](class_World3D) of the root viewport.
 
 The 2D default navigation map RID can be obtained with ``get_world_2d().get_navigation_map()`` from any [Node2D](class_Node2D) inheriting Node.
 

@@ -6,7 +6,7 @@
 ### Annotation guidelines
 
 Create annotations for modifiers that act on the script or its code.
-Additionally, create annotations for behavior that is specific to the Godot
+Additionally, create annotations for behavior that is specific to the Redot
 engine and editor; if the primary purpose is to affect the way that the engine
 or editor treats or interacts with the script, implement the token as an
 annotation.

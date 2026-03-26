@@ -3,12 +3,12 @@
 Introduction to 2D
 ==================
 
-Godot's 2D game development tools include a dedicated 2D rendering engine, physics system, 
+Redot's 2D game development tools include a dedicated 2D rendering engine, physics system,
 and features tailored specifically for creating 2D experiences. You can efficiently design 
 levels with the TileMap system, animate characters with 2D sprite or Cutout animation, 
 and leverage 2D lighting for dynamic scene illumination. The built-in 2D particle system 
-allows you to create complex visual effects, and Godot also supports custom shaders to 
-enhance your graphics. These features, combined with Godot's accessibility and 
+allows you to create complex visual effects, and Redot also supports custom shaders to
+enhance your graphics. These features, combined with Redot's accessibility and
 flexibility, provide a solid foundation for creating engaging 2D games.
 
 .. figure:: img/2d_platformer_demo.webp
@@ -189,7 +189,7 @@ angle is fixed.
 
 In the viewport, you will see two lines in two colors going across the screen infinitely: 
 red for the x-axis, and green for the y-axis.
-In Godot, going right and down are positive directions.
+In Redot, going right and down are positive directions.
 Where these two lines intersect is the origin: ``x: 0, y: 0``.
 
 A root node will have its origin at this position once added.
@@ -302,7 +302,7 @@ Node2D and Control node
 
 :ref:`CanvasItem <class_CanvasItem>` is the base node for 2D. :ref:`Node2D <class_Node2D>` is the base node
 for 2D game objects, and :ref:`Control <class_Control>` is the base node 
-for everything GUI. For 3D, Godot uses the :ref:`Node3D <class_Node3D>` node.
+for everything GUI. For 3D, Redot uses the :ref:`Node3D <class_Node3D>` node.
 
 3D in 2D
 --------

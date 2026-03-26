@@ -252,8 +252,8 @@ An example for nested geometry would be a smaller StaticBody2D shape placed comp
 :::info
 
 You can see the navigation mesh chunk baking in action in the
-[Navigation Mesh Chunks 2D ](https://github.com/godotengine/godot-demo-projects/tree/master/2d/navigation_mesh_chunks)_
-and [Navigation Mesh Chunks 3D ](https://github.com/godotengine/godot-demo-projects/tree/master/3d/navigation_mesh_chunks)_
+[Navigation Mesh Chunks 2D ](https://github.com/redot-engine/redot-demo-projects/tree/master/2d/navigation_mesh_chunks)_
+and [Navigation Mesh Chunks 3D ](https://github.com/redot-engine/redot-demo-projects/tree/master/3d/navigation_mesh_chunks)_
 demo projects.
 
 :::

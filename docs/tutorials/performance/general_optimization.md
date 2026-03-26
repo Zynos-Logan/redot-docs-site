@@ -49,7 +49,7 @@ our attempts to speed them up.
 There are several methods of measuring performance, including:
 
 - Putting a start/stop timer around code of interest.
-- Using the [Godot profiler ](doc_the_profiler).
+- Using the [Redot profiler ](doc_the_profiler).
 - Using [external CPU profilers ](doc_using_cpp_profilers).
 - Using external GPU profilers/debuggers such as
   [NVIDIA Nsight Graphics ](https://developer.nvidia.com/nsight-graphics)_,
@@ -73,8 +73,8 @@ they don't always tell the whole story.
 
 - Bottlenecks are often on the GPU, "as a result" of instructions given by the
   CPU.
-- Spikes can occur in the operating system processes (outside of Godot) "as a
-  result" of instructions used in Godot (for example, dynamic memory allocation).
+- Spikes can occur in the operating system processes (outside of Redot) "as a
+  result" of instructions used in Redot (for example, dynamic memory allocation).
 - You may not always be able to profile specific devices like a mobile phone
   due to the initial setup required.
 - You may have to solve performance problems that occur on hardware you don't
@@ -123,7 +123,7 @@ of your improvements. Sometimes, attempts to improve performance can backfire
 and lead to slower performance.
 **Always use profiling and timing to guide your efforts.**
 
-For more info about using Godot's built-in profiler, see [doc_the_profiler](doc_the_profiler).
+For more info about using Redot's built-in profiler, see [doc_the_profiler](doc_the_profiler).
 
 ## Principles
 

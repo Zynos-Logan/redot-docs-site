@@ -24,8 +24,8 @@ collider's cull mask.
 
 :::warning
 
-There is a [known issue ](https://github.com/godotengine/godot/issues/61014) with
-GPU particle collision that prevent the cull mask from working properly in Godot 4.0. We will
+There is a [known issue ](https://github.com/redot-engine/redot-engine/issues/61014) with
+GPU particle collision that prevent the cull mask from working properly in Redot 4.0. We will
 update the documentation as soon as it is fixed.
 
 :::

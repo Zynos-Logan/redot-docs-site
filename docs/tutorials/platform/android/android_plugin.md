@@ -1,34 +1,34 @@
 
-# Godot Android plugins
+# Redot Android plugins
 
 ## Introduction
 
-Android plugins are powerful tools to extend the capabilities of the Godot engine
+Android plugins are powerful tools to extend the capabilities of the Redot engine
 by tapping into the functionality provided by Android platforms and ecosystem.
 
-For example in Godot 4, Android plugins are used to support multiple Android-based
+For example in Redot 4, Android plugins are used to support multiple Android-based
 XR platforms without encumbering the core codebase with vendor specific code or binaries.
 
 ## Android plugin
 
-**Version 1 (v1)** of the Android plugin system was introduced in Godot 3 and compatible with Godot 4.0 and 4.1.
-That version allowed developers to augment the Godot engine with Java, Kotlin and native functionality.
+**Version 1 (v1)** of the Android plugin system was introduced in Redot 3 and compatible with Redot 4.0 and 4.1.
+That version allowed developers to augment the Redot engine with Java, Kotlin and native functionality.
 
-Starting in Godot 4.2, Android plugins built on the v1 architecture are now deprecated.
-Instead, Godot 4.2 introduces a new **Version 2 (v2)** architecture for Android plugins.
+Starting in Redot 4.2, Android plugins built on the v1 architecture are now deprecated.
+Instead, Redot 4.2 introduces a new **Version 2 (v2)** architecture for Android plugins.
 
 ### v2 Architecture
 
 :::note
 
-Godot Android plugin leverages the [Gradle build system ](doc_android_gradle_build).
+Redot Android plugin leverages the [Gradle build system ](doc_android_gradle_build).
 
 :::
 
 Building on the previous v1 architecture, Android plugins continue to be derived from the
 [Android archive library ](https://developer.android.com/studio/projects/android-library#aar-contents).
 
-At its core, a Godot Android plugin v2 is an Android library with a dependency on the [Godot Android library ](doc_android_library),
+At its core, a Redot Android plugin v2 is an Android library with a dependency on the [Redot Android library ](doc_android_library),
 and a custom Android library manifest.
 
 This architecture allows Android plugins to extend the functionality of the engine with:
@@ -39,33 +39,33 @@ This architecture allows Android plugins to extend the functionality of the engi
 - Native libraries (via JNI)
 - GDExtension libraries
 
-Each plugin has an init class extending from the [GodotPlugin ](https://github.com/godotengine/godot/blob/0a7f75ec7b465604b6496c8f5f1d638aed250d6d/platform/android/java/lib/src/org/godotengine/godot/plugin/GodotPlugin.java#L80) class
-which is provided by the [Godot Android library ](doc_android_library).
+Each plugin has an init class extending from the [GodotPlugin ](https://github.com/redot-engine/redot-engine/blob/0a7f75ec7b465604b6496c8f5f1d638aed250d6d/platform/android/java/lib/src/org/Redotengine/Redot/plugin/GodotPlugin.java#L80) class
+which is provided by the [Redot Android library ](doc_android_library).
 
-The ``GodotPlugin`` class provides APIs to access the running Godot instance and hook into its lifecycle. It is loaded at runtime by the Godot engine.
+The ``GodotPlugin`` class provides APIs to access the running Redot instance and hook into its lifecycle. It is loaded at runtime by the Redot engine.
 
 ### v2 Packaging format
 
-v1 Android plugins required a custom ``gdap`` configuration file that was used by the Godot Editor to detect and load them.
+v1 Android plugins required a custom ``gdap`` configuration file that was used by the Redot Editor to detect and load them.
 However this approach had several drawbacks, primary ones being that it lacked flexibility and departed from the `existing
-Godot EditorExportPlugin format, delivery and installation flow &lt;https://docs.godotengine.org/en/stable/tutorials/plugins/editor/installing_plugins.html&gt;`_.
+Redot EditorExportPlugin format, delivery and installation flow &lt;https://docs.redotengine.org/en/stable/tutorials/plugins/editor/installing_plugins.html&gt;`_.
 
 This has been resolved for v2 Android plugins by deprecating the ``gdap`` packaging and configuration mechanism in favor of
-the existing Godot ``EditorExportPlugin`` packaging format.
+the existing Redot ``EditorExportPlugin`` packaging format.
 The ``EditorExportPlugin`` API in turn has been extended to properly support Android plugins.
 
 ## Building a v2 Android plugin
 
 A github project template **is provided** at https://github.com/m4gr3d/Godot-Android-Plugin-Template as a **quickstart for building
-Godot Android plugins for Godot 4.2+**.
+Redot Android plugins for Redot 4.2+**.
 You can follow the [template README ](https://github.com/m4gr3d/Godot-Android-Plugin-Template#readme)
-to set up your own Godot Android plugin project.
+to set up your own Redot Android plugin project.
 
 To provide further understanding, here is a break-down of the steps used to create the project template:
 
 1. Create an Android library module using [these instructions ](https://developer.android.com/studio/projects/android-library)
 
-2. Add the Godot Android library as a dependency by updating the module's ``gradle`` `build file <https://github.com/m4gr3d/Godot-Android-Plugin-Template/blob/main/plugin/build.gradle.kts#L42>`_
+2. Add the Redot Android library as a dependency by updating the module's ``gradle`` `build file <https://github.com/m4gr3d/Godot-Android-Plugin-Template/blob/main/plugin/build.gradle.kts#L42>`_
 
 ```
 dependencies {
@@ -74,11 +74,11 @@ dependencies {
 
 ```
 
-  The Godot Android library is [hosted on MavenCentral ](https://central.sonatype.com/artifact/org.godotengine/godot), and updated for each release.
+  The Redot Android library is [hosted on MavenCentral ](https://central.sonatype.com/artifact/org.godotengine/Redot), and updated for each release.
 
-3. Create [GodotAndroidPlugin ](https://github.com/m4gr3d/Godot-Android-Plugin-Template/blob/a01286b4cb459133bf07b11dfabdfd3980268797/plugin/src/main/java/org/godotengine/plugin/android/template/GodotAndroidPlugin.kt#L10), an init class for the plugin extending [GodotPlugin ](https://github.com/godotengine/godot/blob/0a7f75ec7b465604b6496c8f5f1d638aed250d6d/platform/android/java/lib/src/org/godotengine/godot/plugin/GodotPlugin.java#L80).
+3. Create [GodotAndroidPlugin ](https://github.com/m4gr3d/Godot-Android-Plugin-Template/blob/a01286b4cb459133bf07b11dfabdfd3980268797/plugin/src/main/java/org/Redotengine/plugin/android/template/GodotAndroidPlugin.kt#L10), an init class for the plugin extending [GodotPlugin ](https://github.com/redot-engine/redot-engine/blob/0a7f75ec7b465604b6496c8f5f1d638aed250d6d/platform/android/java/lib/src/org/Redotengine/Redot/plugin/GodotPlugin.java#L80).
 
-- If the plugin exposes Kotlin or Java methods to be called from GDScript, they must be annotated with `@UsedByGodot <https://github.com/godotengine/godot/blob/0a7f75ec7b465604b6496c8f5f1d638aed250d6d/platform/android/java/lib/src/org/godotengine/godot/plugin/UsedByGodot.java#L45>`_. The name called from GDScript **must match the method name exactly**. There is **no** coercing ``snake_case`` to ``camelCase``. For example, from GDScript
+- If the plugin exposes Kotlin or Java methods to be called from GDScript, they must be annotated with `@UsedByGodot <https://github.com/redot-engine/redot-engine/blob/0a7f75ec7b465604b6496c8f5f1d638aed250d6d/platform/android/java/lib/src/org/Redotengine/Redot/plugin/UsedByRedot.java#L45>`_. The name called from GDScript **must match the method name exactly**. There is **no** coercing ``snake_case`` to ``camelCase``. For example, from GDScript
 
 ```
 if Engine.has_singleton("MyPlugin"):
@@ -87,7 +87,7 @@ if Engine.has_singleton("MyPlugin"):
 
 ```
 
-    - If the plugin uses [signals ](https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html), the init class must return the set of signals used by overriding [GodotPlugin::getPluginSignals() ](https://github.com/godotengine/godot/blob/fa3428ff25bc577d2a3433090478a6d615567056/platform/android/java/lib/src/org/godotengine/godot/plugin/GodotPlugin.java#L302). To emit signals, the plugin can use the [GodotPlugin::emitSignal(...) method ](https://github.com/godotengine/godot/blob/0a7f75ec7b465604b6496c8f5f1d638aed250d6d/platform/android/java/lib/src/org/godotengine/godot/plugin/GodotPlugin.java#L317).
+    - If the plugin uses [signals ](https://docs.redotengine.org/en/stable/getting_started/step_by_step/signals.html), the init class must return the set of signals used by overriding [GodotPlugin::getPluginSignals() ](https://github.com/redot-engine/redot-engine/blob/fa3428ff25bc577d2a3433090478a6d615567056/platform/android/java/lib/src/org/Redotengine/Redot/plugin/GodotPlugin.java#L302). To emit signals, the plugin can use the [GodotPlugin::emitSignal(...) method ](https://github.com/redot-engine/redot-engine/blob/0a7f75ec7b465604b6496c8f5f1d638aed250d6d/platform/android/java/lib/src/org/Redotengine/Redot/plugin/GodotPlugin.java#L317).
 
 4. Update the plugin ``AndroidManifest.xml`` `file <https://github.com/m4gr3d/Godot-Android-Plugin-Template/blob/main/plugin/src/main/AndroidManifest.xml>`_ with the following meta-data
 
@@ -110,9 +110,9 @@ if Engine.has_singleton("MyPlugin"):
 Similar to GDNative support in v1 Android plugins, v2 Android plugins support the ability to integrate GDExtension capabilities.
 
 A github project template is provided at https://github.com/m4gr3d/GDExtension-Android-Plugin-Template as a quickstart for building
-GDExtension Android plugins for Godot 4.2+.
+GDExtension Android plugins for Redot 4.2+.
 You can follow the [template's README ](https://github.com/m4gr3d/GDExtension-Android-Plugin-Template#readme)
-to set up your own Godot Android plugin project.
+to set up your own Redot Android plugin project.
 
 ### Migrating a v1 Android plugin to v2
 
@@ -122,9 +122,9 @@ Use the following steps if you have a v1 Android plugin you want to migrate to v
 
     - Change the ``org.godotengine.plugin.v1`` prefix to ``org.godotengine.plugin.v2``
 
-2. Update the Godot Android library build dependency:
+2. Update the Redot Android library build dependency:
 
-    - You can continue using the ``godot-lib.&lt;version&gt;.&lt;status&gt;.aar[` binary from `Godot's download page ](https://godotengine.org/download) if that's your preference. Make sure it's updated to the latest stable version.
+    - You can continue using the ``Redot-lib.&lt;version&gt;.&lt;status&gt;.aar[` binary from `Redot's download page ](https://redotengine.org/download) if that's your preference. Make sure it's updated to the latest stable version.
 - Or you can switch to the MavenCentral provided dependency
 
 ```
@@ -134,22 +134,22 @@ dependencies {
 
 ```
 
-3. After updating the Godot Android library dependency, sync or build the plugin and resolve any compile errors:
+3. After updating the Redot Android library dependency, sync or build the plugin and resolve any compile errors:
 
-    - The ``Godot`` instance provided by ``GodotPlugin::getGodot()`` no longer has access to a ``android.content.Context`` reference. Use ``GodotPlugin::getActivity()`` instead.
+    - The ``Redot`` instance provided by ``GodotPlugin::getRedot()`` no longer has access to a ``android.content.Context`` reference. Use ``GodotPlugin::getActivity()`` instead.
 
 4. Delete the ``gdap`` configuration file(s) and follow the instructions in the [Packaging a v2 Android plugin](Packaging a v2 Android plugin) section to set up the plugin configuration.
 
 ## Packaging a v2 Android plugin
 
-As mentioned, a v2 Android plugin is now provided to the Godot Editor as an [`EditorExportPlugin`` plugin, so it shares a lot of the `same packaging steps ](https://docs.godotengine.org/en/stable/tutorials/plugins/editor/making_plugins.html#creating-a-plugin).
+As mentioned, a v2 Android plugin is now provided to the Redot Editor as an [`EditorExportPlugin`` plugin, so it shares a lot of the `same packaging steps ](https://docs.redotengine.org/en/stable/tutorials/plugins/editor/making_plugins.html#creating-a-plugin).
 
 1. Add the plugin output binaries within the plugin directory (e.g: in ``addons/&lt;plugin_name&gt;/``)
 
-2. Add the [tool script ](https://docs.godotengine.org/en/stable/tutorials/plugins/editor/making_plugins.html#the-script-file) for the export functionality within the plugin directory (e.g: in ``addons/&lt;plugin_name&gt;/``)
+2. Add the [tool script ](https://docs.redotengine.org/en/stable/tutorials/plugins/editor/making_plugins.html#the-script-file) for the export functionality within the plugin directory (e.g: in ``addons/&lt;plugin_name&gt;/``)
 
     - The created script must be a ``@tool`` script, or else it will not work properly
-- The export tool script is used to configure the Android plugin and hook it within the Godot Editor's export process. It should look something like this
+- The export tool script is used to configure the Android plugin and hook it within the Redot Editor's export process. It should look something like this
 
 ```
 @tool
@@ -191,18 +191,18 @@ class AndroidExportPlugin extends EditorExportPlugin:
 
 ```
 
-    - Here are the set of [EditorExportPlugin APIs ](https://docs.godotengine.org/en/stable/classes/class_editorexportplugin.html) most relevant to use in this tool script:
+    - Here are the set of [EditorExportPlugin APIs ](https://docs.redotengine.org/en/stable/classes/class_editorexportplugin.html) most relevant to use in this tool script:
 
-        - [_supports_platform ](https://docs.godotengine.org/en/latest/classes/class_editorexportplugin.html#class-editorexportplugin-method-supports-platform): returns [`true`` if the plugin supports the given platform. For Android plugins, this must return ``true`` when ``platform`` is `EditorExportPlatformAndroid ](https://docs.godotengine.org/en/stable/classes/class_editorexportplatformandroid.html)
-        - [_get_android_libraries ](https://docs.godotengine.org/en/latest/classes/class_editorexportplugin.html#class-editorexportplugin-method-get-android-libraries): retrieve the local paths of the Android libraries binaries (AAR files) provided by the plugin
-        - [_get_android_dependencies ](https://docs.godotengine.org/en/latest/classes/class_editorexportplugin.html#class-editorexportplugin-method-get-android-dependencies): retrieve the set of Android maven dependencies (e.g: `org.godot.example:my-plugin:0.0.0`) provided by the plugin
-        - [_get_android_dependencies_maven_repos ](https://docs.godotengine.org/en/latest/classes/class_editorexportplugin.html#class-editorexportplugin-method-get-android-dependencies-maven-repos): retrieve the urls of the maven repos for the android dependencies provided by ``_get_android_dependencies``
-        - [_get_android_manifest_activity_element_contents ](https://docs.godotengine.org/en/latest/classes/class_editorexportplugin.html#class-editorexportplugin-method-get-android-manifest-activity-element-contents): update the contents of the `&lt;activity&gt;` element in the generated Android manifest
-        - [_get_android_manifest_application_element_contents ](https://docs.godotengine.org/en/latest/classes/class_editorexportplugin.html#class-editorexportplugin-method-get-android-manifest-application-element-contents): update the contents of the `&lt;application&gt;` element in the generated Android manifest
-        - [_get_android_manifest_element_contents ](https://docs.godotengine.org/en/latest/classes/class_editorexportplugin.html#class-editorexportplugin-method-get-android-manifest-element-contents): update the contents of the `&lt;manifest&gt;` element in the generated Android manifest
+        - [_supports_platform ](https://docs.redotengine.org/en/latest/classes/class_editorexportplugin.html#class-editorexportplugin-method-supports-platform): returns [`true`` if the plugin supports the given platform. For Android plugins, this must return ``true`` when ``platform`` is `EditorExportPlatformAndroid ](https://docs.redotengine.org/en/stable/classes/class_editorexportplatformandroid.html)
+        - [_get_android_libraries ](https://docs.redotengine.org/en/latest/classes/class_editorexportplugin.html#class-editorexportplugin-method-get-android-libraries): retrieve the local paths of the Android libraries binaries (AAR files) provided by the plugin
+        - [_get_android_dependencies ](https://docs.redotengine.org/en/latest/classes/class_editorexportplugin.html#class-editorexportplugin-method-get-android-dependencies): retrieve the set of Android maven dependencies (e.g: `org.Redot.example:my-plugin:0.0.0`) provided by the plugin
+        - [_get_android_dependencies_maven_repos ](https://docs.redotengine.org/en/latest/classes/class_editorexportplugin.html#class-editorexportplugin-method-get-android-dependencies-maven-repos): retrieve the urls of the maven repos for the android dependencies provided by ``_get_android_dependencies``
+        - [_get_android_manifest_activity_element_contents ](https://docs.redotengine.org/en/latest/classes/class_editorexportplugin.html#class-editorexportplugin-method-get-android-manifest-activity-element-contents): update the contents of the `&lt;activity&gt;` element in the generated Android manifest
+        - [_get_android_manifest_application_element_contents ](https://docs.redotengine.org/en/latest/classes/class_editorexportplugin.html#class-editorexportplugin-method-get-android-manifest-application-element-contents): update the contents of the `&lt;application&gt;` element in the generated Android manifest
+        - [_get_android_manifest_element_contents ](https://docs.redotengine.org/en/latest/classes/class_editorexportplugin.html#class-editorexportplugin-method-get-android-manifest-element-contents): update the contents of the `&lt;manifest&gt;` element in the generated Android manifest
 
         The ``_get_android_manifest_*`` methods allow the plugin to automatically provide changes
-        to the app's manifest which are preserved when the Godot Editor is updated, resolving a long standing issue with v1 Android plugins.
+        to the app's manifest which are preserved when the Redot Editor is updated, resolving a long standing issue with v1 Android plugins.
 
 3. Create a ``plugin.cfg``. This is an INI file with metadata about your plugin
 
@@ -217,7 +217,7 @@ script="<relative_path_to_the_export_tool_script>"
 
 ```
 
-For reference, here is the [folder structure for the Godot Android plugin project template ](https://github.com/m4gr3d/Godot-Android-Plugin-Template/tree/main/plugin/export_scripts_template).
+For reference, here is the [folder structure for the Redot Android plugin project template ](https://github.com/m4gr3d/Godot-Android-Plugin-Template/tree/main/plugin/export_scripts_template).
 At build time, the contents of the ``export_scripts_template`` directory as well as the generated plugin binaries are copied to the ``addons/&lt;plugin_name&gt;`` directory:
 
 ```none
@@ -231,7 +231,7 @@ export_scripts_template/
 
 ### Packaging a v2 Android plugin with GDExtension capabilities
 
-For GDExtension, we follow the same steps as for [Packaging a v2 Android plugin`_ and add the `GDExtension config file ](https://docs.godotengine.org/en/stable/tutorials/scripting/gdextension/gdextension_cpp_example.html#using-the-gdextension-module) in
+For GDExtension, we follow the same steps as for [Packaging a v2 Android plugin`_ and add the `GDExtension config file ](https://docs.redotengine.org/en/stable/tutorials/scripting/gdextension/gdextension_cpp_example.html#using-the-gdextension-module) in
 the same location as ``plugin.cfg``.
 
 For reference, here is the [folder structure for the GDExtension Android plugin project template ](https://github.com/m4gr3d/GDExtension-Android-Plugin-Template/tree/main/plugin/export_scripts_template).
@@ -266,33 +266,33 @@ android.release.arm64 = "res://addons/GDExtensionAndroidPluginTemplate/bin/relea
 ```
 
 Of note is the ``android_aar_plugin`` field that specifies this GDExtension module is provided as part of a v2 Android plugin.
-During the export process, this will indicate to the Godot Editor that the GDExtension native shared libraries are exported by the Android plugin AAR binaries.
+During the export process, this will indicate to the Redot Editor that the GDExtension native shared libraries are exported by the Android plugin AAR binaries.
 
-For GDExtension Android plugins, the plugin init class must override [GodotPlugin::getPluginGDExtensionLibrariesPaths() ](https://github.com/godotengine/godot/blob/0a7f75ec7b465604b6496c8f5f1d638aed250d6d/platform/android/java/lib/src/org/godotengine/godot/plugin/GodotPlugin.java#L277),
+For GDExtension Android plugins, the plugin init class must override [GodotPlugin::getPluginGDExtensionLibrariesPaths() ](https://github.com/redot-engine/redot-engine/blob/0a7f75ec7b465604b6496c8f5f1d638aed250d6d/platform/android/java/lib/src/org/Redotengine/Redot/plugin/GodotPlugin.java#L277),
 and return the paths to the bundled GDExtension libraries config files (``*.gdextension``).
 
 The paths must be relative to the Android library's ``assets`` directory.
-At runtime, the plugin will provide these paths to the Godot engine which will use them to load and initialize the bundled GDExtension libraries.
+At runtime, the plugin will provide these paths to the Redot engine which will use them to load and initialize the bundled GDExtension libraries.
 
 ## Using a v2 Android plugin
 
 :::note
 
-- Godot 4.2 or higher is required
+- Redot 4.2 or higher is required
 
-- v2 Android plugin requires the use of the [Gradle build process ](https://docs.godotengine.org/en/stable/classes/class_editorexportplatformandroid.html#class-editorexportplatformandroid-property-gradle-build-use-gradle-build).
+- v2 Android plugin requires the use of the [Gradle build process ](https://docs.redotengine.org/en/stable/classes/class_editorexportplatformandroid.html#class-editorexportplatformandroid-property-gradle-build-use-gradle-build).
 
-- The provided github project templates include demo Godot projects for quick testing.
+- The provided github project templates include demo Redot projects for quick testing.
 
 :::
 
-1. Copy the plugin's output directory (``addons/&lt;plugin_name&gt;``) to the target Godot project's directory
+1. Copy the plugin's output directory (``addons/&lt;plugin_name&gt;``) to the target Redot project's directory
 
-2. Open the project in the Godot Editor; the Editor should detect the plugin
+2. Open the project in the Redot Editor; the Editor should detect the plugin
 
 3. Navigate to ``Project`` -&gt; ``Project Settings...`` -&gt; ``Plugins``, and ensure the plugin is enabled
 
-4. Install the Godot Android build template by clicking on ``Project`` -&gt; ``Install Android Build Template...``
+4. Install the Redot Android build template by clicking on ``Project`` -&gt; ``Install Android Build Template...``
 
 5. Navigate to ``Project`` -&gt; ``Export...``
 
@@ -313,22 +313,22 @@ if Engine.has_singleton("MyPlugin"):
 
 ### Using a v2 Android plugin as an Android library
 
-Since they are also Android libraries, Godot v2 Android plugins can be stripped from their ``EditorExportPlugin`` packaging and provided as raw ``AAR`` binaries for use as libraries alongside the [Godot Android library ](doc_android_library) by Android apps.
+Since they are also Android libraries, Redot v2 Android plugins can be stripped from their ``EditorExportPlugin`` packaging and provided as raw ``AAR`` binaries for use as libraries alongside the [Redot Android library ](doc_android_library) by Android apps.
 
 If targeting this use-case, make sure to include additional instructions for how the ``AAR`` binaries should be included (e.g: custom additions to the Android app's manifest).
 
 ## Reference implementations
 
-- [Godot Android Plugins Samples ](https://github.com/m4gr3d/Godot-Android-Samples/tree/master/plugins)
-- [Godot Android Plugin Template ](https://github.com/m4gr3d/Godot-Android-Plugin-Template)
+- [Redot Android Plugins Samples ](https://github.com/m4gr3d/Godot-Android-Samples/tree/master/plugins)
+- [Redot Android Plugin Template ](https://github.com/m4gr3d/Godot-Android-Plugin-Template)
 - [GDExtension Android Plugin Template ](https://github.com/m4gr3d/GDExtension-Android-Plugin-Template)
-- [Godot OpenXR Loaders ](https://github.com/GodotVR/godot_openxr_loaders)
+- [Redot OpenXR Loaders ](https://github.com/GodotVR/Godot_openxr_loaders)
 
 ## Tips and Guidelines
 
 ### Simplify access to the exposed Java / Kotlin APIs
 
-To make it easier to access the exposed Java / Kotlin APIs in the Godot Editor, it's recommended to
+To make it easier to access the exposed Java / Kotlin APIs in the Redot Editor, it's recommended to
 provide one (or multiple) gdscript wrapper class(es) for your plugin users to interface with.
 
 For example
@@ -356,20 +356,20 @@ func helloWorld():
 
 ```
 
-### Support using the GDExtension functionality in the Godot Editor
+### Support using the GDExtension functionality in the Redot Editor
 
-If planning to use the GDExtension functionality in the Godot Editor, it is recommended that the
+If planning to use the GDExtension functionality in the Redot Editor, it is recommended that the
 GDExtension's native binaries are compiled not just for Android, but also for the OS onto which
-developers / users intend to run the Godot Editor. Not doing so may prevent developers /
-users from writing code that accesses the plugin from within the Godot Editor.
+developers / users intend to run the Redot Editor. Not doing so may prevent developers /
+users from writing code that accesses the plugin from within the Redot Editor.
 
 This may involve creating dummy plugins for the host OS just so the API is published to the
-editor. You can use the [godot-cpp-template ](https://github.com/godotengine/godot-cpp-template)_
+editor. You can use the [Redot-cpp-template ](https://github.com/redot-engine/redot-cpp-template)_
 github template for reference on how to do so.
 
-### Godot crashes upon load
+### Redot crashes upon load
 
 Check ``adb logcat`` for possible problems, then:
 
-- Check that the methods exposed by the plugin used the following Java types: ``void``, ``boolean``, ``int``, ``float``, ``java.lang.String``, ``org.godotengine.godot.Dictionary``, ``int[]``, ``byte[]``, ``float[]``, ``java.lang.String[]``.
+- Check that the methods exposed by the plugin used the following Java types: ``void``, ``boolean``, ``int``, ``float``, ``java.lang.String``, ``org.godotengine.Redot.Dictionary``, ``int[]``, ``byte[]``, ``float[]``, ``java.lang.String[]``.
 - More complex datatypes are not supported for now.

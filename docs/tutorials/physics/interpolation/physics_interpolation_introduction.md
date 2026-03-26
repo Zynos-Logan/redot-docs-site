@@ -3,7 +3,7 @@
 
 ## Physics ticks and rendered frames
 
-One key concept to understand in Godot is the distinction between physics ticks
+One key concept to understand in Redot is the distinction between physics ticks
 (sometimes referred to as iterations or physics frames), and rendered frames. The
 physics proceeds at a fixed tick rate (set in [Project Settings &gt; Physics &gt; Common &gt; Physics Tick per Second](class_ProjectSettings_property_physics/common/physics_ticks_per_second)),
 which defaults to 60 ticks per second.
@@ -107,7 +107,7 @@ is 30 units.
 
 :::note
 Although the maths is explained here, you do not have to worry about the
-details, as this step will be performed for you. Under the hood, Godot
+details, as this step will be performed for you. Under the hood, Redot
 may use more complex forms of interpolation, but linear interpolation is
 the easiest in terms of explanation.
 
@@ -132,7 +132,7 @@ fraction = 0.2
 ```
 
 This is called the **physics interpolation fraction**, and is handily calculated
-for you by Godot. It can be retrieved on any frame by calling [Engine.get_physics_interpolation_fraction](class_Engine_method_get_physics_interpolation_fraction).
+for you by Redot. It can be retrieved on any frame by calling [Engine.get_physics_interpolation_fraction](class_Engine_method_get_physics_interpolation_fraction).
 
 ### Calculating the interpolated position
 
@@ -165,7 +165,7 @@ Let's break that down:
 :::note
 Although this example interpolates the position, the same thing can be
 done with the rotation and scale of objects. It is not necessary to know
-the details as Godot will do all this for you.
+the details as Redot will do all this for you.
 
 :::
 
@@ -212,7 +212,7 @@ significant downsides:
 
 ### Fixed timestep interpolation
 
-In Godot this whole system is referred to as physics interpolation, but you may
+In Redot this whole system is referred to as physics interpolation, but you may
 also hear it referred to as **"fixed timestep interpolation"**, as it is
 interpolating between objects moved with a fixed timestep (physics ticks per
 second). In some ways the second term is more accurate, because it can also be used
@@ -220,7 +220,7 @@ to interpolate objects that are not driven by physics.
 
 :::tip
 Although physics interpolation is usually a good choice, there are
-exceptions where you may choose not to use Godot's built-in physics
+exceptions where you may choose not to use Redot's built-in physics
 interpolation (or use it in a limited fashion). An example category is
 internet multiplayer games. Multiplayer games often receive tick or timing
 based information from other players or a server and these may not

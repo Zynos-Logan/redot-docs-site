@@ -3,7 +3,7 @@
 
 .. highlight:: shell
 
-When contributing to Godot's source code, you will be expected to follow the
+When contributing to Redot's source code, you will be expected to follow the
 style guidelines outlined below. Some of them are checked via the Continuous
 Integration process and reviewers will ask you to fix potential issues, so
 best setup your system as outlined below to ensure all your commits follow the
@@ -23,8 +23,8 @@ To name a few:
 - See further down regarding header includes
 
 The rules used by clang-format are outlined in the
-[.clang-format](https://github.com/godotengine/godot/blob/master/.clang-format)
-file of the Godot repository.
+[.clang-format](https://github.com/redot-engine/redot-engine/blob/master/.clang-format)
+file of the Redot repository.
 
 As long as you ensure that your style matches the surrounding code and that you're
 not introducing trailing whitespace or space-based indentation, you should be
@@ -32,8 +32,8 @@ fine. If you plan to contribute regularly, however, we strongly advise that you
 set up clang-format locally to check and automatically fix all your commits.
 
 :::warning
-Godot's code style should *not* be applied to third-party code,
-i.e. code that is included in Godot's source tree, but was not written
+Redot's code style should *not* be applied to third-party code,
+i.e. code that is included in Redot's source tree, but was not written
 specifically for our project. Such code usually comes from
 different upstream projects with their own style guides (or lack
 thereof), and don't want to introduce differences that would make
@@ -42,7 +42,7 @@ syncing with upstream repositories harder.
 Third-party code is usually included in the ``thirdparty/`` folder
 and can thus easily be excluded from formatting scripts. For the
 rare cases where a third-party code snippet needs to be included
-directly within a Godot file, you can use
+directly within a Redot file, you can use
 ``/* clang-format off */`` and ``/* clang-format on */`` to tell
 clang-format to ignore a chunk of code.
 
@@ -57,7 +57,7 @@ for a list of language features that are permitted in pull requests.
 
 ### Using clang-format locally
 
-You need to use **clang-format 17** to be compatible with Godot's format. Later versions might
+You need to use **clang-format 17** to be compatible with Redot's format. Later versions might
 be suitable, but previous versions may not support all used options, or format
 some things differently, leading to style issues in pull requests.
 
@@ -116,7 +116,7 @@ clang-format -i <path/to/file(s)>
 - The path can point to several files, either one after the other or using
   wildcards like in a typical Unix shell. Be careful when globbing so that
   you don't run clang-format on compiled objects (.o and .a files) that are
-  in Godot's tree. So better use ``core/*.{cpp,h}`` than ``core/*``.
+  in Redot's tree. So better use ``core/*.{cpp,h}`` than ``core/*``.
 
 #### IDE plugin
 
@@ -139,7 +139,7 @@ Here is a non-exhaustive list of beautifier plugins for some IDEs:
 When adding new C++ or Objective-C files or including new headers in existing
 ones, the following rules should be followed:
 
-- The first lines in the file should be Godot's copyright header and MIT
+- The first lines in the file should be Redot's copyright header and MIT
   license, copy-pasted from another file. Make sure to adjust the filename.
 - In a ``.h`` header, include guards should be used with the form
   ``FILENAME_H``.
@@ -147,16 +147,16 @@ ones, the following rules should be followed:
 - In a ``.cpp`` file (e.g. ``filename.cpp``), the first include should be the
   one where the class is declared (e.g. ``#include "filename.h"``), followed by
   an empty line for separation.
-- Then come headers from Godot's own code base, included in alphabetical order
+- Then come headers from Redot's own code base, included in alphabetical order
   (enforced by ``clang-format``) with paths relative to the root folder. Those
   includes should be done with quotes, e.g. ``#include "core/object.h"``. The
-  block of Godot header includes should then be followed by an empty line for
+  block of Redot header includes should then be followed by an empty line for
   separation.
 - Finally, third-party headers (either from ``thirdparty`` or from the system's
   include paths) come next and should be included with the &lt; and &gt; symbols, e.g.
   `[#include](png.h)`. The block of third-party headers should also be followed
   by an empty line for separation.
-- Godot and third-party headers should be included in the file that requires
+- Redot and third-party headers should be included in the file that requires
   them, i.e. in the `.h` header if used in the declarative code or in the `.cpp`
   if used only in the imperative code.
 
@@ -167,8 +167,8 @@ Example:
 /*  my_new_file.h                                                         */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
-/*                        https://godotengine.org                         */
+/*                             Redot ENGINE                               */
+/*                        https://redotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present the Redot community, modified from an       */
 /* original work by G-dot Engine contributors (see AUTHORS.md).           */
@@ -214,11 +214,11 @@ Example:
 /*  my_new_file.cpp                                                       */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
-/*                        https://godotengine.org                         */
+/*                             Redot ENGINE                               */
+/*                        https://redotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present the Redot community, modified from an       */
-/* original work by Godot Engine contributors (see AUTHORS.md).           */
+/* original work by Redot Engine contributors (see AUTHORS.md).           */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -253,14 +253,14 @@ Example:
 
 ## Java
 
-Godot's Java code (mostly in ``platform/android``) is also enforced via
+Redot's Java code (mostly in ``platform/android``) is also enforced via
 ``clang-format``, so see the instructions above to set it up. Keep in mind that
-this style guide only applies to code written and maintained by Godot, not
+this style guide only applies to code written and maintained by Redot, not
 third-party code such as the ``java/src/com/google`` subfolder.
 
 ## Python
 
-Godot's SCons buildsystem is written in Python, and various scripts included
+Redot's SCons buildsystem is written in Python, and various scripts included
 in the source tree are also using Python.
 
 For those, we use the [Ruff linter and code formatter](https://docs.astral.sh/ruff/).
@@ -328,7 +328,7 @@ check [Ruff Integrations](https://docs.astral.sh/ruff/integrations/).
 ## Comment style guide
 
 This comment style guide applies to all programming languages used within
-Godot's codebase.
+Redot's codebase.
 
 - Begin comments with a space character to distinguish them from disabled code.
 - Use sentence case for comments. Begin comments with an uppercase character and

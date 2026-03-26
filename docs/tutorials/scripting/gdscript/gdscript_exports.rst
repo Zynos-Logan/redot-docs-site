@@ -3,7 +3,7 @@
 GDScript exported properties
 ============================
 
-In Godot, class members can be exported. This means their value gets saved along
+In Redot, class members can be exported. This means their value gets saved along
 with the resource (such as the :ref:`scene <class_PackedScene>`) they're
 attached to. They will also be available for editing in the property editor.
 Exporting is done by using the ``@export`` annotation.
@@ -210,7 +210,7 @@ the `"radians_as_degrees"` hint:
 
 This performs automatic conversion when the value is displayed or modified in
 the inspector and also displays a degree (``°``) suffix. This approach is used
-by Godot's own `rotation` properties throughout the editor.
+by Redot's own `rotation` properties throughout the editor.
 
 If the angle is stored in degrees instead, use the `"degrees"` hint to display
 the degree symbol while disabling the automatic degrees-to-radians conversion
@@ -246,7 +246,7 @@ Color given as red-green-blue value (alpha will always be 1).
 Nodes
 -----
 
-Since Godot 4.0, nodes can be directly exported as properties in a script
+Since Redot 4.0, nodes can be directly exported as properties in a script
 without having to use NodePaths:
 
 ::
@@ -258,7 +258,7 @@ without having to use NodePaths:
     # Custom classes declared with `class_name` can also be used.
     @export var some_button: BaseButton
 
-Exporting NodePaths like in Godot 3.x is still possible, in case you need it:
+Exporting NodePaths like in Redot 3.x is still possible, in case you need it:
 
 ::
 

@@ -8,9 +8,9 @@ import TabItem from "@theme/TabItem";
 ## Threads
 
 Threads are used to balance processing power across CPUs and cores.
-Godot supports multithreading, but not in the whole engine.
+Redot supports multithreading, but not in the whole engine.
 
-Below is a list of ways multithreading can be used in different areas of Godot.
+Below is a list of ways multithreading can be used in different areas of Redot.
 
 ## Global scope
 
@@ -82,7 +82,7 @@ world.CallDeferred(Node.MethodName.AddChild, enemy);
 
 Still, this is only really useful if you have **one** thread loading data.
 Attempting to load or create scene chunks from multiple threads may work, but you risk
-resources (which are only loaded once in Godot) tweaked by the multiple
+resources (which are only loaded once in Redot) tweaked by the multiple
 threads, resulting in unexpected behaviors or crashes.
 
 Only use more than one thread to generate scene data if you *really* know what

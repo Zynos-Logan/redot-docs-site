@@ -11,20 +11,20 @@ See [doc_saving_games](doc_saving_games) for information on saving and loading g
 
 Sometimes, [exporting packs, patches, and mods ](doc_exporting_pcks) is not
 ideal when you want players to be able to load user-generated content in your
-project. It requires users to generate a PCK or ZIP file through the Godot
-editor, which contains resources imported by Godot.
+project. It requires users to generate a PCK or ZIP file through the Redot
+editor, which contains resources imported by Redot.
 
 Example use cases for runtime file loading and saving include:
 
 - Loading texture packs designed for the game.
 - Loading user-provided audio tracks and playing them back in an in-game radio station.
 - Loading custom levels or 3D models that can be designed with any 3D DCC that
-  can export to glTF (including glTF scenes saved by Godot at runtime).
+  can export to glTF (including glTF scenes saved by Redot at runtime).
 - Using user-provided fonts for menus and HUD.
 - Saving/loading a file format that can contain multiple files but can still
   easily be read by other applications (ZIP).
 - Loading files created by another game or program, or even game data files from
-  another game not made with Godot.
+  another game not made with Redot.
 
 Runtime file loading can be combined with [HTTP requests ](doc_http_request_class)
 to load resources from the Internet directly.
@@ -33,7 +33,7 @@ to load resources from the Internet directly.
 
 Do **not** use this runtime loading approach to load resources that are part
 of the project, as it's less efficient and doesn't allow benefiting from
-Godot's resource handling functionality (such as translation remaps). See
+Redot's resource handling functionality (such as translation remaps). See
 [doc_import_process](doc_import_process) for details.
 
 :::
@@ -41,13 +41,13 @@ Godot's resource handling functionality (such as translation remaps). See
 :::info
 
 You can see how saving and loading works in action using the
-[Run-time File Saving and Loading (Serialization) demo project ](https://github.com/godotengine/godot-demo-projects/blob/master/loading/runtime_save_load)_.
+[Run-time File Saving and Loading (Serialization) demo project ](https://github.com/redot-engine/redot-demo-projects/blob/master/loading/runtime_save_load)_.
 
 :::
 
 ## Plain text and binary files
 
-Godot's [class_FileAccess](class_FileAccess) class provides methods to access files on the
+Redot's [class_FileAccess](class_FileAccess) class provides methods to access files on the
 filesystem for reading and writing:
 
 <Tabs>
@@ -91,7 +91,7 @@ private string LoadFile()
 </Tabs>
 
 To handle custom binary formats (such as loading file formats not supported by
-Godot), [class_FileAccess](class_FileAccess) provides several methods to read/write integers,
+Redot), [class_FileAccess](class_FileAccess) provides several methods to read/write integers,
 floats, strings and more. These FileAccess methods have names that start with
 ``get_`` and ``store_``.
 
@@ -118,7 +118,7 @@ loaded at), use one of the following methods depending on the file format:
 - [Image.load_tga_from_buffer ](class_Image_method_load_tga_from_buffer)
 - [Image.load_webp_from_buffer ](class_Image_method_load_webp_from_buffer)
 
-Several image formats can also be saved by Godot at runtime using the following
+Several image formats can also be saved by Redot at runtime using the following
 methods:
 
 - [Image.save_png ](class_Image_method_save_png)
@@ -154,7 +154,7 @@ Example of loading an image and displaying it in a [class_TextureRect](class_Tex
 <TabItem value="gdscript" label="Gdscript">
 
 ```gdscript
-# Load an image of any format supported by Godot from the filesystem.
+# Load an image of any format supported by Redot from the filesystem.
 var image = Image.load_from_file(path)
 # Optionally, generate mipmaps if displaying the texture on a 3D surface
 # so that the texture doesn't look grainy when viewed at a distance.
@@ -174,7 +174,7 @@ $TextureRect.texture.get_image().save_png("/path/to/file.png")
 <TabItem value="csharp" label="Csharp">
 
 ```csharp
-// Load an image of any format supported by Godot from the filesystem.
+// Load an image of any format supported by Redot from the filesystem.
 var image = Image.LoadFromFile(path);
 // Optionally, generate mipmaps if displaying the texture on a 3D surface
 // so that the texture doesn't look grainy when viewed at a distance.
@@ -195,10 +195,10 @@ GetNode<TextureRect>("TextureRect").Texture.GetImage().SavePng("/Path/To/File.pn
 
 ## Audio/video files
 
-Godot supports loading Ogg Vorbis audio at runtime. Note that not *all* files
+Redot supports loading Ogg Vorbis audio at runtime. Note that not *all* files
 with an ``.ogg`` extension may be Ogg Vorbis files. Some may be Ogg Theora
 videos, or contain Opus audio within an Ogg container. These files will **not**
-load correctly as audio files in Godot.
+load correctly as audio files in Redot.
 
 Example of loading an Ogg Vorbis audio file in an [class_AudioStreamPlayer](class_AudioStreamPlayer) node:
 
@@ -266,7 +266,7 @@ GetNode<VideoStreamPlayer>("VideoStreamPlayer").Play();
 
 :::note
 
-Godot doesn't support runtime loading of MP3 or WAV files yet. Until this is
+Redot doesn't support runtime loading of MP3 or WAV files yet. Until this is
 implemented, it's feasible to implement runtime WAV loading using a script
 since [class_AudioStreamWAV](class_AudioStreamWAV)'s ``data`` property is exposed to
 scripting.
@@ -279,9 +279,9 @@ for procedurally generated audio or microphone recordings.
 
 ## 3D scenes
 
-Godot has first-class support for glTF 2.0, both in the editor and exported
+Redot has first-class support for glTF 2.0, both in the editor and exported
 projects. Using [class_gltfdocument](class_gltfdocument) and [class_gltfstate](class_gltfstate) together,
-Godot can load and save glTF files in exported projects, in both text
+Redot can load and save glTF files in exported projects, in both text
 (``.gltf``) and binary (``.glb``) formats. The binary format should be preferred
 as it's faster to write and smaller, but the text format is easier to debug.
 
@@ -294,7 +294,7 @@ Example of loading a glTF scene and appending its root node to the scene:
 ```gdscript
 # Load an existing glTF scene.
 # GLTFState is used by GLTFDocument to store the loaded scene's state.
-# GLTFDocument is the class that handles actually loading glTF data into a Godot node tree,
+# GLTFDocument is the class that handles actually loading glTF data into a Redot node tree,
 # which means it supports glTF features such as lights and cameras.
 var gltf_document_load = GLTFDocument.new()
 var gltf_state_load = GLTFState.new()
@@ -323,7 +323,7 @@ gltf_document_save.write_to_filesystem(gltf_state_save, path)
 ```csharp
 // Load an existing glTF scene.
 // GLTFState is used by GLTFDocument to store the loaded scene's state.
-// GLTFDocument is the class that handles actually loading glTF data into a Godot node tree,
+// GLTFDocument is the class that handles actually loading glTF data into a Redot node tree,
 // which means it supports glTF features such as lights and cameras.
 var gltfDocumentLoad = new GltfDocument();
 var gltfStateLoad = new GltfState();
@@ -359,7 +359,7 @@ When loading a glTF scene, a *base path* must be set so that external
 resources like textures can be loaded correctly. When loading from a file,
 the base path is automatically set to the folder containing the file. When
 loading from a buffer, this base path must be manually set as there is no
-way for Godot to infer this path.
+way for Redot to infer this path.
 
 To set the base path, set
 [GLTFState.base_path ](class_GLTFState_property_base_path) on your
@@ -378,7 +378,7 @@ On the other hand, [FontFile.load_bitmap_font ](class_FontFile_method_load_bitma
 the [BMFont ](https://www.angelcode.com/products/bmfont/)_ format (``.fnt`` or ``.font``).
 
 Additionally, it is possible to load any font that is installed on the system using
-Godot's support for [doc_using_fonts_system_fonts](doc_using_fonts_system_fonts).
+Redot's support for [doc_using_fonts_system_fonts](doc_using_fonts_system_fonts).
 
 Example of loading a font file automatically according to its file extension,
 then adding it as a theme override to a [class_Label](class_Label) node:
@@ -453,15 +453,15 @@ if (!fontFile.Data.IsEmpty())
 
 ## ZIP archives
 
-Godot supports reading and writing ZIP archives using the [class_zipreader](class_zipreader)
+Redot supports reading and writing ZIP archives using the [class_zipreader](class_zipreader)
 and [class_zippacker](class_zippacker) classes. This supports any ZIP file, including files
-generated by Godot's "Export PCK/ZIP" functionality (although these will contain
-imported Godot resources rather than the original project files).
+generated by Redot's "Export PCK/ZIP" functionality (although these will contain
+imported Redot resources rather than the original project files).
 
 :::note
 
 Use [ProjectSettings.load_resource_pack ](class_ProjectSettings_method_load_resource_pack)
-to load PCK or ZIP files exported by Godot as
+to load PCK or ZIP files exported by Redot as
 [additional data packs ](doc_exporting_pcks). That approach is preferred
 for DLCs, as it makes interacting with additional data packs seamless (virtual filesystem).
 
@@ -469,7 +469,7 @@ for DLCs, as it makes interacting with additional data packs seamless (virtual f
 
 This ZIP archive support can be combined with runtime image, 3D scene and audio
 loading to provide a seamless modding experience without requiring users to go
-through the Godot editor to generate PCK/ZIP files.
+through the Redot editor to generate PCK/ZIP files.
 
 Example that lists files in a ZIP archive in an [class_ItemList](class_ItemList) node,
 then writes contents read from it to a new ZIP archive (essentially duplicating the archive):

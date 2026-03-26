@@ -3,7 +3,7 @@ import TabItem from "@theme/TabItem";
 
 # Animation Track types
 
-This page gives an overview of the track types available for Godot's animation
+This page gives an overview of the track types available for Redot's animation
 player node on top of the default property tracks.
 
 :::info

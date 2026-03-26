@@ -1,5 +1,5 @@
 
-# Upgrading from Godot 4.1 to Godot 4.2
+# Upgrading from Redot 4.1 to Redot 4.2
 
 For most games and apps made with 4.1 it should be relatively safe to migrate to 4.2.
 This page intends to cover everything you need to pay attention to when migrating
@@ -13,21 +13,21 @@ affect you. Changes are grouped by areas/systems.
 :::warning
 
 The [class_Mesh](class_Mesh) resource format has changed in 4.2 to allow for
-[vertex and attribute compression ](https://github.com/godotengine/godot/pull/81138)_.
+[vertex and attribute compression ](https://github.com/redot-engine/redot-engine/pull/81138)_.
 This allows for improved rendering performance, especially on platforms
 constrained by memory bandwidth such as mobile.
 
-It is still possible to load the Godot 4.0-4.1 Mesh formats, but it is
-**not** possible to load the Godot 4.2 Mesh format in prior Godot versions.
-When opening a Godot project made with a version prior to 4.2, you may
+It is still possible to load the Redot 4.0-4.1 Mesh formats, but it is
+**not** possible to load the Redot 4.2 Mesh format in prior Redot versions.
+When opening a Redot project made with a version prior to 4.2, you may
 be presented with an upgrade dialog that offers two options:
 
 - **Restart & Upgrade:** Upgrades the mesh format for all meshes in the
   project and saves the result to disk. Once chosen, this option prevents
-  downgrading the project to a Godot version prior to 4.2. Set up a
+  downgrading the project to a Redot version prior to 4.2. Set up a
   version control system and push your changes *before* choosing this option!
 - **Upgrade Only:** Upgrades the mesh format in-memory without writing it
-  to disk. This allows downgrading the project to a Godot version older than 4.2
+  to disk. This allows downgrading the project to a Redot version older than 4.2
   if you need to do so in the future. The downside is that loading the project
   will be slower every time as the mesh format needs to be upgraded every time
   the project is loaded. These increased loading times will also affect the
@@ -45,7 +45,7 @@ the C# breaking change is *binary compatible* or *source compatible*:
 - **Binary compatible** - Existing binaries will load and execute successfully without
   recompilation, and the runtime behavior won't change.
 - **Source compatible** - Source code will compile successfully without changes when
-  upgrading Godot.
+  upgrading Redot.
 
 ### Core
 

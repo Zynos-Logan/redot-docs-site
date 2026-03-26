@@ -3,14 +3,14 @@
 
 :::info
 
-This page describes the C++ implementation of objects in Godot.
+This page describes the C++ implementation of objects in Redot.
 Looking for the Object class reference? [Have a look here.](class_Object)
 
 :::
 
 ## General definition
 
-[Object](class_object) is the base class for almost everything. Most classes in Godot
+[Object](class_object) is the base class for almost everything. Most classes in Redot
 inherit directly or indirectly from it. Objects provide reflection and
 editable properties, and declaring them is a matter of using a single
 macro like this:
@@ -35,7 +35,7 @@ obj2 = Object::cast_to<OtherClass>(obj); // converting between classes, this als
 
 ### References:
 
--  [core/object/object.h](https://github.com/godotengine/godot/blob/master/core/object/object.h)
+-  [core/object/object.h](https://github.com/redot-engine/redot-engine/blob/master/core/object/object.h)
 
 ## Registering an Object
 
@@ -99,7 +99,7 @@ string passing the name can be passed for brevity.
 
 ### References:
 
--  [core/object/class_db.h](https://github.com/godotengine/godot/blob/master/core/object/class_db.h)
+-  [core/object/class_db.h](https://github.com/redot-engine/redot-engine/blob/master/core/object/class_db.h)
 
 ## Constants
 
@@ -208,7 +208,7 @@ compared against the desired names in serial order.
 
 ## Dynamic casting
 
-Godot provides dynamic casting between Object-derived classes, for
+Redot provides dynamic casting between Object-derived classes, for
 example:
 
 ```cpp
@@ -249,9 +249,9 @@ ADD_SIGNAL(MethodInfo("been_killed"))
 
 ## Notifications
 
-All objects in Godot have a [_notification](class_Object_private_method__notification)
+All objects in Redot have a [_notification](class_Object_private_method__notification)
 method that allows it to respond to engine level callbacks that may relate to it.
-More information can be found on the [doc_godot_notifications](doc_godot_notifications) page.
+More information can be found on the [doc_Redot_notifications](doc_Redot_notifications) page.
 
 ## References
 
@@ -273,7 +273,7 @@ templates point to it.
 
 ### References:
 
--  [core/object/reference.h](https://github.com/godotengine/godot/blob/master/core/object/ref_counted.h)
+-  [core/object/reference.h](https://github.com/redot-engine/redot-engine/blob/master/core/object/ref_counted.h)
 
 ## Resources
 
@@ -287,7 +287,7 @@ Resources without a path are fine too.
 
 ### References:
 
--  [core/io/resource.h](https://github.com/godotengine/godot/blob/master/core/io/resource.h)
+-  [core/io/resource.h](https://github.com/redot-engine/redot-engine/blob/master/core/io/resource.h)
 
 ## Resource loading
 
@@ -307,7 +307,7 @@ the same time.
 
 ### References:
 
--  [core/io/resource_loader.h](https://github.com/godotengine/godot/blob/master/core/io/resource_loader.h)
+-  [core/io/resource_loader.h](https://github.com/redot-engine/redot-engine/blob/master/core/io/resource_loader.h)
 
 ## Resource saving
 
@@ -325,4 +325,4 @@ be bundled with the saved resource and assigned sub-IDs, like
 
 ### References:
 
--  [core/io/resource_saver.h](https://github.com/godotengine/godot/blob/master/core/io/resource_saver.h)
+-  [core/io/resource_saver.h](https://github.com/redot-engine/redot-engine/blob/master/core/io/resource_saver.h)

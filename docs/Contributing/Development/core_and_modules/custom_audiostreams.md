@@ -18,8 +18,8 @@ This guide assumes the reader knows how to create C++ modules. If not, refer to 
 
 ### References:
 
--  [servers/audio/audio_stream.h](https://github.com/godotengine/godot/blob/master/servers/audio/audio_stream.h)
--  [scene/audio/audio_stream_player.cpp](https://github.com/godotengine/godot/blob/master/scene/audio/audio_stream_player.cpp)
+-  [servers/audio/audio_stream.h](https://github.com/redot-engine/redot-engine/blob/master/servers/audio/audio_stream.h)
+-  [scene/audio/audio_stream_player.cpp](https://github.com/redot-engine/redot-engine/blob/master/scene/audio/audio_stream_player.cpp)
 
 ## What for?
 
@@ -107,7 +107,7 @@ void AudioStreamMyTone::_bind_methods() {
 
 ### References:
 
--  [servers/audio/audio_stream.h](https://github.com/godotengine/godot/blob/master/servers/audio/audio_stream.h)
+-  [servers/audio/audio_stream.h](https://github.com/redot-engine/redot-engine/blob/master/servers/audio/audio_stream.h)
 
 ## Create an AudioStreamPlayback
 
@@ -217,9 +217,9 @@ bool AudioStreamPlaybackMyTone::is_playing() const {
 
 ### Resampling
 
-Godot's AudioServer currently uses 44100 Hz sample rate. When other sample rates are
+Redot's AudioServer currently uses 44100 Hz sample rate. When other sample rates are
 needed such as 48000, either provide one or use AudioStreamPlaybackResampled.
-Godot provides cubic interpolation for audio resampling.
+Redot provides cubic interpolation for audio resampling.
 
 Instead of overloading ``mix``, AudioStreamPlaybackResampled uses ``_mix_internal`` to
 query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
@@ -333,6 +333,6 @@ bool AudioStreamPlaybackResampledMyTone::is_playing() const {
 ```
 
 ### References:
--  [core/math/audio_frame.h](https://github.com/godotengine/godot/blob/master/core/math/audio_frame.h)
--  [servers/audio/audio_stream.h](https://github.com/godotengine/godot/blob/master/servers/audio/audio_stream.h)
--  [scene/audio/audio_stream_player.cpp](https://github.com/godotengine/godot/blob/master/scene/audio/audio_stream_player.cpp)
+-  [core/math/audio_frame.h](https://github.com/redot-engine/redot-engine/blob/master/core/math/audio_frame.h)
+-  [servers/audio/audio_stream.h](https://github.com/redot-engine/redot-engine/blob/master/servers/audio/audio_stream.h)
+-  [scene/audio/audio_stream_player.cpp](https://github.com/redot-engine/redot-engine/blob/master/scene/audio/audio_stream_player.cpp)

@@ -1,7 +1,7 @@
 
 # Changing application icon for Windows
 
-By default, the exported project's icon will be the Godot icon.
+By default, the exported project's icon will be the Redot icon.
 You will most likely want to change that for your project. There are two types
 of icons that can be changed on Windows: the file icon and the taskbar icon.
 
@@ -32,10 +32,10 @@ convert icon.png -define icon:auto-resize=256,128,64,48,32,16 icon.ico
 
 :::warning
 
-For the ICO file to effectively replace the default Godot icon, it must
-contain *all* the sizes included in the default Godot icon: 16×16, 32×32,
+For the ICO file to effectively replace the default Redot icon, it must
+contain *all* the sizes included in the default Redot icon: 16×16, 32×32,
 48×48, 64×64, 128×128, 256×256. If the ICO file does not contain all the sizes,
-the default Godot icon will be kept for the sizes that weren't overridden.
+the default Redot icon will be kept for the sizes that weren't overridden.
 
 The above ImageMagick command takes this into account.
 
@@ -60,14 +60,14 @@ use the ``Icon`` setting.
 
 ## Changing the file icon
 
-In Godot 3.5 and later, you can change the file icon without
-external tools using [godoticon ](https://github.com/pkowal1982/godoticon)_.
+In Redot 3.5 and later, you can change the file icon without
+external tools using [Redoticon ](https://github.com/pkowal1982/godoticon)_.
 Changing the file icon this way should work for executables containing
 an embedded PCK.
 
 :::warning
 
-There are [known issues ](https://github.com/godotengine/godot/issues/33466)_
+There are [known issues ](https://github.com/redot-engine/redot-engine/issues/33466)_
 when changing the application icon in executables that embed a PCK file.
 It's recommended to avoid using rcedit for now if you choose to enable the
 **Embed Pck** option for your Windows export preset in the Export dialog.
@@ -83,7 +83,7 @@ Before selecting it in the export options, you will need to install
 an extra tool called **rcedit**.
 You can download it [here ](https://github.com/electron/rcedit/releases).
 
-After downloading, you need to tell Godot the path to the rcedit executable
+After downloading, you need to tell Redot the path to the rcedit executable
 on your computer.
 Go to **Editor → Editor Settings → Export → Windows**.
 Click on the folder icon for the **rcedit** entry.
@@ -126,7 +126,7 @@ won't change as rcedit will fail to change the executable's metadata.
 If rcedit fails to change the icon, you can instead
 [compile your own Windows export templates ](doc_compiling_for_windows)
 with the icon changed. To do so, replace
-[platform/windows/godot.ico ](https://github.com/godotengine/godot/blob/master/platform/windows/godot.ico)_
+[platform/windows/Godot.ico ](https://github.com/redot-engine/redot-engine/blob/master/platform/windows/Godot.ico)_
 with your own ICO file *before* compiling export templates.
 
 Once this is done, you can specify your export templates as custom export

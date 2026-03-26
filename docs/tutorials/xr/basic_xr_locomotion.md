@@ -1,17 +1,17 @@
 
 # Basic XR Locomotion
 
-For basic locomotion we're going to continue using our Godot XR Tools library. The library contains both basic movement features as more advanced features.
+For basic locomotion we're going to continue using our Redot XR Tools library. The library contains both basic movement features as more advanced features.
 
 ## Adding our player body
 
 The first step we need to do is to add a helper node to our [XROrigin3D ](class_xrorigin3d) node.
 Because XR supports roomscale tracking you can't simply add your XR setup to a [CharacterBody3D ](class_characterbody3d) node and expect things to work.
 You will run into trouble when the user moves around their physical space and is no longer standing in the center of their room.
-Godot XR Tools embeds the needed logic into a helper node called ``PlayerBody``.
+Redot XR Tools embeds the needed logic into a helper node called ``PlayerBody``.
 
 Select your [XROrigin3D ](class_xrorigin3d) node and click on the ``instantiate Child Scene`` button to add a child scene.
-Select ``addons/godot-xr-tools/player/player_body.tscn`` and add this node.
+Select ``addons/Redot-xr-tools/player/player_body.tscn`` and add this node.
 
 ## Adding a floor
 
@@ -47,13 +47,13 @@ We advise you to stick to these defaults but offer features in game to enable le
 
 We want to enable this on the right hand controller.
 We do this by adding a subscene to the right hand [XRController3D ](class_xrcontroller3d) node.
-Select ``addons/godot-xr-tools/functions/movement_direct.tscn`` as the scene to add.
+Select ``addons/Redot-xr-tools/functions/movement_direct.tscn`` as the scene to add.
 
 This function adds forward and backwards movement to the player by using the joystick on the right hand controller.
 It has an option to also add left/right strafe but by default this is disabled.
 
 Instead, we are going to add the ability for the player to also turn with this joystick.
-We will add another subscene to our controller node, select ``addons/godot-xr-tools/functions/movement_turn.tscn`` for this.
+We will add another subscene to our controller node, select ``addons/Redot-xr-tools/functions/movement_turn.tscn`` for this.
 
 The turn system by default uses a snap turn approach.
 This means that turning happens in steps.
@@ -65,9 +65,9 @@ If you run your game at this point in time you will find that you can move throu
 ## Teleport
 
 An alternative to direct movement that some users find more pleasant is the ability to teleport to another location within your game world.
-Godot XR Tools supports this through the teleport function and we will be adding this to our left hand controller.
+Redot XR Tools supports this through the teleport function and we will be adding this to our left hand controller.
 
-Add a new child scene to your left hand [XRController3D ](class_xrcontroller3d) node by selecting the ``addons/godot-xr-tools/functions/function_teleport.tscn`` scene.
+Add a new child scene to your left hand [XRController3D ](class_xrcontroller3d) node by selecting the ``addons/Redot-xr-tools/functions/function_teleport.tscn`` scene.
 
 With this scene added the player will be able to teleport around the world by pressing the trigger on the left hand controller, pointing where they want to go, and then releasing the trigger.
 The player can also adjust the orientation by using the left hand controllers joystick.
@@ -78,8 +78,8 @@ If you've followed all instructions correctly your scene should now look somethi
 
 ## More advanced movement features
 
-Godot XR Tools adds many more movement features such as gliding, a grapple hook implementation, a jetpack, climbing mechanics, etc.
+Redot XR Tools adds many more movement features such as gliding, a grapple hook implementation, a jetpack, climbing mechanics, etc.
 
 Most work similarly to the basic movement features we've handled so far, simply add the relevant subscene from the plugin to the controller that implements it. 
 
-We'll look at some of these in more detail later on in this tutorial where additional setup is required (such as climbing) but for others please look at Godot XR Tools own help pages for details.
+We'll look at some of these in more detail later on in this tutorial where additional setup is required (such as climbing) but for others please look at Redot XR Tools own help pages for details.

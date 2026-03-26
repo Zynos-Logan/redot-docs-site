@@ -1,7 +1,7 @@
 
 # Learning new features
 
-Godot is a feature-rich game engine. There is a lot to learn about it. This page
+Redot is a feature-rich game engine. There is a lot to learn about it. This page
 explains how you can use the online manual, built-in code reference, and join
 online communities to learn new features and techniques.
 
@@ -16,12 +16,12 @@ content.
 
 ![Image](img/manual_search.png)
 
-The manual has a companion class reference that explains each Godot class's
+The manual has a companion class reference that explains each Redot class's
 available functions and properties when programming. While the manual covers
 general features, concepts, and how to use the editor, the reference is all
-about using Godot's scripting API (Application Programming Interface). You can
+about using Redot's scripting API (Application Programming Interface). You can
 access it both online and offline. We recommend browsing the reference offline,
-from within the Godot editor. To do so, go to Help -&gt; Search Help or press
+from within the Redot editor. To do so, go to Help -&gt; Search Help or press
 `F1`.
 
 ![Image](img/manual_class_reference_search.webp)
@@ -46,8 +46,8 @@ A class reference's page tells you:
 
 :::note
 If the manual or class reference is missing or has insufficient
-information, please open an Issue in the official `godot-docs
-&lt;https://github.com/godotengine/godot-docs/issues&gt;`_ GitHub repository
+information, please open an Issue in the official `Redot-docs
+&lt;https://github.com/redot-engine/redot-docs-site/issues&gt;`_ GitHub repository
 to report it.
 
 :::
@@ -58,7 +58,7 @@ method, signal, or constant to underline it, then `Ctrl + Click` (macOS `Cmd + C
 ## Learning to think like a programmer
 
 Teaching programming foundations and how to think like a game developer is
-beyond the scope of Godot's documentation. If you're new to programming, we
+beyond the scope of Redot's documentation. If you're new to programming, we
 recommend two excellent free resources to get you started:
 
 1. Harvard university offers a free courseware to learn to program, `CS50
@@ -73,13 +73,13 @@ recommend two excellent free resources to get you started:
 
 ## Learning with the community
 
-Godot has a growing community of users. If you're stuck on a problem or need
+Redot has a growing community of users. If you're stuck on a problem or need
 help to better understand how to achieve something, you can ask other users for
 help on one of the many `active
-communities &lt;https://godotengine.org/community&gt;`_.
+communities &lt;https://redotengine.org/community&gt;`_.
 
 The best place to ask questions and find already answered ones is the
-official [Questions & Answers](https://ask.godotengine.org/) site. These
+official [Questions & Answers](https://ask.redotengine.org/) site. These
 responses show up in search engine results and get saved, allowing other users
 to benefit from discussions on the platform. Once you have asked a question there,
 you can share its link on other social platforms. Before asking a question, be
@@ -129,7 +129,7 @@ information:
    You can then use a service like [streamable](https://streamable.com/) or a
    cloud provider to upload and share your videos for free.
 
-6. If you're not using the stable version of Godot, please mention the version
+6. If you're not using the stable version of Redot, please mention the version
    you're using. The answer can be different as available features and the
    interface evolve rapidly.
 
@@ -138,8 +138,8 @@ you're looking for. They will save time both for you and the persons helping you
 
 ## Community tutorials
 
-This manual aims to provide a comprehensive reference of Godot's features. Aside
+This manual aims to provide a comprehensive reference of Redot's features. Aside
 from the 2D and 3D getting started series, it does not contain tutorials to
 implement specific game genres. If you're looking for a tutorial about creating
 a role-playing game, a platformer, or other, please see
-[doc_community_tutorials](doc_community_tutorials), which lists content made by the Godot community.
+[doc_community_tutorials](doc_community_tutorials), which lists content made by the Redot community.

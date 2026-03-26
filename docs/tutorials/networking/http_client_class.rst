@@ -23,11 +23,11 @@ class. It's just a script, so it can be run by executing:
 
  .. code-tab:: console GDScript
 
-    c:\godot> godot -s http_test.gd
+    c:\Redot> Redot -s http_test.gd
 
  .. code-tab:: console C#
 
-    c:\godot> godot -s HTTPTest.cs
+    c:\Redot> Redot -s HTTPTest.cs
 
 It will connect and fetch a website.
 
@@ -57,7 +57,7 @@ It will connect and fetch a website.
 
         # Some headers
         var headers = [
-            "User-Agent: Pirulo/1.0 (Godot)",
+            "User-Agent: Pirulo/1.0 (Redot)",
             "Accept: */*"
         ]
 
@@ -141,7 +141,7 @@ It will connect and fetch a website.
             // Some headers.
             string[] headers =
             [
-                "User-Agent: Pirulo/1.0 (Godot)",
+                "User-Agent: Pirulo/1.0 (Redot)",
                 "Accept: */*",
             ];
 

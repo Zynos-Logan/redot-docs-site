@@ -17,8 +17,8 @@ Some use-cases where customizing the default page is useful include:
   the project file system as soon as possible;
 - Passing custom command line arguments, e.g. ``-s`` to start a ``MainLoop`` script.
 
-The default HTML page is available in the Godot Engine repository at
-[/misc/dist/html/full-size.html ](https://github.com/godotengine/godot/blob/master/misc/dist/html/full-size.html)_
+The default HTML page is available in the Redot Engine repository at
+[/misc/dist/html/full-size.html ](https://github.com/redot-engine/redot-engine/blob/master/misc/dist/html/full-size.html)_
 but the following template can be used as a much simpler example:
 
 ```html
@@ -30,9 +30,9 @@ but the following template can be used as a much simpler example:
     </head>
     <body>
         <canvas id="canvas"></canvas>
-        <script src="$GODOT_URL"></script>
+        <script src="$Redot_URL"></script>
         <script>
-            var engine = new Engine($GODOT_CONFIG);
+            var engine = new Engine($Redot_CONFIG);
             engine.startGame();
         </script>
     </body>
@@ -47,35 +47,35 @@ JavaScript code that calls the :js:class:`Engine` class.
 
 The only required placeholders are:
 
-- ``$GODOT_URL``:
+- ``$Redot_URL``:
   The name of the main JavaScript file, which provides the :js:class:`Engine` class required
   to start the engine and that must be included in the HTML as a ``&lt;script&gt;``.
   The name is generated from the *Export Path* during the export process.
 
-- ``$GODOT_CONFIG``:
+- ``$Redot_CONFIG``:
   A JavaScript object, containing the export options and can be later overridden.
   See :js:attr:`EngineConfig` for the full list of overrides.
 
 The following optional placeholders will enable some extra features in your custom HTML template.
 
-- ``$GODOT_PROJECT_NAME``:
+- ``$Redot_PROJECT_NAME``:
   The project name as defined in the
   [Name ](class_ProjectSettings_property_application/config/name) setting
   in **Project Settings &gt; Application &gt; Config**.
   It is a good idea to use it as a ``&lt;title&gt;`` in your template.
 
-- ``$GODOT_HEAD_INCLUDE``:
+- ``$Redot_HEAD_INCLUDE``:
   A custom string to include in the HTML document just before the end of the ``&lt;head&gt;`` tag. It
   is customized in the export options under the *Html / Head Include* section. While you fully
   control the HTML page you create, this variable can be useful for configuring parts of the
-  HTML ``head`` element from the Godot Editor, e.g. for different Web export presets.
+  HTML ``head`` element from the Redot Editor, e.g. for different Web export presets.
 
-- ``$GODOT_SPLASH``:
+- ``$Redot_SPLASH``:
   The path to the image used as the boot splash as defined in the
   [Image ](class_ProjectSettings_property_application/boot_splash/image) setting
   in **Project Settings &gt; Application &gt; Boot Splash**.
 
-- ``$GODOT_SPLASH_COLOR``
+- ``$Redot_SPLASH_COLOR``
   The splash screen background color as defined in the
   [BG Color ](class_ProjectSettings_property_application/boot_splash/bg_color) setting
   in **Project Settings &gt; Application &gt; Boot Splash**, converted to a hex color code.
@@ -99,7 +99,7 @@ class with the exported configuration, and then call the :js:meth:`engine.startG
 optionally overriding any :js:attr:`EngineConfig` parameters.
 
 ```js
-const engine = new Engine($GODOT_CONFIG);
+const engine = new Engine($Redot_CONFIG);
 engine.startGame({
     /* optional override configuration, eg. */
     // unloadAfterInit: false,

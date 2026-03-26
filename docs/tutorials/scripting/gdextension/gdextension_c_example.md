@@ -19,12 +19,12 @@ methods, properties, and signals. It gives an insight on the GDExtension API.
 
 There are a few prerequisites you'll need:
 
-- a Godot 4.2 (or later) executable,
+- a Redot 4.2 (or later) executable,
 - a C compiler,
 - SCons as a build tool.
 
 Since this is using the API directly, there's no need to use the
-[godot-cpp repository ](https://github.com/godotengine/godot-cpp)_.
+[Redot-cpp repository ](https://github.com/redot-engine/redot-cpp)_.
 
 ## File structure
 
@@ -39,12 +39,12 @@ gdextension_c_example/
 
 ```
 
-We also need a copy of the ``gdextension_interface.h`` header from the Godot
-source code, which can be obtained directly from the Godot executable by running
+We also need a copy of the ``gdextension_interface.h`` header from the Redot
+source code, which can be obtained directly from the Redot executable by running
 the following command:
 
 ```none
-godot --dump-gdextension-interface
+Redot --dump-gdextension-interface
 
 ```
 
@@ -52,13 +52,13 @@ This creates the header in the current folder, so you can just copy it to the ``
 folder in the example project.
 
 Lastly, there's another source of information we need to refer to, which is the JSON
-file with the Godot API reference. This file won't be used by the code directly, we
+file with the Redot API reference. This file won't be used by the code directly, we
 will only use it to extract some information manually.
 
-To get this JSON file, just call the Godot executable:
+To get this JSON file, just call the Redot executable:
 
 ```none
-godot --dump-extension-api
+Redot --dump-extension-api
 
 ```
 
@@ -67,16 +67,16 @@ folder. You can copy this file to the example folder to have it handy.
 
 :::note
 
-This extension is targeting Godot 4.2, but it should work on later versions as
+This extension is targeting Redot 4.2, but it should work on later versions as
 well. If you want to target a different minimal version, make sure to get the
-header and the JSON from the version Godot version you are targeting.
+header and the JSON from the version Redot version you are targeting.
 
 :::
 
 ## Buildsystem
 
 Using a buildsystem makes our life a lot easier when dealing with C code. For
-the sake of convenience, we'll use SCons since it's the same as what Godot
+the sake of convenience, we'll use SCons since it's the same as what Redot
 itself uses.
 
 The following ``SConstruct`` file is a simple one that will build your extension
@@ -126,7 +126,7 @@ this file when adding new source files.
 ## Initializing the extension
 
 The first bit of code will be responsible for initializing the extension. This is
-what makes Godot aware of what our GDExtension provides, such as classes and
+what makes Redot aware of what our GDExtension provides, such as classes and
 plugins.
 
 Create the file ``init.h`` in the ``src`` folder, with the following contents:
@@ -152,7 +152,7 @@ The functions declared here have the signatures expected by the GDExtension API.
 Note the inclusion of the ``defs.h`` file. This is one of our helpers to
 simplify writing the extension code. For now it will only contain the definition
 of ``GDE_EXPORT``, a macro that makes the function public in the shared library
-so Godot can properly call it. This macro helps abstracting what each compiler
+so Redot can properly call it. This macro helps abstracting what each compiler
 expects.
 
 Create the ``defs.h`` file in the ``src`` folder with the following contents:
@@ -208,8 +208,8 @@ GDExtensionBool GDE_EXPORT gdexample_library_init(GDExtensionInterfaceGetProcAdd
 
 ```
 
-What this does is set up the initialization data that Godot expects. The
-functions to initialize and deinitialize are set so Godot will call then when
+What this does is set up the initialization data that Redot expects. The
+functions to initialize and deinitialize are set so Redot will call then when
 needed. It also sets the initialization level which varies per extension. Since
 we plan to add a custom node, the ``SCENE`` level is enough.
 
@@ -236,7 +236,7 @@ contents:
 typedef struct
 {
     // Metadata.
-    GDExtensionObjectPtr object; // Stores the underlying Godot object.
+    GDExtensionObjectPtr object; // Stores the underlying Redot object.
 } GDExample;
 
 // Constructor for the node.
@@ -253,15 +253,15 @@ void gdexample_class_bind_methods();
 ```
 
 Noteworthy here is the ``object`` field, which holds a pointer to
-the Godot object, and the ``gdexample_class_bind_methods()`` function, which will
+the Redot object, and the ``gdexample_class_bind_methods()`` function, which will
 register the metadata of our custom class (properties, methods, and signals).
 The latter is not entirely necessary, as we can do it when registering the
 class, but it makes clearer to separate the concerns and let our class register
 its own metadata.
 
-The ``object`` field is necessary because our class will inherit a Godot class.
+The ``object`` field is necessary because our class will inherit a Redot class.
 Since we can't inherit it directly, as we are not interacting with the source
-code (and C doesn't even have classes), we instead tell Godot to create an
+code (and C doesn't even have classes), we instead tell Redot to create an
 object of a type it knows and attach our extension to it. We will need the
 reference to such objects when calling methods on the parent class, for
 instance.
@@ -345,8 +345,8 @@ StringName, which we'll need to use to avoid leaking memory, as well as the
 function to register a class, which is our initial goal.
 
 We also keep a reference to the ``class_library`` here. This is something that
-Godot provides to us when initializing the extension and we'll need to use it
-when registering the things we create so Godot can tell which extension is
+Redot provides to us when initializing the extension and we'll need to use it
+when registering the things we create so Redot can tell which extension is
 making the call.
 
 There's also a function to load those function pointers from the GDExtension API.
@@ -405,9 +405,9 @@ You may wonder why the ``2`` is there in the function name. This means it's the
 second version of this function. The old version is kept to ensure backwards
 compatibility with older extensions, but since we have the second version
 available, it's best to use the new one, because we don't intend to support older
-Godot versions in this example.
+Redot versions in this example.
 
-The ``gdextension_interface.h`` header documents in which Godot version each
+The ``gdextension_interface.h`` header documents in which Redot version each
 function was introduced.
 
 :::
@@ -502,7 +502,7 @@ to work on them soon. Note that we skip the initialization if it isn't at the
 level, but we only want to register our class once.
 
 The other undefined thing here is ``StringName``. This will be an opaque struct
-meant to hold the data of a Godot StringName in our extension. We'll define it
+meant to hold the data of a Redot StringName in our extension. We'll define it
 in the appropriately named ``defs.h`` file:
 
 ```c
@@ -528,13 +528,13 @@ typedef struct
 As mentioned in the comment, the sizes can be found in the
 ``extension_api.json`` file that we generated earlier, under the
 ``builtin_class_sizes`` property. The ``BUILD_32`` is never defined, as we
-assume we are working with a 64-bits build of Godot here, but if you need it you
+assume we are working with a 64-bits build of Redot here, but if you need it you
 can add ``env.Append(CPPDEFINES=["BUILD_32"])`` to your ``SConstruct`` file.
 
 The ``// Types.`` comment foreshadows that we'll be adding more types to this
 file. Let's leave that for later.
 
-The ``StringName`` struct here is just to hold Godot data, so we don't really
+The ``StringName`` struct here is just to hold Redot data, so we don't really
 care what is inside of it. Though, in this case, it is just a pointer to the
 data in the heap. We'll use this struct when we need to allocate data for a
 StringName ourselves, like we are doing when registering our class.
@@ -554,8 +554,8 @@ void gdexample_class_free_instance(void *p_class_userdata, GDExtensionClassInsta
 
 Before we can implement those function, we'll need a few more things in our API.
 We need a way to allocate and free memory. While we could do this with good ol'
-``malloc()``, we can instead make use of Godot's memory management functions.
-We'll also need a way to create a Godot object and set it with our custom
+``malloc()``, we can instead make use of Redot's memory management functions.
+We'll also need a way to create a Redot object and set it with our custom
 instance.
 
 So let's change the ``api.h`` to include these new functions:
@@ -610,7 +610,7 @@ const GDExtensionInstanceBindingCallbacks gdexample_class_binding_callbacks = {
 
 GDExtensionObjectPtr gdexample_class_create_instance(void *p_class_userdata)
 {
-    // Create native Godot object;
+    // Create native Redot object;
     StringName class_name;
     constructors.string_name_new_with_latin1_chars(&class_name, "Sprite2D", false);
     GDExtensionObjectPtr object = api.classdb_construct_object(&class_name);
@@ -621,7 +621,7 @@ GDExtensionObjectPtr gdexample_class_create_instance(void *p_class_userdata)
     gdexample_class_constructor(self);
     self->object = object;
 
-    // Set the extension instance in the native Godot object.
+    // Set the extension instance in the native Redot object.
     constructors.string_name_new_with_latin1_chars(&class_name, "GDExample", false);
     api.object_set_instance(object, &class_name, self);
     api.object_set_instance_binding(object, class_library, self, &gdexample_class_binding_callbacks);
@@ -645,23 +645,23 @@ void gdexample_class_free_instance(void *p_class_userdata, GDExtensionClassInsta
 
 When instantiating an object, first we create a new Sprite2D object, since
 that's the parent of our class. Then we allocate memory for our custom struct
-and call its constructor. We save the pointer to the Godot object in the struct
+and call its constructor. We save the pointer to the Redot object in the struct
 as well like we mentioned earlier.
 
-Then we set our custom struct as the instance data. This will make Godot know
+Then we set our custom struct as the instance data. This will make Redot know
 that the object is an instance of our custom class and properly call our custom
 methods for instance, as well as passing this data back.
 
-Note that we return the Godot object we created, not our custom struct.
+Note that we return the Redot object we created, not our custom struct.
 
 For the ``gdextension_free_instance()`` function, we only call the destructor and free the memory we
-allocated for the custom data. It is not necessary to destruct the Godot object
+allocated for the custom data. It is not necessary to destruct the Redot object
 since that will be taken care of by the engine itself.
 
 ## A demo project
 
 Now that we can create and free our custom object, we should be able to try it
-out in an actual project. For this, you need to open Godot and create a new
+out in an actual project. For this, you need to open Redot and create a new
 project on the ``demo`` folder. The project manager may warn you the folder
 isn't empty if you have compiled the extension before, you can safely ignore
 this warning this time.
@@ -672,7 +672,7 @@ extension and run ``scons``. It should compile quickly since the extension is
 very simple.
 
 Then, create a file called ``gdexample.gdextension`` inside the ``demo`` folder.
-This is a Godot resource that describes the extension, allowing the engine to
+This is a Redot resource that describes the extension, allowing the engine to
 properly load it. Put the following content in this file:
 
 ```
@@ -690,10 +690,10 @@ windows.debug = "res://bin/libgdexample.dll"
 
 As you can see, ``gdexample_library_init()`` is the same name of the function we
 defined in our ``init.c`` file. It is important that the names match because it
-is how Godot calls the entry point of the extension.
+is how Redot calls the entry point of the extension.
 
 We also set the compatibility minimum to 4.2, since we are targeting this
-version. It should still work on later versions. If you are using a later Godot
+version. It should still work on later versions. If you are using a later Redot
 version and rely on the new features, you need to increase this value to a
 version number that has everything you use.
 See [doc_what_is_gdextension_version_compatibility](doc_what_is_gdextension_version_compatibility) for more information.
@@ -707,30 +707,30 @@ well as providing 32-bit and 64-bit binaries.
 You can also add library dependencies and custom icons for your classes in this
 file, but this is out of the scope for this tutorial.
 
-After saving the file, go back to the editor. Godot should automatically load
+After saving the file, go back to the editor. Redot should automatically load
 the extension. Nothing will be seen because our extension only registers a new
 class. To use this class add a ``Node2D`` as a root of the scene. Move it to
 the middle of viewport for better visibility. Then add a new child node to the
 root and in the **Create New Node** dialog search for "GDExample", the name of
-our class, as it should be listed there. If it isn't, it means that Godot didn't
+our class, as it should be listed there. If it isn't, it means that Redot didn't
 load the extension properly, so try restarting the editor and retrace the steps
 to see if anything went missing.
 
 Our custom class is derived from ``Sprite2D``, so it has a **Texture** property
-in the Inspector. Set this to the ``icon.svg`` file that Godot handily created
+in the Inspector. Set this to the ``icon.svg`` file that Redot handily created
 for us when making the project. Save this scene as ``main.tscn`` and run it. You
 may want to set it as the main scene for convenience.
 
 ![Image](img/gdextension_c_running.webp)
 
-Voilà! We have a custom node running in Godot. However, it does not do anything
+Voilà! We have a custom node running in Redot. However, it does not do anything
 and has nothing different than a regular ``Sprite2D`` node. We will fix that next by
 adding custom methods and properties.
 
 ## Custom methods
 
 A common thing in extensions is creating methods for the custom classes and
-exposing those to the Godot API. We are going to create a couple of getters and
+exposing those to the Redot API. We are going to create a couple of getters and
 setters which are need for binding the properties afterwards.
 
 First, let's add the new fields in our struct to hold the values for
@@ -747,7 +747,7 @@ typedef struct
     double amplitude;
     double speed;
     // Metadata.
-    GDExtensionObjectPtr object; // Stores the underlying Godot object.
+    GDExtensionObjectPtr object; // Stores the underlying Redot object.
 } GDExample;
 
 ...
@@ -805,10 +805,10 @@ double gdexample_class_get_speed(const GDExample *self)
 
 ```
 
-To make those simple functions work when called by Godot, we will need some
+To make those simple functions work when called by Redot, we will need some
 wrappers to help us properly convert the data to and from the engine.
 
-First, we will create wrappers for ``ptrcall``. This is what Godot uses when the
+First, we will create wrappers for ``ptrcall``. This is what Redot uses when the
 types of the values are known to be exact, which avoids using Variant. We're
 gonna need two of those: one for the functions that take no arguments and
 return a ``double`` (for the getters) and another for the functions that take a
@@ -824,7 +824,7 @@ void ptrcall_1_float_arg_no_ret(void *method_userdata, GDExtensionClassInstanceP
 
 Those two functions follow the ``GDExtensionClassMethodPtrCall`` type, as
 defined in the ``gdextension_interface.h``. We use ``float`` as a name here
-because in Godot the ``float`` type has double precision, so we keep this
+because in Redot the ``float`` type has double precision, so we keep this
 convention.
 
 Then we implement those functions in the ``api.c`` file:
@@ -846,7 +846,7 @@ void ptrcall_1_float_arg_no_ret(void *method_userdata, GDExtensionClassInstanceP
 
 ```
 
-The ``method_userdata`` argument is a custom value that we give to Godot, in
+The ``method_userdata`` argument is a custom value that we give to Redot, in
 this case we will set as the function pointer for the one we want to call. So
 first we convert it to the function type, then we just call it by passing the
 arguments when needed, or setting the return value.
@@ -868,7 +868,7 @@ types, for example, we would have to create more wrappers. This could be
 automated using some code generation, but this is out of the scope for this
 tutorial.
 
-While the ``ptrcall`` functions are used when types are exact, sometimes Godot cannot know
+While the ``ptrcall`` functions are used when types are exact, sometimes Redot cannot know
 if that's the case (when the call comes from a dynamically typed language, such
 as GDScript). In those situations it uses regular ``call`` functions, so we need to
 provide those as well when binding.
@@ -1319,7 +1319,7 @@ created since they aren't needed anymore.
 :::note
 
 The bind helpers here use the call helpers we created earlier, so do note that
-those call helpers only accept the Godot ``FLOAT`` type (which is equivalent to
+those call helpers only accept the Redot ``FLOAT`` type (which is equivalent to
 ``double`` in C). If you intend to use this for other types, you would need to
 check the type of the arguments and return type and select an appropriate
 function callback. This is avoided here only to keep the example from becoming
@@ -1359,7 +1359,7 @@ are present in the documentation page.
 ## Custom properties
 
 Since we now have the getter and setter for our properties already bound, we can
-move forward to create actual properties that will be displayed in the Godot
+move forward to create actual properties that will be displayed in the Redot
 editor inspector.
 
 Given our extensive setup in the previous section, there are only a few things
@@ -1454,7 +1454,7 @@ void gdexample_class_bind_methods()
 
 ```
 
-If you build the extension with ``scons``, you'll see in the Godot editor the new property shown
+If you build the extension with ``scons``, you'll see in the Redot editor the new property shown
 not only on the documentation page for the custom class but also in the Inspector dock when the
 ``GDExample`` node is selected.
 
@@ -1477,7 +1477,7 @@ void gdexample_class_process(GDExample *self, double delta);
 ```
 
 We'll also add a "private" field to keep track of the time passed in our custom
-struct. This is "private" only in the sense that it won't be bound to the Godot
+struct. This is "private" only in the sense that it won't be bound to the Redot
 API, even though it is public in the C side, given the language lacks access
 modifiers.
 
@@ -1519,7 +1519,7 @@ back to this after the method is properly bound.
 
 Virtual methods are a bit different from the regular bindings. Instead of
 explicitly registering the method itself, we'll register a special function that
-Godot will call to ask if a particular virtual method is implemented in our
+Redot will call to ask if a particular virtual method is implemented in our
 extension. The engine will pass a ``StringName`` as an argument so, following
 the spirit of this tutorial, we'll create a helper function to check if it is
 equal to a C string.
@@ -1590,7 +1590,7 @@ that the return value for the operator is passed as an out reference, this is a
 common thing in the API.
 
 Let's go back to the ``gdexample.h`` file and add a couple of functions that
-will be used as the callbacks for the Godot API:
+will be used as the callbacks for the Redot API:
 
 ```c
 void *gdexample_class_get_virtual_with_data(void *p_class_userdata, GDExtensionConstStringNamePtr p_name);
@@ -1599,10 +1599,10 @@ void gdexample_class_call_virtual_with_data(GDExtensionClassInstancePtr p_instan
 ```
 
 There are actually two ways of registering virtual methods. Only one has the
-``get`` part, in which you give Godot a properly crafted function pointer which
+``get`` part, in which you give Redot a properly crafted function pointer which
 will be called. For this we would need to create another helper for each virtual
 method, something that is not very convenient. Instead, we use the second method
-which allows us to return any data, and then Godot will call a second callback
+which allows us to return any data, and then Redot will call a second callback
 and give us back this data along with the call information. We can simply give
 our own function pointer as custom data and then have a single callback for all
 virtual methods. Although in this example we will only use it for one method,
@@ -1673,7 +1673,7 @@ the demo project again, the ``_process()`` function will be called. You just won
 be able to tell since the function itself does nothing visible. We will solve
 this now by making the custom node move following a pattern.
 
-In order to make our node do stuff, we'll need to call Godot methods. Not only
+In order to make our node do stuff, we'll need to call Redot methods. Not only
 the GDExtension API functions as we've being doing so far, but actual engine
 methods, as we would do with scripting. This naturally requires some extra setup.
 
@@ -1702,7 +1702,7 @@ typedef struct
 
 ```
 
-The ``REAL_T_IS_DOUBLE`` define is only needed if your Godot version was built
+The ``REAL_T_IS_DOUBLE`` define is only needed if your Redot version was built
 with double precision support, which is not the default.
 
 Now, in the ``api.h`` file, we'll add few things to the API structs, including a
@@ -1731,7 +1731,7 @@ struct API
 
 ```
 
-Then in the ``api.c`` file we can grab the function pointers from Godot:
+Then in the ``api.c`` file we can grab the function pointers from Redot:
 
 ```
 void load_api(GDExtensionInterfaceGetProcAddress p_get_proc_address)
@@ -1799,8 +1799,8 @@ since this is where it was registered, even though we're going to use it in a
 ``Sprite2D``, a derived class.
 
 The seemingly random number for getting the bind is actually a hash of the
-method signature. This allows Godot to match the method you're requesting even
-if in a future Godot version this signature changes, by providing a
+method signature. This allows Redot to match the method you're requesting even
+if in a future Redot version this signature changes, by providing a
 compatibility method that matches what you're asking for. This is one of the
 systems that allow the engine to load extensions made for previous versions. You
 can get the value of this hash from the ``extension_api.json`` file.
@@ -1847,7 +1847,7 @@ call the ``set_position()`` method via the bind we acquired previously.
 
 Since nothing here allocates any memory, there's not a need to cleanup.
 
-Now we can build the extension again and reopen Godot. Even in the editor you'll
+Now we can build the extension again and reopen Redot. Even in the editor you'll
 see the custom sprite moving.
 
 ![Image](img/gdextension_c_moving_sprite.gif)
@@ -1976,7 +1976,7 @@ typedef struct
 We first set the size of Variant together with the size of Vector2 that we added
 before. Then we use it to create an opaque struct that is enough to hold the
 Variant data. Again, we set the size for double precision builds as a fallback,
-since by the official Godot builds use single precision.
+since by the official Redot builds use single precision.
 
 The ``emit_signal()`` function will be called with two arguments. The first is
 the name of the signal to be emitted and the second is the argument we're

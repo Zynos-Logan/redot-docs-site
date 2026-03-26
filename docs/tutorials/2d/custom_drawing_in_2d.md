@@ -5,7 +5,7 @@ import TabItem from "@theme/TabItem";
 
 ## Introduction
 
-Godot has nodes to draw sprites, polygons, particles, text, and many other
+Redot has nodes to draw sprites, polygons, particles, text, and many other
 common game development needs. However, if you need something specific
 not covered with the standard nodes you can make any 2D node (for example,
 [Control ](class_Control) or [Node2D ](class_Node2D)-based)
@@ -136,7 +136,7 @@ public partial class MyNode2D : Node2D
 
 </Tabs>
 
-To see it in action, you can set the texture to be the Godot icon on the
+To see it in action, you can set the texture to be the Redot icon on the
 editor by dragging and dropping the default ``icon.svg`` from the
 ``FileSystem`` tab to the Texture property on the ``Inspector`` tab.
 When changing the ``Texture`` property value while the previous script is
@@ -272,7 +272,7 @@ public override void _Draw()
 
 ## Antialiased drawing
 
-Godot offers method parameters in [draw_line](class_CanvasItem_method_draw_line)
+Redot offers method parameters in [draw_line](class_CanvasItem_method_draw_line)
 to enable antialiasing, but not all custom drawing methods offer this ``antialiased``
 parameter.
 
@@ -300,8 +300,8 @@ on both GDScript and C#. See
 
 ## Example 1: drawing a custom shape
 
-We will now use the custom drawing functionality of the Godot Engine to draw
-something that Godot doesn't provide functions for. We will recreate the Godot
+We will now use the custom drawing functionality of the Redot Engine to draw
+something that Redot doesn't provide functions for. We will recreate the Redot
 logo but with code- only using drawing functions.
 
 You will have to code a function to perform this and draw it yourself.
@@ -380,14 +380,14 @@ public partial class MyNode2D : Node2D
 
 </Tabs>
 
-This format, while compact, is not the one that Godot understands to
+This format, while compact, is not the one that Redot understands to
 draw a polygon. In a different scenario we could have to load
 these coordinates from a file or calculate the positions while the
 application is running, so some transformation may be needed.
 
 To transform these coordinates into the right format, we will create a new
 method ``float_array_to_Vector2Array()``. Then we will override the ``_ready()``
-function, which Godot will call only once -at the start of the execution-
+function, which Redot will call only once -at the start of the execution-
 to load those coordinates into a variable:
 
 <Tabs>
@@ -451,9 +451,9 @@ like this:
 ```gdscript
 func _draw():
     # We are going to paint with this color.
-    var godot_blue : Color = Color("478cbf")
+    var Redot_blue : Color = Color("478cbf")
     # We pass the PackedVector2Array to draw the shape.
-    draw_polygon(head, [ godot_blue ])
+    draw_polygon(head, [ Redot_blue ])
 
 ```
 
@@ -465,9 +465,9 @@ func _draw():
 public override void _Draw()
 {
     // We are going to paint with this color.
-    Color godotBlue = new Color("478cbf");
+    Color RedotBlue = new Color("478cbf");
     // We pass the array of Vector2 to draw the shape.
-    DrawPolygon(_head, [godotBlue]);
+    DrawPolygon(_head, [RedotBlue]);
 }
 
 ```
@@ -493,7 +493,7 @@ one** in order to have a closed shape.
 
 Drawing a sequence of connected lines that don't close down to form a polygon
 is very similar to the previous method. We will use a connected set of lines to
-draw Godot's logo mouth.
+draw Redot's logo mouth.
 
 First, we will define the list of coordinates that form the mouth shape, like this:
 
@@ -581,9 +581,9 @@ draw the line, like this:
 func _draw():
     # We will use white to draw the line.
     var white : Color = Color.WHITE
-    var godot_blue : Color = Color("478cbf")
+    var Redot_blue : Color = Color("478cbf")
 
-    draw_polygon(head, [ godot_blue ])
+    draw_polygon(head, [ Redot_blue ])
 
     # We draw the while line on top of the previous shape.
     draw_polyline(mouth, white, _mouth_width)
@@ -599,9 +599,9 @@ public override void _Draw()
 {
     // We will use white to draw the line.
     Color white = Colors.White;
-    Color godotBlue = new Color("478cbf");
+    Color RedotBlue = new Color("478cbf");
 
-    DrawPolygon(_head, [godotBlue]);
+    DrawPolygon(_head, [RedotBlue]);
 
     // We draw the while line on top of the previous shape.
     DrawPolyline(_mouth, white, _mouthWidth);
@@ -648,10 +648,10 @@ its radius, and the third is its color:
 ```gdscript
 func _draw():
     var white : Color = Color.WHITE
-    var godot_blue : Color = Color("478cbf")
+    var Redot_blue : Color = Color("478cbf")
     var grey : Color = Color("414042")
 
-    draw_polygon(head, [ godot_blue ])
+    draw_polygon(head, [ Redot_blue ])
     draw_polyline(mouth, white, _mouth_width)
 
     # Four circles for the 2 eyes: 2 white, 2 grey.
@@ -670,10 +670,10 @@ func _draw():
 public override void _Draw()
 {
     Color white = Colors.White;
-    Color godotBlue = new Color("478cbf");
+    Color RedotBlue = new Color("478cbf");
     Color grey = new Color("414042");
 
-    DrawPolygon(_head, [godotBlue]);
+    DrawPolygon(_head, [RedotBlue]);
     DrawPolyline(_mouth, white, _mouthWidth);
 
     // Four circles for the 2 eyes: 2 white, 2 grey.
@@ -712,10 +712,10 @@ like this:
 ```gdscript
 func _draw():
     var white : Color = Color.WHITE
-    var godot_blue : Color = Color("478cbf")
+    var Redot_blue : Color = Color("478cbf")
     var grey : Color = Color("414042")
 
-    draw_polygon(head, [ godot_blue ])
+    draw_polygon(head, [ Redot_blue ])
     draw_polyline(mouth, white, _mouth_width)
     draw_circle(Vector2(42.479, 65.4825), 9.3905, white)
     draw_circle(Vector2(85.524, 65.4825), 9.3905, white)
@@ -735,10 +735,10 @@ func _draw():
 public override void _Draw()
 {
     Color white = Colors.White;
-    Color godotBlue = new Color("478cbf");
+    Color RedotBlue = new Color("478cbf");
     Color grey = new Color("414042");
 
-    DrawPolygon(_head, [godotBlue]);
+    DrawPolygon(_head, [RedotBlue]);
     DrawPolyline(_mouth, white, _mouthWidth);
     DrawCircle(new Vector2(42.479f, 65.4825f), 9.3905f, white);
     DrawCircle(new Vector2(85.524f, 65.4825f), 9.3905f, white);
@@ -768,7 +768,7 @@ the [draw_multiline ](class_CanvasItem_method_draw_multiline) method.
 
 While using the [Label ](class_Label) Node is the most common way to add
 text to your application, the low-level `_draw` function includes functionality
-to add text to your custom Node drawing. We will use it to add the name "GODOT"
+to add text to your custom Node drawing. We will use it to add the name "Redot"
 under the robot head.
 
 We will use the [draw_string ](class_CanvasItem_method_draw_string) method
@@ -783,10 +783,10 @@ var default_font : Font = ThemeDB.fallback_font;
 
 func _draw():
     var white : Color = Color.WHITE
-    var godot_blue : Color = Color("478cbf")
+    var Redot_blue : Color = Color("478cbf")
     var grey : Color = Color("414042")
 
-    draw_polygon(head, [ godot_blue ])
+    draw_polygon(head, [ Redot_blue ])
     draw_polyline(mouth, white, _mouth_width)
     draw_circle(Vector2(42.479, 65.4825), 9.3905, white)
     draw_circle(Vector2(85.524, 65.4825), 9.3905, white)
@@ -794,8 +794,8 @@ func _draw():
     draw_circle(Vector2(84.626, 66.008), 6.246, grey)
     draw_line(Vector2(64.273, 60.564), Vector2(64.273, 74.349), white, 5.8)
 
-    # Draw GODOT text below the logo with the default font, size 22.
-    draw_string(default_font, Vector2(20, 130), "GODOT",
+    # Draw Redot text below the logo with the default font, size 22.
+    draw_string(default_font, Vector2(20, 130), "Redot",
                 HORIZONTAL_ALIGNMENT_CENTER, 90, 22)
 
 ```
@@ -810,10 +810,10 @@ private Font _defaultFont = ThemeDB.FallbackFont;
 public override void _Draw()
 {
     Color white = Colors.White;
-    Color godotBlue = new Color("478cbf");
+    Color RedotBlue = new Color("478cbf");
     Color grey = new Color("414042");
 
-    DrawPolygon(_head, [godotBlue]);
+    DrawPolygon(_head, [RedotBlue]);
     DrawPolyline(_mouth, white, _mouthWidth);
     DrawCircle(new Vector2(42.479f, 65.4825f), 9.3905f, white);
     DrawCircle(new Vector2(85.524f, 65.4825f), 9.3905f, white);
@@ -822,8 +822,8 @@ public override void _Draw()
     DrawLine(new Vector2(64.273f, 60.564f), new Vector2(64.273f, 74.349f),
              white, 5.8f);
 
-    // Draw GODOT text below the logo with the default font, size 22.
-    DrawString(_defaultFont, new Vector2(20f, 130f), "GODOT",
+    // Draw Redot text below the logo with the default font, size 22.
+    DrawString(_defaultFont, new Vector2(20f, 130f), "Redot",
                HorizontalAlignment.Center, 90, 22);
 }
 

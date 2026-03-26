@@ -2,7 +2,7 @@
 # Signed distance field global illumination (SDFGI)
 
 Signed distance field global illumination (SDFGI) is a novel technique available
-in Godot 4.0. It provides semi-real-time global illumination that scales to any
+in Redot 4.0. It provides semi-real-time global illumination that scales to any
 world size and works with procedurally generated levels.
 
 SDFGI supports dynamic lights, but *not* dynamic occluders or dynamic emissive surfaces.
@@ -11,7 +11,7 @@ Therefore, SDFGI provides better real-time ability than
 [VoxelGI ](doc_using_voxel_gi).
 
 From a performance standpoint, SDFGI is one of the most demanding global illumination
-techniques in Godot. Like with VoxelGI, there are still many settings available to tweak
+techniques in Redot. Like with VoxelGI, there are still many settings available to tweak
 its performance requirements at the cost of quality.
 
 :::important
@@ -25,7 +25,7 @@ Compatibility renderers.
 
 Not sure if SDFGI is suited to your needs?
 See [doc_introduction_to_global_illumination_comparison](doc_introduction_to_global_illumination_comparison)
-for a comparison of GI techniques available in Godot 4.
+for a comparison of GI techniques available in Redot 4.
 
 :::
 
@@ -41,7 +41,7 @@ for a comparison of GI techniques available in Godot 4.
 
 ## Setting up SDFGI
 
-In Godot, SDFGI is the global illumination technique with the fewest required
+In Redot, SDFGI is the global illumination technique with the fewest required
 steps to enable:
 
 1. Make sure your MeshInstance nodes have their **Global Illumination &gt; Mode**

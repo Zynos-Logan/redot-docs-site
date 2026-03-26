@@ -4,21 +4,21 @@
 ## Introduction
 
 In a project, there may be times when text needs to be created as part of a 3D
-scene and not just in the HUD. Godot provides 2 methods to do this: the
+scene and not just in the HUD. Redot provides 2 methods to do this: the
 Label3D node and the TextMesh *resource* for a MeshInstance3D node.
 
-Additionally, Godot makes it possible to position Control nodes according to a
+Additionally, Redot makes it possible to position Control nodes according to a
 3D point's position on the camera. This can be used as an alternative to "true"
 3D text in situations where Label3D and TextMesh aren't flexible enough.
 
 :::info
 
 You can see 3D text in action using the
-[3D Labels and Texts demo project](https://github.com/godotengine/godot-demo-projects/tree/master/3d/labels_and_texts)_.
+[3D Labels and Texts demo project](https://github.com/redot-engine/redot-demo-projects/tree/master/3d/labels_and_texts)_.
 
 This page does **not** cover how to display a GUI scene within a 3D
 environment. For information on how to achieve that, see the
-[GUI in 3D](https://github.com/godotengine/godot-demo-projects/tree/master/viewport/gui_in_3d)_
+[GUI in 3D](https://github.com/redot-engine/redot-demo-projects/tree/master/viewport/gui_in_3d)_
 demo project.
 
 :::
@@ -123,7 +123,7 @@ return value of [unproject_position](class_Camera3D_method_unproject_position)
 method on a Camera3D node in a script's ``_process()`` function. This return value
 should then be used to set the ``position`` property of a Control node.
 
-See the [3D waypoints](https://github.com/godotengine/godot-demo-projects/tree/master/3d/waypoints)_
+See the [3D waypoints](https://github.com/redot-engine/redot-demo-projects/tree/master/3d/waypoints)_
 demo for an example of this.
 
 ### Advantages

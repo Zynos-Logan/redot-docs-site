@@ -277,7 +277,7 @@ this might look familiar:
 ![Image](img/bezier_cubic_handles.png)
 
 This is how graphics software presents Bezier curves to the users, and how they
-work and look in Godot.
+work and look in Redot.
 
 ## Curve2D, Curve3D, Path and Path2D
 

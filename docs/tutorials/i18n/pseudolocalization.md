@@ -7,7 +7,7 @@ When creating a game, the process of localization usually starts when developmen
 has finished. This means that translations aren't available during development
 for testing whether the project is internationalized properly.
 
-Godot offers pseudolocalization as a way to test how robust the project is
+Redot offers pseudolocalization as a way to test how robust the project is
 when it comes to locale changes. Pseudolocalization simulates changes that
 might take place during localization. This way, any issues regarding
 internationalization can be recognized early on during development.
@@ -15,7 +15,7 @@ internationalization can be recognized early on during development.
 :::info
 
 You can see how pseudolocalization works in action using the
-[Pseudolocalizaton demo project ](https://github.com/godotengine/godot-demo-projects/tree/master/gui/pseudolocalization)_.
+[Pseudolocalizaton demo project ](https://github.com/redot-engine/redot-demo-projects/tree/master/gui/pseudolocalization)_.
 
 :::
 
@@ -32,7 +32,7 @@ Pseudolocalization can also be [toggled at runtime from a script ](doc_pseudoloc
 
 ## Pseudolocalization configurations
 
-Pseudolocalization in Godot can be set up according to the specific use case of the
+Pseudolocalization in Redot can be set up according to the specific use case of the
 project. Here are the pseudolocalization properties that can be configured through
 project settings:
 

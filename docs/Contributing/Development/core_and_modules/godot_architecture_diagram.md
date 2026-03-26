@@ -1,7 +1,7 @@
 
-# Godot's architecture diagram
+# Redot's architecture diagram
 
-The following diagram describes the architecture used by Godot, from the
+The following diagram describes the architecture used by Redot, from the
 core components down to the abstracted drivers, via the scene
 structure and the servers.
 

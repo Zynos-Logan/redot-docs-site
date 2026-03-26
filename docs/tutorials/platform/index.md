@@ -4,7 +4,7 @@ This section contains tutorials and documentation about platform in Redot Engine
 
 ## Articles
 
-- [Console support in Godot](consoles)
+- [Console support in Redot](consoles)
 
 ## Subcategories
 

@@ -1,20 +1,20 @@
 
-# Custom Godot servers
+# Custom Redot servers
 
 ## Introduction
 
-Godot implements multi-threading as servers. Servers are daemons which
+Redot implements multi-threading as servers. Servers are daemons which
 manage data, process it, and push the result. Servers implement the
 mediator pattern which interprets resource ID and process data for the
 engine and other modules. In addition, the server claims ownership for
 its RID allocations.
 
-This guide assumes the reader knows how to create C++ modules and Godot
+This guide assumes the reader knows how to create C++ modules and Redot
 data types. If not, refer to [doc_custom_modules_in_cpp](doc_custom_modules_in_cpp).
 
 ### References
 
-- [Why does Godot use servers and RIDs?](https://godotengine.org/article/why-does-godot-use-servers-and-rids)
+- [Why does Redot use servers and RIDs?](https://godotengine.org/article/why-does-godot-use-servers-and-rids)
 - [Singleton pattern](https://en.wikipedia.org/wiki/Singleton_pattern)
 - [Mediator pattern](https://en.wikipedia.org/wiki/Mediator_pattern)
 
@@ -27,7 +27,7 @@ data types. If not, refer to [doc_custom_modules_in_cpp](doc_custom_modules_in_c
 - Adding a custom VoIP protocol.
 - And more...
 
-## Creating a Godot server
+## Creating a Redot server
 
 At minimum, a server must have a static instance, a sleep timer, a thread loop,
 an initialization state and a cleanup procedure.
@@ -69,7 +69,7 @@ protected:
 private:
     uint64_t counter;
     RID_Owner<InfiniteBus> bus_owner;
-    // https://github.com/godotengine/godot/blob/master/core/templates/rid.h
+    // https://github.com/redot-engine/redot-engine/blob/master/core/templates/rid.h
     Set<RID> buses;
     void _emit_occupy_room(uint64_t room, RID rid);
 
@@ -196,7 +196,7 @@ RID HilbertHotel::create_bus() {
     return ret;
 }
 
-// https://github.com/godotengine/godot/blob/master/core/templates/rid.h
+// https://github.com/redot-engine/redot-engine/blob/master/core/templates/rid.h
 bool HilbertHotel::delete_bus(RID id) {
     if (bus_owner.owns(id)) {
         lock();
@@ -263,7 +263,7 @@ const uint64_t PRIME[225] = {
 
 ## Custom managed resource data
 
-Godot servers implement a mediator pattern. All data types inherit ``RID_Data``.
+Redot servers implement a mediator pattern. All data types inherit ``RID_Data``.
 `RID_Owner<MyRID_Data>` owns the object when ``make_rid`` is called. During debug mode only,
 RID_Owner maintains a list of RIDs. In practice, RIDs are similar to writing
 object-oriented C code.
@@ -306,7 +306,7 @@ public:
 ### References
 
 - [RID](class_rid)
-- [core/templates/rid.h](https://github.com/godotengine/godot/blob/master/core/templates/rid.h)
+- [core/templates/rid.h](https://github.com/redot-engine/redot-engine/blob/master/core/templates/rid.h)
 
 ## Registering the class in GDScript
 
@@ -314,9 +314,9 @@ Servers are allocated in ``register_types.cpp``. The constructor sets the static
 instance and ``init()`` creates the managed thread; ``unregister_types.cpp``
 cleans up the server.
 
-Since a Godot server class creates an instance and binds it to a static singleton,
+Since a Redot server class creates an instance and binds it to a static singleton,
 binding the class might not reference the correct instance. Therefore, a dummy
-class must be created to reference the proper Godot server.
+class must be created to reference the proper Redot server.
 
 In ``register_server_types()``, ``Engine::get_singleton()-&gt;add_singleton``
 is used to register the dummy class in GDScript.
@@ -360,7 +360,7 @@ void unregister_hilbert_hotel_types() {
 
 ```
 
-- [servers/register_server_types.cpp](https://github.com/godotengine/godot/blob/master/servers/register_server_types.cpp)
+- [servers/register_server_types.cpp](https://github.com/redot-engine/redot-engine/blob/master/servers/register_server_types.cpp)
 
 ### Bind methods
 
@@ -462,7 +462,7 @@ to execute the desired behavior. The queue will be flushed whenever either
 
 ### References:
 
-- [core/object/message_queue.cpp](https://github.com/godotengine/godot/blob/master/core/object/message_queue.cpp)
+- [core/object/message_queue.cpp](https://github.com/redot-engine/redot-engine/blob/master/core/object/message_queue.cpp)
 
 ## Summing it up
 

@@ -7,11 +7,11 @@ GPU.
 
 ![Image](img/pipeline_compilations_shader_compilation_diagram.webp)
 
-   Shaders and materials in Godot go through several steps before they can be run
+   Shaders and materials in Redot go through several steps before they can be run
    by the GPU.
 
 In more precise terms, *shader compilation* involves the translation of the GLSL
-code that Godot generates into an intermediate format that can be shared across
+code that Redot generates into an intermediate format that can be shared across
 systems (such as SPIR-V when using Vulkan). However, this format can't be used
 by the GPU directly.
 
@@ -29,19 +29,19 @@ step can only be performed on the user's system and it is very tough to share
 the result between users unless they have the exact same hardware and driver
 version.
 
-Before Godot 4.4, there was no solution to pipeline compilation other than
+Before Redot 4.4, there was no solution to pipeline compilation other than
 generating them when an object shows up inside the camera's view, leading to the
 infamous *shader stutter* or hitches that only occur during the first
-playthrough. **With Godot 4.4, new mechanisms have been introduced to mitigate
+playthrough. **With Redot 4.4, new mechanisms have been introduced to mitigate
 stutters from pipeline compilation.**
 
-- **Ubershaders**: Godot makes use of specialization constants, a feature that
+- **Ubershaders**: Redot makes use of specialization constants, a feature that
   allows the driver to optimize a pipeline's code around a set of parameters
   such as lighting, shadow quality, etc. Specialization constants are used to
   optimize a shader by limiting unnecessary features. Changing a specialization
   constant requires recompiling the pipeline. Ubershaders are a special version
   of the shader that are able to change these constants while rendering, which
-  means Godot can precompile just one pipeline ahead of time and compile the
+  means Redot can precompile just one pipeline ahead of time and compile the
   more optimized versions on the background during gameplay. This reduces the
   amount of pipelines that need to be created significantly.
 - **Pipeline precompilation**: By using ubershaders, the engine can precompile
@@ -50,7 +50,7 @@ stutters from pipeline compilation.**
   process, pipelines can even be precompiled in multiple background threads if
   possible during loading screens or even gameplay.
 
-Starting in Godot 4.4, Godot will detect which pipelines are needed and
+Starting in Redot 4.4, Redot will detect which pipelines are needed and
 precompile them at load-time. This detection system is mostly automatic, but it
 relies on the RenderingServer seeing evidence of all shaders, meshes, or
 rendering features at load-time. For example, if you load a mesh and shader
@@ -61,14 +61,14 @@ pipeline recompilations.
 
 ## Pipeline precompilation monitors
 
-Compiling pipelines ahead of time is the main mechanism Godot uses to mitigate
+Compiling pipelines ahead of time is the main mechanism Redot uses to mitigate
 shader stutters, but it's not a perfect solution. Being aware of the situations
 that can lead to pipeline stutters can be very helpful, and the workarounds are
 pretty straightforward compared to previous versions. These workarounds may be
-less necessary over time with future versions of Godot as more detection
+less necessary over time with future versions of Redot as more detection
 techniques are implemented.
 
-The Godot debugger offers monitors for tracking the amount of pipelines created
+The Redot debugger offers monitors for tracking the amount of pipelines created
 by the game and the step that triggered their compilation. You can keep an eye
 on these monitors as the game runs to identify potential sources of shader
 stutters without having to wipe your driver cache every time you wish to test.
@@ -108,9 +108,9 @@ and pipelines may be erased and recreated during gameplay.
   ubershader was not precompiled ahead of time. The engine is unable to
   precompile this pipeline due to triggering a case that hasn't been covered
   yet or a modification that was done to the engine's code. Leads to stutters
-  during gameplay. This is identical to Godot versions before 4.4. If you
+  during gameplay. This is identical to Redot versions before 4.4. If you
   see compilations here, please
-  `let the developers know &lt;https://github.com/godotengine/godot/issues&gt;`
+  `let the developers know &lt;https://github.com/redot-engine/redot-engine/issues&gt;`
   as this should never happen with the Ubershader system.
   Make sure to attach a minimal reproduction project when doing so.
 - **Specialization**: Compiled in the background during gameplay to optimize the
@@ -119,7 +119,7 @@ and pipelines may be erased and recreated during gameplay.
 
 ## Pipeline precompilation features
 
-Godot offers a lot of rendering features that are not necessarily used by every
+Redot offers a lot of rendering features that are not necessarily used by every
 game. Unfortunately, pipeline precompilation can't know ahead of time if a
 particular feature is used by a project. Some of these features can only be
 detected when a user adds a node to the scene or toggles a particular setting in
@@ -179,7 +179,7 @@ through a script when a player does an action. Even if the scene is preloaded,
 the engine might be unable to precompile the pipelines until the effect is added
 to the scene at least once.
 
-Luckily, it's possible for Godot 4.4 and later to
+Luckily, it's possible for Redot 4.4 and later to
 precompile these pipelines as long as the scene is instantiated at least once on
 the scene, even if it's completely invisible or outside of the camera's view.
 

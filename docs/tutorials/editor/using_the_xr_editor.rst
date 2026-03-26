@@ -3,12 +3,12 @@
 Using the XR editor
 ===================
 
-In 2024, we introduced the `Godot XR editor <https://godotengine.org/article/godot-editor-horizon-store-early-access-release/>`__,
-a version of the Godot editor **designed to run natively on XR devices**, enabling the creation,
+In 2024, we introduced the `Redot XR editor <https://godotengine.org/article/godot-editor-horizon-store-early-access-release/>`__,
+a version of the Redot editor **designed to run natively on XR devices**, enabling the creation,
 development and export of 2D, 3D, and **XR** apps and games directly on device.
 
-The app can be downloaded from the `Meta Horizon Store <https://www.meta.com/experiences/godot-game-engine/7713660705416473/>`__,
-or from the `Godot download page <https://godotengine.org/download/preview/>`__.
+The app can be downloaded from the `Meta Horizon Store <https://www.meta.com/experiences/Redot-game-engine/7713660705416473/>`__,
+or from the `Redot download page <https://redotengine.org/download/preview/>`__.
 
 .. note::
 
@@ -17,7 +17,7 @@ or from the `Godot download page <https://godotengine.org/download/preview/>`__.
 XR devices support
 ------------------
 
-For now, the Godot XR editor is only available for the following `Meta Quest <https://www.meta.com/quest/>`__
+For now, the Redot XR editor is only available for the following `Meta Quest <https://www.meta.com/quest/>`__
 devices running **Meta Horizon OS v69 or higher**:
 
  - Meta Quest 3
@@ -35,7 +35,7 @@ Runtime Permissions
   Enables the editor to create, import, and read project files from any file locations on the device.
   Without this permission, the editor is still functional, but has limited access to the device's files and directories.
 - `REQUEST_INSTALL_PACKAGES <https://developer.android.com/reference/android/Manifest.permission#REQUEST_INSTALL_PACKAGES>`__: Enables the editor to install exported project APKs.
-- `RECORD_AUDIO <https://developer.android.com/reference/android/Manifest.permission#RECORD_AUDIO>`__: Requested when the `audio/driver/enable_input <https://docs.godotengine.org/en/stable/classes/class_projectsettings.html#class-projectsettings-property-audio-driver-enable-input>`__ project setting is enabled.
+- `RECORD_AUDIO <https://developer.android.com/reference/android/Manifest.permission#RECORD_AUDIO>`__: Requested when the `audio/driver/enable_input <https://docs.redotengine.org/en/stable/classes/class_projectsettings.html#class-projectsettings-property-audio-driver-enable-input>`__ project setting is enabled.
 - `USE_SCENE <https://developers.meta.com/horizon/documentation/native/native-spatial-data-perm/>`__: Required to enable and access the scene APIs when running an XR project.
 
 Tips & Tricks
@@ -44,22 +44,22 @@ Tips & Tricks
 **Input**
 
 - For the best experience and high level of productivity, connecting a bluetooth keyboard & mouse is recommended to interact with the XR editor.
-  The XR editor supports all of the `usual shortcuts and key mappings <https://docs.godotengine.org/en/stable/tutorials/editor/default_key_mapping.html>`__.
+  The XR editor supports all of the `usual shortcuts and key mappings <https://docs.redotengine.org/en/stable/tutorials/editor/default_key_mapping.html>`__.
 - When interacting with tracked controllers or tracked hands, you can toggle on the
-  `interface/touchscreen/enable_long_press_as_right_click <https://docs.godotengine.org/en/stable/classes/class_editorsettings.html#class-editorsettings-property-interface-touchscreen-enable-long-press-as-right-click>`__ editor setting to enable right-click by long press.
+  `interface/touchscreen/enable_long_press_as_right_click <https://docs.redotengine.org/en/stable/classes/class_editorsettings.html#class-editorsettings-property-interface-touchscreen-enable-long-press-as-right-click>`__ editor setting to enable right-click by long press.
 - When interacting with tracked controllers or tracked hands, you can increase the size of the scrollbar using the
-  `interface/touchscreen/increase_scrollbar_touch_area <https://docs.godotengine.org/en/stable/classes/class_editorsettings.html#class-editorsettings-property-interface-touchscreen-increase-scrollbar-touch-area>`__ editor setting.
+  `interface/touchscreen/increase_scrollbar_touch_area <https://docs.redotengine.org/en/stable/classes/class_editorsettings.html#class-editorsettings-property-interface-touchscreen-increase-scrollbar-touch-area>`__ editor setting.
 
 **Multi-tasking**
 
 - `Theater View <https://www.meta.com/blog/quest/meta-quest-v67-update-new-window-layout-creator-content-horizon-feed/>`__ can be used to fullscreen the *Editor window*.
 - Enable `Seamless Multitasking <https://www.uploadvr.com/seamless-multitasking-experimental-quest/>`__, available in the Quest *Experimental Settings*,
   to enable the ability to quickly transition between a running XR project and the *Editor window*.
-- When developing a non-XR project, the Godot editor app icon will provide the ability to switch between the *Editor window* and the *Play window* when the latter is active, using Quest's *App menu* feature.
+- When developing a non-XR project, the Redot editor app icon will provide the ability to switch between the *Editor window* and the *Play window* when the latter is active, using Quest's *App menu* feature.
 - When developing and running an XR project, you can bring back the *Editor window* by:
 
   - Pressing on the *Meta* button to invoke the menu bar
-  - Clicking on the Godot editor app icon to summon the *App menu*, and select the *Editor window* tile.
+  - Clicking on the Redot editor app icon to summon the *App menu*, and select the *Editor window* tile.
 
 **Projects sync**
 
@@ -81,7 +81,7 @@ Limitations & known issues
 Here are the known limitations and issues of the XR editor:
 
 - No Meta Quest 2 support due to the limited amount of memory on the device. 
-  However advanced users can grab the XR editor APK from the `download page <https://godotengine.org/download/preview/>`__
+  However advanced users can grab the XR editor APK from the `download page <https://redotengine.org/download/preview/>`__
   and sideload it onto their device if they desire to do so.
 - No gradle build support.
 - No support for Android plugins as they require gradle build support. GDExtension plugins are supported.

@@ -59,7 +59,7 @@ Demo project
 ------------
 
 The information presented on this page was used to create a demo project that can be found
-`here <https://github.com/godotengine/godot-demo-projects/tree/master/xr/openxr_hand_tracking_demo>`_.
+`here <https://github.com/redot-engine/redot-demo-projects/tree/master/xr/openxr_hand_tracking_demo>`_.
 
 
 The Hand Tracking API
@@ -72,7 +72,7 @@ even if the user is holding a controller.
 This includes SteamVR, Meta Quest (currently native only but Meta link support is likely coming),
 and hopefully soon others as well.
 
-The hand tracking implementation in Godot has been standardized around the Godot Humanoid Skeleton
+The hand tracking implementation in Redot has been standardized around the Redot Humanoid Skeleton
 and works both in OpenXR and WebXR. The instructions below will thus work in both environments.
 
 In order to use the hand tracking API with OpenXR you first need to enable it.
@@ -123,10 +123,10 @@ Rigged hand mesh
 ~~~~~~~~~~~~~~~~
 
 In order to display our hand we need a hand mesh that is properly rigged and skinned.
-For this Godot uses the hand bone structure as defined for the :ref:`Godot Humanoid <class_skeletonprofilehumanoid>`
+For this Redot uses the hand bone structure as defined for the :ref:`Redot Humanoid <class_skeletonprofilehumanoid>`
 but optionally supporting an extra tip bone for each finger.
 
-The `OpenXR hand tracking demo <https://github.com/godotengine/godot-demo-projects/tree/master/xr/openxr_hand_tracking_demo>`_
+The `OpenXR hand tracking demo <https://github.com/redot-engine/redot-demo-projects/tree/master/xr/openxr_hand_tracking_demo>`_
 contains example glTF files of properly rigged hands.
 
 We will be using those here and add them as a child to our ``XRNode3D`` node.
@@ -156,7 +156,7 @@ The hand tracking data source
 -----------------------------
 
 This is an OpenXR extension that provides information about the source of the hand tracking data.
-At this moment only a few runtimes implement it but if it is available, Godot will activate it.
+At this moment only a few runtimes implement it but if it is available, Redot will activate it.
 
 If this extension is not supported and thus unknown is returned, you can make the following assumptions:
 

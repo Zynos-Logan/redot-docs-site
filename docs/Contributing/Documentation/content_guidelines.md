@@ -11,7 +11,7 @@ We want to achieve two goals:
    them to learn from the docs.
 2. **Write a complete reference manual**. Our goal here is not to teach
    programming fundamentals. Instead, our goal is to provide a reference for how
-   Godot's features work.
+   Redot's features work.
 
 ## Guidelines and principles
 
@@ -23,12 +23,12 @@ Still, we should strive to achieve the two goals listed above.
 
 **A feature doesn't exist unless it is documented**. If a user can't find
 information about a feature and how it works, it doesn't exist to them. We
-should ensure that we cover everything Godot does.
+should ensure that we cover everything Redot does.
 
 :::note
 
 When adding or updating an engine feature, the documentation team needs to
-know about it. Contributors should open an issue on the `godot-docs` repository
+know about it. Contributors should open an issue on the `Redot-docs` repository
 when their work gets merged and requires documentation.
 
 :::
@@ -51,7 +51,7 @@ navigation cumbersome. Try to keep headings five words long or less.
 
 :::
 
-If the page assumes specific knowledge of other Godot features, mention it and
+If the page assumes specific knowledge of other Redot features, mention it and
 link to the corresponding documentation. For instance, a page about physics
 may use signals, in which case you could note that the signals tutorial is a
 prerequisite. You may also link to other websites for prerequisites beyond the
@@ -88,7 +88,7 @@ practice explaining the feature before writing about it.
 :::note
 
 Programming fundamentals are a prerequisite for using a complex engine like
-Godot. Talking about variables, functions, or classes is acceptable. But we
+Redot. Talking about variables, functions, or classes is acceptable. But we
 should favor plain language over specific terminology like
 "metaprogramming". If you need to use precise terms, be sure to define them.
 

@@ -25,7 +25,7 @@ as a base to develop and test the plugins.
 The first thing you need for the editor to identify a new plugin is to
 create two files: a ``plugin.cfg`` for configuration and a tool script with the
 functionality. Plugins have a standard path like ``addons/plugin_name`` inside
-the project folder. Godot provides a dialog for generating those files and
+the project folder. Redot provides a dialog for generating those files and
 placing them where they need to be.
 
 In the main toolbar, click the ``Project`` dropdown. Then click
@@ -48,7 +48,7 @@ To continue with the example, use the following values:
 ```ini
 Plugin Name: My Custom Node
 Subfolder: my_custom_node
-Description: A custom node made to extend the Godot Engine.
+Description: A custom node made to extend the Redot Engine.
 Author: Your Name Here
 Version: 1.0.0
 Language: GDScript
@@ -64,7 +64,7 @@ Activate now: No
 ```ini
 Plugin Name: My Custom Node
 Subfolder: MyCustomNode
-Description: A custom node made to extend the Godot Engine.
+Description: A custom node made to extend the Redot Engine.
 Author: Your Name Here
 Version: 1.0.0
 Language: C#
@@ -95,7 +95,7 @@ The name and description help people understand what it does.
 Your name helps you get properly credited for your work.
 The version number helps others know if they have an outdated version;
 if you are unsure on how to come up with the version number, check out [Semantic Versioning ](https://semver.org/).
-The main script file will instruct Godot what your plugin does in the editor
+The main script file will instruct Redot what your plugin does in the editor
 once it is active.
 
 ### The script file
@@ -244,7 +244,7 @@ public partial class MyButton : Button
 That's it for our basic button. You can save this as ``my_button.gd`` inside the
 plugin folder. You'll also need a 16×16 icon to show in the scene tree. If you
 don't have one, you can grab the default one from the engine and save it in your
-`addons/my_custom_node` folder as `icon.png`, or use the default Godot logo
+`addons/my_custom_node` folder as `icon.png`, or use the default Redot logo
 (`preload("res://icon.svg")`).
 
 :::tip
@@ -253,7 +253,7 @@ SVG images that are used as custom node icons should have the
 **Editor &gt; Scale With Editor Scale** and **Editor &gt; Convert Colors With Editor Theme**
 [import options ](doc_importing_images_editor_import_options) enabled. This allows
 icons to follow the editor's scale and theming settings if the icons are designed with
-the same color palette as Godot's own icons.
+the same color palette as Redot's own icons.
 
 :::
 
@@ -379,7 +379,7 @@ Then create the script ``custom_dock.gd`` in the same folder. Fill it with the
 good start.
 
 Since we're trying to add a new custom dock, we need to create the contents of
-the dock. This is nothing more than a standard Godot scene: just create
+the dock. This is nothing more than a standard Redot scene: just create
 a new scene in the editor then edit it.
 
 For an editor dock, the root node **must** be a [Control ](class_Control)
@@ -562,7 +562,7 @@ Then move the sub plugins into the main plugin folder:
 
 ![Image](img/sub_plugin_moved.webp)
 
-Godot will hide sub-plugins from the plugin list, so that a user can't enable or disable them.
+Redot will hide sub-plugins from the plugin list, so that a user can't enable or disable them.
 Instead the main plugin script should enable and disable sub-plugins like this:
 
 <Tabs>

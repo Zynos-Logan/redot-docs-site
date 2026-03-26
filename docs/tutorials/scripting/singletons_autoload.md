@@ -5,7 +5,7 @@ import TabItem from "@theme/TabItem";
 
 ## Introduction
 
-Godot's scene system, while powerful and flexible, has a drawback: there is no
+Redot's scene system, while powerful and flexible, has a drawback: there is no
 method for storing information (e.g. a player's score or inventory) that is
 needed by more than one scene.
 
@@ -36,7 +36,7 @@ Autoloading nodes and scripts can give us these characteristics.
 
 :::note
 
-Godot won't make an Autoload a "true" singleton as per the singleton design
+Redot won't make an Autoload a "true" singleton as per the singleton design
 pattern. It may still be instanced more than once by the user if desired.
 
 :::
@@ -158,10 +158,10 @@ method (see [doc_scene_tree](doc_scene_tree) for details). However, if you need 
 complex behavior when changing scenes, this method provides more functionality.
 
 To begin, download the template from here:
-[singleton_autoload_starter.zip ](https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/singleton_autoload_starter.zip)
-and open it in Godot.
+[singleton_autoload_starter.zip ](https://github.com/redot-engine/redot-docs-site-project-starters/releases/download/latest-4.x/singleton_autoload_starter.zip)
+and open it in Redot.
 
-A window notifying you that the project was last opened in an older Godot version
+A window notifying you that the project was last opened in an older Redot version
 may appear, that's not an issue. Click *Ok* to open the project.
 
 The project contains two scenes: ``scene_1.tscn`` and ``scene_2.tscn``. Each

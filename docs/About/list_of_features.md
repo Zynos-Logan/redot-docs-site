@@ -4,13 +4,13 @@ sidebar_position: 2
 
 # List of features
 
-This page aims to list **all** features currently supported by Godot.
+This page aims to list **all** features currently supported by Redot.
 
 :::note
 
 This page lists features supported by the current stable version of
-Godot. Some of these features are not available in the
-[3.x release series ](https://docs.godotengine.org/en/3.6/about/list_of_features.html)_.
+Redot. Some of these features are not available in the
+[3.x release series ](https://docs.redotengine.org/en/3.6/about/list_of_features.html)_.
 
 :::
 
@@ -31,26 +31,26 @@ See [doc_system_requirements](doc_system_requirements) for hardware and software
    - Binaries are statically linked and can run on any distribution if compiled
      on an old enough base distribution.
    - Official binaries are compiled using the
-     [Godot Engine buildroot ](https://github.com/godotengine/buildroot)_,
+     [Redot Engine buildroot ](https://github.com/redot-engine/buildroot)_,
      allowing for binaries that work across common Linux distributions.
 
 - Android (editor support is experimental).
 - [Web browsers ](doc_using_the_web_editor). Experimental in 4.0,
-  using Godot 3.x is recommended instead when targeting HTML5.
+  using Redot 3.x is recommended instead when targeting HTML5.
 
 **Runs exported projects:**
 
 - iOS.
 - [Consoles ](doc_consoles).
 
-Godot aims to be as platform-independent as possible and can be
+Redot aims to be as platform-independent as possible and can be
 [ported to new platforms ](doc_custom_platform_ports) with relative ease.
 
 :::note
 
-Projects written in C# using Godot 4 currently cannot be exported to the
-web platform. To use C# on that platform, consider Godot 3 instead.
-Android and iOS platform support is available as of Godot 4.2, but is
+Projects written in C# using Redot 4 currently cannot be exported to the
+web platform. To use C# on that platform, consider Redot 3 instead.
+Android and iOS platform support is available as of Redot 4.2, but is
 experimental and [some limitations apply ](doc_c_sharp_platforms).
 
 :::
@@ -97,7 +97,7 @@ experimental and [some limitations apply ](doc_c_sharp_platforms).
 
 ## Rendering
 
-Godot 4 includes three renderers:
+Redot 4 includes three renderers:
 
 - **Forward+**. The most advanced renderer, suited for desktop platforms only.
   Used by default on desktop platforms. This renderer uses **Vulkan**, **Direct3D 12**,
@@ -390,7 +390,7 @@ See [doc_renderers](doc_renderers) for a detailed comparison of the rendering me
 
 Most effects listed above can be adjusted for better performance or to further
 improve quality. This can be helpful when
-[using Godot for offline rendering ](doc_creating_movies).
+[using Redot for offline rendering ](doc_creating_movies).
 
 ## 3D tools
 
@@ -461,11 +461,11 @@ improve quality. This can be helpful when
 
    - Full support for the C# 12.0 syntax and features.
 
-- Supports Windows, Linux, and macOS. Since Godot 4.2, experimental support for Android and iOS is also available.
+- Supports Windows, Linux, and macOS. Since Redot 4.2, experimental support for Android and iOS is also available.
 
    - On the iOS platform only some architectures are supported: ``arm64``.
    - The web platform is currently unsupported. To use C# on that platform,
-     consider Godot 3 instead.
+     consider Redot 3 instead.
 
 - Using an external editor is recommended to benefit from IDE functionality.
 
@@ -476,13 +476,13 @@ improve quality. This can be helpful when
    - For scripting game logic, GDScript or C# are recommended if their
      performance is suitable.
 
-- Official GDExtension bindings for [C ](https://github.com/godotengine/godot-headers)_
-  and [C++ ](https://github.com/godotengine/godot-cpp)_.
+- Official GDExtension bindings for [C ](https://github.com/redot-engine/redot-engine-headers)_
+  and [C++ ](https://github.com/redot-engine/redot-engine-cpp)_.
 
    - Use any build system and language features you wish.
 
-- Actively developed GDExtension bindings for [D ](https://github.com/godot-dlang/godot-dlang)_,
-  [Swift ](https://github.com/migueldeicaza/SwiftGodot)_, and [Rust ](https://github.com/godot-rust/gdextension)_
+- Actively developed GDExtension bindings for [D ](https://github.com/Godot-dlang/Godot-dlang)_,
+  [Swift ](https://github.com/migueldeicaza/SwiftGodot)_, and [Rust ](https://github.com/Godot-rust/gdextension)_
   bindings provided by the community. (Some of these bindings may be experimental and not production-ready).
 
 ## Audio
@@ -531,7 +531,7 @@ improve quality. This can be helpful when
 
    - glTF 2.0 *(recommended)*.
    - ``.blend`` (by calling Blender's glTF export functionality transparently).
-   - FBX (by calling [FBX2glTF ](https://github.com/godotengine/FBX2glTF)_ transparently).
+   - FBX (by calling [FBX2glTF ](https://github.com/redot-engine/FBX2glTF)_ transparently).
    - Collada (.dae).
    - Wavefront OBJ (static scenes only, can be loaded directly as a mesh or imported as a 3D scene).
 
@@ -620,7 +620,7 @@ improve quality. This can be helpful when
   multiple instances of the same project).
 - Open file paths and URLs using default or custom protocol handlers (if registered on the system).
 - Parse custom command line arguments.
-- Any Godot binary (editor or exported project) can be
+- Any Redot binary (editor or exported project) can be
   [used as a headless server ](doc_exporting_for_dedicated_servers)
   by starting it with the ``--headless`` command line argument.
   This allows running the engine without a GPU or display server.
@@ -646,7 +646,7 @@ improve quality. This can be helpful when
 
 ## GUI system
 
-Godot's GUI is built using the same Control nodes used to make games in Godot.
+Redot's GUI is built using the same Control nodes used to make games in Redot.
 The editor UI can easily be extended in many ways using add-ons.
 
 **Nodes:**
@@ -693,7 +693,7 @@ The editor UI can easily be extended in many ways using add-ons.
 
 - Texture-based theming using [class_StyleBoxTexture](class_StyleBoxTexture).
 
-Godot's small distribution size can make it a suitable alternative to frameworks
+Redot's small distribution size can make it a suitable alternative to frameworks
 like Electron or Qt.
 
 ## Animation
@@ -718,11 +718,11 @@ like Electron or Qt.
 - Read and write [class_JSON](class_JSON) files.
 - Read and write INI-style configuration files using [class_ConfigFile](class_ConfigFile).
 
-   - Can (de)serialize any Godot datatype, including Vector2/3, Color, ...
+   - Can (de)serialize any Redot datatype, including Vector2/3, Color, ...
 
 - Read XML files using [class_XMLParser](class_XMLParser).
 - [Load and save images, audio/video, fonts and ZIP archives ](doc_runtime_loading_and_saving)
-  in an exported project without having to go through Godot's import system.
+  in an exported project without having to go through Redot's import system.
 - Pack game data into a PCK file (custom format optimized for fast seeking),
   into a ZIP archive, or directly into the executable for single-file distribution.
 - [Export additional PCK files](doc_exporting_pcks) that can be read
@@ -738,7 +738,7 @@ like Electron or Qt.
 - [Command line interface ](doc_command_line_tutorial) for automation.
 
    - Export and deploy projects using continuous integration platforms.
-   - [Shell completion scripts ](https://github.com/godotengine/godot/tree/master/misc/dist/shell)_
+   - [Shell completion scripts ](https://github.com/redot-engine/redot-engine/tree/master/misc/dist/shell)_
      are available for Bash, zsh and fish.
    - Print colored text to standard output on all platforms using
      [print_rich ](class_@GlobalScope_method_print_rich).
@@ -750,7 +750,7 @@ like Electron or Qt.
    - Can be [compiled ](doc_introduction_to_the_buildsystem) using GCC,
      Clang and MSVC. MinGW is also supported.
    - Friendly towards packagers. In most cases, system libraries can be used
-     instead of the ones provided by Godot. The build system doesn't download anything.
+     instead of the ones provided by Redot. The build system doesn't download anything.
      Builds can be fully reproducible.
 
 - Licensed under the permissive MIT license.
@@ -759,8 +759,8 @@ like Electron or Qt.
 
 :::info
 
-The [Godot proposals repository ](https://github.com/godotengine/godot-proposals)_
+The [Redot proposals repository ](https://github.com/redot-engine/redot-engine-proposals)_
 lists features that have been requested by the community and may be implemented
-in future Godot releases.
+in future Redot releases.
 
 :::

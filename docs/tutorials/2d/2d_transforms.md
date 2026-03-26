@@ -31,7 +31,7 @@ in the built-in canvas. To put nodes in a different layer, a [CanvasLayer ](clas
 Viewports also have a Global Canvas transform (also a
 [Transform2D ](class_Transform2D)). This is the master transform and
 affects all individual *Canvas Layer* transforms. Generally, this is primarily
-used in Godot's CanvasItem Editor.
+used in Redot's CanvasItem Editor.
 
 ## Stretch transform
 

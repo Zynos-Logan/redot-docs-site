@@ -3,21 +3,21 @@
 
 :::info
 
-This page describes how to export a Godot project to HTML5.
+This page describes how to export a Redot project to HTML5.
 If you're looking to compile editor or export template binaries from source instead,
 read [doc_compiling_for_web](doc_compiling_for_web).
 
 :::
 
-HTML5 export allows publishing games made in Godot Engine to the browser.
+HTML5 export allows publishing games made in Redot Engine to the browser.
 This requires support for `WebAssembly
 &lt;https://webassembly.org/&gt;[__ and `WebGL 2.0 ](https://www.khronos.org/webgl/)_
 in the user's browser.
 
 .. attention::
 
-    Projects written in C# using Godot 4 currently cannot be exported to the
-    web. To use C# on web platforms, use Godot 3 instead.
+    Projects written in C# using Redot 4 currently cannot be exported to the
+    web. To use C# on web platforms, use Redot 3 instead.
 
 :::tip
 
@@ -30,7 +30,7 @@ with `F12` (`Cmd + Option + I` on macOS), to view
 :::info
 
 See the
-[list of open issues on GitHub related to the web export ](https://github.com/godotengine/godot/issues?q=is%3Aopen+is%3Aissue+label%3Aplatform%3Aweb)_
+[list of open issues on GitHub related to the web export ](https://github.com/redot-engine/redot-engine/issues?q=is%3Aopen+is%3Aissue+label%3Aplatform%3Aweb)_
 for a list of known bugs.
 
 :::
@@ -43,15 +43,15 @@ parent directory, usually hiding the name of that file.
 
 .. attention::
 
-    The Godot 4 Web export expects some files to be named the same name as the one set in the
+    The Redot 4 Web export expects some files to be named the same name as the one set in the
     initial export. Some issues could occur if some exported files are renamed, including the
     main HTML file.
 
 ## WebGL version
 
-Godot 4.0 and later can only target WebGL 2.0 (using the Compatibility rendering
+Redot 4.0 and later can only target WebGL 2.0 (using the Compatibility rendering
 method). Forward+/Mobile are not supported on the web platform, as these
-rendering methods are designed around modern low-level graphics APIs. Godot
+rendering methods are designed around modern low-level graphics APIs. Redot
 currently does not support WebGPU, which is a prerequisite for allowing
 Forward+/Mobile to run on the web platform.
 
@@ -62,7 +62,7 @@ Chromium-based browser or Firefox if possible.
 
 ## Audio playback
 
-Since Godot 4.3, audio playback is done using the Web Audio API on the web
+Since Redot 4.3, audio playback is done using the Web Audio API on the web
 platform. This **Sample** playback mode allows for low latency even when the
 project is exported without thread support, but it has several limitations:
 
@@ -71,13 +71,13 @@ project is exported without thread support, but it has several limitations:
 - Procedural audio generation is not supported.
 - Positional audio may not always work correctly depending on the node's properties.
 
-To use Godot's own audio playback system on the web platform, you can change the
+To use Redot's own audio playback system on the web platform, you can change the
 default playback mode using the **Audio &gt; General &gt; Default Playback Type.web**
 project setting, or change the **Playback Type** property to **Stream** on an
 [class_AudioStreamPlayer](class_AudioStreamPlayer), [class_AudioStreamPlayer2D](class_AudioStreamPlayer2D) or
 [class_AudioStreamPlayer3D](class_AudioStreamPlayer3D) node. This leads to increased latency
 (especially when thread support is disabled), but it allows the full suite
-of Godot's audio features to work.
+of Redot's audio features to work.
 
 ## Export options
 
@@ -162,7 +162,7 @@ If **Progressive Web App &gt; Enable** is enabled, it will have several effects:
 
 For security and privacy reasons, many features that work effortlessly on
 native platforms are more complicated on the web platform. Following is a list
-of limitations you should be aware of when porting a Godot game to the web.
+of limitations you should be aware of when porting a Redot game to the web.
 
 :::important
 Browser vendors are making more and more functionalities only
@@ -200,7 +200,7 @@ user's side, this can be worked around by running the project in a separate
 
 Browsers do not allow arbitrarily **entering full screen**. The same goes for
 **capturing the cursor**. Instead, these actions have to occur as a response to
-a JavaScript input event. In Godot, this means entering full screen from within
+a JavaScript input event. In Redot, this means entering full screen from within
 a pressed input event callback such as ``_input`` or ``_unhandled_input``.
 Querying the [class_Input](class_Input) singleton is not sufficient, the relevant
 input event must currently be active.
@@ -319,7 +319,7 @@ common on most web game hosting sites.
 
 The other exported files are served as they are, next to the ``.html`` file,
 names unchanged. The ``.wasm`` file is a binary WebAssembly module implementing
-the engine. The ``.pck`` file is the Godot main pack containing your game. The
+the engine. The ``.pck`` file is the Redot main pack containing your game. The
 ``.js`` file contains start-up code and is used by the ``.html`` file to access
 the engine. The ``.png`` file contains the boot splash image. It is not used in
 the default HTML page, but is included for
@@ -350,8 +350,8 @@ supported on your web server for further file size savings.
 
 :::tip
 
-The Godot repository includes a
-[Python script to host a local web server ](https://raw.githubusercontent.com/godotengine/godot/master/platform/web/serve.py)_.
+The Redot repository includes a
+[Python script to host a local web server ](https://raw.githubusercontent.com/Redot-engine/Redot-engine/master/platform/web/serve.py)_.
 This script is intended for testing the web editor, but it can also be used to test exported projects.
 
 Save the linked script to a file called ``serve.py``, move this file to the
@@ -394,4 +394,4 @@ the export menu.
    * - Export option
      - Environment variable
    * - Encryption / Encryption Key
-     - ``GODOT_SCRIPT_ENCRYPTION_KEY``
+     - ``Redot_SCRIPT_ENCRYPTION_KEY``

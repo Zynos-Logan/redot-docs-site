@@ -1,7 +1,7 @@
 
-# Upgrading from Godot 3 to Godot 4
+# Upgrading from Redot 3 to Redot 4
 
-## Should I upgrade to Godot 4?
+## Should I upgrade to Redot 4?
 
 Before beginning the upgrade process, it's worth thinking about the advantages
 and disadvantages that upgrading would bring to your project.
@@ -14,40 +14,40 @@ upgrading gives the following advantages:
 
 - Many bugs are fixed in 4.0, but cannot be resolved in 3.x for various reasons
   (such as graphics API differences or backwards compatibility).
-- 4.x will enjoy a longer [support period ](doc_release_policy). Godot 3.x
+- 4.x will enjoy a longer [support period ](doc_release_policy). Redot 3.x
   will continue to be supported for some time after 4.0 is released, but it will
   eventually stop receiving support.
 
 See [doc_docs_changelog](doc_docs_changelog) for a list of pages documenting new features in
-Godot 4.0, and [doc_list_of_features](doc_list_of_features) for a list of all features in Godot.
+Redot 4.0, and [doc_list_of_features](doc_list_of_features) for a list of all features in Redot.
 
 ### Disadvantages of upgrading
 
-If you don't *need* any features present in Godot 4.0, you may want to stay on
-Godot 3.x for the following reasons:
+If you don't *need* any features present in Redot 4.0, you may want to stay on
+Redot 3.x for the following reasons:
 
-- [Godot 3.x is tried and true, while Godot 4 remains in its early stages. ](https://godotengine.org/article/release-management-4-0-and-beyond)_
+- [Redot 3.x is tried and true, while Redot 4 remains in its early stages. ](https://godotengine.org/article/release-management-4-0-and-beyond)_
 
-  - Godot 4.0 is expected to contain workflow and performance issues that Godot
+  - Redot 4.0 is expected to contain workflow and performance issues that Redot
     3.x doesn't have. These issues will be ironed out over time in future
-    Godot 4.x releases.
+    Redot 4.x releases.
 
-- Godot 4 has fewer third-party tutorials available compared to Godot 3.x.
-  If you're new to game engines, you may have a better experience using Godot 3.x
+- Redot 4 has fewer third-party tutorials available compared to Redot 3.x.
+  If you're new to game engines, you may have a better experience using Redot 3.x
   as a result.
-- Godot 4's baseline hardware requirements (such as memory usage) are slightly
+- Redot 4's baseline hardware requirements (such as memory usage) are slightly
   higher, both for the editor and exported projects. This was required for the
   implementation of some core optimizations.
-- Since Godot 4 includes more features than Godot 3, Godot 4's binary size for
+- Since Redot 4 includes more features than Redot 3, Redot 4's binary size for
   exported projects is larger. While this can be mitigated by
   [optimizing a build for size ](doc_optimizing_for_size), a 4.0 build with
   a given set of enabled modules will remain larger compared to a 3.x build with
   the same modules. This can be an issue for
   [exporting to the Web ](doc_exporting_for_web), as binary size directly
   influences how fast the engine can initialize (regardless of download speed).
-- Godot 4 does not and will not have support for GLES2 rendering.
+- Redot 4 does not and will not have support for GLES2 rendering.
   (There is still support for GLES3 rendering using the new Compatibility renderer,
-  which means that devices without Vulkan support can still run Godot 4.)
+  which means that devices without Vulkan support can still run Redot 4.)
 
   - If you are targeting **very** old hardware such as Intel Sandy Bridge (2nd
     generation) integrated graphics, this will prevent the project from running
@@ -57,17 +57,17 @@ Godot 3.x for the following reasons:
 
 ### Caveats of upgrading
 
-**Since Godot 4 is a complete rewrite in many aspects, some features have
+**Since Redot 4 is a complete rewrite in many aspects, some features have
 unfortunately been lost in the process.** Some of these features may be restored
-in future Godot releases:
+in future Redot releases:
 
-- Bullet physics was removed in favor of GodotPhysics. This only affects 3D
+- Bullet physics was removed in favor of RedotPhysics. This only affects 3D
   projects that used the default physics engine (which was Bullet) and didn't
-  manually change it to GodotPhysics. There are no plans to re-add Bullet physics
+  manually change it to RedotPhysics. There are no plans to re-add Bullet physics
   in core, but a third-party add-on could be created for it thanks to
   GDExtension.
 - By default, rendering in 2D is no longer performed in HDR, which means
-  "overbright" modulate values have no visible effect. Since Godot 4.2, you can
+  "overbright" modulate values have no visible effect. Since Redot 4.2, you can
   enable the project setting [HDR 2D](class_ProjectSettings_property_rendering/viewport/hdr_2d)
   to perform 2D rendering in HDR. See also [doc_environment_and_post_processing_using_glow_in_2d](doc_environment_and_post_processing_using_glow_in_2d).
 - While rendering still happens in HDR in 3D when using the Forward+ or Mobile
@@ -81,20 +81,20 @@ in future Godot releases:
   improves.
 
 You can find a more complete list of functional regressions by searching for
-[issues labeled "regression" but not "bug" on GitHub ](https://github.com/godotengine/godot/issues?q=is%3Aissue+is%3Aopen+label%3Aregression+-label%3Abug)_.
+[issues labeled "regression" but not "bug" on GitHub ](https://github.com/redot-engine/redot-engine/issues?q=is%3Aissue+is%3Aopen+label%3Aregression+-label%3Abug)_.
 
 ## Preparing before the upgrade (optional)
 
-If you want to be ready to upgrade to Godot 4 in the future, consider using
+If you want to be ready to upgrade to Redot 4 in the future, consider using
 [class_Tweener](class_Tweener) and the [class_Time](class_Time) singleton in your project. These
-classes are both available in Godot 3.5 and later.
+classes are both available in Redot 3.5 and later.
 
 This way, you won't be relying on the deprecated Tween node and OS time
-functions, both of which are removed in Godot 4.0.
+functions, both of which are removed in Redot 4.0.
 
 It's also a good idea to rename external shaders so that their extension is
-``.gdshader`` instead of ``.shader``. Godot 3.x supports both extensions, but
-only ``.gdshader`` is supported in Godot 4.0.
+``.gdshader`` instead of ``.shader``. Redot 3.x supports both extensions, but
+only ``.gdshader`` is supported in Redot 4.0.
 
 ## Running the project upgrade tool
 
@@ -110,14 +110,14 @@ only ``.gdshader`` is supported in Godot 4.0.
 
 To use the project upgrade tool:
 
-1. Open the Godot 4 Project Manager.
-2. Import the Godot 3.x project using the **Import** button, or use the **Scan**
+1. Open the Redot 4 Project Manager.
+2. Import the Redot 3.x project using the **Import** button, or use the **Scan**
    button to find the project within a folder.
 3. Double-click the imported project (or select the project then choose **Edit**).
-4. You will see a dialog appearing with two options: **Convert project.godot
+4. You will see a dialog appearing with two options: **Convert project.Redot
    Only** and **Convert Full Project**. After ensuring your project is backed up
    (see the above warning), choose **Convert Full Project**. **Convert
-   project.godot Only** is intended to be used for advanced use cases *only*, in
+   project.Redot Only** is intended to be used for advanced use cases *only*, in
    case the conversion tool fails.
 5. Wait until the project conversion process finishes. This can take up to a few
    minutes for large projects with lots of scenes.
@@ -132,22 +132,22 @@ you to override the converter's size limits.
 ### Using the command line
 
 To use the project upgrade tool from the [command line ](doc_command_line_tutorial),
-it's recommended to validate the project conversion by running the Godot editor binary with the following arguments:
+it's recommended to validate the project conversion by running the Redot editor binary with the following arguments:
 
 ```
 # [<max_file_kb>] [<max_line_size>] are optional arguments.
 # Remove them if you aren't changing their values.
-path/to/godot.binary --path /path/to/project/folder --validate-conversion-3to4 [<max_file_kb>] [<max_line_size>]
+path/to/Redot.binary --path /path/to/project/folder --validate-conversion-3to4 [<max_file_kb>] [<max_line_size>]
 
 ```
 
 If the list of planned upgrades looks good to you, run the following command on
-the Godot editor binary to upgrade project files:
+the Redot editor binary to upgrade project files:
 
 ```
 # [<max_file_kb>] [<max_line_size>] are optional arguments.
 # Remove them if you aren't changing their values.
-path/to/godot.binary --path /path/to/project/folder --convert-3to4 [<max_file_kb>] [<max_line_size>]
+path/to/Redot.binary --path /path/to/project/folder --convert-3to4 [<max_file_kb>] [<max_line_size>]
 
 ```
 
@@ -159,18 +159,18 @@ prevent large resources from slowing down the upgrade to a crawl.
 
 If you still want large files to be converted by the project upgrade tool,
 increase the size limits when running the project upgrade tool. For example,
-running the Godot editor binary with those arguments increases both limits by a
+running the Redot editor binary with those arguments increases both limits by a
 10× factor:
 
 ```
-path/to/godot.binary --path /path/to/project/folder --convert-3to4 40000 1000000
+path/to/Redot.binary --path /path/to/project/folder --convert-3to4 40000 1000000
 
 ```
 
 :::note
 
-Only Godot 3.0 and later projects can be upgraded using the project
-conversion tool found in the Godot 4 editor.
+Only Redot 3.0 and later projects can be upgraded using the project
+conversion tool found in the Redot 4 editor.
 
 It's recommended to ensure that your project is up-to-date with the latest
 3.x stable release before running the project upgrade tool.
@@ -188,7 +188,7 @@ manual.
 ### Automatically renamed nodes and resources
 
 The list below refers to nodes which were simply renamed for consistency or
-clarity in Godot 4.0. The project upgrade tool renames them automatically in
+clarity in Redot 4.0. The project upgrade tool renames them automatically in
 your scripts.
 
 One noteworthy set of renames is 3D nodes, which all got a ``3D`` suffix added for
@@ -198,7 +198,7 @@ For ease of searching, this table lists all nodes and resources that were rename
 and are automatically converted, excluding the ones which only involved adding
 a ``3D`` suffix to the old name:
 
-| Old name (Godot 3.x) | New name (Godot 4) |
+| Old name (Redot 3.x) | New name (Redot 4) |
 | --- | --- |
 | AnimatedSprite | AnimatedSprite2D |
 | ARVRCamera | XRCamera3D |
@@ -316,7 +316,7 @@ notation).
   ``OS.get_screen_size()`` becomes ``DisplayServer.screen_get_size()``.
 - Time and date methods from the [class_OS](class_OS) singleton were moved to the
   [class_Time](class_Time) singleton.
-  (The Time singleton is also available in Godot 3.5 and later.)
+  (The Time singleton is also available in Redot 3.5 and later.)
 - You may have to replace some ``instance()`` calls with ``instantiate()``. The
   converter *should* handle this automatically, but this relies on custom code that
   may not work in 100% of situations.
@@ -376,7 +376,7 @@ and PathFollow3D's ``set_offset()`` and ``get_offset()`` must be renamed to
   ``get_extents()``.
 - The ``Engine.editor_hint`` property was removed in favor of the
   ``Engine.is_editor_hint()`` *method*. This is because it's read-only, and
-  properties in Godot are not used for read-only values.
+  properties in Redot are not used for read-only values.
 
 **Enums**
 
@@ -417,7 +417,7 @@ project settings as old Environment quality settings aren't converted
 automatically to project settings.
 
 If you have a graphics settings menu that changed environment properties in
-Godot 3.x, you will have to change its code to call [class_RenderingServer](class_RenderingServer)
+Redot 3.x, you will have to change its code to call [class_RenderingServer](class_RenderingServer)
 methods that affect environment effects' quality. Only the "base" toggle of each
 environment effect and its visual knobs remain within the Environment resource.
 
@@ -454,11 +454,11 @@ Some notable changes you will need to perform in shaders are:
 See [doc_shading_language](doc_shading_language) for more information.
 
 This list is not exhaustive. If you made all the changes mentioned here and your 
-shader still doesn't work, try asking for help in one of the [community channels ](https://godotengine.org/community/)_.
+shader still doesn't work, try asking for help in one of the [community channels ](https://redotengine.org/community/)_.
 
 ### Updating scripts to take backwards-incompatible changes into account
 
-Some changes performed between Godot 3.x and 4 are not renames, but they still
+Some changes performed between Redot 3.x and 4 are not renames, but they still
 break backwards compatibility due to different default behavior.
 
 The most notable examples of this are:
@@ -479,14 +479,14 @@ The most notable examples of this are:
   cases, manual changes are required to make setters and getters working again.
 - [GDScript signal connection syntax ](doc_gdscript_signals) was changed.
   The conversion tool will use the string-based syntax which is still present in
-  Godot 4, but it's recommended to switch to the [class_Signal](class_Signal)-based syntax
+  Redot 4, but it's recommended to switch to the [class_Signal](class_Signal)-based syntax
   described on the linked page. This way, strings are no longer involved,
   which avoids issues with signal name errors that can only be discovered at runtime.
 - Built-in scripts that are [tool scripts ](doc_running_code_in_the_editor)
   do not get the ``tool`` keyword converted to the ``@tool`` annotation.
 - The Tween node was removed in favor of Tweeners, which are also available in
-  Godot 3.5 and later. See the
-  [original pull request ](https://github.com/godotengine/godot/pull/41794)_
+  Redot 3.5 and later. See the
+  [original pull request ](https://github.com/redot-engine/redot-engine/pull/41794)_
   for details.
 - ``randomize()`` is now automatically called on project load, so deterministic
   randomness with the global RandomNumberGenerate instance requires manually
@@ -523,7 +523,7 @@ The most notable examples of this are:
   in, instead of less.
 - [class_Node](class_Node)'s ``remove_and_skip()`` method was removed.
   If you need to reimplement it in a script, you can use the
-  [old C++ implementation ](https://github.com/godotengine/godot/blob/7936b3cc4c657e4b273b376068f095e1e0e4d82a/scene/main/node.cpp#L1910-L1945)_
+  [old C++ implementation ](https://github.com/redot-engine/redot-engine/blob/7936b3cc4c657e4b273b376068f095e1e0e4d82a/scene/main/node.cpp#L1910-L1945)_
   as a reference.
 - ``OS.get_system_time_secs()`` should be converted to
   ``Time.get_time_dict_from_system()["second"]``.
@@ -532,13 +532,13 @@ The most notable examples of this are:
   [class_ResourceFormatSaver](class_ResourceFormatSaver)'s ``_save()`` method.
 - A [class_StreamPeerTCP](class_StreamPeerTCP) must have ``poll()`` called on it to update its
   state, instead of relying on ``get_status()`` automatically polling:
-  [GH-59582 ](https://github.com/godotengine/godot/pull/59582)_
-- [class_String`'s ``right()`` method `has changed behavior ](https://github.com/godotengine/godot/pull/36180)__:
+  [GH-59582 ](https://github.com/redot-engine/redot-engine/pull/59582)_
+- [class_String`'s ``right()`` method `has changed behavior ](https://github.com/redot-engine/redot-engine/pull/36180)__:
   it now returns a number of characters from the right of the string, rather than
   the right side of the string from a given position. If you need the old behavior,
   you can use ``substr()`` instead.
 - ``is_connected_to_host()`` was removed from StreamPeerTCP and PacketPeerUDP as
-  per [GH-59582 ](https://github.com/godotengine/godot/pull/59582)_.
+  per [GH-59582 ](https://github.com/redot-engine/redot-engine/pull/59582)_.
   ``get_status()`` can be used in StreamPeerTCP instead.
   ``is_socket_connected()`` can be used in [class_PacketPeerUDP](class_PacketPeerUDP) instead.
 - In ``_get_property_list()``, the ``or_lesser`` property hint string is now ``or_less``.
@@ -554,7 +554,7 @@ converter doesn't support updating existing setups:
 
 | Removed node | Closest approximation | Comment |
 | --- | --- | --- |
-| AnimationTreePlayer | AnimationTree | AnimationTreePlayer was deprecated since Godot 3.1. |
+| AnimationTreePlayer | AnimationTree | AnimationTreePlayer was deprecated since Redot 3.1. |
 | BakedLightmap | LightmapGI | See :ref:`doc_using_lightmap_gi`. |
 | BakedLightmapData | LightmapGIData |  |
 | BitmapFont | FontFile | See :ref:`doc_gui_using_fonts`. |
@@ -579,7 +579,7 @@ If loading an old project, the node will be replaced with its
 **Threading changes**
 
 [Threading ](doc_using_multiple_threads) APIs have changed in 4.0. For
-example, the following code snippet in Godot 3.x must be modified to work in 4.0:
+example, the following code snippet in Redot 3.x must be modified to work in 4.0:
 
 ```
 # 3.x
@@ -596,8 +596,8 @@ var start_success = new_thread.start(__threaded_background_loader.bind(resource_
 
 :::info
 
-See the [changelog ](https://github.com/godotengine/godot/blob/master/CHANGELOG.md)_
-for a full list of changes between Godot 3.x and 4.
+See the [changelog ](https://github.com/redot-engine/redot-engine/blob/master/CHANGELOG.md)_
+for a full list of changes between Redot 3.x and 4.
 
 :::
 
@@ -610,24 +610,24 @@ ArrayMesh resource again.
 
 ## List of automatically renamed methods, properties, signals and constants
 
-The [editor/renames_map_3_to_4.cpp ](https://github.com/godotengine/godot/blob/master/editor/renames_map_3_to_4.cpp)_
+The [editor/renames_map_3_to_4.cpp ](https://github.com/redot-engine/redot-engine/blob/master/editor/renames_map_3_to_4.cpp)_
 source file lists all automatic renames performed by the project upgrade tool.
-Lines that are commented out refer to API renames that [cannot be performed automatically ](doc_upgrading_to_godot_4_manual_rename).
+Lines that are commented out refer to API renames that [cannot be performed automatically ](doc_upgrading_to_Redot_4_manual_rename).
 
 ## Porting editor settings
 
-Godot 3.x and 4.0 use different editor settings files. This means their settings
+Redot 3.x and 4.0 use different editor settings files. This means their settings
 can be changed independently from each other.
 
-If you wish to port over your Godot 3.x settings to Godot 4, open the
+If you wish to port over your Redot 3.x settings to Redot 4, open the
 [editor settings folder ](doc_data_paths_editor_data_paths) and copy
-``editor_settings-3.tres`` to ``editor_settings-4.tres`` while the Godot 4
+``editor_settings-3.tres`` to ``editor_settings-4.tres`` while the Redot 4
 editor is closed.
 
 :::note
 
-Many settings' names and categories have changed since Godot 3.x. Editor settings
-whose name or category has changed won't carry over to Godot 4.0; you will
+Many settings' names and categories have changed since Redot 3.x. Editor settings
+whose name or category has changed won't carry over to Redot 4.0; you will
 have to set their values again.
 
 :::

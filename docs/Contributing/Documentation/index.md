@@ -38,8 +38,8 @@ how to build the online version locally for testing.
 
 The pages below focus on the class reference.
 
-As the reference is included in the Godot editor, its source files are part of
-the [godot repository](https://github.com/godotengine/godot). We use XML files
+As the reference is included in the Redot editor, its source files are part of
+the [Redot repository](https://github.com/redot-engine/redot). We use XML files
 to write it, so the process to contribute to the class reference differs from
 writing the online manual.
 
@@ -52,7 +52,7 @@ writing the online manual.
 
 ## Translating the documentation
 
-The community is always working hard on making Godot and its documentation
+The community is always working hard on making Redot and its documentation
 available to more people. Localizing the documentation is a colossal and ongoing
 effort you can be part of.
 

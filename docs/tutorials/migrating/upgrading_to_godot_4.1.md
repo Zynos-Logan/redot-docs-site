@@ -1,5 +1,5 @@
 
-# Upgrading from Godot 4.0 to Godot 4.1
+# Upgrading from Redot 4.0 to Redot 4.1
 
 For most games and apps made with 4.0, it should be relatively safe to migrate to 4.1.
 This page intends to cover everything you need to pay attention to when migrating
@@ -13,7 +13,7 @@ affect you. Changes are grouped by areas/systems.
 :::warning
 
 The GDExtension API completely breaks compatibility in 4.1, so it's not included
-in the table below. See the [updating_your_gdextension_for_godot_4_1](updating_your_gdextension_for_godot_4_1) section
+in the table below. See the [updating_your_gdextension_for_Redot_4_1](updating_your_gdextension_for_Redot_4_1) section
 for more information.
 
 :::
@@ -24,7 +24,7 @@ the C# breaking change is *binary compatible* or *source compatible*:
 - **Binary compatible** - Existing binaries will load and execute successfully without
   recompilation, and the runtime behavior won't change.
 - **Source compatible** - Source code will compile successfully without changes when
-  upgrading Godot.
+  upgrading Redot.
 
 ### Core
 
@@ -197,19 +197,19 @@ Multiple layered ``SubViewportContainer`` nodes, that should all receive mouse i
 ## Updating your GDExtension for 4.1
 
 GDExtension is still in beta. Until it's marked as stable, compatibility may break when
-upgrading to a new minor version of Godot.
+upgrading to a new minor version of Redot.
 
-In order to fix a serious bug, in Godot 4.1 we had to break binary compatibility in a big
+In order to fix a serious bug, in Redot 4.1 we had to break binary compatibility in a big
 way and source compatibility in a small way.
 
-This means that GDExtensions made for Godot 4.0 will need to be recompiled for Godot 4.1
-(using the  ``4.1`` branch of godot-cpp), with a small change to their source code.
+This means that GDExtensions made for Redot 4.0 will need to be recompiled for Redot 4.1
+(using the  ``4.1`` branch of Redot-cpp), with a small change to their source code.
 
-In Godot 4.0, your "entry_symbol" function looks something like this:
+In Redot 4.0, your "entry_symbol" function looks something like this:
 
 ```cpp
 GDExtensionBool GDE_EXPORT example_library_init(const GDExtensionInterface *p_interface, const GDExtensionClassLibraryPtr p_library, GDExtensionInitialization *r_initialization) {
-    godot::GDExtensionBinding::InitObject init_obj(p_interface, p_library, r_initialization);
+    Redot::GDExtensionBinding::InitObject init_obj(p_interface, p_library, r_initialization);
 
     init_obj.register_initializer(initialize_example_module);
     init_obj.register_terminator(uninitialize_example_module);
@@ -220,11 +220,11 @@ GDExtensionBool GDE_EXPORT example_library_init(const GDExtensionInterface *p_in
 
 ```
 
-However, for Godot 4.1, it should look like:
+However, for Redot 4.1, it should look like:
 
 ```cpp
 GDExtensionBool GDE_EXPORT example_library_init(GDExtensionInterfaceGetProcAddress p_get_proc_address, const GDExtensionClassLibraryPtr p_library, GDExtensionInitialization *r_initialization) {
-    godot::GDExtensionBinding::InitObject init_obj(p_get_proc_address, p_library, r_initialization);
+    Redot::GDExtensionBinding::InitObject init_obj(p_get_proc_address, p_library, r_initialization);
 
     init_obj.register_initializer(initialize_example_module);
     init_obj.register_terminator(uninitialize_example_module);
@@ -250,4 +250,4 @@ compatibility_minimum = 4.1
 
 ```
 
-This lets Godot know that your GDExtension has been updated and is safe to load in Godot 4.1.
+This lets Redot know that your GDExtension has been updated and is safe to load in Redot 4.1.

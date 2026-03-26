@@ -2,8 +2,8 @@
 # Bug triage guidelines
 
 This page describes the typical workflow of the bug triage team aka
-bugsquad when handling issues and pull requests on Godot's
-[GitHub repository](https://github.com/godotengine/godot).
+bugsquad when handling issues and pull requests on Redot's
+[GitHub repository](https://github.com/redot-engine/redot).
 It is bound to evolve together with the bugsquad, so do not
 hesitate to propose modifications to the following guidelines.
 
@@ -14,10 +14,10 @@ GitHub proposes various features to manage issues:
 -  Set one or several labels from a predefined list
 -  Set one milestone from a predefined list
 -  Keep track of the issue in the project dashboard
--  Define one contributor as "assignee" among the Godot engine
+-  Define one contributor as "assignee" among the Redot engine
    organization members
 
-As the Godot engine organization on GitHub currently has a restricted
+As the Redot engine organization on GitHub currently has a restricted
 number of contributors, we do not use assignees extensively for now. All
 contributors are welcome to take on any issue, if relevant after mentioning
 it on the issue ticket and/or discussing the best way to resolve it with
@@ -30,8 +30,8 @@ to both issues and pull requests.
 
 ### Labels
 
-The following [labels](https://github.com/godotengine/godot/labels) are
-currently defined in the Godot repository:
+The following [labels](https://github.com/redot-engine/redot-engine/labels) are
+currently defined in the Redot repository:
 
 **Categories:**
 
@@ -47,7 +47,7 @@ currently defined in the Godot repository:
    The purpose of this label is to let developers know which issues are
    still reproducible when they want to select what to work on. It is
    therefore a good practice to add in a comment on what platform and
-   what version or commit of Godot the issue could be reproduced; if a
+   what version or commit of Redot the issue could be reproduced; if a
    developer looks at the issue one year later, the *Confirmed* label
    may not be relevant anymore.
 -  *Crash:* describes a bug that causes the engine to crash.
@@ -59,17 +59,17 @@ currently defined in the Godot repository:
    class reference. Issues with this label are either for wrong documentation, or
    are user-reported "bugs" that are actually limitations to be further documented.
    Often paired with *Discussion*. Issues related to the ReadTheDocs documentation
-   should be filed on the [godot-docs](https://github.com/godotengine/godot-docs) repository.
+   should be filed on the [Redot-docs](https://github.com/redot-engine/redot-docs-site) repository.
 -  *Enhancement*: describes a proposed enhancement to an existing
    functionality.
 -  *Feature proposal*: describes a wish for a new feature to be
-   implemented. Note that the main Godot repository no longer accepts
+   implemented. Note that the main Redot repository no longer accepts
    feature requests. Please use
-   [godot-proposals](https://github.com/godotengine/godot-proposals) instead.
+   [Redot-proposals](https://github.com/redot-engine/redot-proposals) instead.
    PRs which add new features but do not have a corresponding proposal use this
    label.
 -  *For PR meeting*: the issue needs to be discussed in a pull request meeting.
-   These meetings are public and are held on the [Godot Contributors Chat](https://chat.godotengine.org/).
+   These meetings are public and are held on the [Redot Contributors Chat](https://chat.redotengine.org/).
 -  *Good first issue*: the issue is *assumed* to be an easy one to fix, which makes
    it a great fit for new contributors who want to become familiar with
    the code base. It should be removed while an active PR is available, that
@@ -131,9 +131,9 @@ describe an issue or pull request.
 -  *Plugin*: relates to problems encountered while writing plugins.
 -  *Porting*: relates to some specific platforms or exporting projects.
 -  *Rendering*: relates to the 2D and 3D rendering engines.
--  *Shaders*: relates to the Godot shader language or visual shaders.
+-  *Shaders*: relates to the Redot shader language or visual shaders.
 -  *Tests*: relates to unit tests.
--  *Thirdparty*: relates to third-party libraries used in Godot.
+-  *Thirdparty*: relates to third-party libraries used in Redot.
 -  *XR*: relates to Augmented Reality or Virtual Reality.
 
 Issues would typically correspond to only one topic, though it's not
@@ -152,8 +152,8 @@ Android and Linux exclusively, select those two platforms).
 
 ### Documentation labels
 
-In the [documentation repository](https://github.com/godotengine/godot-docs), we
-use the following [labels](https://github.com/godotengine/godot-docs/labels):
+In the [documentation repository](https://github.com/redot-engine/redot-docs-site), we
+use the following [labels](https://github.com/redot-engine/redot-docs-site/labels):
 
 -  *Archived*: either a duplicate of another issue, or invalid. Such an
    issue would also be closed.
@@ -205,8 +205,8 @@ repository.
 
 ### Milestones
 
-[Milestones](https://github.com/godotengine/godot/milestones) correspond to
-planned future versions of Godot for which there is an existing roadmap. Issues
+[Milestones](https://github.com/redot-engine/redot-engine/milestones) correspond to
+planned future versions of Redot for which there is an existing roadmap. Issues
 that fit in the said roadmap should be filed under the corresponding milestone;
 if they don't correspond to any current roadmap, they should be left without
 milestone. As a rule of thumb, an issue corresponds to a given milestone if it

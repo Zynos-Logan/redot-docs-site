@@ -1,50 +1,50 @@
 
-# Godot Android library
+# Redot Android library
 
-The Godot Engine for Android platforms is designed to be used as an [Android library ](https://developer.android.com/studio/projects/android-library).
+The Redot Engine for Android platforms is designed to be used as an [Android library ](https://developer.android.com/studio/projects/android-library).
 This architecture enables several key features on Android platforms:
 
-- Ability to integrate the Gradle build system within the Godot Editor, which provides the ability to leverage more components from the Android ecosystem such as libraries and tools
+- Ability to integrate the Gradle build system within the Redot Editor, which provides the ability to leverage more components from the Android ecosystem such as libraries and tools
 
 - Ability to make the engine portable and embeddable:
 
-  - Key in enabling the port of the Godot Editor to Android and mobile XR devices
-  - Key in allowing the integration and reuse of Godot's capabilities within existing codebase
+  - Key in enabling the port of the Redot Editor to Android and mobile XR devices
+  - Key in allowing the integration and reuse of Redot's capabilities within existing codebase
 
 Below we describe some of the use-cases and scenarios this architecture enables.
 
-## Using the Godot Android library
+## Using the Redot Android library
 
-The Godot Android library is packaged as an AAR archive file and hosted on [MavenCentral ](https://central.sonatype.com/artifact/org.godotengine/godot) along with [its documentation ](https://javadoc.io/doc/org.godotengine/godot/latest/index.html).
+The Redot Android library is packaged as an AAR archive file and hosted on [MavenCentral ](https://central.sonatype.com/artifact/org.godotengine/Redot) along with [its documentation ](https://javadoc.io/doc/org.godotengine/Redot/latest/index.html).
 
-It provides access to Godot APIs and capabilities on Android platforms for the following non-exhaustive use-cases.
+It provides access to Redot APIs and capabilities on Android platforms for the following non-exhaustive use-cases.
 
-## Godot Android plugins
+## Redot Android plugins
 
-Android plugins are powerful tools to extend the capabilities of the Godot Engine
+Android plugins are powerful tools to extend the capabilities of the Redot Engine
 by tapping into the functionality provided by Android platforms and ecosystem.
 
-An Android plugin is an Android library with a dependency on the Godot Android library
-which the plugin uses to integrate into the engine's lifecycle and to access Godot APIs,
+An Android plugin is an Android library with a dependency on the Redot Android library
+which the plugin uses to integrate into the engine's lifecycle and to access Redot APIs,
 granting it powerful capabilities such as GDExtension support which allows to update / mod the engine behavior as needed.
 
-For more information, see [Godot Android plugins ](doc_android_plugin).
+For more information, see [Redot Android plugins ](doc_android_plugin).
 
-## Embedding Godot in existing Android projects
+## Embedding Redot in existing Android projects
 
-The Godot Engine can be embedded within existing Android applications or libraries,
+The Redot Engine can be embedded within existing Android applications or libraries,
 allowing developers to leverage mature and battle-tested code and libraries better suited to a specific task.
 
-The hosting component is responsible for driving the engine lifecycle via Godot's Android APIs.
+The hosting component is responsible for driving the engine lifecycle via Redot's Android APIs.
 These APIs can also be used to provide bidirectional communication between the host and the embedded
-Godot instance allowing for greater control over the desired experience.
+Redot instance allowing for greater control over the desired experience.
 
-We showcase how this is done using a sample Android app that embeds the Godot Engine as an Android view,
+We showcase how this is done using a sample Android app that embeds the Redot Engine as an Android view,
 and uses it to render 3D glTF models.
 
 The [GLTF Viewer ](https://github.com/m4gr3d/Godot-Android-Samples/tree/master/apps/gltf_viewer) sample app uses an [Android RecyclerView component ](https://developer.android.com/develop/ui/views/layout/recyclerview) to create
 a list of glTF items, populated from [Kenney's Food Kit pack ](https://kenney.nl/assets/food-kit).
-When an item on the list is selected, the app's logic interacts with the embedded Godot Engine to render the selected glTF item as a 3D model.
+When an item on the list is selected, the app's logic interacts with the embedded Redot Engine to render the selected glTF item as a 3D model.
 
 ![Image](img/gltf_viewer_sample_app_screenshot.webp)
 
@@ -55,7 +55,7 @@ Below we break-down the steps used to create the GLTF Viewer app.
 
 :::warning
 
-Currently only a single instance of the Godot Engine is supported per process.
+Currently only a single instance of the Redot Engine is supported per process.
 You can configure the process the Android Activity runs under using the [android:process attribute ](https://developer.android.com/guide/topics/manifest/activity-element#proc).
 
 :::
@@ -83,19 +83,19 @@ so feel free to use what you're familiar with, and update the steps below accord
 :::
 
 - Set up an Android application project. It may be a brand new empty project, or an existing project
-- Add the [maven dependency for the Godot Android library ](https://central.sonatype.com/artifact/org.godotengine/godot)
+- Add the [maven dependency for the Redot Android library ](https://central.sonatype.com/artifact/org.godotengine/Redot)
 
-  - If using ``gradle``, add the following to the ``dependency`` section of the app's gradle build file. Make sure to update ``&lt;version&gt;`` to the latest version of the Godot Android library:
+  - If using ``gradle``, add the following to the ``dependency`` section of the app's gradle build file. Make sure to update ``&lt;version&gt;`` to the latest version of the Redot Android library:
 
 ```kotlin
 implementation("org.godotengine:godot:<version>")
 
 ```
 
-- If using ``gradle``, include the following ``aaptOptions`` configuration under the ``android &gt; defaultConfig`` section of the app's gradle build file. Doing so allows ``gradle`` to include Godot's hidden directories when building the app binary.
+- If using ``gradle``, include the following ``aaptOptions`` configuration under the ``android &gt; defaultConfig`` section of the app's gradle build file. Doing so allows ``gradle`` to include Redot's hidden directories when building the app binary.
 
   - If your build system does not support including hidden directories, you can
-    configure the Godot project to not use hidden directories by deselecting 
+    configure the Redot project to not use hidden directories by deselecting 
     [Application &gt; Config &gt; Use Hidden Project Data Directory](class_ProjectSettings_property_application/config/use_hidden_project_data_directory)
     in the Project Settings.
 
@@ -104,7 +104,7 @@ android {
 
   defaultConfig {
       // The default ignore pattern for the 'assets' directory includes hidden files and
-      // directories which are used by Godot projects, so we override it with the following.
+      // directories which are used by Redot projects, so we override it with the following.
       aaptOptions {
           ignoreAssetsPattern "!.svn:!.git:!.gitignore:!.ds_store:!*.scc:<dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"
       }
@@ -112,26 +112,26 @@ android {
 
 ```
 
-- Create / update the application's Activity that will be hosting the Godot Engine instance. For the sample app, this is [MainActivity ](https://github.com/m4gr3d/Godot-Android-Samples/blob/master/apps/gltf_viewer/src/main/java/fhuyakou/godot/app/android/gltfviewer/MainActivity.kt)
+- Create / update the application's Activity that will be hosting the Redot Engine instance. For the sample app, this is [MainActivity ](https://github.com/m4gr3d/Godot-Android-Samples/blob/master/apps/gltf_viewer/src/main/java/fhuyakou/Redot/app/android/gltfviewer/MainActivity.kt)
 
-  - The host Activity should implement the [GodotHost interface ](https://github.com/godotengine/godot/blob/master/platform/android/java/lib/src/org/godotengine/godot/GodotHost.java)
-  - The sample app uses [Fragments ](https://developer.android.com/guide/fragments) to organize its UI, so it uses [GodotFragment ](https://github.com/godotengine/godot/blob/master/platform/android/java/lib/src/org/godotengine/godot/GodotFragment.java), a fragment component provided by the Godot Android library to automatically host and manage the Godot Engine instance.
+  - The host Activity should implement the [RedotHost interface ](https://github.com/redot-engine/redot-engine/blob/master/platform/android/java/lib/src/org/Redotengine/Redot/RedotHost.java)
+  - The sample app uses [Fragments ](https://developer.android.com/guide/fragments) to organize its UI, so it uses [RedotFragment ](https://github.com/redot-engine/redot-engine/blob/master/platform/android/java/lib/src/org/Redotengine/Redot/RedotFragment.java), a fragment component provided by the Redot Android library to automatically host and manage the Redot Engine instance.
 
 ```kotlin
-private var godotFragment: GodotFragment? = null
+private var RedotFragment: RedotFragment? = null
 
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 
     setContentView(R.layout.activity_main)
 
-    val currentGodotFragment = supportFragmentManager.findFragmentById(R.id.godot_fragment_container)
-    if (currentGodotFragment is GodotFragment) {
-        godotFragment = currentGodotFragment
+    val currentRedotFragment = supportFragmentManager.findFragmentById(R.id.Redot_fragment_container)
+    if (currentRedotFragment is RedotFragment) {
+        RedotFragment = currentRedotFragment
     } else {
-        godotFragment = GodotFragment()
+        RedotFragment = RedotFragment()
         supportFragmentManager.beginTransaction()
-            .replace(R.id.godot_fragment_container, godotFragment!!)
+            .replace(R.id.Redot_fragment_container, RedotFragment!!)
             .commitNowAllowingStateLoss()
     }
 
@@ -141,19 +141,19 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 :::note
 
-The Godot Android library also provide [GodotActivity ](https://github.com/godotengine/godot/blob/master/platform/android/java/lib/src/org/godotengine/godot/GodotActivity.kt), an Activity component that can be extended to automatically host and manage the Godot Engine instance.
+The Redot Android library also provide [RedotActivity ](https://github.com/redot-engine/redot-engine/blob/master/platform/android/java/lib/src/org/Redotengine/Redot/RedotActivity.kt), an Activity component that can be extended to automatically host and manage the Redot Engine instance.
 
-Alternatively, applications can directly create a [Godot ](https://github.com/godotengine/godot/blob/master/platform/android/java/lib/src/org/godotengine/godot/Godot.kt) instance, host and manage it themselves.
+Alternatively, applications can directly create a [Redot ](https://github.com/redot-engine/redot-engine/blob/master/platform/android/java/lib/src/org/Redotengine/Redot/Redot.kt) instance, host and manage it themselves.
 
 :::
 
-- Using [GodotHost#getHostPlugins(...) ](https://github.com/m4gr3d/Godot-Android-Samples/blob/0e3440f357f8be5b4c63a4fe75766793199a99d0/apps/gltf_viewer/src/main/java/fhuyakou/godot/app/android/gltfviewer/MainActivity.kt#L55), the sample app creates a [runtime GodotPlugin instance ](https://github.com/m4gr3d/Godot-Android-Samples/blob/master/apps/gltf_viewer/src/main/java/fhuyakou/godot/app/android/gltfviewer/AppPlugin.kt) that's used to send [signals ](doc_signals) to the ``gdscript`` logic
+- Using [RedotHost#getHostPlugins(...) ](https://github.com/m4gr3d/Godot-Android-Samples/blob/0e3440f357f8be5b4c63a4fe75766793199a99d0/apps/gltf_viewer/src/main/java/fhuyakou/Redot/app/android/gltfviewer/MainActivity.kt#L55), the sample app creates a [runtime GodotPlugin instance ](https://github.com/m4gr3d/Godot-Android-Samples/blob/master/apps/gltf_viewer/src/main/java/fhuyakou/Redot/app/android/gltfviewer/AppPlugin.kt) that's used to send [signals ](doc_signals) to the ``gdscript`` logic
 
-  - The runtime ``GodotPlugin`` can also be used by ``gdscript`` logic to access JVM methods. For more information, see [Godot Android plugins ](doc_android_plugin).
+  - The runtime ``GodotPlugin`` can also be used by ``gdscript`` logic to access JVM methods. For more information, see [Redot Android plugins ](doc_android_plugin).
 
 - Add any additional logic that will be used by your application
 
-  - For the sample app, this includes adding the [ItemsSelectionFragment fragment ](https://github.com/m4gr3d/Godot-Android-Samples/blob/master/apps/gltf_viewer/src/main/java/fhuyakou/godot/app/android/gltfviewer/ItemsSelectionFragment.kt) (and related classes), a fragment used to build and show the list of glTF items
+  - For the sample app, this includes adding the [ItemsSelectionFragment fragment ](https://github.com/m4gr3d/Godot-Android-Samples/blob/master/apps/gltf_viewer/src/main/java/fhuyakou/Redot/app/android/gltfviewer/ItemsSelectionFragment.kt) (and related classes), a fragment used to build and show the list of glTF items
 
 - Open the [`AndroidManifest.xml`` file, and configure the orientation if needed using the `android:screenOrientation attribute ](https://developer.android.com/guide/topics/manifest/activity-element#screen)
 
@@ -170,32 +170,32 @@ Alternatively, applications can directly create a [Godot ](https://github.com/go
 
 ```
 
-### 2. Create the Godot project
+### 2. Create the Redot project
 
 :::note
 
-On Android, Godot's project files are exported to the ``assets`` directory of the generated ``apk`` binary.
+On Android, Redot's project files are exported to the ``assets`` directory of the generated ``apk`` binary.
 
-We leverage that architecture to bind our Android app and Godot project together by creating the Godot project in the Android app's ``assets`` directory.
+We leverage that architecture to bind our Android app and Redot project together by creating the Redot project in the Android app's ``assets`` directory.
 
-Note that it's also possible to create the Godot project in a separate directory and export it as a [PCK or ZIP file ](https://docs.godotengine.org/en/stable/tutorials/export/exporting_projects.html#pck-versus-zip-pack-file-formats)
+Note that it's also possible to create the Redot project in a separate directory and export it as a [PCK or ZIP file ](https://docs.redotengine.org/en/stable/tutorials/export/exporting_projects.html#pck-versus-zip-pack-file-formats)
 to the Android app's ``assets`` directory.
-Using this approach requires passing the ``--main-pack &lt;pck_or_zip_filepath_relative_to_assets_dir&gt;[` argument to the hosted Godot Engine instance using `GodotHost#getCommandLine() ](https://github.com/godotengine/godot/blob/6916349697a4339216469e9bf5899b983d78db07/platform/android/java/lib/src/org/godotengine/godot/GodotHost.java#L45).
+Using this approach requires passing the ``--main-pack &lt;pck_or_zip_filepath_relative_to_assets_dir&gt;[` argument to the hosted Redot Engine instance using `RedotHost#getCommandLine() ](https://github.com/redot-engine/redot-engine/blob/6916349697a4339216469e9bf5899b983d78db07/platform/android/java/lib/src/org/Redotengine/Redot/RedotHost.java#L45).
 
-The instructions below and the sample app follow the first approach of creating the Godot project in the Android app's ``assets`` directory.
+The instructions below and the sample app follow the first approach of creating the Redot project in the Android app's ``assets`` directory.
 
 :::
 
-- As mentioned in the **note** above, open the Godot Editor and create a Godot project directly (no subfolder) in the ``assets`` directory of the Android application project
+- As mentioned in the **note** above, open the Redot Editor and create a Redot project directly (no subfolder) in the ``assets`` directory of the Android application project
 
-  - See the sample app's [Godot project ](https://github.com/m4gr3d/Godot-Android-Samples/tree/master/apps/gltf_viewer/src/main/assets) for reference
+  - See the sample app's [Redot project ](https://github.com/m4gr3d/Godot-Android-Samples/tree/master/apps/gltf_viewer/src/main/assets) for reference
 
-- Configure the Godot project as desired
+- Configure the Redot project as desired
 
-  - Make sure the [orientation ](https://docs.godotengine.org/en/stable/classes/class_projectsettings.html#class-projectsettings-property-display-window-handheld-orientation) set for the Godot project matches the one set in the Android app's manifest
-  - For Android, make sure [textures/vram_compression/import_etc2_astc ](https://docs.godotengine.org/en/stable/classes/class_projectsettings.html#class-projectsettings-property-rendering-textures-vram-compression-import-etc2-astc) is set to `true`
+  - Make sure the [orientation ](https://docs.redotengine.org/en/stable/classes/class_projectsettings.html#class-projectsettings-property-display-window-handheld-orientation) set for the Redot project matches the one set in the Android app's manifest
+  - For Android, make sure [textures/vram_compression/import_etc2_astc ](https://docs.redotengine.org/en/stable/classes/class_projectsettings.html#class-projectsettings-property-rendering-textures-vram-compression-import-etc2-astc) is set to `true`
 
-- Update the Godot project script logic as needed
+- Update the Redot project script logic as needed
 
   - For the sample app, the [script logic ](https://github.com/m4gr3d/Godot-Android-Samples/blob/master/apps/gltf_viewer/src/main/assets/main.gd) queries for the runtime ``GodotPlugin`` instance and uses it to register for signals fired by the app logic
   - The app logic fires a signal every time an item is selected in the list. The signal contains the filepath of the glTF model, which is used by the ``gdscript`` logic to render the model.
@@ -232,9 +232,9 @@ func _load_gltf(gltf_path: String):
 
 ### 3. Build and run the app
 
-Once you complete configuration of your Godot project, build and run the Android app.
-If set up correctly, the host Activity will initialize the embedded Godot Engine on startup.
-The Godot Engine will check the ``assets`` directory for project files to load (unless configured to look for a ``main pack``), and will proceed to run the project.
+Once you complete configuration of your Redot project, build and run the Android app.
+If set up correctly, the host Activity will initialize the embedded Redot Engine on startup.
+The Redot Engine will check the ``assets`` directory for project files to load (unless configured to look for a ``main pack``), and will proceed to run the project.
 
 While the app is running on device, you can check [Android logcat ](https://developer.android.com/studio/debug/logcat) to investigate any errors or crashes.
 

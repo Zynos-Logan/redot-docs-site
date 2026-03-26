@@ -6,10 +6,10 @@ Project Settings
 There are dozens of settings you can change to control a project's execution,
 including physics, rendering, and windowing settings. These settings can be
 changed from the **Project Settings** window, from code, or by manually editing
-the ``project.godot`` file. You can see a full list of settings in the 
+the ``project.Redot`` file. You can see a full list of settings in the
 :ref:`ProjectSettings <class_ProjectSettings>` class.
 
-Internally, Godot stores the settings for a project in a ``project.godot`` file,
+Internally, Redot stores the settings for a project in a ``project.Redot`` file,
 a plain text file in INI format. While this is human-readable and version control
 friendly, it's not the most convenient to edit. For that reason, the
 **Project Settings** window is available to edit these settings. To open the
@@ -114,17 +114,17 @@ the value from the runtime equivalent property or method:
         int maxFps = Engine.MaxFps;
         DisplayServer.WindowMode windowMode = DisplayServer.WindowGetMode();
 
-Manually editing project.godot
+Manually editing project.Redot
 ------------------------------
 
-You can open the ``project.godot`` file using a text editor and manually
-change project settings. Note that if the ``project.godot`` file does not have a
+You can open the ``project.Redot`` file using a text editor and manually
+change project settings. Note that if the ``project.Redot`` file does not have a
 stored value for a particular setting, it is implicitly the default value of
 that setting. This means that if you are are manually editing the file, you may
 have to write in both the setting name *and* the value.
 
 In general, it is recommended to use the Project Settings window rather than
-manually edit ``project.godot``.
+manually edit ``project.Redot``.
 
 Advanced project settings
 -------------------------

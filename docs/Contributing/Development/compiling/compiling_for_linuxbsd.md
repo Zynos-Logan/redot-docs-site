@@ -33,9 +33,9 @@ required:
 
 :::info
 
-To get the Godot source code for compiling, see [doc_getting_source](doc_getting_source).
+To get the Redot source code for compiling, see [doc_getting_source](doc_getting_source).
 
-For a general overview of SCons usage for Godot, see [doc_introduction_to_the_buildsystem](doc_introduction_to_the_buildsystem).
+For a general overview of SCons usage for Redot, see [doc_introduction_to_the_buildsystem](doc_introduction_to_the_buildsystem).
 
 :::
 
@@ -270,15 +270,15 @@ scons platform=linuxbsd
 
 :::note
 
-Prior to Godot 4.0, the Linux/\*BSD target was called ``x11`` instead of
-``linuxbsd``. If you are looking to compile Godot 3.x, make sure to use the
-[3.x branch of this documentation](https://docs.godotengine.org/en/3.6/development/compiling/compiling_for_x11.html).
+Prior to Redot 4.0, the Linux/\*BSD target was called ``x11`` instead of
+``linuxbsd``. If you are looking to compile Redot 3.x, make sure to use the
+[3.x branch of this documentation](https://docs.redotengine.org/en/3.6/development/compiling/compiling_for_x11.html).
 
 :::
 
 :::tip
 
-If you are compiling Godot to make changes or contribute to the engine,
+If you are compiling Redot to make changes or contribute to the engine,
 you may want to use the SCons options ``dev_build=yes`` or ``dev_mode=yes``.
 See [doc_introduction_to_the_buildsystem_development_and_production_aliases](doc_introduction_to_the_buildsystem_development_and_production_aliases)
 for more info.
@@ -306,7 +306,7 @@ For RISC-V architecture devices, use the Clang compiler instead of the GCC compi
 :::
 
 :::tip
-If you are compiling Godot for production use, you can
+If you are compiling Redot for production use, you can
 make the final executable smaller and faster by adding the
 SCons option ``production=yes``. This enables additional compiler
 optimizations and link-time optimization.
@@ -319,7 +319,7 @@ lightweight but less effective form of LTO.
 :::
 
 :::note
-If you want to use separate editor settings for your own Godot builds
+If you want to use separate editor settings for your own Redot builds
 and official releases, you can enable
 [doc_data_paths_self_contained_mode](doc_data_paths_self_contained_mode) by creating a file called
 ``._sc_`` or ``_sc_`` in the ``bin/`` folder.
@@ -339,7 +339,7 @@ scons platform=linuxbsd target=editor
 And then use the ``--headless`` command line argument
 
 ```
-./bin/godot.linuxbsd.editor.x86_64 --headless
+./bin/Redot.linuxbsd.editor.x86_64 --headless
 
 ```
 
@@ -397,11 +397,11 @@ To create standard export templates, the resulting files in the ``bin/`` folder
 must be copied to:
 
 ```
-$HOME/.local/share/godot/export_templates/<version>/
+$HOME/.local/share/Redot/export_templates/<version>/
 
 ```
 
-and named like this (even for \*BSD which is seen as "Linux/X11" by Godot):
+and named like this (even for \*BSD which is seen as "Linux/X11" by Redot):
 
 ```
 linux_debug.arm32
@@ -422,12 +422,12 @@ here:
 ![Image](img/lintemplates.png)
 
 You don't even need to copy them, you can just reference the resulting
-files in the ``bin/`` directory of your Godot source folder, so the next
+files in the ``bin/`` directory of your Redot source folder, so the next
 time you build, you automatically have the custom templates referenced.
 
 ## Cross-compiling for RISC-V devices
 
-To cross-compile Godot for RISC-V devices, we need to setup the following items:
+To cross-compile Redot for RISC-V devices, we need to setup the following items:
 
 - [riscv-gnu-toolchain](https://github.com/riscv-collab/riscv-gnu-toolchain/releases).
   While we are not going to use this directly, it provides us with a sysroot, as well
@@ -453,7 +453,7 @@ export RISCV_TOOLCHAIN_PATH="path to toolchain here"
 This way, we won't have to manually set the directory location
 each time we want to reference it.
 
-With all the above setup, we are now ready to build Godot.
+With all the above setup, we are now ready to build Redot.
 
 Go to the root of the source code, and execute the following build command:
 
@@ -468,7 +468,7 @@ scons arch=rv64 use_llvm=yes linker=mold lto=none target=editor \
 :::note
 
 RISC-V GCC has [bugs with its atomic operations](https://github.com/riscv-collab/riscv-gcc/issues/15)
-which prevent it from compiling Godot correctly. That's why Clang is used instead. Make sure that
+which prevent it from compiling Redot correctly. That's why Clang is used instead. Make sure that
 it *can* compile to RISC-V. You can verify by executing this command ``clang -print-targets``,
 make sure you see ``riscv64`` on the list of targets.
 
@@ -497,7 +497,7 @@ If all went well, you should now see a ``bin`` directory, and within it,
 a binary similar to the following:
 
 ```
-godot.linuxbsd.editor.rv64.llvm
+Redot.linuxbsd.editor.rv64.llvm
 
 ```
 
@@ -511,10 +511,10 @@ a debug build, or ``template_release`` for a release build.
 
 ## Using Clang and LLD for faster development
 
-You can also use Clang and LLD to build Godot. This has two upsides compared to
+You can also use Clang and LLD to build Redot. This has two upsides compared to
 the default GCC + GNU ld setup:
 
-- LLD links Godot significantly faster compared to GNU ld or gold. This leads to
+- LLD links Redot significantly faster compared to GNU ld or gold. This leads to
   faster iteration times.
 - Clang tends to give more useful error messages compared to GCC.
 
@@ -566,7 +566,7 @@ PATH="$HOME/.local/share/mold/bin:$PATH"
 ```
 
 - Open a new terminal (or run ``source "$HOME/.bash_profile"``),
-then use the following SCons command when compiling Godot
+then use the following SCons command when compiling Redot
 
 ```
 scons platform=linuxbsd linker=mold
@@ -575,9 +575,9 @@ scons platform=linuxbsd linker=mold
 
 ## Using system libraries for faster development
 
-[Godot bundles the source code of various third-party libraries.](https://github.com/godotengine/godot/tree/master/thirdparty)
+[Redot bundles the source code of various third-party libraries.](https://github.com/redot-engine/redot-engine/tree/master/thirdparty)
 You can choose to use system versions of third-party libraries instead.
-This makes the Godot binary faster to link, as third-party libraries are
+This makes the Redot binary faster to link, as third-party libraries are
 dynamically linked. Therefore, they don't need to be statically linked
 every time you build the engine (even on small incremental changes).
 
@@ -590,7 +590,7 @@ you may not be able to use system libraries for everything due to bugs in the
 system library packages (or in the build system, as this feature is less
 tested).
 
-To compile Godot with system libraries, install these dependencies **on top** of the ones
+To compile Redot with system libraries, install these dependencies **on top** of the ones
 listed in the [doc_compiling_for_linuxbsd_oneliners](doc_compiling_for_linuxbsd_oneliners):
 
 <Tabs>
@@ -640,7 +640,7 @@ sudo dnf install -y \
 
 </Tabs>
 
-After installing all required packages, use the following command to build Godot:
+After installing all required packages, use the following command to build Redot:
 
 ```
 scons platform=linuxbsd builtin_embree=no builtin_enet=no builtin_freetype=no builtin_graphite=no builtin_harfbuzz=no builtin_libogg=no builtin_libpng=no builtin_libtheora=no builtin_libvorbis=no builtin_libwebp=no builtin_mbedtls=no builtin_miniupnpc=no builtin_pcre2=no builtin_zlib=no builtin_zstd=no
@@ -648,7 +648,7 @@ scons platform=linuxbsd builtin_embree=no builtin_enet=no builtin_freetype=no bu
 ```
 
 On Debian stable, you will need to remove `builtin_embree=no` as the system-provided
-Embree version is too old to work with Godot's latest `master` branch
+Embree version is too old to work with Redot's latest `master` branch
 (which requires Embree 4).
 
 You can view a list of all built-in libraries that have system alternatives by

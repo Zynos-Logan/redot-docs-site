@@ -21,7 +21,7 @@ baking lightmaps takes longer compared to baking VoxelGI. While baking VoxelGI
 can be done in a matter of seconds, baking lightmaps can take several minutes if
 not more. This can slow down iteration speed significantly, so it is recommended
 to bake lightmaps only when you actually need to see changes in lighting. Since
-Godot 4.0, lightmaps are baked on the GPU, making light baking faster if you
+Redot 4.0, lightmaps are baked on the GPU, making light baking faster if you
 have a mid-range or high-end dedicated GPU.
 
 Baking lightmaps will also reserve baked materials' UV2 slot, which means you can
@@ -37,7 +37,7 @@ oldest technique for global illumination in video games.
 
     Not sure if LightmapGI is suited to your needs?
     See :ref:`doc_introduction_to_global_illumination_comparison`
-    for a comparison of GI techniques available in Godot 4.
+    for a comparison of GI techniques available in Redot 4.
 
 Visual comparison
 -----------------
@@ -98,7 +98,7 @@ Unwrap on scene import (recommended)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In most scenarios, this is the best approach to use. The only downside is that,
-on large models, unwrapping can take a while on import. Nonetheless, Godot will
+on large models, unwrapping can take a while on import. Nonetheless, Redot will
 cache the UV2 across reimports, so it will only be regenerated when needed.
 
 Select the imported scene in the filesystem dock, then go to the **Import** dock.
@@ -136,7 +136,7 @@ their UV2 maps properly generated.
     as these files guarantee that UV2 reimports are consistent across platforms
     and engine versions.
 
-Unwrap from within Godot
+Unwrap from within Redot
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. warning::
@@ -144,7 +144,7 @@ Unwrap from within Godot
     If this Mesh menu operation is used on an imported 3D scene, the generated
     UV2 will be lost when the scene is reloaded.
 
-Godot has an option to unwrap meshes and visualize the UV channels. After
+Redot has an option to unwrap meshes and visualize the UV channels. After
 selecting a MeshInstance3D node, it can be found in the **Mesh** menu at the top
 of the 3D editor viewport:
 
@@ -159,7 +159,7 @@ Unwrap from your 3D modeling software
 The last option is to do it from your favorite 3D app. This approach is
 generally **not recommended**, but it's explained so that you know it exists.
 The main advantage is that, on complex objects that you may want to re-import a
-lot, the texture generation process can be quite costly within Godot, so having
+lot, the texture generation process can be quite costly within Redot, so having
 it unwrapped before import can be faster.
 
 Simply do an unwrap on the second UV2 layer.
@@ -205,7 +205,7 @@ any modifications will be lost when the scene is reloaded.
 Generating UV2 for CSG nodes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Since Godot 4.4, you can
+Since Redot 4.4, you can
 :ref:`convert a CSG node and its children to a MeshInstance3D <doc_csg_tools_converting_to_mesh_instance_3d>`.
 This can be used to bake lightmaps on a CSG node by following these steps:
 
@@ -420,7 +420,7 @@ from the DirectionalLight3D. While this can be resolved by using the **Static**
 global illumination mode on the DirectionalLight3D, this has several downsides:
 
 - Since both direct and indirect light are baked, there is no way for dynamic
-  objects to cast shadows onto static surfaces in a realistic manner. Godot skips
+  objects to cast shadows onto static surfaces in a realistic manner. Redot skips
   shadow sampling entirely in this case to avoid "double lighting" artifacts.
 - Static shadows up close lack in detail, as they only rely on the lightmap texture
   and not on real-time shadow cascades.
@@ -509,14 +509,14 @@ but doing so will increase bake times significantly.
 To combat noise without increasing bake times too much, a denoiser can be used.
 A denoiser is an algorithm that runs on the final baked lightmap, detects patterns of
 noise and softens them while attempting to best preserve detail.
-Godot offers two denoising algorithms:
+Redot offers two denoising algorithms:
 
 JNLM (Non-Local Means with Joint Filtering)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-JNLM is the default denoising method and is included in Godot. It uses a simple
+JNLM is the default denoising method and is included in Redot. It uses a simple
 but efficient denoising algorithm known as *non-local means*. JNLM runs on the
-GPU using a compute shader, and is compatible with any GPU that can run Godot
+GPU using a compute shader, and is compatible with any GPU that can run Redot
 4's Vulkan-based rendering methods. No additional setup is required.
 
 JNLM's denoising can be adjusted using the **Denoiser Strength** property that
@@ -549,10 +549,10 @@ high-end GPU, this can provide a speedup of over 50× over CPU-based denoising:
 If hardware acceleration is not available, OIDN will fall back to multithreaded
 CPU-based denoising. To confirm whether GPU-based denoising is working, use a
 GPU utilization monitor while baking lightmaps and look at the GPU utilization
-percentage and VRAM utilization while the denoising step is shown in the Godot
+percentage and VRAM utilization while the denoising step is shown in the Redot
 editor. The ``nvidia-smi`` command line tool can be useful for this.
 
-OIDN is not included with Godot due to its relatively large download size. You
+OIDN is not included with Redot due to its relatively large download size. You
 can download precompiled OIDN binary packages from its
 `website <https://www.openimagedenoise.org/downloads.html>`__.
 Extract the package to a location on your PC, then specify the path to the
@@ -640,6 +640,6 @@ Reducing LightmapGI artifacts
 
 If you notice LightmapGI nodes popping in and out of existence as the camera
 moves, this is most likely because the engine is rendering too many LightmapGI
-instances at once. Godot is limited to rendering 8 LightmapGI nodes at once,
+instances at once. Redot is limited to rendering 8 LightmapGI nodes at once,
 which means up to 8 instances can be in the camera view before some of them will
 start flickering.

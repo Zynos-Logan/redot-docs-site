@@ -9,7 +9,7 @@ Before following the OpenXR-specific instructions here, you'll need to first set
 - Installing OpenJDK 17
 - Installing Android Studio
 - Creating a debug.keystore
-- Configuring the location of the Android SDK and debug.keystore in Godot
+- Configuring the location of the Android SDK and debug.keystore in Redot
 
 See [doc_exporting_for_android](doc_exporting_for_android) for the full details, and return here when you've finished these steps.
 
@@ -28,7 +28,7 @@ Select **Install Android Build Template...** from the **Project** menu:
 
 ![Image](img/android_gradle_build.webp)
 
-This will create a folder called **android** inside of your project that contains all the runtime files needed on Android. You can now customize this installation. Godot won't show this in the editor but you can find it with a file browser.
+This will create a folder called **android** inside of your project that contains all the runtime files needed on Android. You can now customize this installation. Redot won't show this in the editor but you can find it with a file browser.
 
 You can read more about gradle builds here: [doc_android_gradle_build](doc_android_gradle_build).
 
@@ -36,7 +36,7 @@ You can read more about gradle builds here: [doc_android_gradle_build](doc_andro
 
 :::warning
 
-The Android plugin structure has been restructured in Godot 4.2, and the loader plugin was renamed to vendors plugin as it now includes more than just loaders.
+The Android plugin structure has been restructured in Redot 4.2, and the loader plugin was renamed to vendors plugin as it now includes more than just loaders.
 If you've previously installed the loader plugin you need to delete it from the `android/plugins` folder.
 
 :::
@@ -49,7 +49,7 @@ You will find the installed files inside the **addons** folder.
 
 Alternatively you can manually install the vendors plugin by downloading the v2.x version of the plugin [from the release page here ](https://github.com/GodotVR/godot_openxr_vendors/releases)_.
 
-You will need to copy the `assets/addons/godotopenxrvendors` folder from the zip file into your projects `addons` folder.
+You will need to copy the `assets/addons/Redotopenxrvendors` folder from the zip file into your projects `addons` folder.
 
 You can find the main repository of the vendors plugin [here ](https://github.com/GodotVR/godot_openxr_vendors)_.
 
@@ -58,7 +58,7 @@ You can find the main repository of the vendors plugin [here ](https://github.co
 The vendors plugin needs to be enabled before the export settings become accessible.
 Open **Project** and select **Project Settings...**.
 Go to the **Plugins** tab.
-Enable the **GodotOpenXRVendors** plugin.
+Enable the **RedotOpenXRVendors** plugin.
 
 ![Image](img/xr_enable_vendors_plugin.webp)
 
@@ -109,8 +109,8 @@ It is highly advisable to use the compatibility renderer (OpenGL) for the time b
 
 :::
 
-## Running on your device from the Godot editor
-If you've setup your export settings as described above, and your headset is connected to your computer and correctly recognized, you can launch it directly from the Godot editor using [doc_one-click_deploy](doc_one-click_deploy):
+## Running on your device from the Redot editor
+If you've setup your export settings as described above, and your headset is connected to your computer and correctly recognized, you can launch it directly from the Redot editor using [doc_one-click_deploy](doc_one-click_deploy):
 
 ![Image](img/android_one_click_deploy.webp)
 

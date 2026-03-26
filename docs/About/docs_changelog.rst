@@ -89,7 +89,7 @@ GDExtension
 Migrating
 ~~~~~~~~~
 
-- :ref:`doc_upgrading_to_godot_4.3`
+- :ref:`doc_upgrading_to_Redot_4.3`
 
 Rendering
 ~~~~~~~~~
@@ -123,7 +123,7 @@ Development
 Migrating
 ~~~~~~~~~
 
-- :ref:`doc_upgrading_to_godot_4.2`
+- :ref:`doc_upgrading_to_Redot_4.2`
 
 I/O
 ~~~
@@ -147,7 +147,7 @@ Development
 Migrating
 ~~~~~~~~~
 
-- :ref:`doc_upgrading_to_godot_4.1`
+- :ref:`doc_upgrading_to_Redot_4.1`
 
 Physics
 ~~~~~~~

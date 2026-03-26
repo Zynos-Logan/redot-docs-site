@@ -41,11 +41,11 @@ aren't affected by PCK encryption. To use PCK encryption on Android, enable
    [OpenSSL](https://www.openssl.org/) command-line tools:
 
 ```
-openssl rand -hex 32 > godot.gdkey
+openssl rand -hex 32 > Redot.gdkey
 
 ```
 
-   The output in ``godot.gdkey`` should be similar to:
+   The output in ``Redot.gdkey`` should be similar to:
 
 ```
 # NOTE: Do not use the key below! Generate your own key instead.
@@ -57,7 +57,7 @@ aeb1bc56aaf580cc31784e9c41551e9ed976ecba10d315db591e749f3f64890f
    that way you can minimize the risk of exposing the key.
 
 2. Set this key as environment variable in the console that you will use to
-   compile Godot, like this:
+   compile Redot, like this:
 
 <Tabs>
 
@@ -89,7 +89,7 @@ $env:SCRIPT_AES256_ENCRYPTION_KEY="your_generated_key"
 
 </Tabs>
 
-3. Compile Godot export templates and set them as custom export templates
+3. Compile Redot export templates and set them as custom export templates
    in the export preset options.
 
 4. Set the encryption key in the **Encryption** tab of the export preset:
@@ -104,7 +104,7 @@ $env:SCRIPT_AES256_ENCRYPTION_KEY="your_generated_key"
 ## Troubleshooting
 
 If you get an error like below, it means the key wasn't properly included in
-your Godot build. Godot is encrypting PCK file during export, but can't read
+your Redot build. Redot is encrypting PCK file during export, but can't read
 it at runtime.
 
 ```

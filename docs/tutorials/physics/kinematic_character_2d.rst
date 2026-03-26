@@ -10,7 +10,7 @@ Yes, the name sounds strange. "Kinematic Character". What is that?
 The reason for the name is that, when physics engines came out, they were called
 "Dynamics" engines (because they dealt mainly with collision
 responses). Many attempts were made to create a character controller
-using the dynamics engines, but it wasn't as easy as it seemed. Godot
+using the dynamics engines, but it wasn't as easy as it seemed. Redot
 has one of the best implementations of dynamic character controller
 you can find (as it can be seen in the 2d/platformer demo), but using
 it requires a considerable level of skill and understanding of
@@ -77,7 +77,7 @@ Scene setup
 ~~~~~~~~~~~
 
 To have something to test, here's the scene (from the tilemap tutorial):
-`kinematic_character_2d_starter.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/kinematic_character_2d_starter.zip>`_.
+`kinematic_character_2d_starter.zip <https://github.com/redot-engine/redot-docs-site-project-starters/releases/download/latest-4.x/kinematic_character_2d_starter.zip>`_.
 We'll be creating a new scene for the character. Use the robot sprite and
 create a scene like this:
 
@@ -242,4 +242,4 @@ And give it a try.
 
 This is a good starting point for a platformer. A more complete demo can be found in the demo zip distributed with the
 engine, or in the
-https://github.com/godotengine/godot-demo-projects/tree/master/2d/kinematic_character.
+https://github.com/redot-engine/redot-demo-projects/tree/master/2d/kinematic_character.

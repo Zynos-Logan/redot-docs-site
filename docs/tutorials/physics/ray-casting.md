@@ -10,7 +10,7 @@ custom shaped object) and checking what it hits. This enables complex
 behaviors, AI, etc. to take place. This tutorial will explain how to
 do this in 2D and 3D.
 
-Godot stores all the low-level game information in servers, while the
+Redot stores all the low-level game information in servers, while the
 scene is only a frontend. As such, ray casting is generally a
 lower-level task. For simple raycasts, nodes like
 [RayCast3D ](class_RayCast3D) and [RayCast2D ](class_RayCast2D)
@@ -22,7 +22,7 @@ so a way to do this by code must exist.
 
 ## Space
 
-In the physics world, Godot stores all the low-level collision and
+In the physics world, Redot stores all the low-level collision and
 physics information in a *space*. The current 2d space (for 2D Physics)
 can be obtained by accessing
 [CanvasItem.get_world_2d().space ](class_CanvasItem_method_get_world_2d).
@@ -34,7 +34,7 @@ The resulting space [RID ](class_RID) can be used in
 
 ## Accessing space
 
-Godot physics runs by default in the same thread as game logic, but may
+Redot physics runs by default in the same thread as game logic, but may
 be set to run on a separate thread to work more efficiently. Due to
 this, the only time accessing space is safe is during the
 [Node._physics_process() ](class_Node_private_method__physics_process)

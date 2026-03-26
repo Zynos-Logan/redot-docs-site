@@ -3,7 +3,7 @@ import TabItem from "@theme/TabItem";
 
 # Cross-language scripting
 
-Godot allows you to mix and match scripting languages to suit your needs.
+Redot allows you to mix and match scripting languages to suit your needs.
 This means a single project can define nodes in both C# and GDScript.
 This page will go through the possible interactions between two nodes written
 in different languages.
@@ -117,13 +117,13 @@ var my_csharp_node = MyCSharpScript.new()
 :::warning
 
 When creating ``.cs`` scripts, you should always keep in mind that the class
-Godot will use is the one named like the ``.cs`` file itself. If that class
+Redot will use is the one named like the ``.cs`` file itself. If that class
 does not exist in the file, you'll see the following error:
 ``Invalid call. Nonexistent function `new` in base``.
 
 For example, MyCoolNode.cs should contain a class named MyCoolNode.
 
-The C# class needs to derive a Godot class, for example ``GodotObject``.
+The C# class needs to derive a Redot class, for example ``RedotObject``.
 Otherwise, the same error will occur.
 
 You also need to check your ``.cs`` file is referenced in the project's
@@ -138,7 +138,7 @@ be instantiated with [GDScript.New() ](class_GDScript_method_new).
 
 ```csharp
 var myGDScript = GD.Load<GDScript>("res://path/to/my_gd_script.gd");
-var myGDScriptNode = (GodotObject)myGDScript.New(); // This is a GodotObject.
+var myGDScriptNode = (RedotObject)myGDScript.New(); // This is a RedotObject.
 
 ```
 
@@ -164,8 +164,8 @@ print(my_csharp_node.MyProperty)
 ### Accessing GDScript fields from C#
 
 As C# is statically typed, accessing GDScript from C# is a bit more
-convoluted. You will have to use [GodotObject.Get() ](class_Object_method_get)
-and [GodotObject.Set() ](class_Object_method_set). The first argument is the name of the field you want to access.
+convoluted. You will have to use [RedotObject.Get() ](class_Object_method_get)
+and [RedotObject.Set() ](class_Object_method_set). The first argument is the name of the field you want to access.
 
 ```csharp
 // Output: "my gdscript value".
@@ -208,7 +208,7 @@ my_csharp_node.PrintArray([1, 2, 3])
 ### Calling GDScript methods from C#
 
 To call GDScript methods from C# you'll need to use
-[GodotObject.Call() ](class_Object_method_call). The first argument is the
+[RedotObject.Call() ](class_Object_method_call). The first argument is the
 name of the method you want to call. The following arguments will be passed
 to said method.
 
@@ -262,5 +262,5 @@ myGDScriptNode.Connect("my_signal_with_params", Callable.From<string, int>(MySig
 A GDScript file may not inherit from a C# script. Likewise, a C# script may not
 inherit from a GDScript file. Due to how complex this would be to implement,
 this limitation is unlikely to be lifted in the future. See
-[this GitHub issue ](https://github.com/godotengine/godot/issues/38352)_
+[this GitHub issue ](https://github.com/redot-engine/redot-engine/issues/38352)_
 for more information.

@@ -3,7 +3,7 @@ import TabItem from "@theme/TabItem";
 
 # Creating movies
 
-Godot can record **non-real-time** video and audio from any 2D or 3D project.
+Redot can record **non-real-time** video and audio from any 2D or 3D project.
 This kind of recording is also called *offline rendering*.
 There are many scenarios where this is useful:
 
@@ -17,12 +17,12 @@ There are many scenarios where this is useful:
 - Comparing the visual output of graphics settings, shaders, or rendering techniques
   in an animated scene.
 
-With Godot's animation features such as the AnimationPlayer node, Tweeners,
+With Redot's animation features such as the AnimationPlayer node, Tweeners,
 particles and shaders, it can effectively be used to create any kind of 2D and
 3D animations (and still images).
 
-If you are already used to Godot's workflow, you may find yourself more
-productive by using Godot for video rendering compared to Blender. That said,
+If you are already used to Redot's workflow, you may find yourself more
+productive by using Redot for video rendering compared to Blender. That said,
 renderers designed for non-real-time usage such as Cycles and Eevee can result
 in better visuals (at the cost of longer rendering times).
 
@@ -48,7 +48,7 @@ Compared to real-time video recording, some advantages of non-real-time recordin
 Players should use something like [OBS Studio ](https://obsproject.com/)_ or
 [SimpleScreenRecorder ](https://www.maartenbaert.be/simplescreenrecorder/)_
 to record gameplay videos, as they do a much better job at intercepting the
-compositor than Godot can do using Vulkan or OpenGL natively.
+compositor than Redot can do using Vulkan or OpenGL natively.
 
 That said, if your game runs at near-real-time speeds when capturing,
 you can still use this feature (but it will lack audible sound playback,
@@ -109,7 +109,7 @@ when running the project from the editor.
 Movie Maker can also be enabled from the [command line ](doc_command_line_tutorial):
 
 ```
-godot --path /path/to/your_project --write-movie output.avi
+Redot --path /path/to/your_project --write-movie output.avi
 
 ```
 
@@ -123,7 +123,7 @@ adjust the window size on startup to override it if the project uses the
 ``disabled`` or ``canvas_items`` [stretch mode ](doc_multiple_resolutions):
 
 ```
-godot --path /path/to/your_project --write-movie output.avi --resolution 1280x720
+Redot --path /path/to/your_project --write-movie output.avi --resolution 1280x720
 
 ```
 
@@ -135,7 +135,7 @@ The recording FPS can also be overridden on the command line,
 without having to edit the Project Settings:
 
 ```
-godot --path /path/to/your_project --write-movie output.avi --fixed-fps 30
+Redot --path /path/to/your_project --write-movie output.avi --fixed-fps 30
 
 ```
 
@@ -151,7 +151,7 @@ run a second instance of the exported project that will record a video file.
 ## Choosing an output format
 
 Output formats are provided by the [MovieWriter ](class_MovieWriter) class.
-Godot has 2 built-in [MovieWriters ](class_MovieWriter), and more can be
+Redot has 2 built-in [MovieWriters ](class_MovieWriter), and more can be
 implemented by extensions:
 
 ### AVI (recommended)
@@ -162,7 +162,7 @@ compression quality can be adjusted by changing
 **Editor &gt; Movie Writer &gt; MJPEG Quality**.
 
 The resulting file can be viewed in most video players, but it must be converted
-to another format for viewing on the web or by Godot with the VideoStreamPlayer
+to another format for viewing on the web or by Redot with the VideoStreamPlayer
 node. MJPEG does not support transparency. AVI output is currently limited to a
 file of 4 GB in size at most.
 
@@ -247,7 +247,7 @@ the ``--quit-after N`` command line argument where ``N`` is the number of frames
 to render before quitting.
 
 Pressing `F8` (`Cmd + .` on macOS) or pressing `Ctrl + C` on the
-terminal running Godot is **not recommended**, as it will result in an
+terminal running Redot is **not recommended**, as it will result in an
 improperly formatted AVI file with no duration information. For PNG image
 sequences, PNG images will not be negatively altered, but the associated WAV file
 will still lack duration information.
@@ -260,7 +260,7 @@ can help in those cases.
 
 If you're using an AnimationPlayer to control a "main action" in the scene (such
 as camera movement), you can enable the **Movie Quit On Finish** property on the
-AnimationPlayer node in question. When enabled, this property will make Godot
+AnimationPlayer node in question. When enabled, this property will make Redot
 quit on its own when an animation is done playing *and* the engine is running in
 Movie Maker mode. Note that *this property has no effect on looping animations*.
 Therefore, you need to make sure that the animation is set as non-looping.
@@ -329,7 +329,7 @@ resolutions such as 4K or 8K.
 
 :::note
 
-For 3D rendering, Godot provides a **Rendering &gt; Scaling 3D &gt; Scale**
+For 3D rendering, Redot provides a **Rendering &gt; Scaling 3D &gt; Scale**
 advanced project setting, which can be set above ``1.0`` to obtain
 *supersample antialiasing*. The 3D rendering is then *downsampled* when it's
 drawn on the viewport. This provides an expensive but high-quality form of
@@ -345,7 +345,7 @@ If you wish to render 2D at a higher resolution, or if you actually need the
 higher raw pixel output for 3D rendering, you can increase the resolution above
 what the screen allows.
 
-By default, Godot uses the ``disabled`` [stretch modes ](doc_multiple_resolutions)
+By default, Redot uses the ``disabled`` [stretch modes ](doc_multiple_resolutions)
 in projects. If using ``disabled`` or ``canvas_items`` stretch mode,
 the window size dictates the output video resolution.
 
@@ -405,9 +405,9 @@ cost of a worse size/quality ratio.
 If you chose to record a PNG image sequence with a WAV file beside it,
 you need to convert it to a video before you can use it elsewhere.
 
-The filename for the PNG image sequence generated by Godot always contains 8
+The filename for the PNG image sequence generated by Redot always contains 8
 digits, starting at 0 with zero-padded numbers. If you specify an output
-path ``folder/example.png``, Godot will write ``folder/example00000000.png``,
+path ``folder/example.png``, Redot will write ``folder/example00000000.png``,
 ``folder/example00000001.png``, and so on in that folder. The audio will be saved
 at ``folder/example.wav``.
 
@@ -465,7 +465,7 @@ ffmpeg -i input.avi -r 30 -crf 15 output.mp4
 
 ### Generating accumulation motion blur with FFmpeg
 
-Godot does not have built-in support for motion blur, but it can still be
+Redot does not have built-in support for motion blur, but it can still be
 created in recorded videos.
 
 If you record the video at a multiple of the original framerate, you can blend

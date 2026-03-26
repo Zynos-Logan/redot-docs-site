@@ -3,7 +3,7 @@
 C# exported properties
 ======================
 
-In Godot, class members can be exported. This means their value gets saved along
+In Redot, class members can be exported. This means their value gets saved along
 with the resource (such as the :ref:`scene <class_PackedScene>`) they're
 attached to. They will also be available for editing in the property editor.
 Exporting is done by using the ``[Export]`` attribute.
@@ -85,7 +85,7 @@ Properties with a backing field use the default value of the backing field.
 .. note::
 
     A property's ``get`` is not actually executed to determine the default
-    value. Instead, Godot analyzes the C# source code. This works fine for most
+    value. Instead, Redot analyzes the C# source code. This works fine for most
     cases, such as the examples on this page. However, some properties are too
     complex for the analyzer to understand.
 
@@ -305,7 +305,7 @@ Color given as red-green-blue value (alpha will always be 1).
 Nodes
 -----
 
-Since Godot 4.0, nodes can be directly exported without having to use NodePaths.
+Since Redot 4.0, nodes can be directly exported without having to use NodePaths.
 
 .. code-block:: csharp
 
@@ -325,7 +325,7 @@ Custom node classes can also be exported directly. The filtering behavior
 depends on whether the custom class is a
 :ref:`global class <doc_c_sharp_global_classes>`.
 
-Exporting NodePaths like in Godot 3.x is still possible, in case you need it:
+Exporting NodePaths like in Redot 3.x is still possible, in case you need it:
 
 .. code-block:: csharp
 
@@ -496,7 +496,7 @@ As explained in the :ref:`C# Variant <doc_c_sharp_variant>` documentation, only
 certain C# arrays and the collection types defined in the ``Godot.Collections``
 namespace are Variant-compatible, therefore, only those types can be exported.
 
-Exporting Godot arrays
+Exporting Redot arrays
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: csharp
@@ -513,7 +513,7 @@ restrict the elements to the specified type.
     [Export]
     public Godot.Collections.Array<string> Array { get; set; }
 
-The default value of Godot arrays is null. A different default can be specified:
+The default value of Redot arrays is null. A different default can be specified:
 
 .. code-block:: csharp
 
@@ -536,7 +536,7 @@ drag-and-dropping multiple files from the FileSystem dock.
     [Export]
     public Godot.Collections.Array<PackedScene> Scenes { get; set; }
 
-Exporting Godot dictionaries
+Exporting Redot dictionaries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: csharp
@@ -549,7 +549,7 @@ the types of the key and value elements of the dictionary.
 
 .. note::
 
-    Typed dictionaries are currently unsupported in the Godot editor, so
+    Typed dictionaries are currently unsupported in the Redot editor, so
     the Inspector will not restrict the types that can be assigned, potentially
     resulting in runtime exceptions.
 
@@ -558,7 +558,7 @@ the types of the key and value elements of the dictionary.
     [Export]
     public Godot.Collections.Dictionary<string, int> Dictionary { get; set; }
 
-The default value of Godot dictionaries is null. A different default can be specified:
+The default value of Redot dictionaries is null. A different default can be specified:
 
 .. code-block:: csharp
 

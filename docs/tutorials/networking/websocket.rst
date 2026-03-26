@@ -15,12 +15,12 @@ The protocol is message based and a very powerful tool to send push notification
 
 Due to its simplicity, its wide compatibility, and being easier to use than a raw TCP connection, WebSocket soon started to spread outside the browsers, in native applications as a mean to communicate with network servers.
 
-Godot supports WebSocket in both native and HTML5 exports.
+Redot supports WebSocket in both native and HTML5 exports.
 
-Using WebSocket in Godot
+Using WebSocket in Redot
 ------------------------
 
-WebSocket is implemented in Godot via :ref:`WebSocketPeer <class_WebSocketPeer>`.
+WebSocket is implemented in Redot via :ref:`WebSocketPeer <class_WebSocketPeer>`.
 The WebSocket implementation is compatible with the High-Level Multiplayer. See
 section on :ref:`high-level multiplayer <doc_high_level_multiplayer>` for more
 details.
@@ -166,5 +166,5 @@ Advanced chat demo
 
 A more advanced chat demo which optionally uses the multiplayer mid-level
 abstraction and a high-level multiplayer demo are available in the
-`godot demo projects <https://github.com/godotengine/godot-demo-projects>`_
+`Redot demo projects <https://github.com/redot-engine/redot-demo-projects>`_
 under `networking/websocket_chat` and `networking/websocket_multiplayer`.

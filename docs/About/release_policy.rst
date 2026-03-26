@@ -2,18 +2,18 @@
 
 .. _doc_release_policy:
 
-Godot release policy
+Redot release policy
 ====================
 
-Godot's release policy is in constant evolution. The description below
+Redot's release policy is in constant evolution. The description below
 provides a general idea of what to expect, but what will actually
 happen depends on the choices of core contributors and the needs of the
 community at a given time.
 
-Godot versioning
+Redot versioning
 ----------------
 
-Godot loosely follows `Semantic Versioning <https://semver.org/>`__ with a
+Redot loosely follows `Semantic Versioning <https://semver.org/>`__ with a
 ``major.minor.patch`` versioning system, albeit with an interpretation of each
 term adapted to the complexity of a game engine:
 
@@ -21,7 +21,7 @@ term adapted to the complexity of a game engine:
   which imply significant porting work to move projects from one major version
   to another.
 
-  For example, porting Godot projects from Godot 3.x to Godot 4.x requires
+  For example, porting Redot projects from Redot 3.x to Redot 4.x requires
   running the project through a conversion tool, and then performing a number
   of further adjustments manually for what the tool could not do automatically.
 
@@ -30,7 +30,7 @@ term adapted to the complexity of a game engine:
   areas *may* happen in minor versions, but the vast majority of projects
   should not be affected or require significant porting work.
 
-  This is because Godot, as a game engine, covers many areas like rendering,
+  This is because Redot, as a game engine, covers many areas like rendering,
   physics, and scripting. Fixing bugs or implementing new features in one area
   might sometimes require changing a feature's behavior or modifying a class's
   interface, even if the rest of the engine API remains backwards compatible.
@@ -84,10 +84,10 @@ on GitHub.
 +--------------+----------------------+--------------------------------------------------------------------------+
 | **Version**  | **Release date**     | **Support level**                                                        |
 +--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 4.4    | Q1 2025 (estimate)   | |unstable| *Development.* Receives new features, usability and           |
+| Redot 4.4    | Q1 2025 (estimate)   | |unstable| *Development.* Receives new features, usability and           |
 | (`master`)   |                      | performance improvements, as well as bug fixes, while under development. |
 +--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 4.3    | August 2024          | |supported| Receives fixes for bugs and security issues, as well as      |
+| Redot 4.3    | August 2024          | |supported| Receives fixes for bugs and security issues, as well as      |
 |              |                      | patches that enable platform support.                                    |
 +--------------+----------------------+--------------------------------------------------------------------------+
 
@@ -102,7 +102,7 @@ on GitHub.
 |eol| No support (end of life) –
 |unstable| Development version
 
-Pre-release Godot versions aren't intended to be used in production and are
+Pre-release Redot versions aren't intended to be used in production and are
 provided for testing purposes only.
 
 .. _doc_release_policy_which_version_should_i_use:
@@ -110,16 +110,16 @@ provided for testing purposes only.
 Which version should I use for a new project?
 ---------------------------------------------
 
-We recommend using Godot 4.x for new projects, as the Godot 4.x series will be
+We recommend using Redot 4.x for new projects, as the Redot 4.x series will be
 supported long after 3.x stops receiving updates in the future. One caveat is
-that a lot of third-party documentation hasn't been updated for Godot 4.x yet.
-If you have to follow a tutorial designed for Godot 3.x, we recommend keeping
-:ref:`doc_upgrading_to_godot_4` open in a separate tab to check which methods
+that a lot of third-party documentation hasn't been updated for Redot 4.x yet.
+If you have to follow a tutorial designed for Redot 3.x, we recommend keeping
+:ref:`doc_upgrading_to_Redot_4` open in a separate tab to check which methods
 have been renamed (if you get a script error while trying to use a specific node
-or method that was renamed in Godot 4.x).
+or method that was renamed in Redot 4.x).
 
 If your project requires a feature that is missing in 4.x (such as GLES2/WebGL
-1.0), you should use Godot 3.x for a new project instead.
+1.0), you should use Redot 3.x for a new project instead.
 
 .. _doc_release_policy_should_i_upgrade_my_project:
 
@@ -163,7 +163,7 @@ When is the next release out?
 
 .. UPDATE: Refers to specific current minor versions 3.6 and 3.7.
 
-While Godot contributors aren't working under any deadlines, we strive to
+While Redot contributors aren't working under any deadlines, we strive to
 publish minor releases relatively frequently.
 
 In particular, after the very length release cycle for 4.0, we are pivoting to
@@ -186,12 +186,12 @@ What are the criteria for compatibility across engine versions?
 
     This section is intended to be used by contributors to determine which
     changes are safe for a given release. The list is not exhaustive; it only
-    outlines the most common situations encountered during Godot's development.
+    outlines the most common situations encountered during Redot's development.
 
 The following changes are acceptable in patch releases:
 
 - Fixing a bug in a way that has no major negative impact on most projects, such
-  as a visual or physics bug. Godot's physics engine is not deterministic, so
+  as a visual or physics bug. Redot's physics engine is not deterministic, so
   physics bug fixes are not considered to break compatibility. If fixing a bug
   has a negative impact that could impact a lot of projects, it should be made
   optional (e.g. using a project setting or separate method).
@@ -225,9 +225,9 @@ performed in a new major release:
 - Modifying a node's inheritance tree by making it inherit from a different class.
 - Changing the default value of a project setting value in a way that affects existing
   projects. To only affect new projects, the project manager should write a
-  modified ``project.godot`` instead.
+  modified ``project.Redot`` instead.
 
-Since Godot 5.0 hasn't been branched off yet, we currently discourage making
+Since Redot 5.0 hasn't been branched off yet, we currently discourage making
 compatibility-breaking changes of this kind.
 
 .. note::

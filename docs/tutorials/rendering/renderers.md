@@ -3,7 +3,7 @@
 
 :::info
 
-This page gives an overview of Godot's renderers, focusing on the differences
+This page gives an overview of Redot's renderers, focusing on the differences
 between their rendering features. For more technical details on the renderers,
 see [doc_internal_rendering_architecture](doc_internal_rendering_architecture).
 
@@ -11,7 +11,7 @@ see [doc_internal_rendering_architecture](doc_internal_rendering_architecture).
 
 ## Introduction
 
-Godot 4 includes three renderers:
+Redot 4 includes three renderers:
 
 - **Forward+**. The most advanced renderer, suited for desktop platforms only.
   Used by default on desktop platforms. This renderer uses **Vulkan**, **Direct3D 12**,
@@ -31,13 +31,13 @@ Godot 4 includes three renderers:
     Vulkan, Direct3D 12, or Metal as a rendering driver.
   :align: center
 
-  Godot's rendering abstraction layers.
+  Redot's rendering abstraction layers.
 
 The *renderer*, or *rendering method*, determines which features are available.
-Most of the time, this is the only thing you need to think about. Godot's renderers
+Most of the time, this is the only thing you need to think about. Redot's renderers
 are **Forward+**, **Mobile**, and **Compatibility**.
 
-The *rendering driver* tells the GPU what to do, using a graphics API. Godot can
+The *rendering driver* tells the GPU what to do, using a graphics API. Redot can
 use the **OpenGL**, **Vulkan**, **Direct3D 12**, and **Metal** rendering drivers.
 Not every GPU supports every rendering driver, and therefore not every GPU supports
 all renderers. Vulkan, Direct3D 12, and Metal are modern, low-level graphics APIs,
@@ -94,7 +94,7 @@ and environment, since each renderer is different. In general, switching between
 the Mobile and Forward+ renderers will require fewer adjustments than switching
 between the Compatibility renderer and the Forward+ or Mobile renderers.
 
-Since Godot 4.4, when using Forward+ or Mobile, if Vulkan is not supported, the
+Since Redot 4.4, when using Forward+ or Mobile, if Vulkan is not supported, the
 engine will fall back to Direct3D 12 and vice versa. If the attempted fallback
 driver is not supported either, the engine will then fall back to Compatibility
 when the RenderingDevice backend is not supported. This allows the project to run
@@ -106,7 +106,7 @@ limited renderer. This behavior can be disabled in the project settings by unche
 
 This is not a complete list of the features of each renderer. If a feature is
 not listed here, it is available in all renderers, though it may be much faster
-on some renderers. For a list of *all* features in Godot, see [doc_list_of_features](doc_list_of_features). 
+on some renderers. For a list of *all* features in Redot, see [doc_list_of_features](doc_list_of_features). 
 
 Hardware with RenderingDevice support is hardware which can run Vulkan, Direct3D
 12, or Metal.

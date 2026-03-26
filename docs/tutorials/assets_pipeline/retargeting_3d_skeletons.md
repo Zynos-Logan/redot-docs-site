@@ -3,12 +3,12 @@
 
 ## To share animations among multiple Skeletons
 
-Godot has Position/Rotation/Scale 3D tracks (which this document calls "Transform" tracks)
+Redot has Position/Rotation/Scale 3D tracks (which this document calls "Transform" tracks)
 with Nodepaths to bones for Skeleton bone animation. This means you can't
 share animations between multiple Skeletons just by using the same bone
 names.
 
-Godot allows each bone to have a parent-child relationship and can have rotation
+Redot allows each bone to have a parent-child relationship and can have rotation
 and scale as well as position, which means that bones that share a name can still
 have different Transform values.
 
@@ -16,8 +16,8 @@ The Skeleton stores the Transform values necessary for the default pose as Bone 
 If Bone Pose is equal to Bone Rest, it means that the Skeleton is in the default pose.
 
 :::note
-Godot 3.x and Godot 4.0+ have different Bone Pose behaviors.
-In Godot 3.x, Bone Pose is relative to Bone Rest, but in Godot 4.0+,
+Redot 3.x and Redot 4.0+ have different Bone Pose behaviors.
+In Redot 3.x, Bone Pose is relative to Bone Rest, but in Redot 4.0+,
 it includes Bone Rest. See this [article ](https://godotengine.org/article/animation-data-redesign-40)_.
 
 :::
@@ -27,8 +27,8 @@ which they were exported. For example, the bones of a glTF model output from Ble
 have "Edit Bone Orientation" as the Bone Rest rotation. However, there are skeletal
 models without any Bone Rest rotations, such as the glTF model output from Maya.
 
-To share animations in Godot, it is necessary to match Bone Rests as well as Bone Names
-to remove unwanted tracks in some cases. In Godot 4.0+, you can do that using the scene
+To share animations in Redot, it is necessary to match Bone Rests as well as Bone Names
+to remove unwanted tracks in some cases. In Redot 4.0+, you can do that using the scene
 importer.
 
 ## Options for Retargeting
@@ -42,7 +42,7 @@ property ``bone_map``.
 ![Image](img/retargeting1.webp)
 
 With the Skeleton node selected, first set up a new [class_bonemap](class_bonemap) and [class_skeletonprofile](class_skeletonprofile).
-Godot has a preset called [class_skeletonprofilehumanoid](class_skeletonprofilehumanoid) for humanoid models.
+Redot has a preset called [class_skeletonprofilehumanoid](class_skeletonprofilehumanoid) for humanoid models.
 This tutorial proceeds with the assumption that you are using [class_skeletonprofilehumanoid](class_skeletonprofilehumanoid).
 
 :::note
@@ -86,7 +86,7 @@ Removes any tracks except the bone Transform track from the animations.
 Removes Position tracks other than ``root_bone`` and ``scale_base_bone``
 defined in [class_skeletonprofile](class_skeletonprofile) from the animations. In [class_skeletonprofilehumanoid](class_skeletonprofilehumanoid),
 this means that to remove Position tracks other than "Root" and "Hips".
-Since Godot 4.0+, animations include Bone Rest in the Transform value. If you disable this option,
+Since Redot 4.0+, animations include Bone Rest in the Transform value. If you disable this option,
 the animation may change the body shape unpredictably.
 
 #### Unmapped Bones
@@ -147,7 +147,7 @@ With [class_skeletonprofilehumanoid](class_skeletonprofilehumanoid), ``scale_bas
 Unifies the models' Bone Rests by overwriting it to match the reference poses defined in the [class_skeletonprofile](class_skeletonprofile).
 
 :::note
-This is the most important option for sharing animations in Godot 4.0+,
+This is the most important option for sharing animations in Redot 4.0+,
 but be aware that this option can produce horrible results **if the original Bone Rest set externally is important**.
 If you want to share animations with keeping the original Bone Rest,
 consider to use the [Realtime Retarget Module ](https://github.com/TokageItLab/realtime_retarget)_.

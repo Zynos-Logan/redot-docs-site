@@ -19,7 +19,7 @@ Base class for serializable objects.
 
 ## Description
 
-Resource is the base class for all Godot-specific resource types, serving primarily as data containers. Since they inherit from [RefCounted](RefCounted.md), resources are reference-counted and freed when no longer in use. They can also be nested within other resources, and saved on disk. [PackedScene](PackedScene.md), one of the most common [Object](Object.md)\\ s in a Redot project, is also a resource, uniquely capable of storing and instantiating the [Node](Node.md)\\ s it contains as many times as desired.
+Resource is the base class for all Redot-specific resource types, serving primarily as data containers. Since they inherit from [RefCounted](RefCounted.md), resources are reference-counted and freed when no longer in use. They can also be nested within other resources, and saved on disk. [PackedScene](PackedScene.md), one of the most common [Object](Object.md)\\ s in a Redot project, is also a resource, uniquely capable of storing and instantiating the [Node](Node.md)\\ s it contains as many times as desired.
 
 In GDScript, resources can loaded from disk by their [resource_path](Resource.md#Resource_property_resource_path) using [@GDScript.load()](@GDScript.md#@GDScript_method_load) or [@GDScript.preload()](@GDScript.md#@GDScript_method_preload).
 

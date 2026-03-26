@@ -5,7 +5,7 @@ import TabItem from "@theme/TabItem";
 
 Many games rely on randomness to implement core game mechanics. This page
 guides you through common types of randomness and how to implement them in
-Godot.
+Redot.
 
 After giving you a brief overview of useful functions that generate random
 numbers, you will learn how to get random elements from arrays, dictionaries,
@@ -19,14 +19,14 @@ Computers cannot generate "true" random numbers. Instead, they rely on
 `pseudorandom number generators
 &lt;https://en.wikipedia.org/wiki/Pseudorandom_number_generator&gt;`__ (PRNGs).
 
-Godot internally uses the [PCG Family ](https://www.pcg-random.org/)_
+Redot internally uses the [PCG Family ](https://www.pcg-random.org/)_
 of pseudorandom number generators.
 
 :::
 
 ## Global scope versus RandomNumberGenerator class
 
-Godot exposes two ways to generate random numbers: via *global scope* methods or
+Redot exposes two ways to generate random numbers: via *global scope* methods or
 using the [class_RandomNumberGenerator](class_RandomNumberGenerator) class.
 
 Global scope methods are easier to set up, but they don't offer as much control.
@@ -41,7 +41,7 @@ the RandomNumberGenerator class.
 
 :::note
 
-Since Godot 4.0, the random seed is automatically set to a random value when
+Since Redot 4.0, the random seed is automatically set to a random value when
 the project starts. This means you don't need to call ``randomize()`` in
 ``_ready()`` anymore to ensure that results are random across project runs.
 However, you can still use ``randomize()`` if you want to use a specific
@@ -144,7 +144,7 @@ random.Randomize();
 ## Getting a random number
 
 Let's look at some of the most commonly used functions and methods to generate
-random numbers in Godot.
+random numbers in Redot.
 
 The function [randi() ](class_@GlobalScope_method_randi) returns a random
 number between ``0`` and ``2^32 - 1``. Since the maximum value is huge, you most
@@ -307,7 +307,7 @@ func get_fruit():
 <TabItem value="csharp" label="Csharp">
 
 ```csharp
-// Use Godot's Array type instead of a BCL type so we can use `PickRandom()` on it.
+// Use Redot's Array type instead of a BCL type so we can use `PickRandom()` on it.
 private Godot.Collections.Array<string> _fruits = ["apple", "orange", "pear", "banana"];
 
 public override void _Ready()
@@ -699,7 +699,7 @@ time, or anything else.
 
 To achieve this, you can use random *noise* functions. Noise functions are
 especially popular in procedural generation to generate realistic-looking
-terrain. Godot provides [class_fastnoiselite](class_fastnoiselite) for this, which supports
+terrain. Redot provides [class_fastnoiselite](class_fastnoiselite) for this, which supports
 1D, 2D and 3D noise. Here's an example with 1D noise:
 
 <Tabs>
@@ -757,7 +757,7 @@ So far, the approaches mentioned above are **not** suitable for
 for games, but this is not sufficient for scenarios where encryption,
 authentication or signing is involved.
 
-Godot offers a [class_Crypto](class_Crypto) class for this. This class can perform
+Redot offers a [class_Crypto](class_Crypto) class for this. This class can perform
 asymmetric key encryption/decryption, signing/verification, while also
 generating cryptographically secure random bytes, RSA keys, HMAC digests, and
 self-signed [class_X509Certificate](class_X509Certificate)\ s.

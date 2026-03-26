@@ -3,7 +3,7 @@
 The Compositor
 ==============
 
-The compositor is a new feature in Godot 4 that allows control over
+The compositor is a new feature in Redot 4 that allows control over
 the rendering pipeline when rendering the contents of a :ref:`Viewport <class_Viewport>`.
 
 It can be configured on a :ref:`WorldEnvironment <class_WorldEnvironment>`
@@ -36,7 +36,7 @@ Care needs to be taken to ensure we don't run into threading issues.
 To illustrate how to use compositor effects we'll create a simple
 post processing effect that allows you to write your own shader code
 and apply this full screen through a compute shader.
-You can find the finished demo project `here <https://github.com/godotengine/godot-demo-projects/tree/master/compute/post_shader>`_.
+You can find the finished demo project `here <https://github.com/redot-engine/redot-demo-projects/tree/master/compute/post_shader>`_.
 
 We start by creating a new script called ``post_process_shader.gd``.
 We'll make this a tool script so we can see the compositor effect work in the editor.
@@ -235,7 +235,7 @@ compile it.
     on some platforms such as consoles.
     Note that the demo project comes with an alternative example where
     a ``glsl`` file contains the entire compute shader and this is used.
-    Godot is able to precompile and cache the shader with this approach.
+    Redot is able to precompile and cache the shader with this approach.
 
 Finally we need to implement our effect callback, the rendering engine will call
 this at the right stage of rendering.
@@ -314,7 +314,7 @@ template shader.
 .. paragraph.
 
 We also populate our push constant so our shader knows our size.
-Godot does not support structs here **yet** so we use a
+Redot does not support structs here **yet** so we use a
 ``PackedFloat32Array`` to store this data into. Note that we have
 to pad this array with a 16 byte alignment. In other words, the
 length of our array needs to be a multiple of 4.

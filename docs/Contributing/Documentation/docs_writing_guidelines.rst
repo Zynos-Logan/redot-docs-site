@@ -3,7 +3,7 @@
 Writing guidelines
 ==================
 
-The Godot community is rich and international. Users come from all
+The Redot community is rich and international. Users come from all
 around the world. Some of them are young, and many aren't native English
 speakers. That's why we must all write using a clear and a common
 language. For the class reference, the goal is to make it easy to read
@@ -448,12 +448,12 @@ Use ``[code]`` around arguments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the class reference, always surround arguments with ``[code][/code]``. In the
-documentation and in Godot, it will display like ``this``. When you edit XML
-files in the Godot repository, replace existing arguments written like 'this' or
+documentation and in Redot, it will display like ``this``. When you edit XML
+files in the Redot repository, replace existing arguments written like 'this' or
 \`this\` with ``[code]this[/code]``.
 
 
-Common vocabulary to use in Godot's documentation
+Common vocabulary to use in Redot's documentation
 -------------------------------------------------
 
 The developers chose some specific words to refer to areas of the
@@ -564,8 +564,8 @@ Use *italic style* or to emphasize one word in the context of a sentence.
 Use *italic style* when introducing new technical terms. **Bold style**
 is fine too.
 
-    - Godot uses *nodes* with *scripts* in a *scene tree*.
-    - Godot uses **nodes** with **scripts** in a **scene tree**.
+    - Redot uses *nodes* with *scripts* in a *scene tree*.
+    - Redot uses **nodes** with **scripts** in a **scene tree**.
 
 Literals
 ~~~~~~~~
@@ -710,7 +710,7 @@ See the `Sphinx documentation <https://www.sphinx-doc.org/en/master/usage/restru
 and the `reStructuredText documentation <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#sections>`__
 for more information.
 
-When to refer to a specific Godot version
+When to refer to a specific Redot version
 -----------------------------------------
 
 Most of the time, the class reference and the manual should not specify the first
@@ -720,7 +720,7 @@ for many versions after it is initially written, and a reference to a first supp
 version is only relevant for a few versions after a feature is added. After that,
 it becomes historical trivia best left to a dedicated changelog.
 
-Follow these guidelines for when to refer to a specific Godot version:
+Follow these guidelines for when to refer to a specific Redot version:
 
 - If a feature was added in the current major version (4.x), **you can specify**
   the feature is new in 4.x.

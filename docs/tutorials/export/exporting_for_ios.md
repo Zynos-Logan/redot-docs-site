@@ -3,29 +3,29 @@
 
 :::info
 
-This page describes how to export a Godot project to iOS.
+This page describes how to export a Redot project to iOS.
 If you're looking to compile export template binaries from source instead,
 read [doc_compiling_for_ios](doc_compiling_for_ios).
 
 :::
 
-These are the steps to load a Godot project in Xcode. This allows you to
+These are the steps to load a Redot project in Xcode. This allows you to
 build and deploy to an iOS device, build a release for the App Store, and
 do everything else you can normally do with Xcode.
 
 .. attention::
 
-    Projects written in C# can be exported to iOS as of Godot 4.2, but support
+    Projects written in C# can be exported to iOS as of Redot 4.2, but support
     is experimental and [some limitations apply ](doc_c_sharp_platforms).
 
 ## Requirements
 
 -  You must export for iOS from a computer running macOS with Xcode installed.
--  Download the Godot export templates. Use the Godot menu: Editor &gt; Manage Export Templates
+-  Download the Redot export templates. Use the Redot menu: Editor &gt; Manage Export Templates
 
-## Export a Godot project to Xcode
+## Export a Redot project to Xcode
 
-In the Godot editor, open the **Export** window from the **Project** menu. When the
+In the Redot editor, open the **Export** window from the **Project** menu. When the
 Export window opens, click **Add..** and select **iOS**.
 
 The **App Store Team ID** and (Bundle) **Identifier** options in the **Application** category
@@ -70,51 +70,51 @@ like any other iOS app.
 ## Active development considerations
 
 The above method creates an exported project that you can build for
-release, but you have to re-export every time you make a change in Godot.
+release, but you have to re-export every time you make a change in Redot.
 
 While developing, you can speed this process up by linking your
-Godot project files directly into your app.
+Redot project files directly into your app.
 
 In the following example:
 
   * **exported_xcode_project_name** is the name of the exported iOS application (as above).
-  * **godot_project_to_export** is the name of the Godot project.
+  * **Redot_project_to_export** is the name of the Redot project.
 
 :::note
-**godot_project_to_export** must not be the same as **exported_xcode_project_name**
+**Redot_project_to_export** must not be the same as **exported_xcode_project_name**
 to prevent signing issues in Xcode.
 
 :::
 
-### Steps to link a Godot project folder to Xcode
+### Steps to link a Redot project folder to Xcode
 
 1. Start from an exported iOS project (follow the steps above).
-2. In Finder, drag the Godot project folder into the Xcode file browser.
+2. In Finder, drag the Redot project folder into the Xcode file browser.
 
 ![Image](img/ios_export_add_dir.png)
 
 3. In the dialog, make sure **Create folder references** is selected. This means
-you will be able to continue to edit your Godot project in its current location.
+you will be able to continue to edit your Redot project in its current location.
 
 ![Image](img/ios_export_file_ref.png)
 
-4. See the **godot_project_to_export** folder in the Xcode file browser.
+4. See the **Redot_project_to_export** folder in the Xcode file browser.
 5. Delete **exported_xcode_project_name.pck** from the Xcode project.
 
 ![Image](img/ios_export_delete_pck.png)
 
 6. Open **exported_xcode_project_name-Info.plist** and add a string property named
-**godot_path** (this is the real key name) with a value **godot_project_to_export**
+**Redot_path** (this is the real key name) with a value **Redot_project_to_export**
 (this is the name of your project)
 
 ![Image](img/ios_export_set_path.png)
 
-That's it! You can now edit your project in the Godot editor and build it
+That's it! You can now edit your project in the Redot editor and build it
 in Xcode when you want to run it on a device.
 
 ## Plugins for iOS
 
-Special iOS plugins can be used in Godot. Check out the
+Special iOS plugins can be used in Redot. Check out the
 [doc_plugins_for_ios](doc_plugins_for_ios) page.
 
 ## Environment variables
@@ -129,11 +129,11 @@ the export menu.
    * - Export option
      - Environment variable
    * - Encryption / Encryption Key
-     - ``GODOT_SCRIPT_ENCRYPTION_KEY``
+     - ``Redot_SCRIPT_ENCRYPTION_KEY``
    * - Options / Application / Provisioning Profile UUID Debug
-     - ``GODOT_IOS_PROVISIONING_PROFILE_UUID_DEBUG``
+     - ``Redot_IOS_PROVISIONING_PROFILE_UUID_DEBUG``
    * - Options / Application / Provisioning Profile UUID Release
-     - ``GODOT_IOS_PROVISIONING_PROFILE_UUID_RELEASE``
+     - ``Redot_IOS_PROVISIONING_PROFILE_UUID_RELEASE``
 
 ## Troubleshooting
 
@@ -142,7 +142,7 @@ the export menu.
 xcode-select is a tool that comes with Xcode and among other things points at iOS SDKs on your Mac.
 If you have Xcode installed, opened it, agreed to the license agreement, and installed the command line tools, 
 xcode-select should point at the right location for the iPhone SDK. 
-If it somehow doesn't, Godot will fail exporting to iOS with an error that may look like this:
+If it somehow doesn't, Redot will fail exporting to iOS with an error that may look like this:
 
 ```
 MSB3073: The command ""clang" <LOTS OF PATHS AND COMMAND LINE ARGUMENTS HERE>
@@ -150,7 +150,7 @@ MSB3073: The command ""clang" <LOTS OF PATHS AND COMMAND LINE ARGUMENTS HERE>
 
 ```
 
-In this case, Godot is trying to find the ``Platforms`` folder containing the iPhone SDK inside the 
+In this case, Redot is trying to find the ``Platforms`` folder containing the iPhone SDK inside the 
 ``/Library/Developer/CommandLineTools/`` folder, but the ``Platforms`` folder with the iPhone SDK is 
 actually located under ``/Applications/Xcode.app/Contents/Developer``. To verify this, you can open 
 up Terminal and run the following command to see what xcode-select points at:
@@ -167,4 +167,4 @@ sudo xcode-select -switch /Applications/Xcode.app
 
 ```
 
-After running this command, Godot should be able to successfully export to iOS.
+After running this command, Redot should be able to successfully export to iOS.

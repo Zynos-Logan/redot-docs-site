@@ -6,16 +6,16 @@ Exporting for Android
 
 .. seealso::
 
-    This page describes how to export a Godot project to Android.
+    This page describes how to export a Redot project to Android.
     If you're looking to compile export template binaries from source instead,
     read :ref:`doc_compiling_for_android`.
 
-Exporting for Android has fewer requirements than compiling Godot for Android.
+Exporting for Android has fewer requirements than compiling Redot for Android.
 The following steps detail what is needed to set up the Android SDK and the engine.
 
 .. attention::
 
-    Projects written in C# can be exported to Android as of Godot 4.2, but support
+    Projects written in C# can be exported to Android as of Redot 4.2, but support
     is experimental and :ref:`some limitations apply <doc_c_sharp_platforms>`.
 
 Install OpenJDK 17
@@ -58,7 +58,7 @@ Download and install the Android SDK.
     **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**.
 
 
-Setting it up in Godot
+Setting it up in Redot
 ----------------------
 
 Enter the Editor Settings screen. This screen contains the editor
@@ -94,7 +94,7 @@ Once that is configured, everything is ready to export to Android!
 Providing launcher icons
 ------------------------
 
-Launcher icons are used by Android launcher apps to represent your application to users. Godot only requires high-resolution icons (for ``xxxhdpi`` density screens) and will automatically generate lower-resolution variants.
+Launcher icons are used by Android launcher apps to represent your application to users. Redot only requires high-resolution icons (for ``xxxhdpi`` density screens) and will automatically generate lower-resolution variants.
 
 There are three types of icons:
 
@@ -106,11 +106,11 @@ There are three types of icons:
 
 .. caution:: The most important adaptive icon design rule is to have your icon critical elements inside the safe zone: a centered circle with a diameter of 66dp (264 pixels on ``xxxhdpi``) to avoid being clipped by the launcher.
 
-If you don't provide the requested icons (except for Monochrome), Godot will replace them using a fallback chain, trying the next in line when the current one fails:
+If you don't provide the requested icons (except for Monochrome), Redot will replace them using a fallback chain, trying the next in line when the current one fails:
 
-- **Main Icon:** Provided main icon -> Project icon -> Default Godot main icon.
-- **Adaptive Icon Foreground:** Provided foreground icon -> Provided main icon -> Project icon -> Default Godot foreground icon.
-- **Adaptive Icon Background:** Provided background icon -> Default Godot background icon.
+- **Main Icon:** Provided main icon -> Project icon -> Default Redot main icon.
+- **Adaptive Icon Foreground:** Provided foreground icon -> Provided main icon -> Project icon -> Default Redot foreground icon.
+- **Adaptive Icon Background:** Provided background icon -> Default Redot background icon.
 
 It's highly recommended to provide all the requested icons with their specified resolutions.
 This way, your application will look great on all Android devices and versions.
@@ -173,16 +173,16 @@ the export menu.
    * - Export option
      - Environment variable
    * - Encryption / Encryption Key
-     - ``GODOT_SCRIPT_ENCRYPTION_KEY``
+     - ``Redot_SCRIPT_ENCRYPTION_KEY``
    * - Options / Keystore / Debug
-     - ``GODOT_ANDROID_KEYSTORE_DEBUG_PATH``
+     - ``Redot_ANDROID_KEYSTORE_DEBUG_PATH``
    * - Options / Keystore / Debug User
-     - ``GODOT_ANDROID_KEYSTORE_DEBUG_USER``
+     - ``Redot_ANDROID_KEYSTORE_DEBUG_USER``
    * - Options / Keystore / Debug Password
-     - ``GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD``
+     - ``Redot_ANDROID_KEYSTORE_DEBUG_PASSWORD``
    * - Options / Keystore / Release
-     - ``GODOT_ANDROID_KEYSTORE_RELEASE_PATH``
+     - ``Redot_ANDROID_KEYSTORE_RELEASE_PATH``
    * - Options / Keystore / Release User
-     - ``GODOT_ANDROID_KEYSTORE_RELEASE_USER``
+     - ``Redot_ANDROID_KEYSTORE_RELEASE_USER``
    * - Options / Keystore / Release Password
-     - ``GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD``
+     - ``Redot_ANDROID_KEYSTORE_RELEASE_PASSWORD``

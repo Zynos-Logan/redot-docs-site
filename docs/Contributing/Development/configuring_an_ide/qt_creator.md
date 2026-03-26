@@ -11,7 +11,7 @@
   <img src="/Contributing/Development/configuring_an_ide/img/qtcreator-new-project.png" />
 </figure>
 
-- Under **Location** select the Godot root folder.
+- Under **Location** select the Redot root folder.
 
 <figure>
   <img src="/Contributing/Development/configuring_an_ide/img/qtcreator-set-project-path.png" />
@@ -73,10 +73,10 @@ full path to the SCons binary.
 
 - From the left-side menu select **Projects** and open the **Run** tab.
 - Under **Executable** specify the path to your executable located in
-  the ``&lt;Godot root directory&gt;/bin`` folder. The name depends on your build configuration,
-  e.g. ``godot.linuxbsd.editor.dev.x86_64`` for 64-bit LinuxBSD platform with
+  the ``&lt;Redot root directory&gt;/bin`` folder. The name depends on your build configuration,
+  e.g. ``Redot.linuxbsd.editor.dev.x86_64`` for 64-bit LinuxBSD platform with
   ``platform=editor`` and ``dev_build=yes``.
-  You can use ``%{buildDir}`` to reference the project root, e.g: ``%{buildDir}/bin/godot.linuxbsd.editor.dev.x86_64``.
+  You can use ``%{buildDir}`` to reference the project root, e.g: ``%{buildDir}/bin/Redot.linuxbsd.editor.dev.x86_64``.
 - If you want to run a specific project, specify its root folder under **Working directory**.
 - If you want to run the editor, add ``-e`` to the **Command line arguments** field.
 
@@ -91,7 +91,7 @@ To learn more about command line arguments, refer to the
 
 Developers must follow the project's [code style](doc_code_style_guidelines)
 and the IDE should help them follow it. By default, Qt Creator uses spaces
-for indentation which doesn't match the Godot code style guidelines. You can
+for indentation which doesn't match the Redot code style guidelines. You can
 change this behavior by changing the **Code Style** in **Tools &gt; Options &gt; C++**.
 
 <figure>
@@ -100,11 +100,11 @@ change this behavior by changing the **Code Style** in **Tools &gt; Options &gt;
 
 Click on **Edit** to change the current settings, then click on
 **Copy Built-in Code Style** button to set a new code style. Set a name for it
-(e.g. Godot) and change the Tab policy to be **Tabs Only**.
+(e.g. Redot) and change the Tab policy to be **Tabs Only**.
 
 <figure>
   <img src="/Contributing/Development/configuring_an_ide/img/qtcreator-edit-codestyle.png" />
 </figure>
 
 If you run into any issues, ask for help in one of
-[Godot's community channels](https://godotengine.org/community).
+[Redot's community channels](https://redotengine.org/community).

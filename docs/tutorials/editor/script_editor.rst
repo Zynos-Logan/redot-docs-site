@@ -8,7 +8,7 @@ Script Editor
 Introduction
 ------------
 
-Godot Engine's script editor is a powerful and fully-integrated text editor
+Redot Engine's script editor is a powerful and fully-integrated text editor
 that not only streamlines the process of writing and debugging code written in
 GDScript but also allows for working with plain text files, providing
 developers with a seamless environment for scripting game logic and behaviors.
@@ -47,15 +47,15 @@ Usage
 -----
 
 If you are using GDScript in your project, the built-in text editor in
-Godot provides everything you need, serving as a one-stop location to
-fully utilize the Godot Engine. Nearly all parameters that can be adjusted via
+Redot provides everything you need, serving as a one-stop location to
+fully utilize the Redot Engine. Nearly all parameters that can be adjusted via
 the user interface can also be modified directly through code.
 
 .. note:: If you would like to use an external text editor or prefer to use C#
   in your project, see :ref:`doc_external_editor` and
   :ref:`doc_c_sharp_setup_external_editor`.
 
-.. tip:: Similar to many parts of the Godot's interface, the text editor can
+.. tip:: Similar to many parts of the Redot's interface, the text editor can
   also be customized by changing its settings to your liking. You can access
   these settings by opening **Editor > Editor Settings** and going to the **Text Editor**
   group.
@@ -63,7 +63,7 @@ the user interface can also be modified directly through code.
 .. image:: img/editor_ui_script_editor_open.webp
 
 You can open the Script Editor using the **Script** button in the workspace selector,
-located at the top center of Godot's interface.
+located at the top center of Redot's interface.
 Alternatively, you can use the **Open Script** button next to a node in the
 Scene Tree dock, or double-click on a ``.gd`` file or a recognized text file in 
 the FileSystem dock to open it directly in the Script Editor.
@@ -75,7 +75,7 @@ switcher. Next to the menus, you'll find buttons to open the online documentatio
 or search within the built-in class reference. To the right of these buttons are 
 two navigation arrows that allow you to navigate through your viewing history.
 Finally, you can use the float button to 
-separate the text editor from Godot's window, which is useful if you are working 
+separate the text editor from Redot's window, which is useful if you are working
 with multiple monitors.
 
 Underneath the menus on the left, you will see the script panel. In the center, 
@@ -182,10 +182,10 @@ The **File** menu provides the following options:
 
 - **New Script...**: Opens the new script dialog to create and add the script to
   the project. If creation is successful, it will directly open it in the
-  text editor. Depending on the version of Godot (with C# support or not), you
+  text editor. Depending on the version of Redot (with C# support or not), you
   can choose ``.gd`` or ``.cs`` as the extension.
 - **New Text File...**: Opens the file dialog to create a plain text file with
-  one of the recognized formats. Godot can also highlight ``json`` files.
+  one of the recognized formats. Redot can also highlight ``json`` files.
 - **Open...**: Opens the file dialog to let you browse inside your computer and
   choose any recognized text file to open it.
 - **Reopen Closed Script**: Reopens the last closed scripts. You can use this
@@ -368,7 +368,7 @@ Coding area
 ~~~~~~~~~~~
 
 .. note:: This section will only cover the basics of the coding area in terms of the user
-  interface. To learn more about scripting in Godot, refer to the :ref:`doc_gdscript` or
+  interface. To learn more about scripting in Redot, refer to the :ref:`doc_gdscript` or
   :ref:`Scripting <toc-learn-scripting>` documentation.
 
 .. image:: img/editor_ui_script_editor_coding_area.webp

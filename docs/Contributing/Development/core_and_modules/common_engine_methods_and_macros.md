@@ -1,7 +1,7 @@
 
 # Common engine methods and macros
 
-Godot's C++ codebase makes use of dozens of custom methods and macros which are
+Redot's C++ codebase makes use of dozens of custom methods and macros which are
 used in almost every file. This page is geared towards beginner contributors,
 but it can also be useful for those writing custom C++ modules.
 
@@ -76,7 +76,7 @@ String real_to_string = rtos(123.45);
 
 ## Internationalize a string
 
-There are two types of internationalization in Godot's codebase:
+There are two types of internationalization in Redot's codebase:
 
 - ``TTR()``: **Editor ("tools") translations** will only be processed in the
   editor. If a user uses the same text in one of their projects, it won't be
@@ -114,7 +114,7 @@ already replaced when it's passed to TranslationServer.
 
 ## Clamp a value
 
-Godot provides macros for clamping a value with a lower bound (``MAX``), an
+Redot provides macros for clamping a value with a lower bound (``MAX``), an
 upper bound (``MIN``) or both (``CLAMP``):
 
 ```cpp
@@ -188,7 +188,7 @@ use ``GLOBAL_GET``/``EDITOR_GET`` in all other places where it's referenced.
 
 ## Error macros
 
-Godot features many error macros to make error reporting more convenient.
+Redot features many error macros to make error reporting more convenient.
 
 :::warning
 
@@ -248,7 +248,7 @@ if (!complex_error_checking_routine()) {
 }
 
 // Crashes the engine. This should generally never be used
-// except for testing crash handling code. Godot's philosophy
+// except for testing crash handling code. Redot's philosophy
 // is to never crash, both in the editor and in exported projects.
 CRASH_NOW_MSG("Can't predict the future! Aborting.");
 
@@ -256,12 +256,12 @@ CRASH_NOW_MSG("Can't predict the future! Aborting.");
 
 :::info
 
-See [core/error/error_macros.h](https://github.com/godotengine/godot/blob/master/core/error/error_macros.h)
-in Godot's codebase for more information about each error macro.
+See [core/error/error_macros.h](https://github.com/redot-engine/redot-engine/blob/master/core/error/error_macros.h)
+in Redot's codebase for more information about each error macro.
 
 Some functions return an error code (materialized by a return type of
 ``Error``). This value can be returned directly from an error macro.
 See the list of available error codes in
-[core/error/error_list.h](https://github.com/godotengine/godot/blob/master/core/error/error_list.h).
+[core/error/error_list.h](https://github.com/redot-engine/redot-engine/blob/master/core/error/error_list.h).
 
 :::

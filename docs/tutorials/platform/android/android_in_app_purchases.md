@@ -1,24 +1,24 @@
 
 # Android in-app purchases
 
-Godot offers a first-party [`GodotGooglePlayBilling`` Android plugin compatible with Godot 4 which uses the `Google Play Billing library ](https://developer.android.com/google/play/billing).
+Redot offers a first-party [`RedotGooglePlayBilling`` Android plugin compatible with Redot 4 which uses the `Google Play Billing library ](https://developer.android.com/google/play/billing).
 
 ## Usage
 
 ### Getting started
 
 Make sure you have enabled and successfully set up [Android Gradle Builds ](doc_android_gradle_build).
-Follow the compiling instructions on the [`GodotGooglePlayBilling`` `github page ](https://github.com/godotengine/godot-google-play-billing)_.
+Follow the compiling instructions on the [`RedotGooglePlayBilling`` `github page ](https://github.com/redot-engine/redot-google-play-billing)_.
 
-Then put the files `./godot-google-play-billing/build/outputs/aar/GodotGooglePlayBilling.***.release.aar` and `./GodotGooglePlayBilling.gdap` into your project in the `res://android/plugins` folder.
+Then put the files `./Redot-google-play-billing/build/outputs/aar/RedotGooglePlayBilling.***.release.aar` and `./RedotGooglePlayBilling.gdap` into your project in the `res://android/plugins` folder.
 
 The plugin should now show up in the Android export settings, where you can enable it.
 
 ### Initialize the plugin
 
-To use the ``GodotGooglePlayBilling`` API:
+To use the ``RedotGooglePlayBilling`` API:
 
-1. Obtain a reference to the ``GodotGooglePlayBilling`` singleton
+1. Obtain a reference to the ``RedotGooglePlayBilling`` singleton
 2. Connect handlers for the plugin signals
 3. Call ``startConnection``
 
@@ -28,8 +28,8 @@ Initialization example:
 var payment
 
 func _ready():
-    if Engine.has_singleton("GodotGooglePlayBilling"):
-        payment = Engine.get_singleton("GodotGooglePlayBilling")
+    if Engine.has_singleton("RedotGooglePlayBilling"):
+        payment = Engine.get_singleton("RedotGooglePlayBilling")
 
         # These are all signals supported by the API
         # You can drop some of these based on your needs
@@ -50,7 +50,7 @@ func _ready():
 
         payment.startConnection()
     else:
-        print("Android IAP support is not enabled. Make sure you have enabled 'Gradle Build' and the GodotGooglePlayBilling plugin in your Android export settings! IAP will not work.")
+        print("Android IAP support is not enabled. Make sure you have enabled 'Gradle Build' and the RedotGooglePlayBilling plugin in your Android export settings! IAP will not work.")
 
 ```
 

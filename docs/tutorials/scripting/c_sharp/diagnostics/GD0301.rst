@@ -28,7 +28,7 @@ that can be converted to Variant.
 
     class SomeType { }
 
-    // SomeType is not a valid type because it doesn't derive from GodotObject,
+    // SomeType is not a valid type because it doesn't derive from RedotObject,
     // so it's not compatible with Variant.
     var invalidArray = new Godot.Collections.Array<SomeType>();
 

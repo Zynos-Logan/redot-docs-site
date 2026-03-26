@@ -3,7 +3,7 @@
 Debugger panel
 ==============
 
-Many of Godot's debugging tools, including the debugger, can be found in the
+Many of Redot's debugging tools, including the debugger, can be found in the
 debugger panel at the bottom of the screen. Click on **Debugger** to open it.
 
 .. image:: img/overview_debugger.webp
@@ -67,7 +67,7 @@ is running, the expression field won't be editable, so you will need to set a
 breakpoint first. Expressions can be persisted across runs by unchecking **Clear on Run**,
 although they will be lost when the editor quits.
 
-Expressions are evaluated using :ref:`Godot's expression language
+Expressions are evaluated using :ref:`Redot's expression language
 <doc_evaluating_expressions>`, which allows you to perform arithmetic and call
 some functions within the expression. Expressions can refer to member variables,
 or local variables within the same scope as the line the breakpoint is on. You

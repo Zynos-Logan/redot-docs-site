@@ -9,13 +9,13 @@ hidden geometry removal.
 On this page, you'll learn:
 
 - What are the advantages and pitfalls of occlusion culling.
-- How to set up occlusion culling in Godot.
+- How to set up occlusion culling in Redot.
 - Troubleshooting common issues with occlusion culling.
 
 :::info
 
 You can see how occlusion culling works in action using the
-[Occlusion Culling and Mesh LOD demo project](https://github.com/godotengine/godot-demo-projects/tree/master/3d/occlusion_culling_mesh_lod)_.
+[Occlusion Culling and Mesh LOD demo project](https://github.com/redot-engine/redot-demo-projects/tree/master/3d/occlusion_culling_mesh_lod)_.
 
 :::
 
@@ -80,7 +80,7 @@ added setup and CPU usage.
 
 :::
 
-## How occlusion culling works in Godot
+## How occlusion culling works in Redot
 
 :::note
 
@@ -89,7 +89,7 @@ the object being hidden.
 
 :::
 
-In Godot, occlusion culling works by rasterizing the scene's occluder geometry
+In Redot, occlusion culling works by rasterizing the scene's occluder geometry
 to a low-resolution buffer on the CPU. This is done using
 the software raytracing library [Embree](https://github.com/embree/embree)_.
 
@@ -128,7 +128,7 @@ nodes are **not** taken into account when baking occluders. If you wish
 those to be treated as occluders, you have to manually create occluder
 shapes that (roughly) match their geometry.
 
-Since Godot 4.4, CSG nodes can be taken into account in the baking process if they are
+Since Redot 4.4, CSG nodes can be taken into account in the baking process if they are
 [converted to a MeshInstance3D](doc_csg_tools_converting_to_mesh_instance_3d)
 before baking occluders.
 

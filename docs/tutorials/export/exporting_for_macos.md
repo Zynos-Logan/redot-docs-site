@@ -3,7 +3,7 @@
 
 :::info
 
-This page describes how to export a Godot project to macOS.
+This page describes how to export a Redot project to macOS.
 If you're looking to compile editor or export template binaries from source instead,
 read [doc_compiling_for_macos](doc_compiling_for_macos).
 
@@ -23,18 +23,18 @@ The main executable located in the ``Contents/MacOS/`` subfolder, as well as opt
 
 ## Requirements
 
--  Download the Godot export templates. Use the Godot menu: ``Editor &gt; Manage Export Templates``.
+-  Download the Redot export templates. Use the Redot menu: ``Editor &gt; Manage Export Templates``.
 -  A valid and unique ``Bundle identifier`` should be set in the ``Application`` section of the export options.
 
 :::warning
 
-Projects exported without code signing and notarization will be blocked by Gatekeeper if they are downloaded from unknown sources, see the [Running Godot apps on macOS ](doc_running_on_macos) page for more information.
+Projects exported without code signing and notarization will be blocked by Gatekeeper if they are downloaded from unknown sources, see the [Running Redot apps on macOS ](doc_running_on_macos) page for more information.
 
 :::
 
 ## Code signing and notarization
 
-By default, macOS will run only applications that are signed and notarized. If you use any other signing configuration, see [Running Godot apps on macOS ](doc_running_on_macos) for workarounds.
+By default, macOS will run only applications that are signed and notarized. If you use any other signing configuration, see [Running Redot apps on macOS ](doc_running_on_macos) for workarounds.
 
 To notarize an app, you **must** have a valid [Apple Developer ID Certificate ](https://developer.apple.com/)_.
 
@@ -83,8 +83,8 @@ After notarization is completed, use the ``rcodesign staple`` command to staple 
 - Select ``Built-in (ad-hoc only)`` in the ``Code Signing &gt; Codesign`` option.
 - Select ``Disabled`` in the ``Notarization &gt; Notarization`` option.
 
-In this case Godot will use an ad-hoc signature, which will make running an exported app easier for the end users,
-see the [Running Godot apps on macOS ](doc_running_on_macos) page for more information.
+In this case Redot will use an ad-hoc signature, which will make running an exported app easier for the end users,
+see the [Running Redot apps on macOS ](doc_running_on_macos) page for more information.
 
 ### Signing Options
 
@@ -181,20 +181,20 @@ the export menu.
    * - Export option
      - Environment variable
    * - Encryption / Encryption Key
-     - ``GODOT_SCRIPT_ENCRYPTION_KEY``
+     - ``Redot_SCRIPT_ENCRYPTION_KEY``
    * - Options / Codesign / Certificate File
-     - ``GODOT_MACOS_CODESIGN_CERTIFICATE_FILE``
+     - ``Redot_MACOS_CODESIGN_CERTIFICATE_FILE``
    * - Options / Codesign / Certificate Password
-     - ``GODOT_MACOS_CODESIGN_CERTIFICATE_PASSWORD``
+     - ``Redot_MACOS_CODESIGN_CERTIFICATE_PASSWORD``
    * - Options / Codesign / Provisioning Profile
-     - ``GODOT_MACOS_CODESIGN_PROVISIONING_PROFILE``
+     - ``Redot_MACOS_CODESIGN_PROVISIONING_PROFILE``
    * - Options / Notarization / API UUID
-     - ``GODOT_MACOS_NOTARIZATION_API_UUID``
+     - ``Redot_MACOS_NOTARIZATION_API_UUID``
    * - Options / Notarization / API Key
-     - ``GODOT_MACOS_NOTARIZATION_API_KEY``
+     - ``Redot_MACOS_NOTARIZATION_API_KEY``
    * - Options / Notarization / API Key ID
-     - ``GODOT_MACOS_NOTARIZATION_API_KEY_ID``
+     - ``Redot_MACOS_NOTARIZATION_API_KEY_ID``
    * - Options / Notarization / Apple ID Name
-     - ``GODOT_MACOS_NOTARIZATION_APPLE_ID_NAME``
+     - ``Redot_MACOS_NOTARIZATION_APPLE_ID_NAME``
    * - Options / Notarization / Apple ID Password
-     - ``GODOT_MACOS_NOTARIZATION_APPLE_ID_PASSWORD``
+     - ``Redot_MACOS_NOTARIZATION_APPLE_ID_PASSWORD``

@@ -10,7 +10,7 @@ and understand the [doc_vector_math](doc_vector_math) tutorial, as this tutorial
 requires a knowledge of vectors.
 
 This tutorial is about *transformations* and how we represent them
-in Godot using matrices. It is not a full in-depth guide to matrices.
+in Redot using matrices. It is not a full in-depth guide to matrices.
 Transformations are most of the time applied as translation, rotation,
 and scale, so we will focus on how to represent those with matrices.
 
@@ -19,7 +19,7 @@ Most of this guide focuses on 2D, using [class_Transform2D](class_Transform2D) a
 
 :::note
 As mentioned in the previous tutorial, it is important to
-remember that in Godot, the Y axis points *down* in 2D.
+remember that in Redot, the Y axis points *down* in 2D.
 This is the opposite of how most schools teach linear
 algebra, with the Y axis pointing up.
 
@@ -62,7 +62,7 @@ is bottom-right, where ``t`` is the Transform2D.
 ### Scaling the transformation matrix
 
 Applying a scale is one of the easiest operations to understand.
-Let's start by placing the Godot logo underneath our vectors
+Let's start by placing the Redot logo underneath our vectors
 so that we can visually see the effects on an object:
 
 ![Image](img/matrices_and_transforms/identity-godot.png)
@@ -120,18 +120,18 @@ method to perform scaling.
 
 ### Rotating the transformation matrix
 
-We'll start the same way as earlier, with the Godot logo underneath
+We'll start the same way as earlier, with the Redot logo underneath
 the identity matrix:
 
 ![Image](img/matrices_and_transforms/identity-godot.png)
 
-As an example, let's say we want to rotate our Godot logo clockwise
+As an example, let's say we want to rotate our Redot logo clockwise
 by 90 degrees. Right now the X axis points right and the Y axis
 points down. If we rotate these in our head, we would logically
 see that the new X axis should point down and the new Y axis
 should point left.
 
-You can imagine that you grab both the Godot logo and its vectors,
+You can imagine that you grab both the Redot logo and its vectors,
 and then spin it around the center. Wherever you finish spinning,
 the orientation of the vectors determines what the matrix is.
 
@@ -155,7 +155,7 @@ hardest thing you need to know.
 ![Image](img/matrices_and_transforms/rotate2.png)
 
 :::note
-Godot represents all rotations with radians, not degrees.
+Redot represents all rotations with radians, not degrees.
 A full turn is `TAU` or `PI*2` radians, and a quarter
 turn of 90 degrees is `TAU/4` or `PI/2` radians. Working
 with `TAU` usually results in more readable code.
@@ -163,7 +163,7 @@ with `TAU` usually results in more readable code.
 :::
 
 :::note
-Fun fact: In addition to Y being *down* in Godot, rotation
+Fun fact: In addition to Y being *down* in Redot, rotation
 is represented clockwise. This means that all the math and
 trig functions behave the same as a Y-is-up CCW system,
 since these differences "cancel out". You can think of
@@ -237,7 +237,7 @@ keep track of the origin vector in all examples. You can think of
 origin as another column, but it's often better to think of it as
 completely separate.
 
-Note that in 3D, Godot has a separate [class_Basis](class_Basis) structure
+Note that in 3D, Redot has a separate [class_Basis](class_Basis) structure
 for holding the three [class_Vector3](class_Vector3) values of the basis,
 since the code can get complex and it makes sense to separate
 it from [class_Transform3D](class_Transform3D) (which is composed of one
@@ -268,7 +268,7 @@ the right when ``translated_local()`` with ``Vector2.UP``. To translate
 *relative to the global/parent frame* use ``translated()`` instead.
 
 :::note
-Godot's 2D uses coordinates based on pixels, so in actual
+Redot's 2D uses coordinates based on pixels, so in actual
 projects you will want to translate by hundreds of units.
 
 :::
@@ -277,7 +277,7 @@ projects you will want to translate by hundreds of units.
 
 We're going to apply everything we mentioned so far onto one transform.
 To follow along, create a project with a Sprite2D node and use the
-Godot logo for the texture resource.
+Redot logo for the texture resource.
 
 Let's set the translation to (350, 150), rotate by -0.5 rad, and scale by 3.
 I've posted a screenshot, and the code to reproduce it, but I encourage
@@ -352,7 +352,7 @@ Normally, you will always have the basis vectors perpendicular to each
 other. However, shearing can be useful in some situations, and
 understanding shearing helps you understand how transforms work.
 
-To show you visually how it will look, let's overlay a grid onto the Godot
+To show you visually how it will look, let's overlay a grid onto the Redot
 logo:
 
 ![Image](img/matrices_and_transforms/identity-grid.png)
@@ -428,7 +428,7 @@ the object, and the relationship between the basis vectors and how the
 object's "UV" or "intra-coordinates" have their world position changed.
 
 :::note
-In Godot, all transform math is done relative to the parent node.
+In Redot, all transform math is done relative to the parent node.
 When we refer to "world position", that would be relative to the
 node's parent instead, if the node had a parent.
 
@@ -756,7 +756,7 @@ One of the great things about transformation matrices is that they
 work very similarly between 2D and 3D transformations.
 All the code and formulas used above for 2D work the same in 3D,
 with 3 exceptions: the addition of a third axis, that each
-axis is of type [class_Vector3](class_Vector3), and also that Godot stores
+axis is of type [class_Vector3](class_Vector3), and also that Redot stores
 the [class_Basis](class_Basis) separately from the [class_Transform3D](class_Transform3D),
 since the math can get complex and it makes sense to separate it.
 
@@ -769,15 +769,15 @@ change the basis vectors to be non-perpendicular.
 ![Image](img/matrices_and_transforms/3d-identity.png)
 
 If you would like, it's a good idea to play around with transforms
-to get an understanding of how they work. Godot allows you to edit
+to get an understanding of how they work. Redot allows you to edit
 3D transform matrices directly from the inspector. You can download
 this project which has colored lines and cubes to help visualize the
 [class_Basis](class_Basis) vectors and the origin in both 2D and 3D:
-https://github.com/godotengine/godot-demo-projects/tree/master/misc/matrix_transform
+https://github.com/redot-engine/redot-demo-projects/tree/master/misc/matrix_transform
 
 :::note
-You cannot edit Node2D's transform matrix directly in Godot 4.0's
-inspector. This may be changed in a future release of Godot.
+You cannot edit Node2D's transform matrix directly in Redot 4.0's
+inspector. This may be changed in a future release of Redot.
 
 :::
 
@@ -797,7 +797,7 @@ rotations as a set of 3 numbers, however, they are limited and not very
 useful, except for trivial cases.
 
 In 3D we do not typically use angles, we either use a transformation basis
-(used pretty much everywhere in Godot), or we use quaternions. Godot can
+(used pretty much everywhere in Redot), or we use quaternions. Redot can
 represent quaternions using the [class_Quaternion](class_Quaternion) struct. My suggestion
 to you is to completely ignore how they work under-the-hood, because
 they are very complicated and unintuitive.

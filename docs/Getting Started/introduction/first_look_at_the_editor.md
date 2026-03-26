@@ -1,7 +1,7 @@
 
-# First look at Godot's interface
+# First look at Redot's interface
 
-This page will give you a brief overview of Godot's interface. We're going to
+This page will give you a brief overview of Redot's interface. We're going to
 look at the different main screens and docks to help you situate yourself.
 
 :::info
@@ -12,14 +12,14 @@ use it, see the [Editor manual](doc_editor_introduction).
 
 ## The Project Manager
 
-When you launch Godot, the first window you see is the Project Manager. In the
+When you launch Redot, the first window you see is the Project Manager. In the
 default tab **Projects**, you can manage existing projects, import or create new
 ones, and more.
 
 ![Image](img/editor_intro_project_manager.webp)
 
 At the top of the window, there is another tab named **Asset Library**. The first
-time you go to this tab you'll see a "Go Online" button. For privacy reasons, the Godot
+time you go to this tab you'll see a "Go Online" button. For privacy reasons, the Redot
 project manager does not access the internet by default. To change this click
 the "Go Online" button. You can change this option later in the settings.
 
@@ -41,7 +41,7 @@ To learn the Project Manager's ins and outs, read
 
 :::
 
-## First look at Godot's editor
+## First look at Redot's editor
 
 When you open a new or an existing project, the editor's interface appears.
 Let's look at its main areas:
@@ -161,7 +161,7 @@ You can learn more about the asset library in
 
 ## Integrated class reference
 
-Godot comes with a built-in class reference.
+Redot comes with a built-in class reference.
 
 You can search for information about a class, method, property, constant, or
 signal by any one of the following methods:

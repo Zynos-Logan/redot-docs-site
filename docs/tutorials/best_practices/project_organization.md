@@ -3,14 +3,14 @@
 
 ## Introduction
 
-Since Godot has no restrictions on project structure or filesystem usage,
+Since Redot has no restrictions on project structure or filesystem usage,
 organizing files when learning the engine can seem challenging. This
 tutorial suggests a workflow which should be a good starting point.
-We will also cover using version control with Godot.
+We will also cover using version control with Redot.
 
 ## Organization
 
-Godot is scene-based in nature, and uses the filesystem as-is,
+Redot is scene-based in nature, and uses the filesystem as-is,
 without metadata or an asset database.
 
 Unlike other engines, many resources are contained within the scene
@@ -25,7 +25,7 @@ such as sprite images, 3D model meshes, materials, and music, etc.
 They can then use a separate folder to store built levels that use them.
 
 ```none
-/project.godot
+/project.Redot
 /docs/.gdignore  # See "Ignoring specific folders" below
 /docs/learning.html
 /models/town/house/house.dae
@@ -59,7 +59,7 @@ For consistency across projects, we recommend following these guidelines:
 
 ## Importing
 
-Godot versions prior to 3.0 did the import process from files outside
+Redot versions prior to 3.0 did the import process from files outside
 the project. While this can be useful in large projects, it
 resulted in an organization hassle for most developers.
 
@@ -68,7 +68,7 @@ folder.
 
 ### Ignoring specific folders
 
-To prevent Godot from importing files contained in a specific folder, create
+To prevent Redot from importing files contained in a specific folder, create
 an empty file called ``.gdignore`` in the folder (the leading ``.`` is required).
 This can be useful to speed up the initial project importing.
 
@@ -94,7 +94,7 @@ should be empty. It does not support patterns like ``.gitignore`` files do.
 
 Windows and recent macOS versions use case-insensitive filesystems by default,
 whereas Linux distributions use a case-sensitive filesystem by default.
-This can cause issues after exporting a project, since Godot's PCK virtual
+This can cause issues after exporting a project, since Redot's PCK virtual
 filesystem is case-sensitive. To avoid this, it's recommended to stick to
 ``snake_case`` naming for all files in the project (and lowercase characters
 in general).

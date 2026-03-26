@@ -11,15 +11,15 @@ a speech synthesis (text-to-speech) library written in C++.
 To bind to an external library, set up a module directory similar to the Summator example:
 
 ```none
-godot/modules/tts/
+Redot/modules/tts/
 
 ```
 
 Next, you will create a header file with a TTS class:
 
 ```cpp
-#ifndef GODOT_TTS_H
-#define GODOT_TTS_H
+#ifndef Redot_TTS_H
+#define Redot_TTS_H
 
 #include "core/object/ref_counted.h"
 
@@ -35,7 +35,7 @@ public:
     TTS();
 };
 
-#endif // GODOT_TTS_H
+#endif // Redot_TTS_H
 
 ```
 
@@ -48,7 +48,7 @@ And then you'll add the cpp file.
 
 bool TTS::say_text(String p_txt) {
 
-    //convert Godot String to Godot CharString to C string
+    //convert Redot String to Redot CharString to C string
     return festival_say_text(p_txt.ascii().get_data());
 }
 
@@ -133,7 +133,7 @@ sudo apt-get install festvox-don festvox-rablpc16k festvox-kallpc16k festvox-kdl
 
 The voices that Festival uses (and any other potential external/3rd-party
 resource) all have varying licenses and terms of use; some (if not most) of them may be
-be problematic with Godot, even if the Festival Library itself is MIT License compatible.
+be problematic with Redot, even if the Festival Library itself is MIT License compatible.
 Please be sure to check the licenses and terms of use.
 
 :::
@@ -160,8 +160,8 @@ git submodule add https://github.com/festvox/speech_tools
 
 :::info
 
-Please note that Git submodules are not used in the Godot repository. If
-you are developing a module to be merged into the main Godot repository, you should not
+Please note that Git submodules are not used in the Redot repository. If
+you are developing a module to be merged into the main Redot repository, you should not
 use submodules. If your module doesn't get merged in, you can always try to implement
 the external library as a GDExtension.
 
@@ -175,10 +175,10 @@ environment's paths:
 env_tts.Append(CPPPATH=["speech_tools/include", "festival/src/include"])
 
 # LIBPATH and LIBS need to be set on the real "env" (not the clone)
-# to link the specified libraries to the Godot executable.
+# to link the specified libraries to the Redot executable.
 
 # This is a path relative to /modules/tts/ where your .a libraries reside.
-# If you are compiling the module externally (not in the godot source tree),
+# If you are compiling the module externally (not in the Redot source tree),
 # these will need to be full paths.
 env.Append(LIBPATH=['libpath'])
 
@@ -189,7 +189,7 @@ env.Append(LIBS=['Festival', 'estools', 'estbase', 'eststring'])
 ```
 
 If you want to add custom compiler flags when building your module, you need to clone
-`env` first, so it won't add those flags to whole Godot build (which can cause errors).
+`env` first, so it won't add those flags to whole Redot build (which can cause errors).
 Example `SCsub` with custom flags:
 
 ```python
@@ -208,18 +208,18 @@ env_tts.Append(CCFLAGS=['-O2'])
 The final module should look like this:
 
 ```none
-godot/modules/tts/festival/
-godot/modules/tts/libpath/libestbase.a
-godot/modules/tts/libpath/libestools.a
-godot/modules/tts/libpath/libeststring.a
-godot/modules/tts/libpath/libFestival.a
-godot/modules/tts/speech_tools/
-godot/modules/tts/config.py
-godot/modules/tts/tts.h
-godot/modules/tts/tts.cpp
-godot/modules/tts/register_types.h
-godot/modules/tts/register_types.cpp
-godot/modules/tts/SCsub
+Redot/modules/tts/festival/
+Redot/modules/tts/libpath/libestbase.a
+Redot/modules/tts/libpath/libestools.a
+Redot/modules/tts/libpath/libeststring.a
+Redot/modules/tts/libpath/libFestival.a
+Redot/modules/tts/speech_tools/
+Redot/modules/tts/config.py
+Redot/modules/tts/tts.h
+Redot/modules/tts/tts.cpp
+Redot/modules/tts/register_types.h
+Redot/modules/tts/register_types.cpp
+Redot/modules/tts/SCsub
 
 ```
 

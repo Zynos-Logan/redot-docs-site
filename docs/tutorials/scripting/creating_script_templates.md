@@ -3,7 +3,7 @@ import TabItem from "@theme/TabItem";
 
 # Creating script templates
 
-Godot provides a way to use script templates as seen in the
+Redot provides a way to use script templates as seen in the
 ``Script Create Dialog`` while creating a new script:
 
 ![Image](img/script_create_dialog_templates.webp)
@@ -27,13 +27,13 @@ There are two places where templates can be managed.
 These are available globally throughout any project. The location of these
 templates are determined per each OS:
 
--  Windows: ``%APPDATA%\Godot\script_templates\``
--  Linux: ``$HOME/.config/godot/script_templates/``
--  macOS: ``$HOME/Library/Application Support/Godot/script_templates/``
+-  Windows: ``%APPDATA%\Redot\script_templates\``
+-  Linux: ``$HOME/.config/Redot/script_templates/``
+-  macOS: ``$HOME/Library/Application Support/Redot/script_templates/``
 
-If you're getting Godot from somewhere other than the official website, such
+If you're getting Redot from somewhere other than the official website, such
 as Steam, the folder might be in a different location. You can find it using
-the Godot editor. Go to ``Editor &gt; Open Editor Data/Settings Folder`` and it
+the Redot editor. Go to ``Editor &gt; Open Editor Data/Settings Folder`` and it
 will open a folder in your file browser, inside that folder is the
 ``script_templates`` folder.
 
@@ -160,7 +160,7 @@ use these as the base for creating other templates:
 <TabItem value="gdscript" label="GDScript">
 
 ```gdscript
-# meta-description: Base template for Node with default Godot cycle methods
+# meta-description: Base template for Node with default Redot cycle methods
 
 extends _BASE_
 
@@ -179,7 +179,7 @@ func _process(delta: float) -> void:
 <TabItem value="csharp" label="Csharp">
 
 ```csharp
-// meta-description: Base template for Node with default Godot cycle methods
+// meta-description: Base template for Node with default Redot cycle methods
 
 using _BINDINGS_NAMESPACE_;
 using System;
@@ -203,7 +203,7 @@ public partial class _CLASS_ : _BASE_
 
 </Tabs>
 
-The Godot editor provides a set of useful built-in node-specific templates, such as
+The Redot editor provides a set of useful built-in node-specific templates, such as
 ``basic_movement`` for both [CharacterBody2D ](class_CharacterBody2D) and
 [CharacterBody3D ](class_CharacterBody3D) and ``plugin`` for
 [EditorPlugin ](class_EditorPlugin).
@@ -217,18 +217,18 @@ which are currently implemented.
 
 | Placeholder | Description |
 | --- | --- |
-| ``_BINDINGS_NAMESPACE_`` | The name of the Godot namespace (used in C# only). |
+| ``_BINDINGS_NAMESPACE_`` | The name of the Redot namespace (used in C# only). |
 | ``_CLASS_`` | The name of the new class. |
 | ``_BASE_`` | The base type a new script inherits from. |
 | ``_TS_`` | Indentation placeholder. The exact type and number of whitespace characters used for indentation is determined by the ``text_editor/indent/type`` and ``text_editor/indent/size`` settings in the :ref:`EditorSettings &lt;class_EditorSettings&gt;` respectively. Can be overridden by the ``meta-space-indent`` header on the template. |
 
 ### Type placeholders
 
-There used to be, in Godot 3.x, placeholders for GDScript type hints that
+There used to be, in Redot 3.x, placeholders for GDScript type hints that
 would get replaced whenever a template was used to create a new script, such as:
 ``%INT_TYPE%``, ``%STRING_TYPE%``, ``%FLOAT_TYPE%`` or ``%VOID_RETURN%``.
 
-The placeholders no longer work for Godot 4.x, but if the setting
+The placeholders no longer work for Redot 4.x, but if the setting
 ``text_editor/completion/add_type_hints`` from
 [EditorSettings ](class_EditorSettings) is disabled, type hints
 for parameters and return types will be automatically removed for a few

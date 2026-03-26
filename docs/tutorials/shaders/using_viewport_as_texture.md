@@ -127,7 +127,7 @@ COLOR.xyz = vec3(sin(UV.x * 3.14159 * 4.0) * cos(UV.y * 3.14159 * 4.0) * 0.5 + 0
 ![Image](img/planet_sincos.webp)
 
 Not too bad. If you look around, you can see that the seam has now disappeared, but in its place, we
-have pinching at the poles. This pinching is due to the way Godot maps textures to spheres in its
+have pinching at the poles. This pinching is due to the way Redot maps textures to spheres in its
 [StandardMaterial3D ](class_StandardMaterial3D). It uses a projection technique called equirectangular
 projection, which translates a spherical map onto a 2D plane.
 

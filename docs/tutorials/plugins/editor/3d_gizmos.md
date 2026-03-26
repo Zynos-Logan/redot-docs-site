@@ -53,7 +53,7 @@ func _exit_tree():
 ```
 
 For simple gizmos, inheriting [EditorNode3DGizmoPlugin ](class_EditorNode3DGizmoPlugin)
-is enough. If you want to store some per-gizmo data or you are porting a Godot 3.0 gizmo
+is enough. If you want to store some per-gizmo data or you are porting a Redot 3.0 gizmo
 to 3.1+, you should go with the second approach.
 
 ## Simple approach

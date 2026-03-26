@@ -3,19 +3,19 @@
 
 ## Introduction
 
-Godot provides many post-processing effects out of the box, including Bloom,
+Redot provides many post-processing effects out of the box, including Bloom,
 DOF, and SSAO, which are described in [doc_environment_and_post_processing](doc_environment_and_post_processing).
 However, advanced use cases may require custom effects. This article explains how
 to write your own custom effects.
 
-The easiest way to implement a custom post-processing shader is to use Godot's
+The easiest way to implement a custom post-processing shader is to use Redot's
 built-in ability to read from the screen texture. If you're not familiar with
 this, you should read the
 [Screen Reading Shaders Tutorial ](doc_screen-reading_shaders) first.
 
 ## Single pass post-processing
 
-Post-processing effects are shaders applied to a frame after Godot has rendered
+Post-processing effects are shaders applied to a frame after Redot has rendered
 it. To apply a shader to a frame, create a [CanvasLayer ](class_CanvasLayer), and give it a [ColorRect ](class_ColorRect). Assign a
 new [ShaderMaterial ](class_ShaderMaterial) to the newly created
 ``ColorRect``, and set the ``ColorRect``'s layout to "Full Rect".
@@ -34,11 +34,11 @@ access it in a shader script through a ``sampler2D`` using
 
 :::note
 
-As of the time of writing, Godot does not support rendering to multiple
+As of the time of writing, Redot does not support rendering to multiple
 buffers at the same time. Your post-processing shader will not have access
-to other render passes and buffers not exposed by Godot (such as depth or
+to other render passes and buffers not exposed by Redot (such as depth or
 normal/roughness). You only have access to the rendered frame and buffers
-exposed by Godot as samplers.
+exposed by Redot as samplers.
 
 :::
 

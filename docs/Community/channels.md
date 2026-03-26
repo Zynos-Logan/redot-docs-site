@@ -1,12 +1,12 @@
 
 # Community channels
 
-So, where is the Godot community and where can you ask questions and get help?
+So, where is the Redot community and where can you ask questions and get help?
 
-This page used to list the various official and user-supported Godot communities.
-That list is now available on the [Godot website](https://godotengine.org/community).
+This page used to list the various official and user-supported Redot communities.
+That list is now available on the [Redot website](https://redotengine.org/community).
 
 ## Language-based communities
 
-See the [User groups](https://godotengine.org/community/user-groups) page of
+See the [User groups](https://redotengine.org/community/user-groups) page of
 the website for a list of local communities.

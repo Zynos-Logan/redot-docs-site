@@ -9,7 +9,7 @@ import TabItem from "@theme/TabItem";
 
 Yet there are never enough. Creating your own custom controls that act
 just the way you want them to is an obsession of almost every GUI
-programmer. Godot provides plenty of them, but they may not work exactly
+programmer. Redot provides plenty of them, but they may not work exactly
 the way you want. Before contacting the developers with a pull-request
 to support diagonal scrollbars, at least it will be good to know how to
 create these controls easily from script.

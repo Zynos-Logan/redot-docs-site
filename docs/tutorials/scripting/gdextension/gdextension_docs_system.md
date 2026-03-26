@@ -3,8 +3,8 @@
 
 :::note
 
-Adding documentation for GDExtensions is only possible for Godot 4.3 and later. The support can be integrated into your project
-regardless because the snippet will check if you use the appropriate godot-cpp version.
+Adding documentation for GDExtensions is only possible for Redot 4.3 and later. The support can be integrated into your project
+regardless because the snippet will check if you use the appropriate Redot-cpp version.
 If you set the ``compatability_minimum`` to 4.2 and you load a project with the extension through a 4.2 editor, the
 documentation page for that class will be empty. The extension itself will still work.
 
@@ -31,7 +31,7 @@ gdextension_cpp_example/  # GDExtension directory
 |       |
 |       +--gdexample.gdextension
 |
-+--godot-cpp/             # C++ bindings
++--Redot-cpp/             # C++ bindings
 |
 +--src/                   # source code of the extension we are building
 |   |
@@ -42,18 +42,18 @@ gdextension_cpp_example/  # GDExtension directory
 
 ```
 
-Inside the Godot demo project directory of your GDExtension directory, run the following terminal command:
+Inside the Redot demo project directory of your GDExtension directory, run the following terminal command:
 
 ```none
-# Replace "godot" with the full path to a Godot editor binary
-# if Godot is not installed in your `PATH`.
-godot --doctool ../ --gdextension-docs
+# Replace "Redot" with the full path to a Redot editor binary
+# if Redot is not installed in your `PATH`.
+Redot --doctool ../ --gdextension-docs
 
 ```
 
-This command calls upon the Godot editor binary to generate documentation via the ``--doctool``
-and ``--gdextension-docs`` commands. The ``../`` addition is to let Godot know where the GDExtension
-SConstruct file is located. By calling this command, Godot generates a ``doc_classes`` directory inside the
+This command calls upon the Redot editor binary to generate documentation via the ``--doctool``
+and ``--gdextension-docs`` commands. The ``../`` addition is to let Redot know where the GDExtension
+SConstruct file is located. By calling this command, Redot generates a ``doc_classes`` directory inside the
 project directory in which it generates XML files for the GDExtension classes. Those files
 can then be edited to add information about member variables, methods, signals, and more.
 
@@ -63,7 +63,7 @@ you need to add the following lines to your SConstruct file:
 ```py
 if env["target"] in ["editor", "template_debug"]:
 try:
-    doc_data = env.GodotCPPDocData("src/gen/doc_data.gen.cpp", source=Glob("doc_classes/*.xml"))
+    doc_data = env.RedotCPPDocData("src/gen/doc_data.gen.cpp", source=Glob("doc_classes/*.xml"))
     sources.append(doc_data)
 except AttributeError:
     print("Not including class reference as we're targeting a pre-4.3 baseline.")
@@ -73,9 +73,9 @@ except AttributeError:
 The if-statement checks if we are compiling the GDExtension library with the ``editor`` and ``template_debug``
 flags. SCons then tries to load all the XML files inside the ``doc_classes`` directory and appends them
 to the ``sources`` variable which already includes all the source files of your extension. If it fails
-it means we are currently trying to compile the library when the ``godot_cpp`` is set to a version before 4.3.
+it means we are currently trying to compile the library when the ``Redot_cpp`` is set to a version before 4.3.
 
-After loading the extension in a 4.3 Godot editor or later and open the documentation of your extension class
+After loading the extension in a 4.3 Redot editor or later and open the documentation of your extension class
 either by `Ctrl + Click` in the script editor or the Editor help dialog you will see something like this:
 
 ![Image](img/gdextension_docs_generation.webp)
@@ -183,22 +183,22 @@ The most important step is to build reStructuredText (``.rst``) files from your 
 
 ```bash
 # You need a version.py file, so download it first.
-curl -sSLO https://raw.githubusercontent.com/godotengine/godot/refs/heads/master/version.py
+curl -sSLO https://raw.githubusercontent.com/Redot-engine/Redot-engine/refs/heads/master/version.py
 
 # Edit version.py according to your project before proceeding.
 # Then, run the rst generator. You'll need to have Python installed for this command to work.
-curl -sSL https://raw.githubusercontent.com/godotengine/godot/master/doc/tools/make_rst.py | python3 - -o "docs/classes" -l "en" doc_classes
+curl -sSL https://raw.githubusercontent.com/Redot-engine/Redot-engine/master/doc/tools/make_rst.py | python3 - -o "docs/classes" -l "en" doc_classes
 
 ```
 
 Your ``.rst`` files will now be available in ``docs/classes/``. From here, you can use
 any documentation builder that supports reStructuredText syntax to create a website from them.
 
-[godot-docs ](https://github.com/godotengine/godot-docs) uses [Sphinx ](https://www.sphinx-doc.org/en/master/). You can use the repository as a basis to build your own documentation system. The following guide describes the basic steps, but they are not exhaustive: You will need a bit of personal insight to make it work.
+[Redot-docs ](https://github.com/redot-engine/redot-docs-site) uses [Sphinx ](https://www.sphinx-doc.org/en/master/). You can use the repository as a basis to build your own documentation system. The following guide describes the basic steps, but they are not exhaustive: You will need a bit of personal insight to make it work.
 
-1. Add [godot-docs ](https://github.com/godotengine/godot-docs) as a submodule to your ``docs/`` folder.
-2. Copy over its ``conf.py``, ``index.rst``, ``.readthedocs.yaml`` files into ``/docs/``. You may later decide to copy over and edit more of godot-docs' files, like ``_templates/layout.html``.
-3. Modify these files according to your project. This mostly involves adjusting paths to point to the ``godot-docs`` subfolder, as well as strings to reflect it's your project rather than Godot you're building the docs for.
+1. Add [Redot-docs ](https://github.com/redot-engine/redot-docs-site) as a submodule to your ``docs/`` folder.
+2. Copy over its ``conf.py``, ``index.rst``, ``.readthedocs.yaml`` files into ``/docs/``. You may later decide to copy over and edit more of Redot-docs' files, like ``_templates/layout.html``.
+3. Modify these files according to your project. This mostly involves adjusting paths to point to the ``Redot-docs`` subfolder, as well as strings to reflect it's your project rather than Redot you're building the docs for.
 4. Create an account on [readthedocs.org ](http://readthedocs.org). Import your project, and modify its base ``.readthedocs.yaml`` file path to ``/docs/.readthedocs.yaml``.
 
 Once you have completed all these steps, your documentation should be available at ``&lt;repo-name&gt;.readthedocs.io``.

@@ -61,10 +61,10 @@ For each MSYS2 MinGW subsystem, you should then run
 :::
 
 :::info
-To get the Godot source code for compiling, see
+To get the Redot source code for compiling, see
 [doc_getting_source](doc_getting_source).
 
-For a general overview of SCons usage for Godot, see
+For a general overview of SCons usage for Redot, see
 [doc_introduction_to_the_buildsystem](doc_introduction_to_the_buildsystem).
 
 :::
@@ -97,24 +97,24 @@ If SCons cannot detect your Visual Studio installation, it might be that your
 SCons version is too old. Update it to the latest version with
 ``python -m pip install --upgrade scons``.
 
-## Downloading Godot's source
+## Downloading Redot's source
 
 Refer to [doc_getting_source](doc_getting_source) for detailed instructions.
 
 The tutorial will assume from now on that you placed the source code in
-``C:\godot``.
+``C:\Redot``.
 
 :::warning
 
 To prevent slowdowns caused by continuous virus scanning during compilation,
-add the Godot source folder to the list of exceptions in your antivirus
+add the Redot source folder to the list of exceptions in your antivirus
 software.
 
 For Windows Defender, hit the `Windows` key, type "Windows Security"
 then hit `Enter`. Click on **Virus & threat protection** on the left
 panel. Under **Virus & threat protection settings** click on **Manage Settings**
 and scroll down to **Exclusions**. Click **Add or remove exclusions** then
-add the Godot source folder.
+add the Redot source folder.
 
 :::
 
@@ -133,15 +133,15 @@ builds cannot be performed from the MSYS2 or MinGW shells. Use either
 :::tip
 
 During development, using the Visual Studio compiler is usually a better
-idea, as it links the Godot binary much faster than MinGW. However, MinGW
+idea, as it links the Redot binary much faster than MinGW. However, MinGW
 can produce more optimized binaries using link-time optimization (see
 below), making it a better choice for production use. This is particularly
 the case for the GDScript VM which performs much better with MinGW compared
 to MSVC. Therefore, it's recommended to use MinGW to produce builds that you
 distribute to players.
 
-All official Godot binaries are built in
-[custom containers](https://github.com/godotengine/build-containers)
+All official Redot binaries are built in
+[custom containers](https://github.com/redot-engine/build-containers)
 using MinGW.
 
 :::
@@ -152,7 +152,7 @@ After opening a command prompt, change to the root directory of
 the engine source code (using ``cd``) and type:
 
 ```doscon
-C:\godot> scons platform=windows
+C:\Redot> scons platform=windows
 
 ```
 
@@ -164,7 +164,7 @@ pywin32 being missing. You can safely ignore this warning.
 
 :::tip
 
-If you are compiling Godot to make changes or contribute to the engine,
+If you are compiling Redot to make changes or contribute to the engine,
 you may want to use the SCons options ``dev_build=yes`` or ``dev_mode=yes``.
 See [doc_introduction_to_the_buildsystem_development_and_production_aliases](doc_introduction_to_the_buildsystem_development_and_production_aliases)
 for more info.
@@ -172,8 +172,8 @@ for more info.
 :::
 
 If all goes well, the resulting binary executable will be placed in
-``C:\godot\bin\`` with the name ``godot.windows.editor.x86_32.exe`` or
-``godot.windows.editor.x86_64.exe``. By default, SCons will build a binary matching
+``C:\Redot\bin\`` with the name ``Redot.windows.editor.x86_32.exe`` or
+``Redot.windows.editor.x86_64.exe``. By default, SCons will build a binary matching
 your CPU architecture, but this can be overridden using ``arch=x86_64``,
 ``arch=x86_32``, or ``arch=arm64``.
 
@@ -181,7 +181,7 @@ This executable file contains the whole engine and runs without any
 dependencies. Running it will bring up the Project Manager.
 
 :::tip
-If you are compiling Godot for production use, you can
+If you are compiling Redot for production use, you can
 make the final executable smaller and faster by adding the
 SCons option ``production=yes``. This enables additional compiler
 optimizations and link-time optimization.
@@ -194,7 +194,7 @@ with the above option, use ``production=yes lto=none`` or ``production=yes lto=t
 :::
 
 :::note
-If you want to use separate editor settings for your own Godot builds
+If you want to use separate editor settings for your own Redot builds
 and official releases, you can enable
 [doc_data_paths_self_contained_mode](doc_data_paths_self_contained_mode) by creating a file called
 ``._sc_`` or ``_sc_`` in the ``bin/`` folder.
@@ -203,12 +203,12 @@ and official releases, you can enable
 
 ## Compiling with support for Direct3D 12
 
-By default, builds of Godot do not contain support for the Direct3D 12 graphics
+By default, builds of Redot do not contain support for the Direct3D 12 graphics
 API.
 
 You can install the required dependencies by running
 ``python misc/scripts/install_d3d12_sdk_windows.py``
-in the Godot source repository. After running this script, add the ``d3d12=yes``
+in the Redot source repository. After running this script, add the ``d3d12=yes``
 SCons option to enable Direct3D 12 support. This will use the default paths for
 the various dependencies, which match the ones used in the script.
 
@@ -216,18 +216,18 @@ You can find the detailed steps below if you wish to set up dependencies
 manually, but the above script handles everything for you (including the
 optional PIX and Agility SDK components).
 
-- [godot-nir-static library](https://github.com/godotengine/godot-nir-static/releases/).
+- [Redot-nir-static library](https://github.com/redot-engine/redot-engine-nir-static/releases/).
   We compile the Mesa libraries you will need into a static library. Download it
   anywhere, unzip it and remember the path to the unzipped folder, you will
   need it below.
 
 :::note
-You can optionally build the godot-nir-static libraries yourself with
+You can optionally build the Redot-nir-static libraries yourself with
 the following steps:
 
 1. Install the Python package [mako](https://www.makotemplates.org)
    which is needed to generate some files.
-2. Clone the [godot-nir-static](https://github.com/godotengine/godot-nir-static)
+2. Clone the [Redot-nir-static](https://github.com/redot-engine/redot-engine-nir-static)
    directory and navigate to it.
 3. Run the following
 
@@ -249,7 +249,7 @@ scons
 
    Mesa static library should be built using the same compiler and the
    same CRT (if you are building with MinGW) you are using for building
-   Godot.
+   Redot.
 
 :::
 
@@ -291,18 +291,18 @@ dlltool --machine arm64 --no-leading-underscore -d WinPixEventRuntime.def -D Win
 
 :::
 
-When building Godot, you will need to tell SCons to use Direct3D 12 and where to
+When building Redot, you will need to tell SCons to use Direct3D 12 and where to
 look for the additional libraries:
 
 ```doscon
-C:\godot> scons platform=windows d3d12=yes mesa_libs=<...>
+C:\Redot> scons platform=windows d3d12=yes mesa_libs=<...>
 
 ```
 
 Or, with all options enabled:
 
 ```doscon
-C:\godot> scons platform=windows d3d12=yes mesa_libs=<...> agility_sdk_path=<...> pix_path=<...>
+C:\Redot> scons platform=windows d3d12=yes mesa_libs=<...> agility_sdk_path=<...> pix_path=<...>
 
 ```
 
@@ -321,7 +321,7 @@ ANGLE provides a translation layer from OpenGL ES 3.x to Direct3D 11 and can be 
 to improve support for the Compatibility renderer on some older GPUs with outdated
 OpenGL drivers and on Windows for ARM.
 
-By default, Godot is built with dynamically linked ANGLE, you can use it by placing
+By default, Redot is built with dynamically linked ANGLE, you can use it by placing
 ``libEGL.dll`` and ``libGLESv2.dll`` alongside the executable.
 
 :::note
@@ -332,10 +332,10 @@ be automatically copied during the export process.
 
 :::
 
-To compile Godot with statically linked ANGLE:
+To compile Redot with statically linked ANGLE:
 
-- Download pre-built static libraries from [godot-angle-static library](https://github.com/godotengine/godot-angle-static/releases), and unzip them.
-- When building Godot, add ``angle_libs={path}`` to tell SCons where to look for the ANGLE libraries
+- Download pre-built static libraries from [Redot-angle-static library](https://github.com/redot-engine/redot-engine-angle-static/releases), and unzip them.
+- When building Redot, add ``angle_libs={path}`` to tell SCons where to look for the ANGLE libraries
 
 ```
 scons platform=windows angle_libs=<...>
@@ -343,10 +343,10 @@ scons platform=windows angle_libs=<...>
 ```
 
 :::note
-You can optionally build the godot-angle-static libraries yourself with
+You can optionally build the Redot-angle-static libraries yourself with
 the following steps:
 
-1. Clone the [godot-angle-static](https://github.com/godotengine/godot-angle-static)
+1. Clone the [Redot-angle-static](https://github.com/redot-engine/redot-engine-angle-static)
    directory and navigate to it.
 2. Run the following command
 
@@ -368,17 +368,17 @@ scons
 
    ANGLE static library should be built using the same compiler and the
    same CRT (if you are building with MinGW) you are using for building
-   Godot.
+   Redot.
 
 :::
 
 ## Development in Visual Studio
 
-Using an IDE is not required to compile Godot, as SCons takes care of everything.
+Using an IDE is not required to compile Redot, as SCons takes care of everything.
 But if you intend to do engine development or debugging of the engine's C++ code,
 you may be interested in configuring a code editor or an IDE.
 
-Folder-based editors don't require any particular setup to start working with Godot's
+Folder-based editors don't require any particular setup to start working with Redot's
 codebase. To edit projects with Visual Studio they need to be set up as a solution.
 
 You can create a Visual Studio solution via SCons by running SCons with
@@ -389,8 +389,8 @@ scons platform=windows vsproj=yes
 
 ```
 
-You will be able to open Godot's source in a Visual Studio solution now,
-and able to build Godot using Visual Studio's **Build** button.
+You will be able to open Redot's source in a Visual Studio solution now,
+and able to build Redot using Visual Studio's **Build** button.
 
 :::info
 See [doc_configuring_an_ide_vs](doc_configuring_an_ide_vs) for further details.
@@ -466,7 +466,7 @@ invoking SCons if building from a different architecture.
 ### Troubleshooting
 
 Cross-compiling from some Ubuntu versions may lead to
-[this bug](https://github.com/godotengine/godot/issues/9258),
+[this bug](https://github.com/redot-engine/redot-engine/issues/9258),
 due to a default configuration lacking support for POSIX threading.
 
 You can change that configuration following those instructions,
@@ -492,16 +492,16 @@ sudo update-alternatives --config i686-w64-mingw32-g++
 
 ## Creating Windows export templates
 
-Windows export templates are created by compiling Godot without the editor,
+Windows export templates are created by compiling Redot without the editor,
 with the following flags:
 
 ```doscon
-C:\godot> scons platform=windows target=template_debug arch=x86_32
-C:\godot> scons platform=windows target=template_release arch=x86_32
-C:\godot> scons platform=windows target=template_debug arch=x86_64
-C:\godot> scons platform=windows target=template_release arch=x86_64
-C:\godot> scons platform=windows target=template_debug arch=arm64
-C:\godot> scons platform=windows target=template_release arch=arm64
+C:\Redot> scons platform=windows target=template_debug arch=x86_32
+C:\Redot> scons platform=windows target=template_release arch=x86_32
+C:\Redot> scons platform=windows target=template_debug arch=x86_64
+C:\Redot> scons platform=windows target=template_release arch=x86_64
+C:\Redot> scons platform=windows target=template_debug arch=arm64
+C:\Redot> scons platform=windows target=template_release arch=arm64
 
 ```
 
@@ -510,7 +510,7 @@ following location, replacing ``&lt;version&gt;`` with the version identifier
 (such as ``4.2.1.stable`` or ``4.3.dev``):
 
 ```none
-%APPDATA%\Godot\export_templates\<version>\
+%APPDATA%\Redot\export_templates\<version>\
 
 ```
 
@@ -541,5 +541,5 @@ here:
 Select matching architecture in the export config.
 
 You don't need to copy them in this case, just reference the resulting
-files in the ``bin\`` directory of your Godot source folder, so the next
+files in the ``bin\`` directory of your Redot source folder, so the next
 time you build, you will automatically have the custom templates referenced.

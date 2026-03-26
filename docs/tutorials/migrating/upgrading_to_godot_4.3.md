@@ -1,5 +1,5 @@
 
-# Upgrading from Godot 4.2 to Godot 4.3
+# Upgrading from Redot 4.2 to Redot 4.3
 
 For most games and apps made with 4.2 it should be relatively safe to migrate to 4.3.
 This page intends to cover everything you need to pay attention to when migrating
@@ -16,7 +16,7 @@ the C# breaking change is *binary compatible* or *source compatible*:
 - **Binary compatible** - Existing binaries will load and execute successfully without
   recompilation, and the runtime behavior won't change.
 - **Source compatible** - Source code will compile successfully without changes when
-  upgrading Godot.
+  upgrading Redot.
 
 ### GDExtension
 
@@ -231,11 +231,11 @@ This breaks compat with script encoding/decoding.
 :::note
 
 ``PackedByteArray`` is now able to use a more compact base64 encoding for storage. But the trade-off is that it breaks
-compatibility, meaning that older versions of Godot may not be able to open resources saved by 4.3 ([GH-89186](GH-89186)).
+compatibility, meaning that older versions of Redot may not be able to open resources saved by 4.3 ([GH-89186](GH-89186)).
 
 To maximize compatibility, this new storage format will only be enabled for resources and scenes that contain large
-PackedByteArrays for now. Support for this new format will also be added in patch updates for older versions of Godot.
-Once all supported Godot versions are able to read the new format, we will gradually retire the compatibility measures
+PackedByteArrays for now. Support for this new format will also be added in patch updates for older versions of Redot.
+Once all supported Redot versions are able to read the new format, we will gradually retire the compatibility measures
 and have all resources and scenes use the new storage format.
 
 :::
@@ -278,7 +278,7 @@ should also note that this method is now deprecated and will be replaced by a ne
 :::
 
 More information about the changes to Animation can be found in the
-[Migrating Animations from Godot 4.0 to 4.3 ](https://godotengine.org/article/migrating-animations-from-godot-4-0-to-4-3)_
+[Migrating Animations from Redot 4.0 to 4.3 ](https://godotengine.org/article/migrating-animations-from-godot-4-0-to-4-3)_
 article.
 
 ### GUI nodes
@@ -304,10 +304,10 @@ are children of a node with the ``auto_translate`` property set to ``false``.
 
 The ``SceneMultiplayer`` caching protocol was changed to send the received ID instead of the Node path when sending a node removal confirmation packet ([GH-90027](GH-90027)).
 
-This is a breaking change for the high-level multiplayer protocol making it incompatible with previous Godot versions.
-Upgrade both your server and client versions to Godot 4.3 to handle this change gracefully.
+This is a breaking change for the high-level multiplayer protocol making it incompatible with previous Redot versions.
+Upgrade both your server and client versions to Redot 4.3 to handle this change gracefully.
 
-Note that high-level multiplayer facilities are only ever meant to be compatible with server and client using the same Godot version. It is recommended to implement some kind of version checking.
+Note that high-level multiplayer facilities are only ever meant to be compatible with server and client using the same Redot version. It is recommended to implement some kind of version checking.
 
 :::
 

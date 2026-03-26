@@ -5,15 +5,15 @@
 
 It is often desired to use :abbr:`TLS (Transport Layer Security)` connections (also
 known as :abbr:`SSL (Secure Sockets Layer)` connections) for communications
-to avoid "man in the middle" attacks. Godot has a connection wrapper,
+to avoid "man in the middle" attacks. Redot has a connection wrapper,
 [StreamPeerTLS ](class_StreamPeerTLS), which can take a regular connection
 and add security around it. The [HTTPClient ](class_HTTPClient) and
 [HTTPRequest ](class_HTTPRequest) classes also support HTTPS using
 this same wrapper.
 
-Godot will try to use the TLS certificate bundle provided by the operating system,
+Redot will try to use the TLS certificate bundle provided by the operating system,
 but also includes the
-[TLS certificate bundle from Mozilla ](https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-certificates.crt)_
+[TLS certificate bundle from Mozilla ](https://github.com/redot-engine/redot-engine/blob/master/thirdparty/certs/ca-certificates.crt)_
 as a fallback.
 
 You can alternatively force your own certificate bundle in the Project Settings:
@@ -39,7 +39,7 @@ which requires additional configuration on the client side before it's
 considered trusted.
 
 These certificates do not require any configuration on the client to work, since
-Godot already bundles the Mozilla certificate bundle in the editor and exported
+Redot already bundles the Mozilla certificate bundle in the editor and exported
 projects.
 
 ## Generate a self-signed certificate
@@ -71,7 +71,7 @@ settings, normal domain name validation is enforced via the certificate
 
 :::
 
-For development purposes Godot can generate self-signed certificates via
+For development purposes Redot can generate self-signed certificates via
 [Crypto.generate_self_signed_certificate ](class_Crypto_method_generate_self_signed_certificate).
 
 Alternatively, OpenSSL has some documentation about `generating keys

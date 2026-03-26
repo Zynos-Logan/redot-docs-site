@@ -76,7 +76,7 @@ many pages have been substantially updated but are not reflected in this documen
 
 ### Migrating
 
-- [doc_upgrading_to_godot_4.3](doc_upgrading_to_godot_4.3)
+- [doc_upgrading_to_Redot_4.3](doc_upgrading_to_Redot_4.3)
 
 ### Rendering
 
@@ -103,7 +103,7 @@ many pages have been substantially updated but are not reflected in this documen
 
 ### Migrating
 
-- [doc_upgrading_to_godot_4.2](doc_upgrading_to_godot_4.2)
+- [doc_upgrading_to_Redot_4.2](doc_upgrading_to_Redot_4.2)
 
 ### I/O
 
@@ -122,7 +122,7 @@ many pages have been substantially updated but are not reflected in this documen
 
 ### Migrating
 
-- [doc_upgrading_to_godot_4.1](doc_upgrading_to_godot_4.1)
+- [doc_upgrading_to_Redot_4.1](doc_upgrading_to_Redot_4.1)
 
 ### Physics
 

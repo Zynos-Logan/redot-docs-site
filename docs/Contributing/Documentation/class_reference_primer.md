@@ -4,12 +4,12 @@ import TabItem from "@theme/TabItem";
 # Class reference primer
 
 This page explains how to write the class reference. You will learn where to
-write new descriptions for the classes, methods, and properties for Godot's
+write new descriptions for the classes, methods, and properties for Redot's
 built-in node types.
 
 :::info
 
-To learn to submit your changes to the Godot project using the Git version
+To learn to submit your changes to the Redot project using the Git version
 control system, see [doc_updating_the_class_reference](doc_updating_the_class_reference).
 
 :::
@@ -25,8 +25,8 @@ The reference for each class is contained in an XML file like the one below:
         A 2D game object, with a transform (position, rotation, and scale). All 2D nodes, including physics objects and sprites, inherit from Node2D. Use Node2D as a parent node to move, scale and rotate children in a 2D project. Also gives control of the node's render order.
     </description>
     <tutorials>
-        <link title="Custom drawing in 2D">https://docs.godotengine.org/en/latest/tutorials/2d/custom_drawing_in_2d.html</link>
-        <link title="All 2D Demos">https://github.com/godotengine/godot-demo-projects/tree/master/2d</link>
+        <link title="Custom drawing in 2D">https://docs.redotengine.org/en/latest/tutorials/2d/custom_drawing_in_2d.html</link>
+        <link title="All 2D Demos">https://github.com/redot-engine/redot-demo-projects/tree/master/2d</link>
     </tutorials>
     <methods>
         <method name="apply_scale">
@@ -69,7 +69,7 @@ description is always at the top of the page, while the long description lies
 below the list of methods, variables, and constants. You can find methods,
 member variables, constants, and signals in separate XML nodes.
 
-For each, you want to learn how they work in Godot's source code. Then, fill
+For each, you want to learn how they work in Redot's source code. Then, fill
 their documentation by completing or improving the text in these tags:
 
 - `&lt;brief_description&gt;`
@@ -90,7 +90,7 @@ result in a new paragraph, even if it is empty.
 
 Edit the file for your chosen class in ``doc/classes/`` to update the class
 reference. The folder contains an XML file for each class. The XML lists the
-constants and methods you will find in the class reference. Godot generates and
+constants and methods you will find in the class reference. Redot generates and
 updates the XML automatically.
 
 :::note
@@ -108,7 +108,7 @@ documentation, navigate to the ``doc/`` folder and run the command ``make rst``.
 This will convert the XML files to the online documentation's format and output
 errors if anything's wrong.
 
-Alternatively, you can build Godot and open the modified page in the built-in
+Alternatively, you can build Redot and open the modified page in the built-in
 code reference. To learn how to compile the engine, read the :ref:`compilation
 guide &lt;toc-devel-compiling&gt;`.
 
@@ -126,7 +126,7 @@ to get linting for class reference XML files.
 
 ### Improve formatting with BBCode style tags
 
-Godot's XML class reference supports BBCode-like tags for linking as well as formatting text and code.
+Redot's XML class reference supports BBCode-like tags for linking as well as formatting text and code.
 In the tables below you can find the available tags, usage examples and the results after conversion to reStructuredText.
 
 ##### Linking

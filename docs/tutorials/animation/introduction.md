@@ -10,7 +10,7 @@ In this guide you learn to:
 -  Animate any property of any node
 -  Create a simple animation
 
-In Godot, you can animate anything available in the Inspector, such as
+In Redot, you can animate anything available in the Inspector, such as
 Node transforms, sprites, UI elements, particles, visibility and color
 of materials, and so on. You can also modify values of script variables
 and even call functions.
@@ -56,7 +56,7 @@ keyframes indicates that the value doesn't change between them.
 
 ![Image](img/animation_keyframes.webp)
 
-   Keyframes in Godot
+   Keyframes in Redot
 
 You set values of a node's properties and create animation keyframes for them.
 When the animation runs, the engine will interpolate the values between the
@@ -115,7 +115,7 @@ as a child of an AnimationPlayer node.
 :::
 
 The sprite holds an image texture. For this tutorial, select the Sprite2D node,
-click Texture in the Inspector, and then click Load. Select the default Godot
+click Texture in the Inspector, and then click Load. Select the default Redot
 icon for the sprite's texture.
 
 ### Adding an animation
@@ -157,10 +157,10 @@ position, make sure that only the location switch is selected. The selected
 switches are blue.
 
 Click on the key button to create the first keyframe. Since we don't have a
-track set up for the Position property yet, Godot will offer to
+track set up for the Position property yet, Redot will offer to
 create it for us. Click **Create**.
 
-Godot will create a new track and insert our first keyframe at the beginning of
+Redot will create a new track and insert our first keyframe at the beginning of
 the timeline:
 
 ![Image](img/animation_track.webp)
@@ -209,11 +209,11 @@ easily identify which one is the autoplay animation.
 
 ### Back and forth
 
-Godot has an interesting feature that we can use in animations. When Animation
+Redot has an interesting feature that we can use in animations. When Animation
 Looping is set but there's no keyframe specified at the end of the animation,
 the first keyframe is also the last.
 
-This means we can extend the animation length to four seconds now, and Godot
+This means we can extend the animation length to four seconds now, and Redot
 will also calculate the frames from the last keyframe to the first, moving
 our sprite back and forth.
 
@@ -233,7 +233,7 @@ mode, track interpolation, and loop mode.
 
    Track settings
 
-The update mode of a track tells Godot when to update the property
+The update mode of a track tells Redot when to update the property
 values. This can be:
 
 -  **Continuous:** Update the property on each frame
@@ -251,7 +251,7 @@ values. This can be:
 You will usually use "Continuous" mode. The other types are used to
 script complex animations.
 
-Track interpolation tells Godot how to calculate the frame values between
+Track interpolation tells Redot how to calculate the frame values between
 keyframes. These interpolation modes are supported:
 
 -  Nearest: Set the nearest keyframe value
@@ -271,7 +271,7 @@ them, which leads to more natural movement. Cubic interpolation is commonly
 used for character animation. Linear interpolation animates changes at a fixed
 pace, resulting in a more robotic effect.
 
-Godot supports two loop modes, which affect the animation when it's set to
+Redot supports two loop modes, which affect the animation when it's set to
 loop:
 
 ![Image](img/animation_track_loop_modes.webp)
@@ -281,16 +281,16 @@ loop:
 -  Clamp loop interpolation: When this is selected, the animation stops
    after the last keyframe for this track. When the first keyframe is
    reached again, the animation will reset to its values.
--  Wrap loop interpolation: When this is selected, Godot calculates the
+-  Wrap loop interpolation: When this is selected, Redot calculates the
    animation after the last keyframe to reach the values of the first
    keyframe again.
 
 ## Keyframes for other properties
 
-Godot's animation system isn't restricted to position, rotation, and scale.
+Redot's animation system isn't restricted to position, rotation, and scale.
 You can animate any property.
 
-If you select your sprite while the animation panel is visible, Godot will
+If you select your sprite while the animation panel is visible, Redot will
 display a small keyframe button in the *Inspector* for each of the sprite's
 properties. Click on one of these buttons to add a track and keyframe to
 the current animation.
@@ -309,7 +309,7 @@ edit its value in the *Inspector*.
    Keyframe editor editing a key
 
 You can also edit the easing value for a keyframe here by clicking and dragging
-its easing curve. This tells Godot how to interpolate the animated property when it
+its easing curve. This tells Redot how to interpolate the animated property when it
 reaches this keyframe.
 
 You can tweak your animations this way until the movement "looks right."
@@ -345,7 +345,7 @@ RESET tracks are also used as reference values for blending. See also `For bette
 
 ## Onion Skinning
 
-Godot's animation editor allows you use onion skinning while creating an
+Redot's animation editor allows you use onion skinning while creating an
 animation. To turn this feature on click on the onion icon in the top right
 of the animation editor. Now there will be transparent red copies of what
 is being animated in its previous positions in the animation.

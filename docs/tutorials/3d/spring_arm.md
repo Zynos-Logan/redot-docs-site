@@ -6,7 +6,7 @@
 3D games will often have a third-person camera that follows and
 rotates around something such as a player character or a vehicle.
 
-In Godot, this can be done by setting a [Camera3D](class_Camera3D) as a child of a node.
+In Redot, this can be done by setting a [Camera3D](class_Camera3D) as a child of a node.
 However, if you try this without any extra steps, you'll notice that the camera clips through geometry and hides the scene.
 
 This is where the [SpringArm3D](class_SpringArm3D) node comes in.
@@ -56,7 +56,7 @@ When the shape hits something, the camera will be placed at or near the collisio
 Let's add a spring arm camera setup to the platformer demo.
 
 :::note
-You can download the Platformer 3D demo on `GitHub <https://github.com/godotengine/godot-demo-projects/tree/master/3d/platformer>`_ or using the `Asset Library <https://godotengine.org/asset-library/asset/2748>`_.
+You can download the Platformer 3D demo on `GitHub <https://github.com/redot-engine/redot-demo-projects/tree/master/3d/platformer>`_ or using the `Asset Library <https://godotengine.org/asset-library/asset/2748>`_.
 
 :::
 

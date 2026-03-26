@@ -3,7 +3,7 @@
 GDScript format strings
 =======================
 
-Godot offers multiple ways to dynamically change the contents of strings:
+Redot offers multiple ways to dynamically change the contents of strings:
 
 - Format strings: ``var string = "I have %s cats." % "3"``
 - The ``String.format()`` method: ``var string = "I have {} cats.".format([3])``
@@ -30,10 +30,10 @@ Examine this concrete GDScript example:
     var format_string = "We're waiting for %s."
 
     # Using the '%' operator, the placeholder is replaced with the desired value
-    var actual_string = format_string % "Godot"
+    var actual_string = format_string % "Redot"
 
     print(actual_string)
-    # Output: "We're waiting for Godot."
+    # Output: "We're waiting for Redot."
 
 Placeholders always start with a ``%``, but the next character or characters,
 the *format specifier*, determines how the given value is converted to a
@@ -238,10 +238,10 @@ A quick example in GDScript:
     var format_string = "We're waiting for {str}"
 
     # Using the 'format' method, replace the 'str' placeholder
-    var actual_string = format_string.format({"str": "Godot"})
+    var actual_string = format_string.format({"str": "Redot"})
 
     print(actual_string)
-    # Output: "We're waiting for Godot"
+    # Output: "We're waiting for Redot"
 
 
 Format method examples
@@ -303,10 +303,10 @@ operator.
     var base_string = "We're waiting for "
 
     # Concatenate the string
-    var actual_string = base_string + "Godot"
+    var actual_string = base_string + "Redot"
 
     print(actual_string)
-    # Output: "We're waiting for Godot"
+    # Output: "We're waiting for Redot"
 
 When using string concatenation, values that are not strings must be converted using
 the ``str()`` function. There is no way to specify the string format of converted
@@ -326,5 +326,5 @@ a better choice. In many cases, string concatenation is also less readable.
 
 .. note::
 
-    In Godot's C++ code, GDScript format strings can be accessed using the
+    In Redot's C++ code, GDScript format strings can be accessed using the
     ``vformat()`` helper function in the :ref:`Variant<class_Variant>` header.

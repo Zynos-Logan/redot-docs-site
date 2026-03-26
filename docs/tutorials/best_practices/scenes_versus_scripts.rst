@@ -16,7 +16,7 @@ Anonymous types
 ---------------
 
 It *is* possible to completely define a scenes' contents using a script alone.
-This is, in essence, what the Godot Editor does, only in the C++ constructor
+This is, in essence, what the Redot Editor does, only in the C++ constructor
 of its objects.
 
 But, choosing which one to use can be a dilemma. Creating script instances
@@ -176,7 +176,7 @@ with it, and finally adds it as a child of the ``Main`` node:
             Child.SetScript(GD.Load<Script>("res://Path/To/Child.cs"));
             // SetScript() causes the C# wrapper object to be disposed, so obtain a new
             // wrapper for the Child node using its instance ID before proceeding.
-            Child = (Node)GodotObject.InstanceFromId(childID);
+            Child = (Node)RedotObject.InstanceFromId(childID);
             AddChild(Child);
             Child.Owner = this;
         }

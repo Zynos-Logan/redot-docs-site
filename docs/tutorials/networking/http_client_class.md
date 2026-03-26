@@ -26,7 +26,7 @@ class. It's just a script, so it can be run by executing:
 <TabItem value="gdscript" label="GDScript">
 
 ```console
-c:\godot> godot -s http_test.gd
+c:\Redot> Redot -s http_test.gd
 
 ```
 
@@ -35,7 +35,7 @@ c:\godot> godot -s http_test.gd
 <TabItem value="c_" label="C#">
 
 ```console
-c:\godot> godot -s HTTPTest.cs
+c:\Redot> Redot -s HTTPTest.cs
 
 ```
 
@@ -72,7 +72,7 @@ func _init():
 
     # Some headers
     var headers = [
-        "User-Agent: Pirulo/1.0 (Godot)",
+        "User-Agent: Pirulo/1.0 (Redot)",
         "Accept: */*"
     ]
 
@@ -161,7 +161,7 @@ public partial class HTTPTest : SceneTree
         // Some headers.
         string[] headers =
         [
-            "User-Agent: Pirulo/1.0 (Godot)",
+            "User-Agent: Pirulo/1.0 (Redot)",
             "Accept: */*",
         ];
 

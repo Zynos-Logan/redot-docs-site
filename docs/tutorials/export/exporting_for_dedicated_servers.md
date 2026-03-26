@@ -4,13 +4,13 @@ import TabItem from "@theme/TabItem";
 # Exporting for dedicated servers
 
 If you want to run a dedicated server for your project on a machine that doesn't
-have a GPU or display server available, you'll need to run Godot with the ``headless``
+have a GPU or display server available, you'll need to run Redot with the ``headless``
 display server and ``Dummy`` [audio driver ](class_ProjectSettings_property_audio/driver/driver).
 
-Since Godot 4.0, this can be done by running a Godot binary on any platform with
+Since Redot 4.0, this can be done by running a Redot binary on any platform with
 the ``--headless`` command line argument, or running a project exported as
 dedicated server. You do not need to use a specialized server binary anymore,
-unlike Godot 3.x.
+unlike Redot 3.x.
 
 ## Editor versus export template
 
@@ -48,7 +48,7 @@ Additionally, headless mode won't be automatically used; the user will have to
 specify ``--headless`` to make sure no window spawns.
 
 Many resources such as textures can be stripped from the PCK file to greatly
-reduce its size. Godot offers a way to do this for textures and materials in a way
+reduce its size. Redot offers a way to do this for textures and materials in a way
 that preserves references in scene or resource files (built-in or external).
 
 To begin doing so, make sure you have a dedicated export preset for your server,
@@ -115,7 +115,7 @@ a removed file will no longer be able to load successfully.
 If you wish to remove specific resources but make the scenes still be able
 to load without them, you'll have to remove the reference in the scene file
 and load the files to the nodes' properties using ``load()`` in a script.
-This approach can be used to strip resources that Godot doesn't support
+This approach can be used to strip resources that Redot doesn't support
 replacing with placeholders yet, such as audio.
 
 Removing textures is often what makes the greatest impact on the PCK size,
@@ -130,7 +130,7 @@ normally) will look as follows:
 
 ```
 .
-├── .godot
+├── .Redot
 │   ├── exported
 │   │   └── 133200997
 │   │       └── export-78c237d4bfdb4e1d02e0b5f38ddfd8bd-scene.scn
@@ -161,7 +161,7 @@ The PCK's file structure for the server will look as follows:
 
 ```
 .
-├── .godot
+├── .Redot
 │   ├── exported
 │   │   └── 3400186661
 │   │       ├── export-78c237d4bfdb4e1d02e0b5f38ddfd8bd-scene.scn
@@ -184,7 +184,7 @@ The PCK's file structure for the server will look as follows:
 
 ## Starting the dedicated server
 
-If both your client and server are part of the same Godot project, you will have
+If both your client and server are part of the same Redot project, you will have
 to add a way to start the server directly using a command-line argument.
 
 If you [exported the project ](doc_exporting_for_dedicated_servers_exporting_project)
@@ -234,7 +234,7 @@ if DisplayServer.get_name() == "headless":
     # Run your server startup code here...
     #
     # Using this check, you can start a dedicated server by running
-    # a Godot binary (editor or export template) with the `--headless`
+    # a Redot binary (editor or export template) with the `--headless`
     # command-line argument.
     pass
 
@@ -252,7 +252,7 @@ if (DisplayServer.GetName() == "headless")
     // Run your server startup code here...
     //
     // Using this check, you can start a dedicated server by running
-    // a Godot binary (editor or export template) with the `--headless`
+    // a Redot binary (editor or export template) with the `--headless`
     // command-line argument.
 }
 
@@ -275,7 +275,7 @@ if "--server" in OS.get_cmdline_user_args():
     # Run your server startup code here...
     #
     # Using this check, you can start a dedicated server by running
-    # a Godot binary (editor or export template) with the `--server`
+    # a Redot binary (editor or export template) with the `--server`
     # command-line argument.
     pass
 
@@ -293,7 +293,7 @@ if (OS.GetCmdlineUserArgs().Contains("--server"))
     // Run your server startup code here...
     //
     // Using this check, you can start a dedicated server by running
-    // a Godot binary (editor or export template) with the `--server`
+    // a Redot binary (editor or export template) with the `--server`
     // command-line argument.
 }
 
@@ -307,7 +307,7 @@ It's a good idea to add at least one of the above command-line arguments to
 start a server, as it can be used to test server functionality from the command
 line without having to export the project.
 
-If your client and server are separate Godot projects, your server should most
+If your client and server are separate Redot projects, your server should most
 likely be configured in a way where running the main scene starts a server
 automatically.
 

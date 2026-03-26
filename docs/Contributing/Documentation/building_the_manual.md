@@ -3,7 +3,7 @@ import TabItem from "@theme/TabItem";
 
 # Building the manual with Sphinx
 
-This page explains how to build a local copy of the Godot manual using the
+This page explains how to build a local copy of the Redot manual using the
 Sphinx docs engine. This allows you to have local HTML files and build the
 documentation as a PDF, EPUB, or LaTeX file, for example.
 
@@ -32,7 +32,7 @@ If both approaches fail, `make sure that you have pip3 installed
 <TabItem value="windows" label="Windows">
 
 ```pwsh
-py -m venv godot-docs-venv
+py -m venv Redot-docs-venv
 ```
 
 </TabItem>
@@ -40,7 +40,7 @@ py -m venv godot-docs-venv
 <TabItem value="other_platforms" label="Other platforms">
 
 ```sh
-python3 -m venv godot-docs-venv
+python3 -m venv Redot-docs-venv
 ```
 
 </TabItem>
@@ -54,7 +54,7 @@ python3 -m venv godot-docs-venv
 <TabItem value="windows" label="Windows">
 
 ```pwsh
-godot-docs-venv\Scripts\activate.bat
+Redot-docs-venv\Scripts\activate.bat
 ```
 
 </TabItem>
@@ -62,7 +62,7 @@ godot-docs-venv\Scripts\activate.bat
 <TabItem value="other_platforms" label="Other platforms">
 
 ```sh
-source godot-docs-venv/bin/activate
+source Redot-docs-venv/bin/activate
 ```
 
 </TabItem>
@@ -94,14 +94,14 @@ pip3 install --upgrade pip setuptools
 2.  Clone the docs repo:
 
 ```sh
-git clone https://github.com/godotengine/godot-docs.git
+git clone https://github.com/redot-engine/redot-docs-site.git
 
 ```
 
 3.  Change directory into the docs repo:
 
 ```sh
-cd godot-docs
+cd Redot-docs
 
 ```
 
@@ -156,7 +156,7 @@ rest intact.
 
 If you delete the ``classes/`` folder, do not use ``git add .`` when working on a pull
 request or the whole ``classes/`` folder will be removed when you commit.
-See [#3157](https://github.com/godotengine/godot-docs/issues/3157) for more detail.
+See [#3157](https://github.com/redot-engine/redot-docs-site/issues/3157) for more detail.
 
 :::
 

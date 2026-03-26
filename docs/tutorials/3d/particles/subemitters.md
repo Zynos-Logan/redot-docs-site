@@ -42,7 +42,7 @@ re-enable the property as long as the particle system is used as a sub-emitter.
 :::warning
 
 Even though the parent particle system can be selected from the list of available particle
-systems, a particle system which is its own sub-emitter does not work in Godot. It will
+systems, a particle system which is its own sub-emitter does not work in Redot. It will
 simply not spawn. The same is true for any other kind of recursive or self-referential
 sub-emitter setup.
 

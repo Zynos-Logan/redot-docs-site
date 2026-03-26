@@ -12,7 +12,7 @@ The first parameter is the ``PrimitiveType``, an OpenGL concept that instructs t
 how to arrange the primitive based on the vertices given, i.e. whether they represent triangles,
 lines, points, etc. See [Mesh.PrimitiveType ](enum_Mesh_PrimitiveType) for the options available.
 
-The second parameter, ``arrays``, is the actual Array that stores the mesh information. The array is a normal Godot array that
+The second parameter, ``arrays``, is the actual Array that stores the mesh information. The array is a normal Redot array that
 is constructed with empty brackets ``[]``. It stores a ``Packed**Array`` (e.g. PackedVector3Array,
 PackedInt32Array, etc.) for each type of information that will be used to build the surface.
 
@@ -108,7 +108,7 @@ Godot.Collections.Array surfaceArray = [];
 </Tabs>
 
 This will be the array that we keep our surface information in - it will hold
-all the arrays of data that the surface needs. Godot will expect it to be of
+all the arrays of data that the surface needs. Redot will expect it to be of
 size ``Mesh.ARRAY_MAX``, so resize it accordingly.
 
 <Tabs>
@@ -297,7 +297,7 @@ example code for generating a sphere.
 ## Generating geometry
 
 Here is sample code for generating a sphere. Although the code is presented in
-GDScript, there is nothing Godot specific about the approach to generating it.
+GDScript, there is nothing Redot specific about the approach to generating it.
 This implementation has nothing in particular to do with ArrayMeshes and is just a
 generic approach to generating a sphere. If you are having trouble understanding it
 or want to learn more about procedural geometry in general, you can use any tutorial

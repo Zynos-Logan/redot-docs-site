@@ -15,14 +15,14 @@ fragment functions. This tutorial targets absolute beginners to shaders.
 
 :::note
 If you have experience writing shaders and are just looking for an
-overview of how shaders work in Godot, see the [Shading Reference ](toc-shading-reference).
+overview of how shaders work in Redot, see the [Shading Reference ](toc-shading-reference).
 
 :::
 
 ## Setup
 
 [CanvasItem shaders ](doc_canvas_item_shader) are used to draw all 2D
-objects in Godot, while [Spatial ](doc_spatial_shader) shaders are used
+objects in Redot, while [Spatial ](doc_spatial_shader) shaders are used
 to draw all 3D objects.
 
 In order to use a shader it must be attached inside a [Material ](class_Material) which must be attached to an object. Materials are a type of
@@ -40,12 +40,12 @@ so long as it is drawing to the canvas, so for this tutorial we will use a Sprit
 as it is the easiest CanvasItem to start drawing with.
 
 In the Inspector, click beside "Texture" where it says "[empty]" and select
-"Load", then select "icon.svg". For new projects, this is the Godot icon. You
+"Load", then select "icon.svg". For new projects, this is the Redot icon. You
 should now see the icon in the viewport.
 
 Next, look down in the Inspector, under the CanvasItem section, click beside
 "Material" and select "New ShaderMaterial". This creates a new Material
-resource. Click on the sphere that appears. Godot currently doesn't know whether
+resource. Click on the sphere that appears. Redot currently doesn't know whether
 you are writing a CanvasItem Shader or a Spatial Shader and it previews the
 output of spatial shaders. So what you are seeing is the output of the default
 Spatial Shader.
@@ -56,7 +56,7 @@ your first shader.
 
 ## Your first CanvasItem shader
 
-In Godot, all shaders start with a line specifying what type of shader they are.
+In Redot, all shaders start with a line specifying what type of shader they are.
 It uses the following format:
 
 ```glsl
@@ -70,7 +70,7 @@ first line. All our code will go beneath this declaration.
 This line tells the engine which built-in variables and functionality to supply
 you with.
 
-In Godot you can override three functions to control how the shader operates;
+In Redot you can override three functions to control how the shader operates;
 ``vertex``, ``fragment``, and ``light``. This tutorial will walk you through
 writing a shader with both vertex and fragment functions. Light functions are
 significantly more complex than vertex and fragment functions and so will not be
@@ -102,7 +102,7 @@ void fragment(){
 ![Image](img/blue-box.png)
 
 Congratulations! You're done. You have successfully written your first shader in
-Godot.
+Redot.
 
 Now let's make things more complex.
 

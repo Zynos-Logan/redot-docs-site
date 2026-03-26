@@ -7,17 +7,17 @@ import TabItem from "@theme/TabItem";
 
 Basic usage of text-to-speech involves the following one-time steps:
 
-- Enable TTS in the Godot editor for your project
+- Enable TTS in the Redot editor for your project
 - Query the system for a list of usable voices
 - Store the ID of the voice you want to use
 
-By default, the Godot project-level setting for text-to-speech is disabled, to avoid unnecessary overhead. To enable it:
+By default, the Redot project-level setting for text-to-speech is disabled, to avoid unnecessary overhead. To enable it:
 
 - Go to **Project &gt; Project Settings**
 - Make sure the **Advanced Settings** toggle is enabled
 - Click on **Audio &gt; General**
 - Ensure the **Text to Speech** option is checked
-- Restart Godot if prompted to do so.
+- Restart Redot if prompted to do so.
 
 Text-to-speech uses a specific voice. Depending on the user's system, they might have multiple voices installed. Once you have the voice ID, you can use it to speak some text:
 
@@ -77,11 +77,11 @@ DisplayServer.TtsSpeak("Goodbye!", voiceId);
 
 ## Requirements for functionality
 
-Godot includes text-to-speech functionality. You can find these under the [DisplayServer class ](class_DisplayServer).
+Redot includes text-to-speech functionality. You can find these under the [DisplayServer class ](class_DisplayServer).
 
-Godot depends on system libraries for text-to-speech functionality. These libraries are installed by default on Windows and macOS, but not on all Linux distributions. If they are not present, text-to-speech functionality will not work. Specifically, the ``tts_get_voices()`` method will return an empty list, indicating that there are no usable voices.
+Redot depends on system libraries for text-to-speech functionality. These libraries are installed by default on Windows and macOS, but not on all Linux distributions. If they are not present, text-to-speech functionality will not work. Specifically, the ``tts_get_voices()`` method will return an empty list, indicating that there are no usable voices.
 
-Both Godot users on Linux and end-users on Linux running Godot games need to ensure that their system includes the system libraries for text-to-speech to work. Please consult the table below or your own distribution's documentation to determine what libraries you need to install.
+Both Redot users on Linux and end-users on Linux running Redot games need to ensure that their system includes the system libraries for text-to-speech to work. Please consult the table below or your own distribution's documentation to determine what libraries you need to install.
 
 ### Distro-specific one-liners
 
@@ -97,9 +97,9 @@ If you get the error `Invalid get index '0' (on base: 'PackedStringArray').` for
 
 ## Best practices
 
-The best practices for text-to-speech, in terms of the ideal player experience for blind players, is to send output to the player's screen reader. This preserves the choice of language, speed, pitch, etc. that the user set, as well as allows advanced features like allowing players to scroll backward and forward through text. As of now, Godot doesn't provide this level of integration.
+The best practices for text-to-speech, in terms of the ideal player experience for blind players, is to send output to the player's screen reader. This preserves the choice of language, speed, pitch, etc. that the user set, as well as allows advanced features like allowing players to scroll backward and forward through text. As of now, Redot doesn't provide this level of integration.
 
-With the current state of the Godot text-to-speech APIs, best practices include:
+With the current state of the Redot text-to-speech APIs, best practices include:
 
 - Develop the game with text-to-speech enabled, and ensure that everything sounds correct
 - Allow players to control which voice to use, and save/persist that selection across game sessions

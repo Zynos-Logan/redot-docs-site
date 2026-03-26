@@ -8,7 +8,7 @@ import TabItem from "@theme/TabItem";
 Threads allow simultaneous execution of code. It allows off-loading work
 from the main thread.
 
-Godot supports threads and provides many handy functions to use them.
+Redot supports threads and provides many handy functions to use them.
 
 :::note
 If using other languages (C#, C++), it may be easier to use the
@@ -60,10 +60,10 @@ func _exit_tree():
 #ifndef MULTITHREADING_DEMO_H
 #define MULTITHREADING_DEMO_H
 
-#include <godot_cpp/classes/node.hpp>
-#include <godot_cpp/classes/thread.hpp>
+#include <Redot_cpp/classes/node.hpp>
+#include <Redot_cpp/classes/thread.hpp>
 
-namespace godot {
+namespace Redot {
     class MultithreadingDemo : public Node {
         GDCLASS(MultithreadingDemo, Node);
 
@@ -80,7 +80,7 @@ namespace godot {
 
         void demo_threaded_function();
     };
-} // namespace godot
+} // namespace Redot
 
 #endif // MULTITHREADING_DEMO_H
 
@@ -93,20 +93,20 @@ namespace godot {
 ```cpp
 #include "multithreading_demo.h"
 
-#include <godot_cpp/classes/engine.hpp>
-#include <godot_cpp/classes/os.hpp>
-#include <godot_cpp/classes/time.hpp>
-#include <godot_cpp/core/class_db.hpp>
-#include <godot_cpp/variant/utility_functions.hpp>
+#include <Redot_cpp/classes/engine.hpp>
+#include <Redot_cpp/classes/os.hpp>
+#include <Redot_cpp/classes/time.hpp>
+#include <Redot_cpp/core/class_db.hpp>
+#include <Redot_cpp/variant/utility_functions.hpp>
 
-using namespace godot;
+using namespace Redot;
 
 void MultithreadingDemo::_bind_methods() {
     ClassDB::bind_method(D_METHOD("threaded_function"), &MultithreadingDemo::demo_threaded_function);
 }
 
 void MultithreadingDemo::_notification(int p_what) {
-    // Prevents this from running in the editor, only during game mode. In Godot 4.3+ use Runtime classes.
+    // Prevents this from running in the editor, only during game mode. In Redot 4.3+ use Runtime classes.
     if (Engine::get_singleton()->is_editor_hint()) {
         return;
     }
@@ -228,11 +228,11 @@ func _exit_tree():
 #ifndef MUTEX_DEMO_H
 #define MUTEX_DEMO_H
 
-#include <godot_cpp/classes/mutex.hpp>
-#include <godot_cpp/classes/node.hpp>
-#include <godot_cpp/classes/thread.hpp>
+#include <Redot_cpp/classes/mutex.hpp>
+#include <Redot_cpp/classes/node.hpp>
+#include <Redot_cpp/classes/thread.hpp>
 
-namespace godot {
+namespace Redot {
     class MutexDemo : public Node {
         GDCLASS(MutexDemo, Node);
 
@@ -251,7 +251,7 @@ namespace godot {
 
         void thread_function();
     };
-} // namespace godot
+} // namespace Redot
 
 #endif // MUTEX_DEMO_H
 
@@ -264,12 +264,12 @@ namespace godot {
 ```cpp
 #include "mutex_demo.h"
 
-#include <godot_cpp/classes/engine.hpp>
-#include <godot_cpp/classes/time.hpp>
-#include <godot_cpp/core/class_db.hpp>
-#include <godot_cpp/variant/utility_functions.hpp>
+#include <Redot_cpp/classes/engine.hpp>
+#include <Redot_cpp/classes/time.hpp>
+#include <Redot_cpp/core/class_db.hpp>
+#include <Redot_cpp/variant/utility_functions.hpp>
 
-using namespace godot;
+using namespace Redot;
 
 void MutexDemo::_bind_methods() {
     ClassDB::bind_method(D_METHOD("thread_function"), &MutexDemo::thread_function);
@@ -410,12 +410,12 @@ func _exit_tree():
 #ifndef SEMAPHORE_DEMO_H
 #define SEMAPHORE_DEMO_H
 
-#include <godot_cpp/classes/mutex.hpp>
-#include <godot_cpp/classes/node.hpp>
-#include <godot_cpp/classes/semaphore.hpp>
-#include <godot_cpp/classes/thread.hpp>
+#include <Redot_cpp/classes/mutex.hpp>
+#include <Redot_cpp/classes/node.hpp>
+#include <Redot_cpp/classes/semaphore.hpp>
+#include <Redot_cpp/classes/thread.hpp>
 
-namespace godot {
+namespace Redot {
     class SemaphoreDemo : public Node {
         GDCLASS(SemaphoreDemo, Node);
 
@@ -438,7 +438,7 @@ namespace godot {
         void increment_counter();
         int get_counter();
     };
-} // namespace godot
+} // namespace Redot
 
 #endif // SEMAPHORE_DEMO_H
 
@@ -451,12 +451,12 @@ namespace godot {
 ```cpp
 #include "semaphore_demo.h"
 
-#include <godot_cpp/classes/engine.hpp>
-#include <godot_cpp/classes/time.hpp>
-#include <godot_cpp/core/class_db.hpp>
-#include <godot_cpp/variant/utility_functions.hpp>
+#include <Redot_cpp/classes/engine.hpp>
+#include <Redot_cpp/classes/time.hpp>
+#include <Redot_cpp/core/class_db.hpp>
+#include <Redot_cpp/variant/utility_functions.hpp>
 
-using namespace godot;
+using namespace Redot;
 
 void SemaphoreDemo::_bind_methods() {
     ClassDB::bind_method(D_METHOD("thread_function"), &SemaphoreDemo::thread_function);

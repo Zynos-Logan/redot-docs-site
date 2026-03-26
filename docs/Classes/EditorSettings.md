@@ -4100,7 +4100,7 @@ Tab style of editor docks.
 
 The language to use for the editor interface.
 
-Translations are provided by the community. If you spot a mistake, [contribute to editor translations on Weblate!](https://contributing.godotengine.org/en/latest/documentation/translation/index.html)
+Translations are provided by the community. If you spot a mistake, [contribute to editor translations on Weblate!](https://contributing.redotengine.org/en/latest/documentation/translation/index.html)
 
 <hr class="classref-item-separator"/>
 
@@ -4852,7 +4852,7 @@ The icon and font color scheme to use in the editor.
 
 The saturation to use for editor icons. Higher values result in more vibrant colors.
 
-\ **Note:** The default editor icon saturation was increased by 30% in Godot 4.0 and later. To get Godot 3.x's icon saturation back, set [interface/theme/icon_saturation](EditorSettings.md#EditorSettings_property_interface/theme/icon_saturation) to ``0.77``.
+\ **Note:** The default editor icon saturation was increased by 30% in Redot 4.0 and later. To get Redot 3.x's icon saturation back, set [interface/theme/icon_saturation](EditorSettings.md#EditorSettings_property_interface/theme/icon_saturation) to ``0.77``.
 
 <hr class="classref-item-separator"/>
 
@@ -6002,7 +6002,7 @@ The syntax theme to use in the script editor.
 
 You can save your own syntax theme from your current settings by using **File &gt; Theme &gt; Save As...** at the top of the script editor. The syntax theme will then be available locally in the list of color themes.
 
-You can find additional syntax themes to install in the [godot-syntax-themes](https://github.com/godotengine/godot-syntax-themes) repository.
+You can find additional syntax themes to install in the [Redot-syntax-themes](https://github.com/redot-engine/redot-syntax-themes) repository.
 
 <hr class="classref-item-separator"/>
 

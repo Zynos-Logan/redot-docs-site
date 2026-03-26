@@ -3,7 +3,7 @@ import TabItem from "@theme/TabItem";
 
 # Playing videos
 
-Godot supports video playback with the [class_VideoStreamPlayer](class_VideoStreamPlayer) node.
+Redot supports video playback with the [class_VideoStreamPlayer](class_VideoStreamPlayer) node.
 
 ## Supported playback formats
 
@@ -11,12 +11,12 @@ The only supported format in core is **Ogg Theora** (not to be confused with Ogg
 Vorbis audio). It's possible for extensions to bring support for additional
 formats, but no such extensions exist yet as of July 2022.
 
-H.264 and H.265 cannot be supported in core Godot, as they are both encumbered
+H.264 and H.265 cannot be supported in core Redot, as they are both encumbered
 by software patents. AV1 is royalty-free, but it remains slow to decode on the
 CPU and hardware decoding support isn't readily available on all GPUs in use
 yet.
 
-WebM was supported in core in Godot 3.x, but support for it was removed in 4.0
+WebM was supported in core in Redot 3.x, but support for it was removed in 4.0
 as it was too buggy and difficult to maintain.
 
 :::note
@@ -25,7 +25,7 @@ You may find videos with an ``.ogg`` or ``.ogx`` extensions, which are generic
 extensions for data within an Ogg container.
 
 Renaming these file extensions to ``.ogv`` *may* allow the videos to be
-imported in Godot. However, not all files with ``.ogg`` or ``.ogx``
+imported in Redot. However, not all files with ``.ogg`` or ``.ogx``
 extensions are videos - some of them may only contain audio.
 
 :::
@@ -46,7 +46,7 @@ extensions are videos - some of them may only contain audio.
 
 ### Handling resizing and different aspect ratios
 
-By default in Godot 4.0, the VideoStreamPlayer will automatically be resized to match
+By default in Redot 4.0, the VideoStreamPlayer will automatically be resized to match
 the video's resolution. You can make it follow usual [class_Control](class_Control) sizing
 by enabling **Expand** on the VideoStreamPlayer node.
 
@@ -109,7 +109,7 @@ This can be done with the following steps:
    set **Shading Mode** to **Unshaded** to improve rendering performance.
 
 See [doc_viewports](doc_viewports) and the
-[GUI in 3D demo ](https://github.com/godotengine/godot-demo-projects/tree/master/viewport/gui_in_3d)_
+[GUI in 3D demo ](https://github.com/redot-engine/redot-demo-projects/tree/master/viewport/gui_in_3d)_
 for more information on setting this up.
 
 ### Looping a video
@@ -143,7 +143,7 @@ To ensure your videos decode smoothly on varied hardware:
 
 ## Playback limitations
 
-There are several limitations with the current implementation of video playback in Godot:
+There are several limitations with the current implementation of video playback in Redot:
 
 - Seeking a video to a certain point is not supported.
 - Changing playback speed is not supported. VideoStreamPlayer also won't follow

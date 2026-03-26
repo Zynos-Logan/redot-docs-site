@@ -4,8 +4,8 @@ This section contains tutorials and documentation about diagnostics in Redot Eng
 
 ## Articles
 
-- [GD0001: Missing partial modifier on declaration of type that derives from GodotObject](GD0001)
-- [GD0002: Missing partial modifier on declaration of type which contains nested classes that derive from GodotObject](GD0002)
+- [GD0001: Missing partial modifier on declaration of type that derives from RedotObject](GD0001)
+- [GD0002: Missing partial modifier on declaration of type which contains nested classes that derive from RedotObject](GD0002)
 - [GD0003: Found multiple classes with the same name in the same script file](GD0003)
 - [GD0101: The exported member is static](GD0101)
 - [GD0102: The type of the exported member is not supported](GD0102)
@@ -20,6 +20,6 @@ This section contains tutorials and documentation about diagnostics in Redot Eng
 - [GD0301: The generic type argument must be a Variant compatible type](GD0301)
 - [GD0302: The generic type parameter must be annotated with the '[MustBeVariant]' attribute](GD0302)
 - [GD0303: The parent symbol of a type argument that must be Variant compatible was not handled](GD0303)
-- [GD0401: The class must derive from Godot.GodotObject or a derived class](GD0401)
+- [GD0401: The class must derive from Redot.RedotObject or a derived class](GD0401)
 - [GD0402: The class must not be generic](GD0402)
 

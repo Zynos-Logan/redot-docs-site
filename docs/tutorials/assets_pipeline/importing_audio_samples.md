@@ -3,7 +3,7 @@
 
 ## Supported audio formats
 
-Godot provides 3 options to import your audio data: WAV, Ogg Vorbis and MP3.
+Redot provides 3 options to import your audio data: WAV, Ogg Vorbis and MP3.
 
 Each format has different advantages:
 
@@ -20,7 +20,7 @@ Each format has different advantages:
 
 :::note
 
-If you've compiled the Godot editor from source with specific modules disabled,
+If you've compiled the Redot editor from source with specific modules disabled,
 some formats may not be available.
 
 :::
@@ -120,7 +120,7 @@ its original peak volume.
 ## Edit > Loop Mode
 
 Unlike Ogg Vorbis and MP3, WAV files can contain metadata to indicate whether
-they're looping (in addition to loop points). By default, Godot will follow this
+they're looping (in addition to loop points). By default, Redot will follow this
 metadata, but you can choose to apply a specific loop mode:
 
 - **Disabled:** Don't loop audio, even if metadata indicates the file should be
@@ -248,7 +248,7 @@ looping, not ping-pong or backward.
 
 While keeping pristine-quality audio sources is important if you're performing
 editing, using the same quality in the exported project is not necessary. For
-WAV files, Godot offers several import options to reduce the final file size
+WAV files, Redot offers several import options to reduce the final file size
 without modifying the source file on disk.
 
 To reduce memory usage and file size, choose an appropriate quantization,
@@ -271,7 +271,7 @@ sample rate and number of channels for your audio:
 
 ### Use real-time audio effects to reduce file size
 
-Godot has an [extensive bus system ](doc_audio_buses) with built-in effects.
+Redot has an [extensive bus system ](doc_audio_buses) with built-in effects.
 This saves SFX artists the need to add reverb to the sound effects,
 reducing their size greatly and ensuring correct trimming.
 

@@ -33,7 +33,7 @@ see [Custom HTML page for Web export ](doc_customizing_html5_shell).
 
 ## Engine configuration
 
-An object used to configure the Engine instance based on godot export options, and to override those in custom HTML
+An object used to configure the Engine instance based on Redot export options, and to override those in custom HTML
 templates if needed.
 
 ### Properties

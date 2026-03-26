@@ -45,10 +45,10 @@ sudo port install scons
 :::
 
 :::info
-To get the Godot source code for compiling, see
+To get the Redot source code for compiling, see
 [doc_getting_source](doc_getting_source).
 
-For a general overview of SCons usage for Godot, see
+For a general overview of SCons usage for Redot, see
 [doc_introduction_to_the_buildsystem](doc_introduction_to_the_buildsystem).
 
 :::
@@ -84,8 +84,8 @@ your Mac while still testing iOS platform-specific functionality.
 
 To create an Xcode project like in the official builds, you need to use the
 template located in ``misc/dist/ios_xcode``. The release and debug libraries
-should be placed in ``libgodot.ios.debug.xcframework`` and
-``libgodot.ios.release.xcframework`` respectively. This process can be automated
+should be placed in ``libRedot.ios.debug.xcframework`` and
+``libRedot.ios.release.xcframework`` respectively. This process can be automated
 by using the ``generate_bundle=yes`` option on the *last* SCons command used to
 build export templates (so that all binaries can be included).
 

@@ -5,9 +5,9 @@ import TabItem from "@theme/TabItem";
 
 .. highlight:: shell
 
-Godot is a primarily C++ project and it [uses the SCons build system.](doc_faq_why_scons)
+Redot is a primarily C++ project and it [uses the SCons build system.](doc_faq_why_scons)
 We love SCons for how maintainable and easy to set up it makes our buildsystem. And thanks to
-that compiling Godot from source can be as simple as running
+that compiling Redot from source can be as simple as running
 
 ```
 scons
@@ -32,7 +32,7 @@ scons dev_build=yes
 ```
 
 Following sections in the article will explain these and other universal options in more detail. But
-before you can compile Godot, you need to install a few prerequisites. Please refer to the platform
+before you can compile Redot, you need to install a few prerequisites. Please refer to the platform
 documentation to learn more:
 
 - [doc_compiling_for_android](doc_compiling_for_android)
@@ -42,13 +42,13 @@ documentation to learn more:
 - [doc_compiling_for_web](doc_compiling_for_web)
 - [doc_compiling_for_windows](doc_compiling_for_windows)
 
-These articles cover in great detail both how to setup your environment to compile Godot on a specific
+These articles cover in great detail both how to setup your environment to compile Redot on a specific
 platform, and how to compile for that platform. Please feel free to go back and forth between them and
 this article to reference platform-specific and universal configuration options.
 
 ## Using multi-threading
 
-The build process may take a while, depending on how powerful your system is. By default, Godot's
+The build process may take a while, depending on how powerful your system is. By default, Redot's
 SCons setup is configured to use all CPU threads but one (to keep the system responsive during
 compilation). If you want to adjust how many CPU threads SCons will use, use the `[-j](threads)`
 parameter to specify how many threads will be used for the build.
@@ -62,7 +62,7 @@ scons -j4
 
 ## Platform selection
 
-Godot's build system will begin by detecting the platforms it can build
+Redot's build system will begin by detecting the platforms it can build
 for. If not detected, the platform will simply not appear on the list of
 available platforms. The build requirements for each platform are
 described in the rest of this tutorial section.
@@ -102,7 +102,7 @@ The resulting binaries will be placed in the ``bin/`` subdirectory,
 generally with this naming convention
 
 ```
-godot.<platform>.<target>[.dev][.double].<arch>[.<extra_suffix>][.<ext>]
+Redot.<platform>.<target>[.dev][.double].<arch>[.<extra_suffix>][.<ext>]
 
 ```
 
@@ -110,7 +110,7 @@ For the previous build attempt, the result would look like this:
 
 ```console
 ls bin
-bin/godot.linuxbsd.editor.x86_64
+bin/Redot.linuxbsd.editor.x86_64
 
 ```
 
@@ -120,15 +120,15 @@ whole editor compiled in, and is meant for 64 bits.
 A Windows binary with the same configuration will look like this:
 
 ```doscon
-C:\godot> dir bin/
-godot.windows.editor.64.exe
+C:\Redot> dir bin/
+Redot.windows.editor.64.exe
 
 ```
 
 Copy that binary to any location you like, as it contains the Project Manager,
 editor and all means to execute the game. However, it lacks the data to export
 it to the different platforms. For that the export templates are needed (which
-can be either downloaded from [godotengine.org](https://godotengine.org/), or
+can be either downloaded from [redotengine.org](https://redotengine.org/), or
 you can build them yourself).
 
 Aside from that, there are a few standard options that can be set in all
@@ -158,10 +158,10 @@ When creating builds for development (running debugging/[profiling](doc_using_cp
 tools), you often have different goals compared to production builds
 (making binaries as fast and small as possible).
 
-Godot provides two aliases for this purpose:
+Redot provides two aliases for this purpose:
 
 - ``dev_mode=yes`` is an alias for ``verbose=yes warnings=extra werror=yes
-  tests=yes``. This enables warnings-as-errors behavior (similar to Godot's
+  tests=yes``. This enables warnings-as-errors behavior (similar to Redot's
   continuous integration setup) and also builds :ref:`unit tests
   &lt;doc_unit_testing&gt;` so you can run them locally.
 - ``production=yes`` is an alias for ``use_static_cpp=yes debug_symbols=no
@@ -211,12 +211,12 @@ See [doc_using_sanitizers](doc_using_sanitizers) for more information.
 By default, ``debug_symbols=no`` is used, which means **no** debugging symbols
 are included in compiled binaries. Use ``debug_symbols=yes`` to include debug
 symbols within compiled binaries, which allows debuggers and profilers to work
-correctly. Debugging symbols are also required for Godot's crash stacktraces to
+correctly. Debugging symbols are also required for Redot's crash stacktraces to
 display with references to source code files and lines.
 
 The downside is that debugging symbols are large files (significantly larger
 than the binaries themselves). As a result, official binaries currently do not
-include debugging symbols. This means you need to compile Godot yourself to have
+include debugging symbols. This means you need to compile Redot yourself to have
 access to debugging symbols.
 
 When using ``debug_symbols=yes``, you can also use
@@ -275,7 +275,7 @@ that matches the host platform.
 
 ## Custom modules
 
-It's possible to compile modules residing outside of Godot's directory
+It's possible to compile modules residing outside of Redot's directory
 tree, along with the built-in modules.
 
 A ``custom_modules`` build option can be passed to the command line before
@@ -287,7 +287,7 @@ For instance, it's possible to provide both relative, absolute, and user
 directory paths containing such modules:
 
 ```
-scons custom_modules="../modules,/abs/path/to/modules,~/src/godot_modules"
+scons custom_modules="../modules,/abs/path/to/modules,~/src/Redot_modules"
 
 ```
 
@@ -309,7 +309,7 @@ to override built-in module implementations.
 
 Sometimes, you may encounter an error due to generated files being present. You
 can remove them by using `[scons --clean](options)`, where ``&lt;options&gt;`` is the
-list of build options you've used to build Godot previously.
+list of build options you've used to build Redot previously.
 
 Alternatively, you can use ``git clean -fixd`` which will clean build artifacts
 for all platforms and configurations. Beware, as this will remove all untracked
@@ -319,7 +319,7 @@ uncommitted work!
 ## Other build options
 
 There are several other build options that you can use to configure the
-way Godot should be built (compiler, debug options, etc.) as well as the
+way Redot should be built (compiler, debug options, etc.) as well as the
 features to include/disable.
 
 Check the output of ``scons --help`` for details about each option for
@@ -329,7 +329,7 @@ the version you are willing to compile.
 
 #### Using a file
 
-The default ``custom.py`` file can be created at the root of the Godot Engine
+The default ``custom.py`` file can be created at the root of the Redot Engine
 source to initialize any SCons build options passed via the command line:
 
 ```python
@@ -346,9 +346,9 @@ time it takes to build the engine. See [doc_optimizing_for_size](doc_optimizing_
 :::info
 
 You can use the online
-[Godot build options generator](https://godot-build-options-generator.github.io/)
+[Redot build options generator](https://Redot-build-options-generator.github.io/)
 to generate a ``custom.py`` file containing SCons options.
-You can then save this file and place it at the root of your Godot source directory.
+You can then save this file and place it at the root of your Redot source directory.
 
 :::
 
@@ -371,7 +371,7 @@ It's also possible to override the options conditionally:
 ```python
 import version
 
-# Override options specific for Godot 3.x and 4.x versions.
+# Override options specific for Redot 3.x and 4.x versions.
 if version.major == 3:
     pass
 elif version.major == 4:
@@ -421,7 +421,7 @@ $env:SCONSFLAGS="-j4"
 
 Regular builds tend to be bottlenecked by including large numbers of headers
 in each compilation translation unit. Primarily to speed up development (rather
-than for production builds), Godot offers a "single compilation unit" build
+than for production builds), Redot offers a "single compilation unit" build
 (aka "Unity / Jumbo" build).
 
 For the folders accelerated by this option, multiple ``.cpp`` files are
@@ -442,8 +442,8 @@ usually be faster to catch them on a local build on your machine.
 
 ## Export templates
 
-Official export templates are downloaded from the Godot Engine site:
-[godotengine.org](https://godotengine.org/). However, you might want
+Official export templates are downloaded from the Redot Engine site:
+[redotengine.org](https://redotengine.org/). However, you might want
 to build them yourself (in case you want newer ones, you are using custom
 modules, or simply don't trust your own shadow).
 
@@ -493,13 +493,13 @@ To create those yourself, follow the instructions detailed for each
 platform in this same tutorial section. Each platform explains how to
 create its own template.
 
-The ``version.txt`` file should contain the corresponding Godot version
+The ``version.txt`` file should contain the corresponding Redot version
 identifier. This file is used to install export templates in a version-specific
 directory to avoid conflicts. For instance, if you are building export templates
-for Godot 3.1.1, ``version.txt`` should contain ``3.1.1.stable`` on the first
+for Redot 3.1.1, ``version.txt`` should contain ``3.1.1.stable`` on the first
 line (and nothing else). This version identifier is based on the ``major``,
 ``minor``, ``patch`` (if present) and ``status`` lines of the
-[version.py file in the Godot Git repository](https://github.com/godotengine/godot/blob/master/version.py).
+[version.py file in the Redot Git repository](https://github.com/redot-engine/redot-engine/blob/master/version.py).
 
 If you are developing for multiple platforms, macOS is definitely the most
 convenient host platform for cross-compilation, since you can cross-compile for

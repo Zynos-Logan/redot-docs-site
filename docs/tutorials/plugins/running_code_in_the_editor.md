@@ -158,7 +158,7 @@ to avoid making unwanted modifications.
 
 ## Try ``@tool`` out
 
-Add a ``Sprite2D`` node to your scene and set the texture to Godot icon. Attach
+Add a ``Sprite2D`` node to your scene and set the texture to Redot icon. Attach
 and open a script, and change it to this:
 
 <Tabs>
@@ -541,7 +541,7 @@ public MyResource Resource
 
 ## Reporting node configuration warnings
 
-Godot uses a *node configuration warning* system to warn users about incorrectly
+Redot uses a *node configuration warning* system to warn users about incorrectly
 configured nodes. When a node isn't configured correctly, a yellow warning sign
 appears next to the node's name in the Scene dock. When you hover or click on
 the icon, a warning message pops up. You can use this feature in your scripts to
@@ -600,7 +600,7 @@ not available in the editor out of the box. Some examples might be:
 - Replace nodes that were copy-pasted with scene instances to make them easier
   to modify later.
 
-This is available in Godot by extending [class_EditorScript](class_EditorScript) in a script.
+This is available in Redot by extending [class_EditorScript](class_EditorScript) in a script.
 This provides a way to run individual scripts in the editor without having to
 create an editor plugin.
 

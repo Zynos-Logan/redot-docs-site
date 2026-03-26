@@ -1,15 +1,15 @@
 
 # Localization using gettext
 
-In addition to [doc_importing_translations](doc_importing_translations) in CSV format, Godot
+In addition to [doc_importing_translations](doc_importing_translations) in CSV format, Redot
 also supports loading translation files written in the GNU gettext
-format (text-based ``.po`` and compiled ``.mo`` since Godot 4.0).
+format (text-based ``.po`` and compiled ``.mo`` since Redot 4.0).
 
 :::note
 For an introduction to gettext, check out
 [A Quick Gettext Tutorial ](https://www.labri.fr/perso/fleury/posts/programming/a-quick-gettext-tutorial.html).
 It's written with C projects in mind, but much of the advice
-also applies to Godot (with the exception of ``xgettext``).
+also applies to Redot (with the exception of ``xgettext``).
 
 :::
 
@@ -30,7 +30,7 @@ also applies to Godot (with the exception of ``xgettext``).
 - gettext is a more complex format than CSV and can be harder to grasp for
   people new to software localization.
 - People who maintain localization files will have to install gettext tools
-  on their system. However, as Godot supports using text-based message files
+  on their system. However, as Redot supports using text-based message files
   (``.po``), translators can test their work without having to install gettext tools.
 
 ## Installing gettext tools
@@ -54,7 +54,7 @@ install them.
 
 ### Automatic generation using the editor
 
-Since Godot 4.0, the editor can generate a PO template automatically from
+Since Redot 4.0, the editor can generate a PO template automatically from
 specified scene and GDScript files. This POT generation also supports translation
 contexts and pluralization if used in a script, with the optional second
 argument of ``tr()`` and the ``tr_n()`` method.
@@ -147,7 +147,7 @@ as the PO template.
 Alternatively, you can do that graphically using Poedit, or by uploading the
 POT file to your web platform of choice.
 
-## Loading a messages file in Godot
+## Loading a messages file in Redot
 
 To register a messages file as a translation in a project, open the
 **Project Settings**, then go to the **Localization** tab.
@@ -157,7 +157,7 @@ in the file dialog. The locale will be inferred from the
 
 :::note
 See :ref:`doc_internationalizing_games` for more information on
-importing and testing translations in Godot.
+importing and testing translations in Redot.
 
 :::
 
@@ -184,7 +184,7 @@ will have a "fuzzy" comment added before them in the ``.po`` file. This comment
 denotes that the translation should be updated to match the new source string,
 as the translation will most likely be inaccurate until it's updated.
 
-Strings with "fuzzy" comments will **not** be read by Godot until the
+Strings with "fuzzy" comments will **not** be read by Redot until the
 translation is updated and the "fuzzy" comment is removed.
 
 :::
@@ -217,7 +217,7 @@ msgfmt fr.po --no-hash -o fr.mo
 ```
 
 If the PO file is valid, this command will create a ``fr.mo`` file besides
-the PO file. This MO file can then be loaded in Godot as described above.
+the PO file. This MO file can then be loaded in Redot as described above.
 
 The original PO file should be kept in version control so you can update
 your translation in the future. In case you lose the original PO file and
@@ -233,7 +233,7 @@ never compiled in the MO file in the first place.
 
 ## Extracting localizable strings from GDScript files
 
-The built-in [editor plugin ](https://github.com/godotengine/godot/blob/master/modules/gdscript/editor/gdscript_translation_parser_plugin.h)
+The built-in [editor plugin ](https://github.com/redot-engine/redot-engine/blob/master/modules/gdscript/editor/gdscript_translation_parser_plugin.h)
 recognizes a variety of patterns in source code to extract localizable strings
 from GDScript files, including but not limited to the following:
 

@@ -1,11 +1,11 @@
 
 # Introducing XR tools
 
-Out of the box Godot gives you all the basic support to setup an XR project.
+Out of the box Redot gives you all the basic support to setup an XR project.
 XR specific game mechanics however need to be implemented on top of this foundation.
-While Godot makes this relatively easy this can still be a daunting task.
+While Redot makes this relatively easy this can still be a daunting task.
 
-For this reason Godot has developed a toolkit called [Godot XR Tools ](https://github.com/GodotVR/godot-xr-tools)
+For this reason Redot has developed a toolkit called [Redot XR Tools ](https://github.com/GodotVR/godot-xr-tools)
 that implements many of the basic mechanics found in XR games, from locomotion to object interaction to UI interaction. 
 
 This toolkit is designed to work with both OpenXR and WebXR runtimes.
@@ -15,28 +15,28 @@ In that case XR tools can help in providing inspiration.
 
 :::note
 
-The current stable release of Godot XR Tools available on the Asset Library is the version for Godot 3.
-The port of Godot XR Tools for Godot 4 is available for download from the github website.
+The current stable release of Redot XR Tools available on the Asset Library is the version for Redot 3.
+The port of Redot XR Tools for Redot 4 is available for download from the github website.
 We will walk through the step of downloading and installing it here.
-We will update the documentation once Godot XR Tools becomes available for Godot 4 through the asset library.
+We will update the documentation once Redot XR Tools becomes available for Redot 4 through the asset library.
 
 :::
 
 ## Installing XR Tools
 
-Continuing on from our project we started in [doc_setting_up_xr](doc_setting_up_xr) we want to add in the Godot XR Tools library.
-This can be downloaded from the [Godot XR Tools releases page ](https://github.com/GodotVR/godot-xr-tools/releases).
-Find the latest release for Godot 4, and under **Assets**, download the
-``godot-xr-tools.zip`` file.
+Continuing on from our project we started in [doc_setting_up_xr](doc_setting_up_xr) we want to add in the Redot XR Tools library.
+This can be downloaded from the [Redot XR Tools releases page ](https://github.com/GodotVR/godot-xr-tools/releases).
+Find the latest release for Redot 4, and under **Assets**, download the
+``Redot-xr-tools.zip`` file.
 
 Once downloaded unzip the file.
-You will notice the files are held within a ``godot-xr-tools`` subfolder.
+You will notice the files are held within a ``Redot-xr-tools`` subfolder.
 Inside of this folder you will find an ``addons`` folder.
-It is this folder that you want to copy in its entirety to your Godot project folder, your project should now look something like this:
+It is this folder that you want to copy in its entirety to your Redot project folder, your project should now look something like this:
 
 ![Image](img/godot_xr_tools_root_folder.webp)
 
-Now open up your project in Godot, if you haven't already, and give it a minute or so to import all the resources of the plugin.
+Now open up your project in Redot, if you haven't already, and give it a minute or so to import all the resources of the plugin.
 
 Next open the ``Project`` menu and select ``Project Settings..``.
 Now go to the ``Plugins`` tab and enable the plugin.
@@ -49,12 +49,12 @@ Just to get a feel of things we're going to add a few standard components that d
 
 OpenXR supports full hand tracking however there currently are significant differences in capabilities between the different XR Runtimes.
 
-As a reliable alternative Godot XR Tools comes with a number of rigged hand scenes that react on trigger and grip inputs of your controller.
+As a reliable alternative Redot XR Tools comes with a number of rigged hand scenes that react on trigger and grip inputs of your controller.
 These hands come in low and high poly versions, come in a few configurations, a number of animation files to control finger positions and a number of different textures.
 
 In your scene tree select your left hand [XRController3D ](class_xrcontroller3d) node.
 Now click on the ``instantiate Child Scene`` button to add a child scene.
-And select ``addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn``.
+And select ``addons/Redot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn``.
 
 As you can see from the path of this scene, low poly models are in the ``lowpoly`` subfolder while high poly models are in the ``highpoly`` subfolder.
 You will want to use the low poly versions if you plan to release your game on mobile devices.
@@ -74,5 +74,5 @@ We repeat the same for the right hand.
 
 ## More information
 
-We'll continue with adding features to our tutorial project using Godot XR tools in the next couple of pages.
-More detailed information about the toolkit can be found [on the toolkits help pages ](https://godotvr.github.io/godot-xr-tools/).
+We'll continue with adding features to our tutorial project using Redot XR tools in the next couple of pages.
+More detailed information about the toolkit can be found [on the toolkits help pages ](https://Redotvr.github.io/Redot-xr-tools/).

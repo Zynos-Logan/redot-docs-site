@@ -22,7 +22,7 @@ For compiling under macOS, the following is required:
 - `Vulkan SDK <https://sdk.lunarg.com/sdk/download/latest/mac/vulkan-sdk.dmg>`_
   for MoltenVK (macOS doesn't support Vulkan out of the box).
   The latest Vulkan SDK version can be installed quickly by running
-  ``misc/scripts/install_vulkan_sdk_macos.sh`` within the Godot source repository.
+  ``misc/scripts/install_vulkan_sdk_macos.sh`` within the Redot source repository.
 
 .. note:: If you have `Homebrew <https://brew.sh/>`_ installed, you can easily
           install SCons using the following command::
@@ -38,10 +38,10 @@ For compiling under macOS, the following is required:
 
               sudo port install scons
 
-.. seealso:: To get the Godot source code for compiling, see
+.. seealso:: To get the Redot source code for compiling, see
              :ref:`doc_getting_source`.
 
-             For a general overview of SCons usage for Godot, see
+             For a general overview of SCons usage for Redot, see
              :ref:`doc_introduction_to_the_buildsystem`.
 
 Compiling
@@ -59,10 +59,10 @@ To compile for Apple Silicon (ARM64) powered Macs, use::
 
 To support both architectures in a single "Universal 2" binary, run the above two commands and then use ``lipo`` to bundle them together::
 
-    lipo -create bin/godot.macos.editor.x86_64 bin/godot.macos.editor.arm64 -output bin/godot.macos.editor.universal
+    lipo -create bin/Redot.macos.editor.x86_64 bin/Redot.macos.editor.arm64 -output bin/Redot.macos.editor.universal
 
 .. tip::
-    If you are compiling Godot to make changes or contribute to the engine,
+    If you are compiling Redot to make changes or contribute to the engine,
     you may want to use the SCons options ``dev_build=yes`` or ``dev_mode=yes``.
     See :ref:`doc_introduction_to_the_buildsystem_development_and_production_aliases`
     for more info.
@@ -72,7 +72,7 @@ If all goes well, the resulting binary executable will be placed in the
 runs without any dependencies. Executing it will bring up the Project
 Manager.
 
-.. note:: If you want to use separate editor settings for your own Godot builds
+.. note:: If you want to use separate editor settings for your own Redot builds
           and official releases, you can enable
           :ref:`doc_data_paths_self_contained_mode` by creating a file called
           ``._sc_`` or ``_sc_`` in the ``bin/`` folder.
@@ -81,11 +81,11 @@ To create an ``.app`` bundle like in the official builds, you need to use the
 template located in ``misc/dist/macos_tools.app``. Typically, for an optimized
 editor binary built with ``dev_build=yes``::
 
-    cp -r misc/dist/macos_tools.app ./Godot.app
-    mkdir -p Godot.app/Contents/MacOS
-    cp bin/godot.macos.editor.universal Godot.app/Contents/MacOS/Godot
-    chmod +x Godot.app/Contents/MacOS/Godot
-    codesign --force --timestamp --options=runtime --entitlements misc/dist/macos/editor.entitlements -s - Godot.app
+    cp -r misc/dist/macos_tools.app ./Redot.app
+    mkdir -p Redot.app/Contents/MacOS
+    cp bin/Redot.macos.editor.universal Redot.app/Contents/MacOS/Redot
+    chmod +x Redot.app/Contents/MacOS/Redot
+    codesign --force --timestamp --options=runtime --entitlements misc/dist/macos/editor.entitlements -s - Redot.app
 
 .. note::
 
@@ -95,8 +95,8 @@ editor binary built with ``dev_build=yes``::
     You can also choose to link it dynamically by passing ``use_volk=yes`` and
     including the dynamic library in your ``.app`` bundle::
 
-        mkdir -p Godot.app/Contents/Frameworks
-        cp <Vulkan SDK path>/macOS/lib/libMoltenVK.dylib Godot.app/Contents/Frameworks/libMoltenVK.dylib
+        mkdir -p Redot.app/Contents/Frameworks
+        cp <Vulkan SDK path>/macOS/lib/libMoltenVK.dylib Redot.app/Contents/Frameworks/libMoltenVK.dylib
 
 Running a headless/server build
 -------------------------------
@@ -108,7 +108,7 @@ projects in an automated manner, use the normal build::
 
 And then use the ``--headless`` command line argument::
 
-    ./bin/godot.macos.editor.x86_64 --headless
+    ./bin/Redot.macos.editor.x86_64 --headless
 
 To compile a debug *server* build which can be used with
 :ref:`remote debugging tools <doc_command_line_tutorial>`, use::
@@ -164,7 +164,7 @@ an *Universal 2* binary from two separate ARM64 and x86_64 binaries (if both wer
     MoltenVK without having to recompile export templates.
 
 You can then zip the ``macos_template.app`` folder to reproduce the ``macos.zip``
-template from the official Godot distribution::
+template from the official Redot distribution::
 
     zip -r9 macos.zip macos_template.app
 

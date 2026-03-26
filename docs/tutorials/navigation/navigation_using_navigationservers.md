@@ -80,7 +80,7 @@ Actors with avoidance enabled will avoid both 2D and 3D avoidance agents when pl
 
 :::warning
 
-It is not possible to use NavigationServer2D while disabling 3D on a Godot custom build.
+It is not possible to use NavigationServer2D while disabling 3D on a Redot custom build.
 
 :::
 

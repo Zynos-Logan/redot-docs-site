@@ -1,6 +1,6 @@
-.. _doc_godot_interfaces:
+.. _doc_Redot_interfaces:
 
-Godot interfaces
+Redot interfaces
 ================
 
 Often one needs scripts that rely on other objects for features. There
@@ -26,8 +26,8 @@ is to get a reference to an existing object from another acquired instance.
 
   .. code-tab:: csharp
 
-    GodotObject obj = node.Object; // Property access.
-    GodotObject obj = node.GetObject(); // Method access.
+    RedotObject obj = node.Object; // Property access.
+    RedotObject obj = node.GetObject(); // Method access.
 
 The same principle applies for :ref:`RefCounted <class_RefCounted>` objects.
 While users often access :ref:`Node <class_Node>` and
@@ -266,14 +266,14 @@ Nodes likewise have an alternative access point: the SceneTree.
 Accessing data or logic from an object
 --------------------------------------
 
-Godot's scripting API is duck-typed. This means that if a script executes an
-operation, Godot doesn't validate that it supports the operation by **type**.
+Redot's scripting API is duck-typed. This means that if a script executes an
+operation, Redot doesn't validate that it supports the operation by **type**.
 It instead checks that the object **implements** the individual method.
 
 For example, the :ref:`CanvasItem <class_CanvasItem>` class has a ``visible``
 property. All properties exposed to the scripting API are in fact a setter and
 getter pair bound to a name. If one tried to access
-:ref:`CanvasItem.visible <class_CanvasItem_property_visible>`, then Godot would do the
+:ref:`CanvasItem.visible <class_CanvasItem_property_visible>`, then Redot would do the
 following checks, in order:
 
 - If the object has a script attached, it will attempt to set the property
@@ -302,7 +302,7 @@ As a result, this duck-typed system can locate a property either in the script,
 the object's class, or any class that object inherits, but only for things
 which extend Object.
 
-Godot provides a variety of options for performing runtime checks on these
+Redot provides a variety of options for performing runtime checks on these
 accesses:
 
 - A duck-typed property access. These will be property checks (as described above).
@@ -533,5 +533,5 @@ accesses:
         }
     }
 
-These strategies contribute to Godot's flexible design. Between them, users
+These strategies contribute to Redot's flexible design. Between them, users
 have a breadth of tools to meet their specific needs.

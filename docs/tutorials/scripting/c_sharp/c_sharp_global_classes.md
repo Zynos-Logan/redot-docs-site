@@ -1,7 +1,7 @@
 
 # C# global classes
 
-Global classes (also known as named scripts) are types registered in Godot's
+Global classes (also known as named scripts) are types registered in Redot's
 editor so they can be used more conveniently.
 [In GDScript ](doc_gdscript_basics_class_name), this is achieved
 using the ``class_name`` keyword at the top of a script. This page describes how
@@ -51,7 +51,7 @@ public partial class Main : Node
 ![Image](img/globalclasses_exportednode.webp)
 
 If a custom type isn't registered as a global class, the assignment is
-restricted to the Godot type the custom type is based on. For example, inspector
+restricted to the Redot type the custom type is based on. For example, inspector
 assignments to an export of the type ``MySimpleSprite2D`` are restricted to
 ``Sprite2D`` and derived types.
 
@@ -96,10 +96,10 @@ will let you create and load instances of this type easily.
 
 :::warning
 
-The Godot editor will hide these custom classes with names that begin with the prefix
+The Redot editor will hide these custom classes with names that begin with the prefix
 "Editor" in the "Create New Node" or "Create New Scene" dialog windows. The classes
 are available for instantiation at runtime via their class names, but are
 automatically hidden by the editor windows along with the built-in editor nodes used
-by the Godot editor.
+by the Redot editor.
 
 :::

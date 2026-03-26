@@ -12,7 +12,7 @@ enabled.
 
 ## Why use large world coordinates?
 
-In Godot, physics simulation and rendering both rely on *floating-point* numbers.
+In Redot, physics simulation and rendering both rely on *floating-point* numbers.
 However, in computing, floating-point numbers have **limited precision and range**.
 This can be a problem for games with huge worlds, such as space or planetary-scale
 simulation games.
@@ -100,10 +100,10 @@ precise at high values. The maximum value that can be represented is also
 greatly increased by going from a single-precision float to a double-precision
 float.
 
-To avoid model snapping issues when far away from the world origin, Godot's 3D
+To avoid model snapping issues when far away from the world origin, Redot's 3D
 rendering engine will increase its precision for rendering operations when large
 world coordinates are enabled. The shaders do not use double-precision floats
-for performance reasons, but an [alternative solution ](https://github.com/godotengine/godot/pull/66178)_
+for performance reasons, but an [alternative solution ](https://github.com/redot-engine/redot-engine/pull/66178)_
 is used to emulate double precision for rendering using single-precision floats.
 
 :::note

@@ -26,10 +26,10 @@ Debug configurations need to be changed when going from one IDE to another.
 
 :::
 
-Rider requires a solution file to work on a C++ project. While Godot does not come
+Rider requires a solution file to work on a C++ project. While Redot does not come
 with a solution file, it can be generated using SCons.
 
-- Navigate to the Godot root folder and open a Command Prompt or PowerShell window.
+- Navigate to the Redot root folder and open a Command Prompt or PowerShell window.
 - Copy, paste and run the next command to generate the solution.
 
 ```
@@ -40,7 +40,7 @@ scons platform=windows vsproj=yes dev_build=yes
 The ``vsproj`` parameter signals that you want Visual Studio solution generated.
 The ``dev_build`` parameter makes sure the debug symbols are included, allowing to e.g. step through code using breakpoints.
 
-- If you have Rider setup as your main IDE for .sln, you can now open the project by double-clicking on the ``godot.sln`` in the project root
+- If you have Rider setup as your main IDE for .sln, you can now open the project by double-clicking on the ``Redot.sln`` in the project root
   or by using the **Open** option inside of Rider.
 
 :::note
@@ -52,7 +52,7 @@ development environment may help.
 :::
 
 ## Compiling and debugging the project
-Rider comes with a built-in debugger that can be used to debug the Godot project. You can launch the debugger
+Rider comes with a built-in debugger that can be used to debug the Redot project. You can launch the debugger
 by pressing the **Debug** icon at the top of the screen, this only works for the Project manager,
 if you want to debug the editor, you need to configure the debugger first.
 
@@ -60,7 +60,7 @@ if you want to debug the editor, you need to configure the debugger first.
   <img src="/Contributing/Development/configuring_an_ide/img/rider_run_debug.webp" />
 </figure>
 
-- Click on the **Godot &gt; Edit Configurations** option at the top of the screen.
+- Click on the **Redot &gt; Edit Configurations** option at the top of the screen.
 
 <figure>
   <img src="/Contributing/Development/configuring_an_ide/img/rider_configurations.webp" />
@@ -69,12 +69,12 @@ if you want to debug the editor, you need to configure the debugger first.
 - Ensure the following values for the C++ Project Run Configuration:
 
     - Exe Path : ``$(LocalDebuggerCommand)``
-    - Program Arguments: `[-e --path](path to the Godot project)`
+    - Program Arguments: `[-e --path](path to the Redot project)`
     - Working Directory: ``$(LocalDebuggerWorkingDirectory)``
     - Before Launch has a value of "Build Project"
 
 This will tell the executable to debug the specified project without using the project manager.
-Use the root path to the project folder, not ``project.godot`` file path.
+Use the root path to the project folder, not ``project.Redot`` file path.
 
 <figure>
   <img src="/Contributing/Development/configuring_an_ide/img/rider_configurations_changed.webp" />
@@ -82,15 +82,15 @@ Use the root path to the project folder, not ``project.godot`` file path.
 
 - Finally click on "Apply" and "OK" to save the changes.
 
-- When you press the **Debug** icon at the top of the screen, JetBrains Rider will launch the Godot editor with the debugger attached.
+- When you press the **Debug** icon at the top of the screen, JetBrains Rider will launch the Redot editor with the debugger attached.
 
-Alternatively you can use **Run &gt; Attach to Process** to attach the debugger to a running Godot instance.
+Alternatively you can use **Run &gt; Attach to Process** to attach the debugger to a running Redot instance.
 
 <figure>
   <img src="/Contributing/Development/configuring_an_ide/img/rider_attach_to_process.webp" />
 </figure>
 
-- You can find the Godot instance by searching for ``godot.editor`` and then clicking ``Attach with LLDB``
+- You can find the Redot instance by searching for ``Redot.editor`` and then clicking ``Attach with LLDB``
 
 <figure>
   <img src="/Contributing/Development/configuring_an_ide/img/rider_attach_to_process_dialog.webp" />

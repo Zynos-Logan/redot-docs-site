@@ -1,9 +1,9 @@
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-# Godot notifications
+# Redot notifications
 
-Every Object in Godot implements a
+Every Object in Redot implements a
 [_notification ](class_Object_private_method__notification) method. Its purpose is to
 allow the Object to respond to a variety of engine-level callbacks that may
 relate to it. For example, if the engine tells a
@@ -11,7 +11,7 @@ relate to it. For example, if the engine tells a
 ``_notification(NOTIFICATION_DRAW)``.
 
 Some of these notifications, like draw, are useful to override in scripts. So
-much so that Godot exposes many of them with dedicated functions:
+much so that Redot exposes many of them with dedicated functions:
 
 - ``_ready()``: ``NOTIFICATION_READY``
 
@@ -118,7 +118,7 @@ public partial class MyNode : Node
 <TabItem value="c__" label="C++">
 
 ```cpp
-using namespace godot;
+using namespace Redot;
 
 class MyNode : public Node {
     GDCLASS(MyNode, Node)
@@ -217,7 +217,7 @@ public partial class MyNode : Node
 <TabItem value="c__" label="C++">
 
 ```cpp
-using namespace godot;
+using namespace Redot;
 
 class MyNode : public Node {
     GDCLASS(MyNode, Node)
@@ -324,7 +324,7 @@ public partial class MyNode : Node
 <TabItem value="c__" label="C++">
 
 ```cpp
-using namespace godot;
+using namespace Redot;
 
 class MyNode : public Node {
     GDCLASS(MyNode, Node)
@@ -362,7 +362,7 @@ initialization *and* the number of times the engine calls the setter.
 
 ## _ready vs. _enter_tree vs. NOTIFICATION_PARENTED
 
-When instantiating a scene connected to the first executed scene, Godot will
+When instantiating a scene connected to the first executed scene, Redot will
 instantiate nodes down the tree (making ``_init()`` calls) and build the tree
 going downwards from the root. This causes ``_enter_tree()`` calls to cascade
 down the tree. Once the tree is complete, leaf nodes call ``_ready``. A node
@@ -457,7 +457,7 @@ public partial class MyNode : Node
 <TabItem value="c__" label="C++">
 
 ```cpp
-using namespace godot;
+using namespace Redot;
 
 class MyNode : public Node {
     GDCLASS(MyNode, Node)

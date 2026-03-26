@@ -15,8 +15,8 @@ From a high level, the ideal life cycle of a pull request looks like the
 following:
 
   1. A contributor opens a PR that fixes a specific problem (optimally closing
-     a GitHub [issue](https://github.com/godotengine/godot) or implementing
-     a [proposal](https://github.com/godotengine/godot-proposals)).
+     a GitHub [issue](https://github.com/redot-engine/redot) or implementing
+     a [proposal](https://github.com/redot-engine/redot-proposals)).
 
   2. Other contributors provide feedback on the PR (including reviewing and/or
      approving the PR, as appropriate).
@@ -28,7 +28,7 @@ following:
      approves it once satisfied.
 
   5. A team leader or a member of the `production team
-     &lt;https://godotengine.org/teams#production&gt;`_ merges the pull request if
+     &lt;https://redotengine.org/teams#production&gt;`_ merges the pull request if
      satisfied that it has been sufficiently reviewed.
 
 This document will explain steps 2, 3, 4, and 5 in more detail. For a more
@@ -47,9 +47,9 @@ Typically the first interaction on a pull request will be an engine maintainer
 assigning tags to the pull request and flagging it for review by someone
 familiar with that area of code.
 
-Engine maintainers are folks who are "members" of the Godot project repository
-on GitHub and/or are listed on the [Teams page](https://godotengine.org/teams)
-on the Godot website. Maintainers are responsible for a given area of the
+Engine maintainers are folks who are "members" of the Redot project repository
+on GitHub and/or are listed on the [Teams page](https://redotengine.org/teams)
+on the Redot website. Maintainers are responsible for a given area of the
 engine. Typically this means they are the people who are given more trust to
 approve and recommend pull requests for merging.
 
@@ -127,7 +127,7 @@ Here are some things to think about and look out for as you review the code:
   are alright, but often bugs that you can find along the way are better fixed
   in their own PRs.
 
-* **Code properly uses Godot's own APIs and patterns.**
+* **Code properly uses Redot's own APIs and patterns.**
 
   Consistency is very important, and a solution that already exists in the
   codebase is preferable to an ad-hoc solution.
@@ -159,8 +159,8 @@ want to avoid stringing people along because it feels bad to say "sorry, no".
 
 :::
 
-As you review pull requests, keep the Godot `Code of Conduct
-&lt;https://godotengine.org/code-of-conduct&gt;`_ in mind. Especially the following:
+As you review pull requests, keep the Redot `Code of Conduct
+&lt;https://redotengine.org/code-of-conduct&gt;`_ in mind. Especially the following:
 
 * Politeness is expected at all times. Be kind and courteous.
 
@@ -194,8 +194,8 @@ contributor:
   as possible.
 
 And ultimately, don't feel pressured to deal with the PR all alone. Feel free to
-ask for a helping hand on the `Godot Contributors Chat
-&lt;https://chat.godotengine.org&gt;`_, in the appropriate channel or in #general.
+ask for a helping hand on the `Redot Contributors Chat
+&lt;https://chat.redotengine.org&gt;`_, in the appropriate channel or in #general.
 Other teams may already be tagged for review, so you can also wait or ask for
 their assistance.
 
@@ -293,14 +293,14 @@ could be the person merging the pull request.
 
 Make sure that the reviews and approvals were left by people competent in that
 specific engine area. It is possible that even a long-standing member of the
-Godot organization left a review without having the relevant expertise.
+Redot organization left a review without having the relevant expertise.
 
 :::note
 
 An easy way to find PRs that may be ready for merging is filtering by
-approved PRs and sorting by recently updated. For example, in the main Godot
+approved PRs and sorting by recently updated. For example, in the main Redot
 repository, you can use `this link
-&lt;https://github.com/godotengine/godot/pulls?q=is%3Apr+is%3Aopen+review%3Aapproved+sort%3Aupdated-desc&gt;`_.
+&lt;https://github.com/redot-engine/redot-engine/pulls?q=is%3Apr+is%3Aopen+review%3Aapproved+sort%3Aupdated-desc&gt;`_.
 
 :::
 
@@ -356,14 +356,14 @@ out more broadly to ask for help reviewing. Consider asking:
   maintainer you've probably written them enough times to know how to make one,
   but for a general template think about *"Fix &lt;issue&gt; in &lt;part of codebase&gt;"*.
   For a more detailed recommendation see the `contributing.md
-  &lt;https://github.com/godotengine/godot/blob/master/CONTRIBUTING.md#format-your-commit-messages-with-readability-in-mind&gt;`_
-  page in the main Godot repository.
+  &lt;https://github.com/redot-engine/redot-engine/blob/master/CONTRIBUTING.md#format-your-commit-messages-with-readability-in-mind&gt;`_
+  page in the main Redot repository.
 
 ### 4. GitHub checklist
 
 * **Validate the target branch of the PR.**
 
-  Most Godot development happens around in the ``master`` branch. Therefore most
+  Most Redot development happens around in the ``master`` branch. Therefore most
   pull requests must be made against it. From there pull requests can then be
   backported to other branches. Be wary of people making PRs on the version they
   are using (e.g, ``3.3``) and guide them to make a change against a

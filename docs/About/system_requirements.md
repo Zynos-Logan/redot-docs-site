@@ -6,11 +6,11 @@ sidebar_position: 3
 
 This page contains system requirements for the editor and exported projects.
 These specifications are given for informative purposes only, but they can be
-referred to if you're looking to build or upgrade a system to use Godot on.
+referred to if you're looking to build or upgrade a system to use Redot on.
 
-## Godot editor
+## Redot editor
 
-These are the **minimum** specifications required to run the Godot editor and work
+These are the **minimum** specifications required to run the Redot editor and work
 on a simple 2D or 3D project:
 
 ### Desktop or laptop PC - Minimum
@@ -28,11 +28,11 @@ Windows 7/8/8.1 are supported on a best-effort basis. These versions are not
 regularly tested and some features may be missing (such as colored
 [print_rich ](class_@GlobalScope_method_print_rich) console output).
 Support for Windows 7/8/8.1 may be removed in a
-[future Godot 4.x release ](doc_release_policy).
+[future Redot 4.x release ](doc_release_policy).
 
 Vulkan drivers for these Windows versions are known to have issues with
 memory leaks. As a result, it's recommended to stick to the Compatibility
-renderer when running Godot on a Windows version older than 10.
+renderer when running Redot on a Windows version older than 10.
 
 :::
 
@@ -46,7 +46,7 @@ renderer when running Godot on a Windows version older than 10.
 | **Operating system** | - **Native editor:** Android 6.0 (Compatibility) or Android 9.0 (Forward+/Mobile) - **Web editor:** Firefox 79, Chrome 88, Edge 79, Safari 15.2, Opera 64, Samsung Internet 15 |
 
 These are the **recommended** specifications to get a smooth experience with the
-Godot editor on a simple 2D or 3D project:
+Redot editor on a simple 2D or 3D project:
 
 ### Desktop or laptop PC - Recommended
 
@@ -66,7 +66,7 @@ Godot editor on a simple 2D or 3D project:
 | **Storage** | 1.5 GB (used for the executable, project files, all export templates and cache) |
 | **Operating system** | - **Native editor:** Android 9.0 - **Web editor:** Latest version of Firefox, Chrome, Edge, Safari, Opera, Samsung Internet |
 
-## Exported Godot project
+## Exported Redot project
 
 :::warning
 
@@ -80,13 +80,13 @@ will also compete for resources, including RAM and video RAM.
 It is strongly recommended to do your own testing on low-end hardware to
 make sure your project runs at the desired speed. To provide scalability for
 low-end hardware, you will also need to introduce a
-[graphics options menu ](https://github.com/godotengine/godot-demo-projects/tree/master/3d/graphics_settings)_
+[graphics options menu ](https://github.com/redot-engine/redot-demo-projects/tree/master/3d/graphics_settings)_
 to your project.
 
 :::
 
 These are the **minimum** specifications required to run a simple 2D or 3D
-project exported with Godot:
+project exported with Redot:
 
 ### Desktop or laptop PC - Minimum
 
@@ -103,11 +103,11 @@ Windows 7/8/8.1 are supported on a best-effort basis. These versions are not
 regularly tested and some features may be missing (such as colored
 [print_rich ](class_@GlobalScope_method_print_rich) console output).
 Support for Windows 7/8/8.1 may be removed in a
-[future Godot 4.x release ](doc_release_policy).
+[future Redot 4.x release ](doc_release_policy).
 
 Vulkan drivers for these Windows versions are known to have issues with
 memory leaks. As a result, it's recommended to stick to the Compatibility
-renderer when running Godot on a Windows version older than 10.
+renderer when running Redot on a Windows version older than 10.
 
 :::
 
@@ -121,7 +121,7 @@ renderer when running Godot on a Windows version older than 10.
 | **Operating system** | - **For native exports:** Android 6.0 (Compatibility), Android 9.0 (Forward+/Mobile), iOS 12.0 (Forward+/Mobile, Vulkan), iOS 16.0 (Forward+/Mobile, Metal) - **For web exports:** Firefox 79, Chrome 88, Edge 79, Safari 15.2, Opera 64, Samsung Internet 15 |
 
 These are the **recommended** specifications to get a smooth experience with a
-simple 2D or 3D project exported with Godot:
+simple 2D or 3D project exported with Redot:
 
 ### Desktop or laptop PC - Recommended
 
@@ -143,7 +143,7 @@ simple 2D or 3D project exported with Godot:
 
 :::note
 
-Godot doesn't use OpenGL/OpenGL ES extensions introduced after OpenGL
+Redot doesn't use OpenGL/OpenGL ES extensions introduced after OpenGL
 3.3/OpenGL ES 3.0, but GPUs supporting newer OpenGL/OpenGL ES versions
 generally have fewer driver issues.
 

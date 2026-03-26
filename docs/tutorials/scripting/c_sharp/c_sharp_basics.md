@@ -4,20 +4,20 @@
 ## Introduction
 
 This page provides a brief introduction to C#, both what it is and
-how to use it in Godot. Afterwards, you may want to look at
+how to use it in Redot. Afterwards, you may want to look at
 [how to use specific features ](doc_c_sharp_features), read about the
 [differences between the C# and the GDScript API ](doc_c_sharp_differences),
 and (re)visit the [Scripting section ](doc_scripting) of the
 step-by-step tutorial.
 
-C# is a high-level programming language developed by Microsoft. In Godot,
+C# is a high-level programming language developed by Microsoft. In Redot,
 it is implemented with .NET 8.0.
 
 .. attention::
 
-    Projects written in C# using Godot 4 currently cannot be exported to the web
-    platform. To use C# on the web platform, consider Godot 3 instead.
-    Android and iOS platform support is available as of Godot 4.2, but is
+    Projects written in C# using Redot 4 currently cannot be exported to the web
+    platform. To use C# on the web platform, consider Redot 3 instead.
+    Android and iOS platform support is available as of Redot 4.2, but is
     experimental and [some limitations apply ](doc_c_sharp_platforms).
 
 :::note
@@ -31,13 +31,13 @@ or look for a suitable introduction elsewhere.
 
 ## Prerequisites
 
-Godot bundles the parts of .NET needed to run already compiled games.
-However, Godot does not bundle the tools required to build and compile
+Redot bundles the parts of .NET needed to run already compiled games.
+However, Redot does not bundle the tools required to build and compile
 games, such as MSBuild and the C# compiler. These are
 included in the .NET SDK, and need to be installed separately.
 
 In summary, you must have installed the .NET SDK **and** the .NET-enabled
-version of Godot.
+version of Redot.
 
 Download and install the latest stable version of the SDK from the
 [.NET download page ](https://dotnet.microsoft.com/download)_.
@@ -45,23 +45,23 @@ Download and install the latest stable version of the SDK from the
 :::important
 
 Be sure to install the 64-bit version of the SDK(s)
-if you are using the 64-bit version of Godot.
+if you are using the 64-bit version of Redot.
 
 :::
 
-If you are building Godot from source, make sure to follow the steps to enable
+If you are building Redot from source, make sure to follow the steps to enable
 .NET support in your build as outlined in the [doc_compiling_with_dotnet](doc_compiling_with_dotnet)
 page.
 
 ## Configuring an external editor
 
-C# support in Godot's built-in script editor is minimal. Consider using an
+C# support in Redot's built-in script editor is minimal. Consider using an
 external IDE or editor, such as  [Visual Studio Code ](https://code.visualstudio.com/)_
 or MonoDevelop. These provide autocompletion, debugging, and other
-useful features for C#. To select an external editor in Godot,
+useful features for C#. To select an external editor in Redot,
 click on **Editor → Editor Settings** and scroll down to
 **Dotnet**. Under **Dotnet**, click on **Editor**, and select your
-external editor of choice. Godot currently supports the following
+external editor of choice. Redot currently supports the following
 external editors:
 
 - Visual Studio 2022
@@ -77,21 +77,21 @@ See the following sections for how to configure an external editor:
 After reading the "Prerequisites" section, you can download and install
 [JetBrains Rider ](https://www.jetbrains.com/rider/download)_.
 
-In Godot's **Editor → Editor Settings** menu:
+In Redot's **Editor → Editor Settings** menu:
 
 - Set **Dotnet** -&gt; **Editor** -&gt; **External Editor** to **JetBrains Rider**.
 
 In Rider:
 
 - Set **MSBuild version** to **.NET Core**.
-- If you are using a Rider version below 2024.2, install the **Godot support** plugin. This functionality is now built into Rider.
+- If you are using a Rider version below 2024.2, install the **Redot support** plugin. This functionality is now built into Rider.
 
 ### Visual Studio Code
 
 After reading the "Prerequisites" section, you can download and install
 [Visual Studio Code ](https://code.visualstudio.com/download)_ (aka VS Code).
 
-In Godot's **Editor → Editor Settings** menu:
+In Redot's **Editor → Editor Settings** menu:
 
 - Set **Dotnet** -&gt; **Editor** -&gt; **External Editor** to **Visual Studio Code**.
 
@@ -113,7 +113,7 @@ Here is an example ``launch.json``:
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${env:GODOT4}",
+            "program": "${env:Redot4}",
             "args": [],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
@@ -123,9 +123,9 @@ Here is an example ``launch.json``:
 
 ```
 
-For this launch configuration to work, you need to either setup a GODOT4
-environment variable that points to the Godot executable, or replace ``program``
-parameter with the path to the Godot executable.
+For this launch configuration to work, you need to either setup a Redot4
+environment variable that points to the Redot executable, or replace ``program``
+parameter with the path to the Redot executable.
 
 Here is an example ``tasks.json``:
 
@@ -147,7 +147,7 @@ Here is an example ``tasks.json``:
 
 ```
 
-Now, when you start the debugger in Visual Studio Code, your Godot project will run.
+Now, when you start the debugger in Visual Studio Code, your Redot project will run.
 
 ### Visual Studio (Windows only)
 
@@ -161,17 +161,17 @@ While installing Visual Studio, select this workload:
 
 - .NET desktop development
 
-In Godot's **Editor → Editor Settings** menu:
+In Redot's **Editor → Editor Settings** menu:
 
 - Set **Dotnet** -&gt; **Editor** -&gt; **External Editor** to **Visual Studio**.
 
 :::note
-If you see an error like "Unable to find package Godot.NET.Sdk",
+If you see an error like "Unable to find package Redot.NET.Sdk",
 your NuGet configuration may be incorrect and need to be fixed.
 
 A simple way to fix the NuGet configuration file is to regenerate it.
 In a file explorer window, go to ``%AppData%\NuGet``. Rename or delete
-the ``NuGet.Config`` file. When you build your Godot project again,
+the ``NuGet.Config`` file. When you build your Redot project again,
 the file will be automatically created with default values.
 
 :::
@@ -180,8 +180,8 @@ To debug your C# scripts using Visual Studio, open the .sln file that is generat
 after opening the first C# script in the editor. In the **Debug** menu, go to the
 **Debug Properties** menu item for your project. Click the **Create a new profile**
 button and choose **Executable**. In the **Executable** field, browse to the path
-of the C# version of the Godot editor, or type ``%GODOT4%`` if you have created an
-environment variable for the Godot executable path. It must be the path to the main Godot
+of the C# version of the Redot editor, or type ``%Redot4%`` if you have created an
+environment variable for the Redot executable path. It must be the path to the main Redot
 executable, not the 'console' version. For the **Working Directory**, type a single period,
 ``.``, meaning the current directory. Also check the **Enable native code debugging**
 checkbox. You may now close this window, click downward arrow on the debug profile
@@ -190,27 +190,27 @@ game will begin playing in debug mode.
 
 ## Creating a C# script
 
-After you successfully set up C# for Godot, you should see the following option
+After you successfully set up C# for Redot, you should see the following option
 when selecting **Attach Script** in the context menu of a node in your scene:
 
 ![Image](img/attachcsharpscript.webp)
 
 Note that while some specifics change, most concepts work the same
-when using C# for scripting. If you're new to Godot, you may want to follow
+when using C# for scripting. If you're new to Redot, you may want to follow
 the tutorials on [doc_scripting](doc_scripting) at this point.
 While some documentation pages still lack C# examples, most notions
 can be transferred from GDScript.
 
 ## Project setup and workflow
 
-When you create the first C# script, Godot initializes the C# project files
-for your Godot project. This includes generating a C# solution (``.sln``)
+When you create the first C# script, Redot initializes the C# project files
+for your Redot project. This includes generating a C# solution (``.sln``)
 and a project file (``.csproj``), as well as some utility files and folders
-(``.godot/mono``).
-All of these but ``.godot/mono`` are important and should be committed to your
-version control system. Everything under ``.godot`` can be safely added to the
+(``.Redot/mono``).
+All of these but ``.Redot/mono`` are important and should be committed to your
+version control system. Everything under ``.Redot`` can be safely added to the
 ignore list of your VCS.
-When troubleshooting, it can sometimes help to delete the ``.godot/mono`` folder
+When troubleshooting, it can sometimes help to delete the ``.Redot/mono`` folder
 and let it regenerate.
 
 ## Example
@@ -230,7 +230,7 @@ public partial class YourCustomClass : Node
     {
         // Called every time the node is added to the scene.
         // Initialization here.
-        GD.Print("Hello from C# to Godot :)");
+        GD.Print("Hello from C# to Redot :)");
     }
 
     public override void _Process(double delta)
@@ -242,9 +242,9 @@ public partial class YourCustomClass : Node
 
 ```
 
-As you can see, functions normally in global scope in GDScript like Godot's
+As you can see, functions normally in global scope in GDScript like Redot's
 ``print`` function are available in the ``GD`` static class which is part of
-the ``Godot`` namespace. For a full list of methods in the ``GD`` class, see the
+the ``Redot`` namespace. For a full list of methods in the ``GD`` class, see the
 class reference pages for
 [@GDScript ](class_@gdscript) and [@GlobalScope ](class_@globalscope).
 
@@ -261,7 +261,7 @@ name as the ``.cs`` file. Otherwise, you will get the following error:
 
 The C# API uses ``PascalCase`` instead of ``snake_case`` in GDScript/C++.
 Where possible, fields and getters/setters have been converted to properties.
-In general, the C# Godot API strives to be as idiomatic as is reasonably possible.
+In general, the C# Redot API strives to be as idiomatic as is reasonably possible.
 
 For more information, see the [doc_c_sharp_differences](doc_c_sharp_differences) page.
 
@@ -281,11 +281,11 @@ You will also need to rebuild the project assemblies to apply changes in
 
 ## Current gotchas and known issues
 
-As C# support is quite new in Godot, there are some growing pains and things
+As C# support is quite new in Redot, there are some growing pains and things
 that need to be ironed out. Below is a list of the most important issues
-you should be aware of when diving into C# in Godot, but if in doubt, also
+you should be aware of when diving into C# in Redot, but if in doubt, also
 take a look over the official
-[issue tracker for .NET issues ](https://github.com/godotengine/godot/labels/topic%3Adotnet).
+[issue tracker for .NET issues ](https://github.com/redot-engine/redot-engine/labels/topic%3Adotnet).
 
 - Writing editor plugins is possible, but it is currently quite convoluted.
 - State is currently not saved and restored when hot-reloading,
@@ -293,7 +293,7 @@ take a look over the official
 - Attached C# scripts should refer to a class that has a class name
   that matches the file name.
 - There are some methods such as ``Get()``/``Set()``, ``Call()``/``CallDeferred()``
-  and signal connection method ``Connect()`` that rely on Godot's ``snake_case`` API
+  and signal connection method ``Connect()`` that rely on Redot's ``snake_case`` API
   naming conventions.
   So when using e.g. ``CallDeferred("AddChild")``, ``AddChild`` will not work because
   the API is expecting the original ``snake_case`` version ``add_child``. However, you
@@ -301,13 +301,13 @@ take a look over the official
   Prefer using the exposed ``StringName`` in the ``PropertyName``, ``MethodName`` and
   ``SignalName`` to avoid extra ``StringName`` allocations and worrying about snake_case naming.
 
-As of Godot 4.0, exporting .NET projects is supported for desktop platforms
+As of Redot 4.0, exporting .NET projects is supported for desktop platforms
 (Linux, Windows and macOS). Other platforms will gain support in future 4.x
 releases.
 
 ## Common pitfalls
 
-You might encounter the following error when trying to modify some values in Godot
+You might encounter the following error when trying to modify some values in Redot
 objects, e.g. when trying to change the X coordinate of a ``Node2D``:
 
 ```csharp
@@ -348,18 +348,18 @@ Position = Position with { X = 100.0f };
 
 You can read more about this error on the [C# language reference ](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/cs1612).
 
-## Performance of C# in Godot
+## Performance of C# in Redot
 
 :::info
 
-For a performance comparison of the languages Godot supports,
+For a performance comparison of the languages Redot supports,
 see [doc_faq_which_programming_language_is_fastest](doc_faq_which_programming_language_is_fastest).
 
 :::
 
-Most properties of Godot C# objects that are based on ``GodotObject``
+Most properties of Redot C# objects that are based on ``RedotObject``
 (e.g. any ``Node`` like ``Control`` or ``Node3D`` like ``Camera3D``) require native (interop) calls as they talk to
-Godot's C++ core.
+Redot's C++ core.
 Consider assigning values of such properties into a local variable if you need to modify or read them multiple times at
 a single code location:
 
@@ -394,15 +394,15 @@ public partial class YourCustomClass : Node3D
 
 ```
 
-Passing raw arrays (such as ``byte[]``) or ``string`` to Godot's C# API requires marshalling which is
+Passing raw arrays (such as ``byte[]``) or ``string`` to Redot's C# API requires marshalling which is
 comparatively pricey.
 
 The implicit conversion from ``string`` to ``NodePath`` or ``StringName`` incur both the native interop and marshalling
 costs as the ``string`` has to be marshalled and passed to the respective native constructor.
 
-## Using NuGet packages in Godot
+## Using NuGet packages in Redot
 
-[NuGet ](https://www.nuget.org/) packages can be installed and used with Godot,
+[NuGet ](https://www.nuget.org/) packages can be installed and used with Redot,
 as with any C# project. Many IDEs are able to add packages directly.
 They can also be added manually by adding the package reference in
 the ``.csproj`` file located in the project root:
@@ -416,7 +416,7 @@ the ``.csproj`` file located in the project root:
 
     &lt;/Project&gt;
 
-As of Godot 3.2.3, Godot automatically downloads and sets up newly added NuGet
+As of Redot 3.2.3, Redot automatically downloads and sets up newly added NuGet
 packages the next time it builds the project.
 
 ## Profiling your C# code

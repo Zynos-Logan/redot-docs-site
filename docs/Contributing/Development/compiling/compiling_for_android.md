@@ -39,10 +39,10 @@ For compiling under Windows, Linux or macOS, the following is required:
    - You can download a build from [Adoptium](https://adoptium.net/temurin/releases/?variant=openjdk17).
 
 :::info
-To get the Godot source code for compiling, see
+To get the Redot source code for compiling, see
 [doc_getting_source](doc_getting_source).
 
-For a general overview of SCons usage for Godot, see
+For a general overview of SCons usage for Redot, see
 [doc_introduction_to_the_buildsystem](doc_introduction_to_the_buildsystem).
 
 :::
@@ -89,13 +89,13 @@ cmdline-tools/latest/bin/sdkmanager --sdk_root=<android_sdk_path> "platform-tool
 
 ## Building the export templates
 
-Godot needs three export templates for Android: the optimized "release"
+Redot needs three export templates for Android: the optimized "release"
 template (``android_release.apk``), the debug template (``android_debug.apk``),
 and the Gradle build template (``android_source.zip``).
 As Google requires all APKs to include ARMv8 (64-bit) libraries since August 2019,
 the commands below build templates containing both ARMv7 and ARMv8 libraries.
 
-Compiling the standard export templates is done by calling SCons from the Godot
+Compiling the standard export templates is done by calling SCons from the Redot
 root directory with the following arguments:
 
 -  Release template (used when exporting with **Debugging Enabled** unchecked)
@@ -179,25 +179,25 @@ cd platform/android/java
 
 ## Using the export templates
 
-Godot needs release and debug binaries that were compiled against the same
+Redot needs release and debug binaries that were compiled against the same
 version/commit as the editor. If you are using official binaries
 for the editor, make sure to install the matching export templates,
 or build your own from the same version.
 
-When exporting your game, Godot uses the templates as a base, and updates their content as needed.
+When exporting your game, Redot uses the templates as a base, and updates their content as needed.
 
 ### Installing the templates
 
 The newly-compiled templates (``android_debug.apk``
-, ``android_release.apk``, and ``android_source.zip``) must be copied to Godot's templates folder
+, ``android_release.apk``, and ``android_source.zip``) must be copied to Redot's templates folder
 with their respective names. The templates folder can be located in:
 
--  Windows: ``%APPDATA%\Godot\export_templates\&lt;version&gt;\``
--  Linux: ``$HOME/.local/share/godot/export_templates/&lt;version&gt;/``
--  macOS: ``$HOME/Library/Application Support/Godot/export_templates/&lt;version&gt;/``
+-  Windows: ``%APPDATA%\Redot\export_templates\&lt;version&gt;\``
+-  Linux: ``$HOME/.local/share/Redot/export_templates/&lt;version&gt;/``
+-  macOS: ``$HOME/Library/Application Support/Redot/export_templates/&lt;version&gt;/``
 
 ``&lt;version&gt;`` is of the form ``major.minor[.patch].status`` using values from
-``version.py`` in your Godot source repository (e.g. ``4.1.3.stable`` or ``4.2.dev``).
+``version.py`` in your Redot source repository (e.g. ``4.1.3.stable`` or ``4.2.dev``).
 You also need to write this same version string to a ``version.txt`` file located
 next to your export templates.
 
@@ -208,13 +208,13 @@ here:
 ![Image](img/andtemplates.png)
 
 You don't even need to copy them, you can just reference the resulting
-file in the ``bin\`` directory of your Godot source folder, so that the
+file in the ``bin\`` directory of your Redot source folder, so that the
 next time you build you will automatically have the custom templates
 referenced.
 
-## Building the Godot editor
+## Building the Redot editor
 
-Compiling the editor is done by calling SCons from the Godot
+Compiling the editor is done by calling SCons from the Redot
 root directory with the following arguments:
 
 ```
@@ -225,7 +225,7 @@ scons platform=android arch=x86_64 production=yes target=editor generate_apk=yes
 
 ```
 
-- You can add the ``dev_build=yes`` parameter to generate a dev build of the Godot editor.
+- You can add the ``dev_build=yes`` parameter to generate a dev build of the Redot editor.
 
 - You can add the ``debug_symbols=yes`` parameter to include the debug symbols in the generated build.
 
@@ -248,7 +248,7 @@ cd platform/android/java
    # On Linux and macOS
    ./gradlew clean
 
-## Installing the Godot editor APK
+## Installing the Redot editor APK
 
 With an Android device with Developer Options enabled, connect the Android device to your computer via its charging cable to a USB/USB-C port.
 Open up a Terminal/Command Prompt and run the following commands from the root directory with the following arguments:
@@ -293,8 +293,8 @@ If the application runs but exits immediately, this might be due to
 one of the following reasons:
 
 -  Make sure to use export templates that match your editor version; if
-   you use a new Godot version, you *have* to update the templates too.
--  ``libgodot_android.so`` is not in ``libs/&lt;arch&gt;/``
+   you use a new Redot version, you *have* to update the templates too.
+-  ``libRedot_android.so`` is not in ``libs/&lt;arch&gt;/``
    where ``&lt;arch&gt;`` is the device's architecture.
 -  The device's architecture does not match the exported one(s).
    Make sure your templates were built for that device's architecture,
