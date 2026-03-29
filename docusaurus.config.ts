@@ -56,6 +56,15 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      require.resolve('docusaurus-lunr-search'),
+      {
+        languages: ['en'], // language codes
+      },
+    ],
+  ],
+
   themeConfig: {
     image: 'img/logo.svg',
     colorMode: {
