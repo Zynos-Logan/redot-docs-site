@@ -2,7 +2,7 @@
     NODE_ENV = 'production'
 
 [phases.setup]
-    nixPkgs = ['nodejs_20', 'npm'] # Pins your Node version
+    nixPkgs = ['nodejs_22'] # Pins your Node version
 
 [phases.install]
     cmds = ['npm install']
