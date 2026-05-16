@@ -203,7 +203,7 @@ There are notable differences when using this API with C#. See the C# difference
 
 ## Tutorials
 
-- [Using Signals](../getting_started/step_by_step/signals.md)
+- [Using Signals](../Getting Started/step_by_step/signals.md)
 
 - [GDScript Basics](../tutorials/scripting/gdscript/gdscript_basics.md#signals)
 

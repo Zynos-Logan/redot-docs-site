@@ -54,7 +54,7 @@ Lastly, every object can also contain metadata (data about data). [set_meta()](O
 
 ## Tutorials
 
-- [Object class introduction](../engine_details/architecture/object_class.md)
+- [Object class introduction](../Contributing/Development/core_and_modules/object_class.md)
 
 - [When and how to avoid using nodes for everything](../tutorials/best_practices/node_alternatives.md)
 

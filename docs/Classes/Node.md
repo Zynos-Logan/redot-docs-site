@@ -47,7 +47,7 @@ Finally, when a node is freed with [Object.free()](Object.md#Object_method_free)
 
 ## Tutorials
 
-- [Nodes and scenes](../getting_started/step_by_step/nodes_and_scenes.md)
+- [Nodes and scenes](../Getting Started/step_by_step/nodes_and_scenes.md)
 
 - [All Demos](https://github.com/redot-engine/redot-demo-projects/)
 

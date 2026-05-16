@@ -38,7 +38,7 @@ The JavaClassWrapper singleton provides a way for the Redot application to send 
 
 ## Tutorials
 
-- [Integrating with Android APIs](../tutorials/platform/android/javaclasswrapper_and_androidruntimeplugin.md)
+- [Integrating with Android APIs](../tutorials/platform/android/javaclasswrapper_and_andriodruntimeplugin.md)
 
 <!-- classref-reftable-group -->
 

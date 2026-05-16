@@ -132,5 +132,5 @@ There are notable differences when using this API with C#. See the C# difference
 
 ## Tutorials
 
-- [Variant class introduction](../engine_details/architecture/variant_class.md)
+- [Variant class introduction](../Contributing/Development/core_and_modules/variant_class.md)
 

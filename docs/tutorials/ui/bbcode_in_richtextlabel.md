@@ -176,7 +176,7 @@ There are several ways to alleviate this:
   avoids stuttering during gameplay. Only enable threading if it's actually
   needed in your project, as threading has some overhead.
 
-## Using push_[tag]() and pop() functions instead of BBCode
+## Using `push_[tag]()` and `pop()` functions instead of BBCode
 
 If you don't want to use BBCode for performance reasons, you can use functions
 provided by RichTextLabel to create formatting tags without writing BBCode in
